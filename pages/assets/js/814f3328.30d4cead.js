@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[535],{5641:function(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Announcing The SPR Project","permalink":"/pages/blog/first-blog-post"}]}')}}]);
