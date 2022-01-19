@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://www.supernetworks.org/blog</id>
+    <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
     <updated>2022-01-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://www.supernetworks.org/blog"/>
+    <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
-    <icon>https://www.supernetworks.org/img/favicon.ico</icon>
+    <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Supernetworks just Released a React User Interface]]></title>
         <id>UI Push</id>
-        <link href="https://www.supernetworks.org/blog/UI Push"/>
+        <link href="https://www.supernetworks.org/pages/blog/UI Push"/>
         <updated>2022-01-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[User Friendliness]]></summary>
         <content type="html"><![CDATA[<h2>User Friendliness</h2><p>The SPR project started out as a series of bash scripts and configuration files. Adding new devices
@@ -34,7 +34,7 @@ of the ones you might not see elsewhere</p>]]></content>
     <entry>
         <title type="html"><![CDATA[Announcing The SPR Project]]></title>
         <id>first-blog-post</id>
-        <link href="https://www.supernetworks.org/blog/first-blog-post"/>
+        <link href="https://www.supernetworks.org/pages/blog/first-blog-post"/>
         <updated>2022-01-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hello, SPR]]></summary>
         <content type="html"><![CDATA[<h2>Hello, SPR</h2><p>I&#x27;m happy to start releasing the <strong>Secure Programmable Router</strong> project to the world. I&#x27;ve been running my home WiFi
