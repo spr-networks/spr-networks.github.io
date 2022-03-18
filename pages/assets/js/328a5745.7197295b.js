@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[1613],{6848:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/x-64","name":"x64","count":1,"permalink":"/pages/blog/tags/x-64"}')}}]);
