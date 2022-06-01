@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="/output.css" rel="stylesheet">
+</head>
+
+<body class="dark:bg-gray-900">
+
+	<nav class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
+		<div class="container flex flex-wrap justify-between items-center mx-auto">
+			<a href="#" class="flex items-center">
+				<!--img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /-->
+				<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">SPR</span>
+			</a>
+
+			<button data-collapse-toggle="mobile-menu" type="button" id="trigger-mobile-menu"
+				class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+				aria-controls="mobile-menu" aria-expanded="false">
+				<span class="sr-only">Open main menu</span>
+				<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+						clip-rule="evenodd"></path>
+				</svg>
+				<svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
+
+			<div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+				<ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+					<li>
+						<a href="#"
+							class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+							aria-current="page">Home</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/blog/first-blog-post"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/docs/pi4b"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Guide</a>
+					</li>
+					<li>
+						<a href="http://demo.supernetworks.org/"
+							class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Demo</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/docs/intro"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Documentation</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/blog"
+							class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<header class="relative pt-8 md:pt-24">
+		<!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
+		<div class="mx-auto flex flex-col items-center space-x-4 space-y-6 mx-2 my-8 text-center">
+			<h1 class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl">SPR Enables Secure
+				Programmable Routers</h1>
+			<!--p class="max-w-2xl mx-auto mb-6 leading-6 text-gray-700 sm:text-lg md:text-xl md:mb-10 sm:mb-8"-->
+			<p class="max-w-2xl mb-6 text-gray-700 sm:text-lg md:text-md md:mb-10 sm:mb-8">
+				Linux and the open source community provide incredible versatility
+				for home networking. SPR unleashes those abilities with an enhanced focus on network hardening.
+			</p>
+			<!--p class="text-slate-500">With this software, hobbyists and
+		developers alike can innovate, build, and deploy flexible networks
+		with best of class network security.</p-->
+
+			<a href="https://www.supernetworks.org/pages/docs/intro">
+				<button type="button"
+					class="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-4">
+					See the technical design docs
+				</button>
+			</a>
+
+			<h1 class="mb-4 text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-3xl">
+				Core Features:
+			</h1>
+
+			<div class="flex text-left" style="margin-top:20px">
+				<div class="pr-10">
+					<h2 class="text-xl">Network Management:</h2>
+					<ul>
+						<li> ✔️ Access control </li>
+						<li> ✔️ Device Groups </li>
+						<li> ✔️ Multicast support </li>
+						<li> ✔️ Traffic statistics </li>
+						<li> ✔️ Mac Spoofing Protection </li>
+					</ul>
+				</div>
+				<div class="pr-10">
+					<h2 class="text-xl">WiFi:</h2>
+					<ul>
+						<li> ✔️ WPA2 & WPA3 support </li>
+						<li> ✔️ Strong device isolation </li>
+						<li> ✔️ Per-device Passphrases </li>
+						<li> ✔️ Easy QR-Code Setup </li>
+					</ul>
+				</div>
+				<div class="pr-10">
+					<h2 class="text-xl">DNS:</h2>
+					<ul>
+						<li> ✔️ DNS over HTTPS </li>
+						<li> ✔️ Custom Ad Block Lists </li>
+						<li> ✔️ DNS Logs </li>
+						<li> ✔️ DNS Rebinding Protection </li>
+						<li> ✔️ Per Device Rules </li>
+						</ul>
+				</div>
+				<div class="pr-10">
+					<h2 class="text-xl">Wireguard:</h2>
+					<ul>
+						<li> ✔️ Device Identity Integration </li>
+						<li> ✔️ Multicast Support </li>
+						<li> ✔️ Easy QR-Code Setup </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="md:py-12">
+		<div class="md:w-2/3 mx-auto">
+			<section>
+
+				<div class="bg-neutral-200 text-gray-700 dark:bg-gray-800 dark:text-gray-300 flex flex-col items-center pt-6 pb-4 md:md:rounded-lg">
+
+					<p class="text-gray-600 dark:text-gray-400">Available for</p>
+
+					<ul class="flex flex-wrap items-center justify-center mt-2 font-medium">
+						<li class="flex items-center px-4 py-3">
+							<img class="mr-2 w-6 opacity-70 dark:invert" src="/assets/img/linux.svg" />
+							Linux
+						</li>
+						<li class="flex items-center px-4 py-3">
+							<img class="mr-2 w-6 opacity-70 dark:invert" src="/assets/img/apple.svg" />
+							Mac
+						</li>
+						<li class="flex items-center px-4 py-3">
+							<img style="width: 36px; height: 36px; opacity: 0.7" src="/assets/img/chip.svg" />
+							&nbsp; ARMv8 &amp; amd64
+						</li>
+						<li class="flex items-center px-4 py-3">
+							<img class="w-8 opacity-70 dark:invert" src="/assets/img/raspberrypi.svg" />
+							Raspberry Pi &amp; ARM
+						</li>
+					</ul>
+
+				</div>
+
+			</section>
+		</div>
+	</div>
+
+
+	<div class="mx-auto max-h-[490px] overflow-y-hidden max-w-full md:max-w-5xl bg-neutral-200 dark:bg-gray-700 md:bg-transparent">
+		<div class="bg-gray-900 dark:bg-black pt-3 px-3 md:px-5 md:pt-5 rounded-t-3xl">
+			<div class="overflow-hidden md:py-0 rounded-t-2xl">
+				<!--img class="w-full max-w-[1024px]" src="/assets/img/screenshot-light.png" /-->
+				<div class="w-full max-w-[1024px] min-h-[240px] md:h-[640px] bg-no-repeat bg-contain bg-[url(/assets/img/screenshot-light.png)] dark:bg-[url(/assets/img/screenshot-dark.png)]"></div>
+			</div>
+		</div>
+	</div>
+
+	<section class="bg-gray-900 md:p-8 md:pt-24 md:pb-28 bg-cover bg-center md:bg-[url(/assets/img/bgs/bg-dark.png)]">
+
+		<div>
+			<div class="bg-violet-900/80 hover:bg-violet-800/70 rounded-lg p-4 mt-24 text-center text-xl text-slate-200 cursor-pointer max-w-md mx-auto" onclick="location.href='http://demo.supernetworks.org/">
+				<a href="http://demo.supernetworks.org/" target="_blank">Try the UI demo &rarr;</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-gray-900 md:p-8 md:pt-24 md:pb-28"
+		style="background-size: 100% auto; background-position: center 0">
+
+		<div class="grid md:grid-cols-3 md:gap-4 md:p-4">
+
+			<div class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
+				onClick="location.href='https://www.supernetworks.org/pages/docs/pi4b'">
+				<img class="mx-auto mb-4 w-8 invert" src="/assets/img/raspberrypi.svg"/>
+				<a class="text-xl text-bold" href="https://www.supernetworks.org/pages/docs/pi4b">Raspberry Pi Setup
+					Guide</a>
+				<p>Get running on a Raspberry Pi 4 with Ubuntu for ARM64</p>
+			</div>
+
+			<div class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
+				onClick="location.href='https://www.supernetworks.org/pages/blog'">
+				<img class="mx-auto mb-4 w-8 invert" src="/assets/img/rss_feed_FILL0_wght400_GRAD0_opsz48.svg" />
+				<a class="text-xl text-bold" href="https://www.supernetworks.org/pages/blog">The Blog</a>
+				<p>Articles about linux networking, wifi, and security</p>
+			</div>
+
+			<div class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
+				onClick="location.href='https://github.com/spr-networks/'">
+				<img class="mx-auto mb-4 w-8 invert" src="/assets/img/github.svg" />
+				<a class="text-xl text-bold" href="https://github.com/spr-networks/">Github</a>
+				<p>View the projects, get the code, file issues</p>
+			</div>
+
+
+		</div>
+
+		<div class="grid md:grid-cols-3 md:gap-4 md:p-4">
+
+			<div class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
+				onClick="location.href='https://www.supernetworks.org/pages/docs/intro'">
+				<img class="mx-auto mb-4 w-8 invert" src="/assets/img/description_FILL0_wght400_GRAD0_opsz48.svg" />
+				<a class="text-xl text-bold" href="https://www.supernetworks.org/pages/docs/intro">Documentation</a>
+				<p>Learn more about SPR and view the API Documenation</p>
+			</div>
+
+			<div class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
+				onClick="location.href='https://discord.gg/WeNKMVTR'">
+				<img class="mx-auto mb-4 w-8 invert" src="/assets/img/discord.svg" />
+				<a class="text-xl text-bold" href="https://discord.gg/WeNKMVTR">Join the Discord Chat</a>
+				<p>Chat with the SPR community, get help setting up, ask questions</p>
+			</div>
+
+			<div class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
+				onClick="location.href='https://www.supernetworks.org/pages/docs/security'">
+				<img class="mx-auto mb-4 w-8 invert" src="/assets/img/security_FILL0_wght400_GRAD0_opsz48.svg" />
+				<a class="text-xl text-bold" href="https://www.supernetworks.org/pages/docs/security">Security
+					Overview</a>
+				<p>Threat modeling, security practices, and security contact information</p>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- bg-neutral-800 -->
+	<section class="bg-[#110133] text-gray-100 p-8 md:px-24 md:pb-24 text-center">
+		<img src="/assets/img/bgs/wifi.png" class="mx-auto max-w-[300px]" />
+		<h3 class="mb-4 text-3xl font-medium tracking-tight text-gray-100 mt-8">WiFi Router + DNS + VPN Server</h3>
+		<!--p class="text-slate-500">With this software, hobbyists and
+		developers alike can innovate, build, and deploy flexible networks
+		with best of class network security.</p-->
+		<p class="text-slate-100">
+			SPR is built to run as a WiFi router managing the host network, but it can also run in a network namespace as a virtualized
+			standalone VPN &amp; DNS Service.</p>
+		<ul class="flex flex-wrap items-center justify-center mt-2 font-medium text-neutral-100">
+			<li class="flex items-center md:px-4 py-3">
+				<img class="mr-1" style="width: 32px; height: 20px; filter:invert(0.9)" src="/assets/img/ubuntu.svg" />
+				Ubuntu
+			</li>
+			<li class="flex items-center md:px-4 py-3">
+				<img class="mr-1" style="width: 32px; height: 20px; filter:invert(0.9)" src="/assets/img/docker.svg" />
+				Docker
+			</li>
+			<li class="flex items-center md:px-4 py-3">
+				<img class="mr-1" style="width: 32px; height: 20px; filter:invert(0.9)"
+					src="/assets/img/wireguard.svg" />
+				Wireguard
+			</li>
+		</ul>
+	</section>
+
+
+	<div class="bg-white dark:bg-gray-900 p-4 flex flex-col space-y-8 divide-y dark:divide-slate-700">
+
+		<div class="md:p-8 md:flex items-center space-x-4 space-y-4 mx-4">
+			<div class="px-8">
+				<img class="w-[128px] opacity-80 mx-auto dark:invert" src="/assets/img/wifi_FILL0_wght400_GRAD0_opsz48.svg" />
+			</div>
+			<div class="flex flex-col space-y-2">
+				<h3 class="text-2xl dark:text-slate-300">Hardened 802.11 Authentication and Access Control</h3>
+				<p class="text-slate-500">
+					Give each device a unique WPA2/3 password, to create trusted device
+					identities without certificate enrollment. This zero-install
+					solution works for anything from a smart toaster-oven to a next-gen
+					laptop. Place devices into predefined or custom network groups to
+					set their internet access, approved network peers and allowed
+					protocols.
+				</p>
+			</div>
+		</div>
+
+		<div class="py-4 md:p-8 md:flex items-center space-x-4 space-y-4 mx-4">
+			<div class="flex flex-col space-y-2">
+				<h3 class="text-2xl  dark:text-slate-300">First-Class API</h3>
+				<p class="text-slate-500">
+					Functionality and features are available through an API.
+					Programatically define how the network connects and retreive data
+					about the devices on the network.
+				</p>
+
+				<a class="text-slate-600 mt-3 hover:underline"
+					href="https://www.supernetworks.org/pages/api/0#section/API-Extensions">Read the docs &rarr;</a>
+			</div>
+			<div class="bg-gray-800 text-sm px-12 py-2 md:rounded-lg overflow-x-hidden">
+				<img class="mx-auto" src="/assets/img/api-preview.png"/>
+			</div>
+		</div>
+
+		<div class="py-4 md:p-8 md:flex items-center space-x-4 space-y-4 mx-4">
+			<div class="px-8">
+				<img class="w-[128px] opacity-80 mx-auto dark:invert" src="/assets/img/github.svg" />
+			</div>
+
+			<div class="flex flex-col space-y-2">
+				<h3 class="text-2xl dark:text-slate-300">Open Source First</h3>
+				<p class="text-slate-500">
+					SPR is fully open source and homelab ready.
+					It uses containerized services to allow for rapid development, simple deployment of new features,
+					and hot swapping of core network services, such as DNS and DHCP.
+				</p>
+				<a class="text-slate-600 mt-3 hover:underline" href="https://github.com/spr-networks/">Check out the
+					code &rarr;</a>
+			</div>
+		</div>
+	</div>
+
+	</div>
+
+	<footer
+		class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 md:py-8">
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://longterm.io"
+				class="hover:underline">Longterm Security, Inc.</a> All Rights Reserved.
+		</span>
+		<ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-8">
+			<li>
+				<a href="https://www.supernetworks.org/pages/blog/first-blog-post" class="hover:underline">About</a>
+			</li>
+			<!--li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+        </li-->
+			<li>
+				<a class="hover:underline flex justify-start" href="https://twitter.com/spr_networks">
+					<div class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/twitter.svg)] dark:invert dark:opacity-70"></div>
+					<div class="inline-flex align-self-center">spr_networks</div>
+				</a>
+			</li>
+			<li>
+				<a class="hover:underline flex justify-start" href="https://discord.gg/WeNKMVTR">
+					<div class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/discord.svg)] dark:invert dark:opacity-70"></div>
+					<div class="inline-flex align-self-center">Discord</div>
+				</a>
+			</li>
+		</ul>
+	</footer>
+
+	<script>
+
+	let el = document.getElementById('trigger-mobile-menu');
+	el.addEventListener('click', function() {
+		let menu = document.getElementById('mobile-menu');
+		menu.classList.toggle('hidden');
+	});
+
+	</script>
+
+</body>
+
+</html>
