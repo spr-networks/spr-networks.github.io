@@ -90,42 +90,42 @@
 				Core Features
 			</h1>
 
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left dark:text-slate-200 mt-4">
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 text-left text-slate-800 dark:text-slate-200 mt-4">
 				<div>
 					<h2 class="text-xl mb-2">Network Management</h2>
-					<ul>
-						<li>✔️ Access control</li>
-						<li>✔️ Device groups </li>
-						<li>✔️ Multicast support</li>
-						<li>✔️ Traffic statistics</li>
-						<li>✔️ Mac spoofing protection</li>
+					<ul class="text-sm md:text-base">
+						<li>✓ Access control</li>
+						<li>✓ Device groups </li>
+						<li>✓ Multicast support</li>
+						<li>✓ Traffic statistics</li>
+						<li>✓ Mac spoofing protection</li>
 					</ul>
 				</div>
 				<div>
 					<h2 class="text-xl mb-2">WiFi</h2>
-					<ul>
-						<li>✔️ WPA2 & WPA3 support </li>
-						<li>✔️ Strong device isolation</li>
-						<li>✔️ Per-device passphrases</li>
-						<li>✔️ Easy QR-Code Setup</li>
+					<ul class="text-sm md:text-base">
+						<li>✓ WPA2 &amp; WPA3 support</li>
+						<li>✓ Strong device isolation</li>
+						<li>✓ Per-device passphrases</li>
+						<li>✓ Easy QR-Code Setup</li>
 					</ul>
 				</div>
 				<div>
 					<h2 class="text-xl mb-2">DNS</h2>
-					<ul>
-						<li>✔️ DNS over HTTPS </li>
-						<li>✔️ Custom Ad Block Lists </li>
-						<li>✔️ DNS Logs </li>
-						<li>✔️ DNS Rebinding Protection </li>
-						<li>✔️ Per Device Rules </li>
+					<ul class="text-sm md:text-base">
+						<li>✓ DNS over HTTPS</li>
+						<li>✓ Custom Ad Block Lists</li>
+						<li>✓ DNS Logs</li>
+						<li>✓ DNS Rebinding Protection</li>
+						<li>✓ Per Device Rules </li>
 					</ul>
 				</div>
 				<div >
 					<h2 class="text-xl mb-2">Wireguard</h2>
-					<ul>
-						<li>✔️ Device Identity Integration </li>
-						<li>✔️ Multicast Support </li>
-						<li>✔️ Easy QR-Code Setup </li>
+					<ul class="text-sm md:text-base">
+						<li>✓ Device Identity Integration</li>
+						<li>✓ Multicast Support</li>
+						<li>✓ Easy QR-Code Setup</li>
 					</ul>
 				</div>
 			</div>
@@ -150,11 +150,11 @@
 							Mac
 						</li>
 						<li class="flex items-center px-4 py-3">
-							<img class="dark:invert" style="width: 36px; height: 36px; opacity: 0.7" src="/assets/img/chip.svg" />
+							<img class="mr-2 w-8 opacity-70 dark:invert" src="/assets/img/chip.svg" />
 							&nbsp; ARMv8 &amp; amd64
 						</li>
 						<li class="flex items-center px-4 py-3">
-							<img class="w-8 opacity-70 dark:invert" src="/assets/img/raspberrypi.svg" />
+							<img class="mr-2 w-8 opacity-70 dark:invert" src="/assets/img/raspberrypi.svg" />
 							Raspberry Pi
 						</li>
 					</ul>
@@ -166,7 +166,7 @@
 	</div>
 
 
-	<div class="mx-auto max-h-[490px] overflow-y-hidden max-w-full md:max-w-5xl bg-neutral-200 dark:bg-gray-700 md:bg-transparent">
+	<div class="mx-auto max-h-[490px] overflow-y-hidden max-w-full md:max-w-5xl bg-neutral-200 dark:bg-gray-800 md:bg-transparent">
 		<div class="bg-gray-900 dark:bg-black pt-3 px-3 md:px-5 md:pt-5 rounded-t-3xl">
 			<div class="overflow-hidden md:py-0 rounded-t-2xl">
 				<!--img class="w-full max-w-[1024px]" src="/assets/img/screenshot-light.png" /-->
@@ -288,9 +288,9 @@
 			</div>
 		</div>
 
-		<div class="py-4 md:p-8 md:flex items-center space-x-4 space-y-4 mx-4">
+		<div class="py-4 md:p-8 md:flex items-center md:space-x-4 space-y-4 md:mx-4">
 			<div class="flex flex-col space-y-2">
-				<h3 class="text-2xl  dark:text-slate-300">First-Class API</h3>
+				<h3 class="text-2xl dark:text-slate-300">First-Class API</h3>
 				<p class="text-slate-500">
 					Functionality and features are available through an API.
 					Programatically define how the network connects and retreive data
@@ -300,8 +300,9 @@
 				<a class="text-slate-600 mt-3 hover:underline"
 					href="https://www.supernetworks.org/pages/api/0#section/API-Extensions">Read the docs &rarr;</a>
 			</div>
-			<div class="bg-gray-800 text-sm px-12 py-2 md:rounded-lg overflow-x-hidden">
-				<img class="mx-auto" src="/assets/img/api-preview.png"/>
+			<div class="md:bg-black md:p-4 text-sm md:rounded-lg overflow-x-hidden w-full rounded-t-3xl">
+				<!--img class="mx-auto" src="/assets/img/api-preview.png"/-->
+				<div class="w-full max-w-[1024px] max-h-[624px] min-h-[230px] md:min-h-[412px] bg-no-repeat bg-contain bg-[url(/assets/img/api-preview.png)] dark:bg-[url(/assets/img/api-preview-dark.png)]"></div>
 			</div>
 		</div>
 
@@ -313,7 +314,7 @@
 			<div class="flex flex-col space-y-2">
 				<h3 class="text-2xl dark:text-slate-300">Open Source First</h3>
 				<p class="text-slate-500">
-					SPR is fully open source and homelab ready.
+					SPR is open source and homelab ready.
 					It uses containerized services to allow for rapid development, simple deployment of new features,
 					and hot swapping of core network services, such as DNS and DHCP.
 				</p>
