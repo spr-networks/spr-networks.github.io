@@ -2,11 +2,53 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
-    <updated>2022-05-02T00:00:00.000Z</updated>
+    <updated>2022-09-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
     <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Securely Chaining Routers]]></title>
+        <id>secure router chaining</id>
+        <link href="https://www.supernetworks.org/pages/blog/secure router chaining"/>
+        <updated>2022-09-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Building a Home WiFi Network]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="building-a-home-wifi-network">Building a Home WiFi Network<a class="hash-link" href="#building-a-home-wifi-network" title="Direct link to heading">​</a></h2><p>Putting together a home network has several subtly annoying security tradeoffs.</p><p><em>Users want</em></p><ul><li><p><strong>Ease of Use &amp; Connectivity</strong></p><p>Maximized by keeping devices maximally connected with a simple passphrase</p></li><li><p><strong>Privacy and Security</strong></p><p>Maximize by keeping devices minimally connected. And ideally offline  🦦</p></li></ul><p>If the goal is a bit of both, how to do segmentation correctly quickly becomes
+a bit of a puzzle</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="whats-the-best-way-to-chain-your-routers">What's the Best Way to Chain Your Routers?<a class="hash-link" href="#whats-the-best-way-to-chain-your-routers" title="Direct link to heading">​</a></h2><p>The "Secure Router" can be considered the Work From Home access point,
+and the "Guest Router" can be considered the Guest, Personal, or IOT access point.</p><p> <img loading="lazy" src="/pages/assets/images/chaining_choices-f543aa893de8eefeda219c3d1e6619fe.png" width="1812" height="940"></p><h4 class="anchor anchorWithStickyNavbar_mojV" id="the-worst-choice">The Worst Choice<a class="hash-link" href="#the-worst-choice" title="Direct link to heading">​</a></h4><p>Option #3 is to connect the internet to the secure router, and then plug the
+guest router into the secure router. Guests and untrustworthy devices can connect
+to the guest router.</p><p>This might make sense intuitively for some. You put the Secure Router close
+to the internet since that's where all the internet traffic will go out from, and
+if the Guest Router is compromised, it can't intercept traffic.</p><p>However, since the Guest Router is a Peer on the Secure Router network's LAN,
+every "Guest" station and the router will be able to reach the secure router and
+devices on the secure network LAN.</p><p>Unless either the Guest Router can block requests to the Secure LAN with its firewall,
+or the Secure Router can isolate the port for the Guest Router for only internet access,
+this is not an accepted best practice.</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="split-essids">Split ESSIDs<a class="hash-link" href="#split-essids" title="Direct link to heading">​</a></h4><p>Option #2 is to share a router for both SSIDs, with one ESSID and password for the
+Secure LAN and one for the Guest LAN.</p><p>The expectation is that devices can not send packets across the two LANs.</p><p>The great tradeoff with this is that if a user wants to control their IOT devices
+they have to switch to the guest network. And if device isolation is enabled on the guest network,
+devices won't be able to communicate at all. So as security improves, usability decreases.</p><p>The guest isolation may also be insufficient. The shared passphrase implies MITM capabilities,
+and passive traffic decryption capabilities with WPA2 or active decryption capabilities with WPA3.</p><p>Some routers place both ESSIDs on the SAME LAN. Usually this allows the secure devices
+to reach the guest devices. Usability has been increased, but this often leads to subtle flaws
+that allow the guest devices to bypass their isolation entirely.</p><p>Another upside to this approach is that bandwidth can be shared for the ESSIDs,
+reducing wasted WiFi spectrum.</p><p>Overall, this is an accepted best practice, but it comes down to the details where very quickly
+users are trading off security for usability.</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="the-best-of-the-three-guest-router-first-secure-router-second">The Best of the Three: Guest Router First, Secure Router Second<a class="hash-link" href="#the-best-of-the-three-guest-router-first-secure-router-second" title="Direct link to heading">​</a></h4><p>Option #1 is the recommended and accepted best practice. The guest network connects
+directly to the internet, and the secure router plugs into the guest Ruuter.</p><p>This approach yields a favorable combination of security and usability. Devices on the
+secure LAN can access devices on the Guest LAN, which is great for controlling IOT devices.
+And devices on the Guest LAN have no way to initiate communication to devices on the
+Secure LAN, blocked by the Guest Router firewall.</p><p>The main downsides: The guest router could have ISP credentials, and could MITM
+internet traffic if compromised by an untrusted device</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="multi-psk--vlans">Multi PSK &amp; VLANs<a class="hash-link" href="#multi-psk--vlans" title="Direct link to heading">​</a></h3><p>Today's most featureful home routers offer support for one passphrase per device. This solves
+many of the MITM and decryption issues for guest isolation. The devices can be placed into VLANs with unique WiFi passphrases, GTKs, and secure firewall rules creating truly strong isolation. These mechanisms provide powerful mechanisms for designing a home network securely.</p><p>This is the approach SPR follows, and we've <a href="/pages/blog/multipsk and wpa3">spearheaded Multi-PSK with WPA3</a>.
+SPR provides maximum isolation capabilities by placing each station into its own LAN. Users can then easily
+create groups of interconnected devices.</p><p><img loading="lazy" src="/pages/assets/images/tinynets-1cc6f9d81a93c8b078f78fc0f5ad2f21.png" width="1594" height="932"></p><h3 class="anchor anchorWithStickyNavbar_mojV" id="spr-supports-plugging-into-an-existing-router-securely">SPR Supports Plugging into An Existing Router Securely<a class="hash-link" href="#spr-supports-plugging-into-an-existing-router-securely" title="Direct link to heading">​</a></h3><p>We recommend running SPR by plugging it into an existing router. To support securely doing this,
+by default -- the firewall will block access to private network addresses over the upstream interface.</p><p>This prevents devices connected to SPR from accessing devices on the LAN of the current router.</p><p>To allow a device access to private network addresses upstream, users can apply the <code>lan_upstream</code> tag to the device.</p><p><img loading="lazy" src="/pages/assets/images/add_wifi_device_lan_upstream-145072582030d7952626322f2bd1575b.png" width="1602" height="960"></p><p>And then manage the tag in the Devices view</p><p><img loading="lazy" src="/pages/assets/images/manage_lan_upstream_tag-88b8dd183fce79f2313324b0725db7a8.png" width="2176" height="1066"></p>]]></content>
+        <author>
+            <name>Alex Radocea</name>
+            <uri>https://twitter.com/defendtheworld</uri>
+        </author>
+        <category label="SPR" term="SPR"/>
+        <category label="Routers" term="Routers"/>
+        <category label="Networking 101" term="Networking 101"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SPR Supports WPA3 with Multiple Passwords]]></title>
         <id>multipsk and wpa3</id>
