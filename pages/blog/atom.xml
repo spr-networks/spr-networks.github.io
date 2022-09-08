@@ -29,24 +29,6 @@
         <category label="WireGuard" term="WireGuard"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Bypassing Guest Isolation]]></title>
-        <id>bypassing guest isolation</id>
-        <link href="https://www.supernetworks.org/pages/blog/bypassing guest isolation"/>
-        <updated>2022-09-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Escaping a Guest WiFi Network Using One Weird Trick - Routing]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="escaping-a-guest-wifi-network-using-one-weird-trick---routing">Escaping a Guest WiFi Network Using One Weird Trick - Routing<a class="hash-link" href="#escaping-a-guest-wifi-network-using-one-weird-trick---routing" title="Direct link to heading">​</a></h2><p>Routers have one job. Routing packets. That is what they are best at.
-And that's it. That's the guest network bypass.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="proof-of-concept">Proof of concept<a class="hash-link" href="#proof-of-concept" title="Direct link to heading">​</a></h3><div class="codeBlockContainer_I0IT theme-code-block"><div class="codeBlockContent_wNvx"><pre tabindex="0" class="prism-code language-text codeBlock_jd64 thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#F8F8F2"><span class="token plain">ip route add 192.168.1.2 via 192.168.1.1</span><br></span></code></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_wuS7 clean-btn">Copy</button></div></div>]]></content>
-        <author>
-            <name>Alex Radocea</name>
-            <uri>https://twitter.com/defendtheworld</uri>
-        </author>
-        <category label="SPR" term="SPR"/>
-        <category label="Routers" term="Routers"/>
-        <category label="Networking 101" term="Networking 101"/>
-        <category label="guest wifi" term="guest wifi"/>
-        <category label="escape" term="escape"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Securely Chaining Routers]]></title>
         <id>secure router chaining</id>
         <link href="https://www.supernetworks.org/pages/blog/secure router chaining"/>
