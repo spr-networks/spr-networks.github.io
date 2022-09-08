@@ -19,8 +19,8 @@
 <img loading="lazy" src="/pages/assets/images/screenshot_dns_log-370b2aa4ba0241c3e494facd7d4dcec9.png" width="1990" height="944"></p><p>Here you can also add more blocks, domain overrides if you want to allow something temporarily, delete logs or disable them completely under <em>Settings</em>.</p><p>It is also possible to get more detail traffic for connections under <em>Traffic</em>:
 <img loading="lazy" src="/pages/assets/images/screenshot_traffic-2f69a0c1ea6d51d18677a11246c41bdd.png" width="2086" height="880"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="outro-and-random-notes">Outro and random notes<a class="hash-link" href="#outro-and-random-notes" title="Direct link to heading">​</a></h2><p>You can remove lan from your device groups for a device but its needed to access the admin interface.</p><p>SPR is configured to use DNS over HTTPs when resolving domains. You can modify the Coredns configuration under configs/dns/Corefile</p>]]></content>
         <author>
-            <name>Alex Radocea</name>
-            <uri>https://twitter.com/defendtheworld</uri>
+            <name>Philip Olausson</name>
+            <uri>https://twitter.com/capslcc</uri>
         </author>
         <category label="SPR" term="SPR"/>
         <category label="Virtual" term="Virtual"/>
