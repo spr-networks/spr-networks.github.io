@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[4471],{1459:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/wire-guard","name":"WireGuard","count":3,"permalink":"/pages/blog/tags/wire-guard"}')}}]);
