@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>SPR Pi Dev Kit</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta property="og:url" content="https://www.supernetworks.org/" />
+	<meta property="og:title" content="Supernetwork Routers WiFi Challenge" />
+	<meta property="og:description" content="Network Security Hacking Challenge" />
+	<meta property="og:image" content="https://www.supernetworks.org/assets/img/bgs/bg-dark.png">
+	<link href="/output.css" rel="stylesheet">
+
+
+</head>
+
+
+
+
+
+<body onload=setup() class="dark:bg-gray-900">
+
+	<nav class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
+		<div class="container flex flex-wrap justify-between items-center mx-auto">
+			<a href="#" class="flex items-center">
+				<!--img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /-->
+				<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">SPR</span>
+			</a>
+
+			<button data-collapse-toggle="mobile-menu" type="button" id="trigger-mobile-menu"
+				class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+				aria-controls="mobile-menu" aria-expanded="false">
+				<span class="sr-only">Open main menu</span>
+				<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+						clip-rule="evenodd"></path>
+				</svg>
+				<svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
+
+			<div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+				<ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+					<li>
+						<a href="/"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+							aria-current="page">Home</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/blog/first-blog-post"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/docs/pi4b"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Guide</a>
+					</li>
+					<li>
+						<a href="http://demo.supernetworks.org/"
+							class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Demo</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/docs/intro"
+							class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Documentation</a>
+					</li>
+					<li>
+						<a href="https://www.supernetworks.org/pages/blog"
+							class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<header class="relative pt-8 md:pt-24">
+		<!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
+		<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
+			<h1 class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl">Raspberry Pi Starter Kits</h1>
+			<p class="max-w-2xl text-gray-700 dark:text-slate-300 sm:text-lg md:text-md">
+				 Ready to try SPR? You can run the software on a Raspberry Pi 4. Grab the Complete Developer Kit for everything you need to get started.
+			</p>
+			</div>
+
+			<div>
+				<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+				<stripe-pricing-table pricing-table-id="prctbl_1MTZC6ExHB2JfQTK9JT0JTzd"
+				publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfcAmQVMWZ5USEOPtghDILSfaAFRJHwDfhzMa00sdqXzGZV">
+				</stripe-pricing-table>
+
+			</div>
+
+		</div>
+	</header>
+
+
+
+	<footer
+		class="w-full p-4 md:flex md:items-center md:justify-between md:p-6 md:py-8">
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://www.supernetworks.org"
+				class="hover:underline">Supernetworks, Inc.</a> All Rights Reserved.
+		</span>
+		<ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-8">
+			<li>
+				<a href="https://www.supernetworks.org/pages/blog/first-blog-post" class="hover:underline">About</a>
+			</li>
+			<!--li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+        </li-->
+			<li>
+				<a class="hover:underline flex justify-start" href="https://github.com/spr-networks/super/">
+					<div class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/discord.svg)] dark:invert dark:opacity-70"></div>
+					<div class="inline-flex align-self-center">github</div>
+				</a>
+			</li>
+			<li>
+				<a class="hover:underline flex justify-start" href="https://twitter.com/spr_networks">
+					<div class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/twitter.svg)] dark:invert dark:opacity-70"></div>
+					<div class="inline-flex align-self-center">spr_networks</div>
+				</a>
+			</li>
+			<li>
+				<a class="hover:underline flex justify-start" href="https://discord.gg/EUjTKJPPAX">
+					<div class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/discord.svg)] dark:invert dark:opacity-70"></div>
+					<div class="inline-flex align-self-center">Discord</div>
+				</a>
+			</li>
+		</ul>
+	</footer>
+
+
+
+	<style>
+		.tooltip-trigger {
+			cursor: help;
+			/*
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-decoration-color: #ababab;
+			*/
+		}
+	</style>
+
+	<script>
+
+	// plan redir
+	document.querySelectorAll('.btn-plan').forEach(el => {
+		el.addEventListener('click', (e) => {
+			e.preventDefault()
+			let plan = el.getAttribute('value')
+			if (plan == 'free') {
+				location.href = 'https://www.supernetworks.org/pages/docs/pi4b'
+			}
+
+			let isYearly = document.getElementById('radio-subscription-yearly').checked
+
+			// redir to payment form
+			//if (plan == 'plus') {} else if (plan == 'supporter') {}
+		})
+	})
+
+	function toggleTooltip() {
+		let elId = this.getAttribute('data-tooltip-target')
+		document.getElementById(elId).classList.toggle('invisible')
+	}
+
+	document.querySelectorAll('.tooltip-trigger').forEach(el => {
+		el.addEventListener('mouseover', toggleTooltip);
+		el.addEventListener('mouseout', toggleTooltip);
+	});
+
+	document.querySelectorAll('.radio-subscription').forEach(el => {
+		el.addEventListener('click', function() {
+			let value = this.getAttribute('value'); // monthly || yearly
+
+			let elTitle = document.getElementById('title-plus-per-month');
+			let price = value == 'monthly' ? '$6' : '$5';
+			elTitle.innerText = `${price} per month`
+		});
+	})
+
+	let el = document.getElementById('trigger-mobile-menu');
+	el.addEventListener('click', function() {
+		let menu = document.getElementById('mobile-menu');
+		menu.classList.toggle('hidden');
+	});
+
+	</script>
+
+</body>
+
+</html>
