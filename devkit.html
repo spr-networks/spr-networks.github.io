@@ -11,11 +11,39 @@
 	<meta property="og:image" content="https://www.supernetworks.org/assets/img/bgs/bg-dark.png">
 	<link href="/output.css" rel="stylesheet">
 
+	<script>
 
+	form_submit = function(form, e) {
+		e.preventDefault();
+		submitMessage.innerHTML = "<h2>Submitting...</h2>";
+
+		let scriptURL = "https://script.google.com/macros/s/AKfycbyc2tk4fyDao1griv8u9hM_vW93sShs5UqiD9i_6UKB-LolHLkwCyPYoapZtK4KE5V5AQ/exec"
+		fetch(scriptURL, { method: 'POST', body: new FormData(form)}
+	).then(response => {
+				const submitMessage = document.getElementById("submit_message");
+				submitMessage.innerHTML = "<h2>Form Submitted!</h2>";
+				submitMessage.innerHTML += "<br/><p>Thank you</p>";
+			})
+			 .catch(error => console.error('Error!', error.message))
+	}
+
+	function setup() {
+		const messageForm = document.getElementById("signup_form");
+
+		messageForm.addEventListener("submit", function(event) {
+			event.preventDefault();
+			const email = this.elements.Email;
+			const name = this.elements.Name;
+			if (email.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+					&& name.value && name.value.trim() !== "") {
+				form_submit(this, event);
+			}
+		});
+	}
+
+
+	</script>
 </head>
-
-
-
 
 
 <body onload=setup() class="dark:bg-gray-900">
@@ -79,7 +107,8 @@
 	<header class="relative pt-8 md:pt-24">
 		<!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
 		<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
-			<h1 class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl">Raspberry Pi Starter Kits</h1>
+			<h2 class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl">Developer Kits</h2>
+			<h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">Raspberry Pi Starter Kits</h2>
 			<p class="max-w-2xl text-gray-700 dark:text-slate-300 sm:text-lg md:text-md">
 				 Ready to try SPR? You can run the software on a Raspberry Pi 4. Grab the Complete Developer Kit for everything you need to get started.
 			</p>
@@ -95,7 +124,79 @@
 		</div>
 	</header>
 
+	<div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md">
+		<h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">Clearfog C9130 Pro Dev Kits</h2>
+		<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
+			<p class="max-w-2xl text-gray-700 dark:text-slate-300 sm:text-lg md:text-md">
+				<b>Coming soon!</b> This Pro Kit is designed to provide high performance and flexibility.
+				It features two upgradable mini-PCIe slots and an M.2 slot, allowing for expansion and customization.
+				Additionally, it is equipped with a 10GbE SFP port which can handle high-speed data transfer.
+				The device also supports WiFi 6-e cards, providing the latest wireless technology with extended frequencies.
+				This device can readily run multiple high-speed wifi cards with multiple APs.
+			</p>
+			<p>
+				<span class="font-semibold"> Board Info </span>
+				<ul class="text-left list-disc list-inside md:text-md">
+					<li>— 1 x SFP+ 10 GbE port for high-speed data transfer</li>
+					<li>— 1 x Port dedicated Ethernet</li>
+					<li>— 5 x Switched Ethernet RJ45 10/100/1000</li>
+					<li>— 2 x upgradable MiniPCIe slots for expansion and customization</li>
+					<li>— 1 x M.2 slot for additional storage</li>
+					<li>— Marvell OCTEON based CN9130 Quad core Arm Cortex A72 up to 2.2 GHz</li>
+				  <li>— 4GB of RAM</li>
+					<li>— 8GB eMMC storage</li>
+				  <li>— microSD slot for additoinal storage</li>
+				  <li>— Micro USB Debugging and Programming</li>
+				  <li>— SIM holder for cellular connectivity</li>
+				  <li>— 1x USB 3.0 for high-speed data transfer</li>
+				</ul>
+				<a class="hover:underline" href="https://www.solid-run.com/embedded-networking/marvell-octeon-tx2-family/clearfog-cn9130/">Find out more about the OCTEON boards at SolidRun</a>
+				<span class="font-semibold"> Wireless Capabilities </span>
+				<ul class="text-left list-disc list-inside md:text-md">
+					<li>— 2 x 802.11ax 4x4</li>
+					<li>— 2.4 Ghz, 5Ghz, 6Ghz bands </li>
+				</ul>
 
+			</p>
+		</div>
+		<img src="/assets/img/clearfog.png" class="mx-auto max-w-lg" />
+	</div>
+
+	<div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md">
+		<h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">Sign up for updates</h2>
+				<div id="submit_message" class="inline-flex align-self-center dark:text-slate-300">
+						<form id="signup_form" class="w-full max-w-sm">
+					  <div class="md:flex md:items-center mb-6">
+					    <div class="md:w-1/3">
+					      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-name">
+					        Name
+					      </label>
+					    </div>
+					    <div class="md:w-2/3">
+					      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="Name" name="Name" type="text" placeholder="Jane Doe">
+					    </div>
+					  </div>
+					  <div class="md:flex md:items-center mb-6">
+					    <div class="md:w-1/3">
+					      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-email">
+					        Email
+					      </label>
+					    </div>
+					    <div class="md:w-2/3">
+								<input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="Email" name="Email" type="text" placeholder="email@example.com">
+					    </div>
+					  </div>
+					  <div class="md:flex md:items-center">
+					    <div class="md:w-1/3"></div>
+					    <div class="md:w-2/3">
+								<input class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"  type="submit" value="Sign Up!" />
+					    </div>
+					  </div>
+					</form>
+
+				</div>
+				<br/>
+	</div>
 
 	<footer
 		class="w-full p-4 md:flex md:items-center md:justify-between md:p-6 md:py-8">
