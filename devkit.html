@@ -15,12 +15,12 @@
 
 	form_submit = function(form, e) {
 		e.preventDefault();
+		const submitMessage = document.getElementById("submit_message");
 		submitMessage.innerHTML = "<h2>Submitting...</h2>";
 
 		let scriptURL = "https://script.google.com/macros/s/AKfycbyc2tk4fyDao1griv8u9hM_vW93sShs5UqiD9i_6UKB-LolHLkwCyPYoapZtK4KE5V5AQ/exec"
 		fetch(scriptURL, { method: 'POST', body: new FormData(form)}
 	).then(response => {
-				const submitMessage = document.getElementById("submit_message");
 				submitMessage.innerHTML = "<h2>Form Submitted!</h2>";
 				submitMessage.innerHTML += "<br/><p>Thank you</p>";
 			})
