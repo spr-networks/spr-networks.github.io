@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[7298],{4487:function(e){e.exports=JSON.parse('{"permalink":"/pages/blog/tags/turtles","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
