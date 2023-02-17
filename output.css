@@ -1113,6 +1113,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[url\(\/assets\/img\/discord\.svg\)\] {
   background-image: url(/assets/img/discord.svg);
 }
+.bg-\[url\(\/assets\/img\/github\.svg\)\] {
+  background-image: url(/assets/img/github.svg);
+}
 
 .bg-\[url\(\/assets\/img\/twitter\.svg\)\] {
   background-image: url(/assets/img/twitter.svg);
