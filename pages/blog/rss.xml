@@ -9,8 +9,8 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[March 2023's Turtles Challenge]]></title>
-            <link>https://www.supernetworks.org/pages/blog/spr-turtles-april</link>
-            <guid>spr-turtles-april</guid>
+            <link>https://www.supernetworks.org/pages/blog/spr-turtles-march</link>
+            <guid>spr-turtles-march</guid>
             <pubDate>Fri, 05 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Editor's note:]]></description>
             <content:encoded><![CDATA[<h4 class="anchor anchorWithStickyNavbar_mojV" id="editors-note">Editor's note:<a class="hash-link" href="#editors-note" title="Direct link to heading">​</a></h4><p>The Turtles WiFi challenges are a series of ctf-style problems concerning network and wifi security skills.</p><p>The tasks were a bit challenging, and invovled a combination of WiFi Cracking and exploring how WPA Authentication works,
