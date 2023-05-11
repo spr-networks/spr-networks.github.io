@@ -85,10 +85,11 @@
 
       let antenna
       let gltf
+      let rpi4
       let group
 
       function first_update(){
-        if (!antenna || !gltf){
+        if (!antenna || !gltf || !rpi4){
           return
         }
         let new_mtl = new THREE.MeshPhongMaterial({
@@ -97,8 +98,16 @@
         })
         //new_mtl = new THREE.MeshNormalMaterial(); // Create a new MeshNormalMaterial
         new_mtl.side = THREE.DoubleSide
+        new_mtl.transparent = true
+        new_mtl.opacity = 0.8
         setMaterial(gltf.scene, new_mtl)
         setMaterial(antenna.scene, new_mtl)
+
+        let rpi4_mtl = new THREE.MeshPhongMaterial({
+          color: 0x323232,
+          shininess: 165
+        })
+        setMaterial(rpi4.scene, rpi4_mtl)
 
         group = new THREE.Group();
         group.add(antenna.scene)
@@ -112,6 +121,7 @@
         group.position.set(-x, -y, -z)
 
 
+        gltf.scene.attach(rpi4.scene)
         gltf.scene.attach(group)
 
         gltf.scene.scale.set(0.002, 0.002, 0.002) // Scale the model down to make it visible
@@ -144,7 +154,7 @@
       let x_dir = 1
       let x_step = Math.PI/2000
       function tick(){
-        if (!antenna || !gltf){
+        if (!antenna || !gltf || !rpi4){
           return
         }
 
@@ -173,18 +183,22 @@
         'top.gltf',
         function (in_antenna) {
       loader.load(
+        'rpi4.gltf',
+        function (in_rpi4) {
+      loader.load(
         'model.gltf',
         function (in_gltf) {
           console.log('loaded')
           antenna = in_antenna
           gltf = in_gltf
+          rpi4 = in_rpi4
           first_update()
         },
         undefined,
         function (error) {
           console.error(error)
         }
-      )});
+      )})});
 
       //camera.position.x = 0;
       camera.position.y = 0.2
