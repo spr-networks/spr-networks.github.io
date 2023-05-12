@@ -10,6 +10,27 @@
 	<meta property="og:description" content="SPR - Raspberry Pi Development Kits" />
 	<meta property="og:image" content="https://www.supernetworks.org/assets/img/clearfog.png">
 	<link href="/output.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/three@0.131.2/build/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/loaders/GLTFLoader.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+
+	<style>
+	  #muzak {
+	    position: absolute;
+	    top: -9999px;
+	    left: -9999px;
+	  }
+
+    .vaporwave {
+			margin: 0;
+			overflow: hidden;
+			background: url(https://www.supernetworks.org/assets/img/bgs/bg-dark.png);
+			padding: 80px;
+			width: 800px;
+    }
+
+	</style>
 
 	<script>
 
@@ -41,6 +62,62 @@
 		});
 	}
 
+	let player
+	let started = false
+  // Load the YouTube API and create a player
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('muzak', {
+      height: '400',
+      width: '4000',
+      videoId: 'ea_UOPzuyZU',
+      playerVars: {
+        'autoplay': 0,
+        'controls': 1,
+				'mute': 1,
+				'start': 0,
+				'rel': 0,
+				'showinfo': 0
+      },
+			events: {
+	      'onReady': onPlayerReady
+	    }
+
+    });
+  }
+
+	function onPlayerReady(event) {
+	  event.target.seekTo(0, true);
+		event.target.pauseVideo()
+	}
+
+	toggleVapor = function() {
+		let ele = document.getElementById("3dcontainer")
+		if (!ele) {
+			return
+		}
+
+		//document.body.classList.toggle('vaporwave');
+
+		if (ele.classList.contains('vaporwave')) {
+			ele.classList.remove('vaporwave')
+			if (player) {
+				player.mute()
+				player.pauseVideo()
+			}
+		} else {
+			ele.classList.add('vaporwave')
+			if (player) {
+				if (!started) {
+					started = true
+					//player.seekTo(0, true)
+				}
+				player.unMute()
+				player.playVideo()
+			}
+		}
+
+
+	}
 
 	</script>
 </head>
@@ -104,6 +181,7 @@
 	</nav>
 
 
+
 	<header class="relative pt-8 md:pt-24">
 		<!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
 		<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
@@ -114,11 +192,60 @@
 			</p>
 			</div>
 
+
 			<div>
 				<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-				<stripe-pricing-table pricing-table-id="prctbl_1MTZC6ExHB2JfQTK9JT0JTzd"
+				<stripe-pricing-table pricing-table-id="prctbl_1N72FtExHB2JfQTKarpvXh2b"
 				publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfcAmQVMWZ5USEOPtghDILSfaAFRJHwDfhzMa00sdqXzGZV">
-				</stripe-pricing-table>
+				</stripe-pricing-table>			</div>
+
+				<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
+					<span class="font-semibold"> Capabilities </span>
+					<p>
+						<ul class="text-left list-disc list-inside md:text-md">
+							<span class="font-semibold"> Supported Features </span>
+							<li> WPA3, WPA2 support with per-device passphrases </li>
+							<li> Built-in Raspberry Pi WLAN can be used as client for uplink</li>
+							<li> High performance USB SSD </li>
+							<li> SPR can be configured with wired backhaul for mesh networking with PLUS</li>
+							<span class="font-semibold"> Wireless Capabilities </span>
+							<li> Dedicated WiFi Adapter required for AP mode in SPR </li>
+							<li> Only one WiFi channel supported per WiFi Adapter. </li>
+							<li> Multiple Adapters can be run off of the Raspberry Pi with a powered USB Hub</li>
+							<li> 5Ghz or 2.4Ghz band</li>
+							<li> WiFi 5 with 80 Mhz channels </li>
+							<li> Top speeds ranging to 600mbps </li>
+						</ul>
+
+					</p>
+				</div>
+
+
+			<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
+				<div class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center">
+					<p class="max-w-2xl text-gray-700 dark:text-slate-300 sm:text-lg md:text-md">
+						<span class="font-semibold"> About the Custom Cases </span>
+						<ul class="text-left list-disc list-inside md:text-md">
+							<li>Built locally in Washington State</li>
+							<li>Hard Plastic, removable case without exterior screws</li>
+							<li>Supports NetGear A6210 WiFi Dongle</li>
+							<li>Male to Female USB3 Adapter included and required</li>
+							<li>Great as a travel router</li>
+						</ul>
+					</p>
+				</div>
+				<div id="3dcontainer" class=""></div>
+				<div id="muzak">
+				</div>
+				<button
+					type="button"
+					class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg px-5 py-2 mr-6 mb-2 my-4"
+					onclick=toggleVapor()
+				>
+					Make It Vaporwave
+				</button>
+				<img src="/assets/img/custompicase.png" class="mx-auto max-w-lg" />
+				<script src="/js/scene.js"></script>
 			</div>
 
 		</div>
@@ -132,29 +259,29 @@
 				It features two upgradable mini-PCIe slots and an M.2 slot, allowing for expansion and customization.
 				Additionally, it is equipped with a 10GbE SFP port which can handle high-speed data transfer.
 				The device also supports WiFi 6-e cards, providing the latest wireless technology with extended frequencies.
-				This device can readily run multiple high-speed wifi cards with multiple APs.
+				This device can readily run multiple high-speed WiFi cards with multiple APs.
 			</p>
 			<p>
 				<span class="font-semibold"> Board Info </span>
 				<ul class="text-left list-disc list-inside md:text-md">
-					<li>— 1 x SFP+ 10 GbE port for high-speed data transfer</li>
-					<li>— 1 x Port dedicated Ethernet</li>
-					<li>— 5 x Switched Ethernet RJ45 10/100/1000</li>
-					<li>— 2 x upgradable MiniPCIe slots for expansion and customization</li>
-					<li>— 1 x M.2 slot for additional storage</li>
-					<li>— Marvell OCTEON based CN9130 Quad core Arm Cortex A72 up to 2.2 GHz</li>
-				  <li>— 4GB of RAM</li>
-					<li>— 8GB eMMC storage</li>
-				  <li>— microSD slot for additoinal storage</li>
-				  <li>— Micro USB Debugging and Programming</li>
-				  <li>— SIM holder for cellular connectivity</li>
-				  <li>— 1x USB 3.0 for high-speed data transfer</li>
+					<li> 1 x SFP+ 10 GbE port for high-speed data transfer</li>
+					<li> 1 x Port dedicated Ethernet</li>
+					<li> 5 x Switched Ethernet RJ45 10/100/1000</li>
+					<li> 2 x upgradable MiniPCIe slots for expansion and customization</li>
+					<li> 1 x M.2 slot for additional storage</li>
+					<li> Marvell OCTEON based CN9130 Quad core Arm Cortex A72 up to 2.2 GHz</li>
+				  <li> 4GB of RAM</li>
+					<li> 8GB eMMC storage</li>
+				  <li> microSD slot for additoinal storage</li>
+				  <li> Micro USB Debugging and Programming</li>
+				  <li> SIM holder for cellular connectivity</li>
+				  <li> 1x USB 3.0 for high-speed data transfer</li>
 				</ul>
 				<a class="hover:underline" href="https://www.solid-run.com/embedded-networking/marvell-octeon-tx2-family/clearfog-cn9130/">Find out more about the OCTEON boards at SolidRun</a>
 				<span class="font-semibold"> Wireless Capabilities </span>
 				<ul class="text-left list-disc list-inside md:text-md">
-					<li>— 2 x 802.11ax 4x4</li>
-					<li>— 2.4 Ghz, 5Ghz, 6Ghz bands </li>
+					<li> 2 x 802.11ax 4x4</li>
+					<li> 2.4 Ghz, 5Ghz, 6Ghz bands </li>
 				</ul>
 
 			</p>
