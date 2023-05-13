@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
-    <updated>2023-05-05T00:00:00.000Z</updated>
+    <updated>2023-05-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
     <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Barely AP is Almost an Access Point]]></title>
+        <id>barely-ap</id>
+        <link href="https://www.supernetworks.org/pages/blog/barely-ap"/>
+        <updated>2023-05-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introducing Barely AP]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="introducing-barely-ap">Introducing Barely AP<a class="hash-link" href="#introducing-barely-ap" title="Direct link to heading">​</a></h2><p>We've <a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">published barely an implementation of a WiFi 802.11 Access Point, using Scapy</a> to teach people about WiFi authentication.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="what">What<a class="hash-link" href="#what" title="Direct link to heading">​</a></h3><p>On Linux, this code lets you spin up a python access point over monitor mode.  It implements features like handling probe requests, authentication, association, and reassociation, and encryption and decryption of data using CCMP (Counter Mode Cipher Block Chaining Message Authentication Code Protocol).</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="note">Note<a class="hash-link" href="#note" title="Direct link to heading">​</a></h3><p>This code just barely gets the job done -- it should NOT be used as a reference for writing production code. It has NO protocol security, as it is not security robust despite performing authenticated CCMP encryption.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="usage">Usage:<a class="hash-link" href="#usage" title="Direct link to heading">​</a></h3><p>Build the container with ./build.sh and then run it with ./setup.sh</p><p>./build.sh
+./setup.sh
+Inspect IP traffic</p><p>docker exec -it barely-ap tcpdump -i scapyap
+docker exec -it barely-sta tcpdump -i wlan1</p>]]></content>
+        <author>
+            <name>Alex Radocea</name>
+            <uri>https://twitter.com/defendtheworld</uri>
+        </author>
+        <category label="Python" term="Python"/>
+        <category label="Scapy" term="Scapy"/>
+        <category label="WiFi" term="WiFi"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[March 2023's Turtles Challenge]]></title>
         <id>spr-turtles-march</id>

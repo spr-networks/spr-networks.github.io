@@ -4,9 +4,23 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Fri, 05 May 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 May 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Barely AP is Almost an Access Point]]></title>
+            <link>https://www.supernetworks.org/pages/blog/barely-ap</link>
+            <guid>barely-ap</guid>
+            <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introducing Barely AP]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="introducing-barely-ap">Introducing Barely AP<a class="hash-link" href="#introducing-barely-ap" title="Direct link to heading">​</a></h2><p>We've <a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">published barely an implementation of a WiFi 802.11 Access Point, using Scapy</a> to teach people about WiFi authentication.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="what">What<a class="hash-link" href="#what" title="Direct link to heading">​</a></h3><p>On Linux, this code lets you spin up a python access point over monitor mode.  It implements features like handling probe requests, authentication, association, and reassociation, and encryption and decryption of data using CCMP (Counter Mode Cipher Block Chaining Message Authentication Code Protocol).</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="note">Note<a class="hash-link" href="#note" title="Direct link to heading">​</a></h3><p>This code just barely gets the job done -- it should NOT be used as a reference for writing production code. It has NO protocol security, as it is not security robust despite performing authenticated CCMP encryption.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="usage">Usage:<a class="hash-link" href="#usage" title="Direct link to heading">​</a></h3><p>Build the container with ./build.sh and then run it with ./setup.sh</p><p>./build.sh
+./setup.sh
+Inspect IP traffic</p><p>docker exec -it barely-ap tcpdump -i scapyap
+docker exec -it barely-sta tcpdump -i wlan1</p>]]></content:encoded>
+            <category>Python</category>
+            <category>Scapy</category>
+            <category>WiFi</category>
+        </item>
         <item>
             <title><![CDATA[March 2023's Turtles Challenge]]></title>
             <link>https://www.supernetworks.org/pages/blog/spr-turtles-march</link>
