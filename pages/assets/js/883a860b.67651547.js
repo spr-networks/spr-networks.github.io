@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[889],{8025:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/wi-fi","name":"WiFi","count":3,"permalink":"/pages/blog/tags/wi-fi"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[7128],{7670:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/scapy","name":"Scapy","count":1,"permalink":"/pages/blog/tags/scapy"}')}}]);
