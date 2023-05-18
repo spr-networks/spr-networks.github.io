@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Load GLTF Example</title>
+    <title>Vaporwave SPR Pi Devkit</title>
     <style>
       body {
         margin: 0;
@@ -37,10 +37,31 @@
         text-align: center;
       }
     </style>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+  	<style>
+  	  #muzak {
+  	    position: absolute;
+  	    top: -9999px;
+  	    left: -9999px;
+  	  }
+
+  	</style>
   </head>
   <body>
     <div id="">
-      <div id="container"></div>
+      <div id="container" class=""></div>
+
+      <div id="muzak">
+      </div>
+      <center>
+      <button
+        type="button"
+        onclick=toggleMusic()
+      >
+        Music
+      </button>
+    </center>
     </div>
     <p>
       <a href="https://www.supernetworks.org/devkit.html">Supernetworks SPR - Raspberry Pi DevKit</a>
@@ -49,6 +70,62 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
     <script>
+
+    let player
+  	let started = false
+    // Load the YouTube API and create a player
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('muzak', {
+        height: '400',
+        width: '4000',
+        videoId: 'ea_UOPzuyZU',
+        playerVars: {
+          'autoplay': 0,
+          'controls': 1,
+  				'mute': 1,
+  				'start': 0,
+  				'rel': 0,
+  				'showinfo': 0
+        },
+  			events: {
+  	      'onReady': onPlayerReady
+  	    }
+
+      });
+    }
+
+  	function onPlayerReady(event) {
+  	  event.target.seekTo(0, true);
+  		event.target.pauseVideo()
+  	}
+
+
+  	toggleMusic = function() {
+  		let ele = document.getElementById("container")
+  		if (!ele) {
+  			return
+  		}
+
+  		if (ele.classList.contains('vaporwave')) {
+  			ele.classList.remove('vaporwave')
+  			if (player) {
+  				player.mute()
+  				player.pauseVideo()
+  			}
+  		} else {
+  			ele.classList.add('vaporwave')
+  			if (player) {
+  				if (!started) {
+  					started = true
+  					//player.seekTo(0, true)
+  				}
+  				player.unMute()
+  				player.playVideo()
+  			}
+  		}
+  	}
+
+
     const scene = new THREE.Scene()
     //scene.background = new THREE.Color(0xffffff); // Set the background color to light gray
     const camera = new THREE.PerspectiveCamera(
