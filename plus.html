@@ -20,7 +20,7 @@
     <link href="/output.css" rel="stylesheet" />
   </head>
 
-  <body class="dark:bg-gray-900">
+  <body onload="setup()" class="dark:bg-gray-900">
     <nav
       class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
     >
@@ -112,6 +112,13 @@
             </li>
             <li>
               <a
+                href="https://www.supernetworks.org/pages/docs/faq"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
                 href="https://www.supernetworks.org/pages/blog"
                 class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Blog</a
@@ -130,13 +137,13 @@
         <h1
           class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl"
         >
-          Get super Plus
+          Get SPR Plus
         </h1>
         <p
           class="max-w-2xl mb-8 text-gray-700 dark:text-slate-300 sm:text-lg md:text-md"
         >
           <b>Super</b> is free for personal use, <b>Plus</b> offers extended
-          features &amp; lets you back the development of SPR.
+          features &amp; lets you back the development of SPR
         </p>
 
         <!--div class="flex items-center gap-8">
@@ -163,7 +170,7 @@
               Free
             </h2>
 
-            <a href="https://www.supernetworks.org/pages/docs/intro">
+            <a href="https://www.supernetworks.org/">
               <button
                 type="button"
                 value="free"
@@ -200,7 +207,7 @@
               $8 per month
             </h2>
 
-            <a href="https://www.supernetworks.org/pages/docs/intro">
+            <a href="#signup_section">
               <button
                 type="button"
                 value="plus"
@@ -220,11 +227,11 @@
                   <span class="text-purple-200">✓</span> Programmable Firewall
                   (PFW)
                 </li>
+                <li><span class="text-purple-300">✓</span> Mesh Support</li>
+                <li><span class="text-purple-400">✓</span> Vote on Features</li>
                 <li>
-                  <span class="text-purple-300">✓</span> Mesh Support
+                  <span class="text-purple-500">✓</span> Native Apps (macOS/iOS)
                 </li>
-                <li><span class="text-purple-400">✓</span> Vote on Features </li>
-                <li><span class="text-purple-500">✓</span> Native Apps (macOS/iOS)</li>
               </ul>
             </div>
           </div>
@@ -253,6 +260,128 @@
       </div>
     </header>
 
+    <!-- SPR Virtual / SPR Cloud -->
+
+    <div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center text-md">
+      <h2 class="text-3xl text-slate-800 dark:text-slate-200 mb-8">
+        Virtual Mode
+      </h2>
+      <p class="mb-16 text-gray-700 dark:text-slate-300 text-center">
+        Virtual Mode offers the same features as SPR without running a wireless
+        AP. This version does not require an extra WiFi adaptor and can run in
+        the cloud for a personal VPN, inside Docker or a Virtual Machine (VM) on
+        your local computer for testing.
+      </p>
+
+      <div class="table w-full gap-4 mb-16">
+        <div class="table-header-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-left text-stone-800 dark:text-stone-400 font-bold py-2 w-2/5"
+            >
+              Features
+            </div>
+            <div
+              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              SPR
+            </div>
+            <div
+              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              SPR Virtual Mode
+            </div>
+          </div>
+        </div>
+
+        <div class="table-row-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              WiFi
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              DNS
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              DHCP
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              VPN
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              API
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md">
       <h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">
         Compare plans &amp; features
@@ -269,7 +398,7 @@
             <div
               class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
             >
-              Free
+              SPR
             </div>
             <div
               class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
@@ -814,126 +943,70 @@
       </div>
     </div>
 
-    <!-- SPR Virtual / SPR Cloud -->
-
-    <div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center text-md">
-      <h2 class="text-3xl text-slate-800 dark:text-slate-200 mb-8">
-        Virtual Mode
+    <!-- Signup -->
+    <div
+      id="signup_section"
+      class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md"
+    >
+      <h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">
+        Join The Beta
       </h2>
-      <p class="mb-16 text-gray-700 dark:text-slate-300 text-center">
-        Virtual Mode offers the same features as SPR without running a wireless
-        AP. This version does not require an extra WiFi adaptor and can run in
-        the cloud for a personal VPN, inside Docker or a Virtual Machine (VM) on
-        your local computer for testing.
-      </p>
-
-      <div class="table w-full gap-4 mb-16">
-        <div class="table-header-group">
-          <div class="table-row">
-            <div
-              class="table-cell text-left text-stone-800 dark:text-stone-400 font-bold py-2 w-2/5"
-            >
-              Features
+      <div
+        id="submit_message"
+        class="inline-flex align-self-center dark:text-slate-300"
+      >
+        <form id="signup_form" class="w-full max-w-sm">
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label
+                class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                for="inline-name"
+              >
+                Name
+              </label>
             </div>
-            <div
-              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
-            >
-              SPR
-            </div>
-            <div
-              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
-            >
-              SPR Virtual Mode
+            <div class="md:w-2/3">
+              <input
+                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                id="Name"
+                name="Name"
+                type="text"
+                placeholder="Jane Doe"
+              />
             </div>
           </div>
-        </div>
-
-        <div class="table-row-group">
-          <div class="table-row">
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
-            >
-              WiFi
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label
+                class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                for="inline-email"
+              >
+                Email
+              </label>
             </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            ></div>
-          </div>
-          <div class="table-row">
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
-            >
-              DNS
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
+            <div class="md:w-2/3">
+              <input
+                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                id="Email"
+                name="Email"
+                type="text"
+                placeholder="email@example.com"
+              />
             </div>
           </div>
-          <div class="table-row">
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
-            >
-              DHCP
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
+          <div class="md:flex md:items-center">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+              <input
+                class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                type="submit"
+                value="Sign Up!"
+              />
             </div>
           </div>
-          <div class="table-row">
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
-            >
-              VPN
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-          </div>
-          <div class="table-row">
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
-            >
-              API
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-            <div
-              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
-            >
-              ✓
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
+      <br />
     </div>
 
     <footer
@@ -954,6 +1027,13 @@
             href="https://www.supernetworks.org/pages/blog/first-blog-post"
             class="hover:underline"
             >About</a
+          >
+        </li>
+        <li class="hidden md:block">
+          <a
+            href="https://www.supernetworks.org/pages/docs/faq"
+            class="hover:underline"
+            >FAQ</a
           >
         </li>
         <li>
@@ -1007,24 +1087,57 @@
     </style>
 
     <script>
+      form_submit = function (form, e) {
+        e.preventDefault()
+
+        let scriptURL =
+          'https://script.google.com/macros/s/AKfycbwcHvyt0AY3ny2ThNXycGnGiYktcWVcRg5DbQbp-v8meHNdvQqBgcx6Rs7TXhgysTYWJw/exec'
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            const submitMessage = document.getElementById('submit_message')
+            submitMessage.innerHTML = '<h2>Form Submitted!</h2>'
+            submitMessage.innerHTML += '<br/><p>Thank you</p>'
+          })
+          .catch((error) => console.error('Error!', error.message))
+      }
+
+      function setup() {
+        const messageForm = document.getElementById('signup_form')
+
+        messageForm.addEventListener('submit', function (event) {
+          event.preventDefault()
+          const email = this.elements.Email
+          const name = this.elements.Name
+          if (
+            email.value &&
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value) &&
+            name.value &&
+            name.value.trim() !== ''
+          ) {
+            form_submit(this, event)
+          }
+        })
+      }
       // plan redir
+      /*
       document.querySelectorAll('.btn-plan').forEach((el) => {
         el.addEventListener('click', (e) => {
           e.preventDefault()
           let plan = el.getAttribute('value')
           if (plan == 'free') {
-            location.href = 'https://www.supernetworks.org/pages/docs/pi4b'
+            //location.href = 'https://www.supernetworks.org/pages/docs/pi4b'
           }
 
           let isYearly = false /*document.getElementById(
             'radio-subscription-yearly'
-          ).checked*/
+          ).checked
           console.log('TODO', 'plan:', plan, 'yearly:', isYearly)
 
           // redir to payment form
           //if (plan == 'plus') {} else if (plan == 'supporter') {}
         })
       })
+      */
 
       function toggleTooltip() {
         let elId = this.getAttribute('data-tooltip-target')

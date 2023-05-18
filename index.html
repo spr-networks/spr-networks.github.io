@@ -21,7 +21,6 @@
   </head>
 
   <body class="dark:bg-gray-900">
-
     <nav
       class="md:flex bg-slate-800 border-gray-200 px-2 sm:px-4 py-4 dark:bg-gray-800"
     >
@@ -113,6 +112,13 @@
             </li>
             <li>
               <a
+                href="https://www.supernetworks.org/pages/docs/faq"
+                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
                 href="https://www.supernetworks.org/pages/blog"
                 class="block py-2 pr-4 pl-3 text-gray-400 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Blog</a
@@ -151,15 +157,13 @@
                 class="text-lg font-light mr-16"
                 style="text-shadow: 1px 1px 2px black"
               >
-                SPR is designed from the ground up with one goal in mind: allowing users to
-                gain complete control of their networks —  even with minimal
-                technical knowledge.
+                SPR is designed from the ground up with one goal in mind:
+                allowing users to gain complete control of their networks — even
+                with minimal technical knowledge.
               </p>
 
               <div class="md:inline-flex pb-12" role="group">
-                <a
-                  href="https://www.supernetworks.org/pages/docs/pi4b"
-                >
+                <a href="https://www.supernetworks.org/pages/docs/pi4b">
                   <button
                     type="button"
                     class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg px-5 py-2 mr-6 mb-2 my-4"
@@ -168,10 +172,7 @@
                   </button>
                 </a>
 
-
-                <a
-                  href="/devkit.html"
-                >
+                <a href="/devkit.html">
                   <button
                     type="button"
                     class="text-slate-50 bg-violet-600 hover:text-white hover:bg-violet-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg px-5 py-2 mr-2 mb-2 my-4"
@@ -267,17 +268,15 @@
       </div>
     </header>
 
-
-
     <section
       class="bg-gray-900 md:p-8 md:pt-24 md:pb-28 bg-cover bg-center md:bg-[url(/assets/img/bgs/bg-dark.png)]"
     >
       <div>
         <div
           class="bg-violet-900/80 hover:bg-violet-800/70 rounded-lg p-4 md:mt-24 text-center text-xl text-slate-200 cursor-pointer max-w-md mx-auto"
-          onclick="location.href='http://demo.supernetworks.org/"
+          onclick="location.href='https://demo.supernetworks.org/'"
         >
-          <a href="http://demo.supernetworks.org/" target="_blank"
+          <a href="https://demo.supernetworks.org/" target="_blank"
             >Try the UI demo &rarr;</a
           >
         </div>
@@ -291,7 +290,9 @@
         <div class="md:w-1/3 flex items-center">
           <!--img class="mx-auto mb-4 w-64 dark:invert rounded-full" src="/assets/img/office.png" /-->
           <!--img class="mx-auto mb-4 w-48 opacity-90 dark:invert" src="/assets/img/chip.svg" /-->
-      <div class="max-auto mb-4 w-64 bg-center h-[300px] w-[300px] bg-no-repeat bg-[url(/assets/img/office.png)] rounded-full"></div>
+          <div
+            class="max-auto mb-4 w-64 bg-center h-[300px] w-[300px] bg-no-repeat bg-[url(/assets/img/office.png)] rounded-full"
+          ></div>
         </div>
         <div class="md:w-2/3 flex flex-col gap-y-8">
           <h4 class="text-2xl font-mono font-bold">
@@ -391,19 +392,14 @@
     >
       <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-4">
         <div class="md:w-1/3 flex items-center">
-          <img
-            src="/assets/img/router.jpg"
-            width="400"
-            alt=""
-          />
+          <img src="/assets/img/router.jpg" width="400" alt="" />
         </div>
         <div class="md:w-2/3 flex flex-col gap-y-8 justify-center">
-          <h4 class="text-2xl font-mono font-bold">
-            Supported platforms
-          </h4>
+          <h4 class="text-2xl font-mono font-bold">Supported platforms</h4>
           <p>
-            SPR is designed for running on a wide variety of linux systems. We support Raspberry Pis with additional
-            hardware dongle. You can also purchase a Pi DevKit
+            SPR is designed for running on a wide variety of linux systems. We
+            support Raspberry Pis with additional hardware dongle. You can also
+            purchase a Pi DevKit
             <a href="/devkit.html" class="underline">directly from us</a>.
           </p>
           <p>
@@ -765,6 +761,13 @@
             >About</a
           >
         </li>
+        <li class="hidden md:block">
+          <a
+            href="https://www.supernetworks.org/pages/docs/faq"
+            class="hover:underline"
+            >FAQ</a
+          >
+        </li>
         <!--li>
             <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
         </li-->
@@ -802,7 +805,9 @@
           </a>
         </li>
       </ul>
-    <a  style="display: none;" rel="me" href="https://infosec.exchange/@alexrad">Mastodon</a>
+      <a style="display: none" rel="me" href="https://infosec.exchange/@alexrad"
+        >Mastodon</a
+      >
     </footer>
 
     <script>
@@ -812,6 +817,5 @@
         menu.classList.toggle('hidden')
       })
     </script>
-
   </body>
 </html>
