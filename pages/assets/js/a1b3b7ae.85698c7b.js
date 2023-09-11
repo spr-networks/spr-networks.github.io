@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[9649],{321:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/evil-twin","name":"EvilTwin","count":1,"permalink":"/pages/blog/tags/evil-twin"}')}}]);
