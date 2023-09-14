@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[74],{881:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/80211-ax","name":"80211ax","count":1,"permalink":"/pages/blog/tags/80211-ax"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[8962],{8794:function(s){s.exports=JSON.parse('{"permalink":"/pages/blog/tags/salsa-20","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

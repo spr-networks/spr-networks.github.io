@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[9591],{4618:function(s){s.exports=JSON.parse('{"allTagsPath":"/pages/blog/tags","slug":"/pages/blog/tags/routers","name":"Routers","count":2,"permalink":"/pages/blog/tags/routers"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Supernetworks just Released a React User Interface","permalink":"/blog/UI Push"},{"title":"Announcing The SPR Project","permalink":"/blog/first-blog-post"}]}')}}]);
