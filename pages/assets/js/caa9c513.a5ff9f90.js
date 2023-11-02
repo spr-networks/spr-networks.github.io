@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[4980],{35282:s=>{s.exports=JSON.parse('{"label":"Salsa20","permalink":"/pages/blog/tags/salsa-20","allTagsPath":"/pages/blog/tags","count":1}')}}]);

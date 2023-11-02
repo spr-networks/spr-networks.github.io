@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[9308],{49322:s=>{s.exports=JSON.parse('{"label":"pwntools","permalink":"/pages/blog/tags/pwntools","allTagsPath":"/pages/blog/tags","count":1}')}}]);

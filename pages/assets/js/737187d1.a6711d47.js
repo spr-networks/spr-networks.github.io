@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[9640],{11296:a=>{a.exports=JSON.parse('{"label":"DigitalOcean","permalink":"/pages/blog/tags/digital-ocean","allTagsPath":"/pages/blog/tags","count":2}')}}]);
