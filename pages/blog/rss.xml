@@ -16,10 +16,9 @@
             <description><![CDATA[Overview]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
 <p>In this post we'll show how PLUS members can add a <code>mitmproxy</code> plugin to their SPR setup,
-and then use the <a href="https://www.supernetworks.org/plus.html" target="_blank" rel="noopener noreferrer">Programmable Firewall (PFW)</a> plugin to redirect traffic through <code>mitmproxy</code></p>
-<p>In particular, we're going to use transparent sockets with <code>-m transparent</code>, meaning,
-we do not need to particularly configure our client with proxy settings to point to <code>mitmproxy</code>.</p>
-<p>We can use the firewall the reroute packets on the fly using DNAT forwarding.</p>
+and then use the <a href="https://www.supernetworks.org/plus.html" target="_blank" rel="noopener noreferrer">Programmable Firewall (PFW)</a> plugin to redirect traffic through <code>mitmproxy</code> with DNAT forwarding.</p>
+<p>We do not need to configure our clients with proxy settings to point to <code>mitmproxy</code>, or rewrite DNS responses,
+since we are using the PFW feature to do the redirection.</p>
 <p><a href="https://github.com/spr-networks/spr-mitmproxy" target="_blank" rel="noopener noreferrer">This plugin is available on github.</a></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="prepare-the-plugin">Prepare the plugin<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#prepare-the-plugin" class="hash-link" aria-label="Direct link to Prepare the plugin" title="Direct link to Prepare the plugin">​</a></h3>
 <p>from the SPR directory, typically <code>/home/spr/super</code></p>
