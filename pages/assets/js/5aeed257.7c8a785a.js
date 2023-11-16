@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[3074],{5908:s=>{s.exports=JSON.parse('{"label":"Turtles","permalink":"/pages/blog/tags/turtles","allTagsPath":"/pages/blog/tags","count":2,"unlisted":false}')}}]);

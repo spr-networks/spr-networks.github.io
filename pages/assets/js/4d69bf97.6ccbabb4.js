@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[2748],{8157:s=>{s.exports=JSON.parse('{"label":"fragmentation","permalink":"/pages/blog/tags/fragmentation","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);

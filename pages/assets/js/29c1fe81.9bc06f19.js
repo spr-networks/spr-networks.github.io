@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[7811],{9111:s=>{s.exports=JSON.parse('{"label":"Google Cloud","permalink":"/pages/blog/tags/google-cloud","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
