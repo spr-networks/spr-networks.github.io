@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[6201],{71373:s=>{s.exports=JSON.parse('{"label":"CTF","permalink":"/pages/blog/tags/ctf","allTagsPath":"/pages/blog/tags","count":2,"unlisted":false}')}}]);

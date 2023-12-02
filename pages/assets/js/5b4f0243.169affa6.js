@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[2356],{12312:s=>{s.exports=JSON.parse('{"label":"blue-team","permalink":"/pages/blog/tags/blue-team","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
