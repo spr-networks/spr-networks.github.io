@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[6198],{462:s=>{s.exports=JSON.parse('{"label":"SPR","permalink":"/pages/blog/tags/spr","allTagsPath":"/pages/blog/tags","count":11,"unlisted":false}')}}]);

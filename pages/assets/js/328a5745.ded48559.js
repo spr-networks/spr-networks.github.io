@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[1613],{6848:s=>{s.exports=JSON.parse('{"label":"x64","permalink":"/pages/blog/tags/x-64","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
