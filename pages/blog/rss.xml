@@ -4,10 +4,26 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Tue, 14 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Loading an nzyme tap on SPR]]></title>
+            <link>https://www.supernetworks.org/pages/blog/spr-nzyme-tap</link>
+            <guid>https://www.supernetworks.org/pages/blog/spr-nzyme-tap</guid>
+            <pubDate>Thu, 16 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nzyme lets people monitor their wifi networks with sensors that collect wifi data (as well as network traffic).]]></description>
+            <content:encoded><![CDATA[<p><a href="https://www.nzyme.org/" target="_blank" rel="noopener noreferrer">Nzyme</a> lets people monitor their wifi networks with sensors that collect wifi data (as well as network traffic).</p>
+<p>It can detect common wifi attack tools and tactics like deauths for getting WPA2 handshakes to crack,
+rogue APs, and more.</p>
+<p>We've put together a plugin that can run alongside the SPR AP without affecting the channels, by creating a monitor interface. While this won't be able to detect Rogue APs, it can detect some anomalous activity.</p>
+<p>The plugin is available at <a href="https://github.com/spr-networks/spr-nzyme-tap/" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/spr-nzyme-tap/</a></p>]]></content:encoded>
+            <category>wifi</category>
+            <category>nzyme</category>
+            <category>defense</category>
+            <category>blue-team</category>
+        </item>
         <item>
             <title><![CDATA[Transparent Socket Forwarding with SPR and MITMProxy]]></title>
             <link>https://www.supernetworks.org/pages/blog/spr-mitmproxy</link>
@@ -233,7 +249,7 @@ get all of the data that has been sent, even beyond the MTU size.</p>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
 <p>This guide allows you to setup your own cloud VPN using SPR for <em>$4/month</em> on the DigitalOcean Marketplace. It features ad blocking, firewall rules,
 and device micro-segmentation.</p>
-<p>If you want to dive in directly: <a href="https://cloud.digitalocean.com/droplets/new?app=spr&amp;onboarding_origin=marketplace&amp;appId=141833495&amp;refcode=24603f3ca4bd&amp;region=nyc1&amp;size=s-1vcpu-512mb-10gb&amp;type=applications&amp;image=supernetworks-spr" target="_blank" rel="noopener noreferrer">Click here</a> to create a droplet using the SPR image. Else, follow along in the steps below.</p>
+<p>If you want to dive in directly: <a href="https://cloud.digitalocean.com/droplets/new?app=spr&amp;onboarding_origin=marketplace&amp;appId=145188909&amp;refcode=24603f3ca4bd&amp;region=nyc1&amp;size=s-1vcpu-512mb-10gb&amp;type=applications&amp;image=supernetworks-spr" target="_blank" rel="noopener noreferrer">Click here</a> to create a droplet using the SPR image. Else, follow along in the steps below.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1---create-a-spr-droplet">Step 1 - Create a SPR Droplet<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#step-1---create-a-spr-droplet" class="hash-link" aria-label="Direct link to Step 1 - Create a SPR Droplet" title="Direct link to Step 1 - Create a SPR Droplet">​</a></h2>
 <p>To create a SPR Droplet from the <a href="https://marketplace.digitalocean.com/apps/spr" target="_blank" rel="noopener noreferrer">Digital Ocean marketplace</a>, press the <strong>Create SPR Droplet</strong> button:</p>
 <p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-1click-1-49a5e2b818eaf57523761496d9b739c2.png" width="2880" height="1800" class="img_ev3q"></p>
@@ -304,7 +320,7 @@ a gaming group for playing LAN networked games.</p>
 Using SPR to VPN your mobile devices helps get better network speeds to work around operator traffic shaping, as well as keep access to media services while traveling. And it's also helpful to maintain ad blocking while on the go, without adding any software at all to your devices.</p>
 <p>With the App you can manage your SPR over the VPN itself.</p>
 <div style="display:flex;flex-direction:row;padding:4px;gap:8px;margin-bottom:20px"><img src="https://www.supernetworks.org/pages/assets/images/ios-vpn-f1d07d004130708578473994edb5bc15.png" width="50%"><img src="https://www.supernetworks.org/pages/assets/images/ios-vpn-2-6fdda12865a53426390957dc457c4820.png" width="50%"></div>
-<p>To learn more about running SPR using VPN, with all its features except WiFi, check out the <a href="https://www.supernetworks.org/pages/docs/virtual_spr"> Virtual SPR Setup Guide</a></p>
+<p>To learn more about running SPR using VPN, with all its features except WiFi, check out the <a href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr"> Virtual SPR Setup Guide</a></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://www.supernetworks.org/pages/blog/ios-app-released#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h3>
 <p>If you'd like to experience the power of open-source networking and take control of your network's security and privacy,
 give SPR a try.</p>
@@ -740,7 +756,7 @@ devices on the secure network LAN.</p>
 or the Secure Router can isolate the port for the Guest Router for only internet access,
 this is not an accepted best practice.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="split-essids">Split ESSIDs<a href="https://www.supernetworks.org/pages/blog/secure%20router%20chaining#split-essids" class="hash-link" aria-label="Direct link to Split ESSIDs" title="Direct link to Split ESSIDs">​</a></h4>
-<p>Option #2 is to share a router for both SSIDs, with one ESSID and password for the
+<p>Option #1 is to share a router for both SSIDs, with one ESSID and password for the
 Secure LAN and one for the Guest LAN.</p>
 <p>The expectation is that devices can not send packets across the two LANs.</p>
 <p>The great tradeoff with this is that if a user wants to control their IOT devices
@@ -756,14 +772,14 @@ reducing wasted WiFi spectrum.</p>
 <p>Overall, this is an accepted best practice, but it comes down to the details where very quickly
 users are trading off security for usability.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="the-best-of-the-three-guest-router-first-secure-router-second">The Best of the Three: Guest Router First, Secure Router Second<a href="https://www.supernetworks.org/pages/blog/secure%20router%20chaining#the-best-of-the-three-guest-router-first-secure-router-second" class="hash-link" aria-label="Direct link to The Best of the Three: Guest Router First, Secure Router Second" title="Direct link to The Best of the Three: Guest Router First, Secure Router Second">​</a></h4>
-<p>Option #1 is the recommended and accepted best practice. The guest network connects
-directly to the internet, and the secure router plugs into the guest Router.</p>
+<p>Option #2 is the recommended and accepted best practice. The Guest router connects
+directly to the internet, and the Secure router plugs into the Guest Router.</p>
 <p>This approach yields a favorable combination of security and usability. Devices on the
 secure LAN can access devices on the Guest LAN, which is great for controlling IOT devices.
 And devices on the Guest LAN have no way to initiate communication to devices on the
-Secure LAN, blocked by the Guest Router firewall.</p>
+Secure LAN, blocked by the Secure Router firewall.</p>
 <p>The main downsides: The guest router could have ISP credentials, and could MITM
-internet traffic if compromised by an untrusted device</p>
+internet traffic if compromised by an untrusted device.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="multi-psk--vlans">Multi PSK &amp; VLANs<a href="https://www.supernetworks.org/pages/blog/secure%20router%20chaining#multi-psk--vlans" class="hash-link" aria-label="Direct link to Multi PSK &amp; VLANs" title="Direct link to Multi PSK &amp; VLANs">​</a></h3>
 <p>Today's most featureful home routers offer support for one passphrase per device. This solves
 many of the MITM and decryption issues for guest isolation. The devices can be placed into VLANs with unique WiFi passphrases, GTKs, and secure firewall rules creating truly strong isolation. These mechanisms provide powerful mechanisms for designing a home network securely.</p>
@@ -832,7 +848,7 @@ This allows stations to break gigabit speeds for WiFi with only 2 spatial stream
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="preparation">Preparation<a href="https://www.supernetworks.org/pages/blog/wifi6#preparation" class="hash-link" aria-label="Direct link to Preparation" title="Direct link to Preparation">​</a></h2>
 <ul>
-<li>Set up your AP device according to the <a href="https://www.supernetworks.org/pages/docs/setup_run_spr">SPR Setup Guide</a></li>
+<li>Set up your AP device according to the <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr">SPR Setup Guide</a></li>
 <li>For mt7915, run a mainline kernel or a kernel with fixes from <code>https://github.com/openwrt/mt76</code> and the latest firmware. I'll publish some updates to building SPR with these in the near future. Fixes are needed for DFS support.</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="hostapd-configuration">Hostapd configuration<a href="https://www.supernetworks.org/pages/blog/wifi6#hostapd-configuration" class="hash-link" aria-label="Direct link to Hostapd configuration" title="Direct link to Hostapd configuration">​</a></h2>
@@ -888,7 +904,7 @@ a look at QOTOM's i3 broadwell routers.</li>
 <a href="https://www.asiarf.com/shop/wifi-wlan/wifi_mini_pcie/wifi6-2t2r-dual-bands-dbdc-mpcie-card-11ax-mt7915-aw7915-npd/"><p><img loading="lazy" src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_400,h_400/https://www.asiarf.com/wp-content/uploads/2021/07/aw7915-npd-1_top.jpg" alt="" class="img_ev3q"></p></a>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="setup">Setup<a href="https://www.supernetworks.org/pages/blog/spr_mini_pc#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup">​</a></h2>
 <p>Download and install Ubuntu Server. Since the WiFi 6 driver is a work in progress, we grabbed a daily release of <a href="https://cdimage.ubuntu.com/ubuntu-server/daily-live/current/jammy-live-server-amd64.iso" target="_blank" rel="noopener noreferrer">Jammy Jellyfish 22.04</a> from the <a href="https://cdimage.ubuntu.com/ubuntu-server/daily-live/current/" target="_blank" rel="noopener noreferrer">Ubuntu Live</a> page to get the latest fixes. Copy the installer to installation media (a flash drive) then plug it in and go.</p>
-<p>Then follow the <a href="https://www.supernetworks.org/pages/docs/setup_run_spr">SPR Setup Guide</a>.</p>
+<p>Then follow the <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr">SPR Setup Guide</a>.</p>
 <p>Our config/base/config.sh:</p>
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">#!/bin/sh                                                                                                              </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">SSID_NAME=6lab                                                                                                         </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">SSID_INTERFACE=wlan1                                                                                                   </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#PPPIF=eth0                                                                                                            </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#WANIF=ppp0</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#PPP_VLANID=201</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#PPP_PROVIDER=provider-config</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">WANIF=enp1s0</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">RUN_WAN_DHCP=true</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">RUN_WAN_DHCP_IPV=4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"># Uncomment the next line if a second ethernet port goes to wired LAN</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#LANIF=eth1</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">VLANIF=wlan1</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">VLANSIF=$VLANIF.</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">LANIP=192.168.3.1</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DNSIP=$LANIP</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">TINYNETSTART=192.168.3.4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">TINYNETSTOP=192.168.3.255</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">TINYNETMASK=255.255.255.252</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">TINYSLASHMASK=30</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DOCKERNET=172.17.0.0/16</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">DOCKERIF=docker0</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">WIREGUARD_PORT=51280</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#WIREGUARD_NETWORK=192.168.3.1/24</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="configure-hostapd-for-80211ax">Configure hostapd for 802.11AX<a href="https://www.supernetworks.org/pages/blog/spr_mini_pc#configure-hostapd-for-80211ax" class="hash-link" aria-label="Direct link to Configure hostapd for 802.11AX" title="Direct link to Configure hostapd for 802.11AX">​</a></h2>
