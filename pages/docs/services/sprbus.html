@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="SPR" href="/pages/opensearch.xml"><link rel="stylesheet" href="/pages/assets/css/styles.43d1ec03.css">
-<script src="/pages/assets/js/runtime~main.3e4cfd67.js" defer="defer"></script>
+<script src="/pages/assets/js/runtime~main.ac18d608.js" defer="defer"></script>
 <script src="/pages/assets/js/main.fe0973c6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,9 +29,18 @@
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="available-events">Available events<a href="#available-events" class="hash-link" aria-label="Direct link to Available events" title="Direct link to Available events">​</a></h2>
 <ul>
+<li>auth<!-- -->:success</li>
+<li>auth<!-- -->:failure</li>
 <li>dns:block<!-- -->:event</li>
+<li>dns:blockrebind<!-- -->:event</li>
 <li>dns:override<!-- -->:event</li>
-<li>dns:serve:192.168.2.2</li>
+<li>dns:serve<!-- -->:clientip<!-- --> (Ex: 192.168.2.2)</li>
+<li>dhcp<!-- -->:request</li>
+<li>dhcp<!-- -->:response</li>
+<li>dhcp<!-- -->:update</li>
+<li>device<!-- -->:save</li>
+<li>device:tags<!-- -->:update</li>
+<li>device:groups<!-- -->:update</li>
 <li>log<!-- -->:api</li>
 <li>log:www<!-- -->:access</li>
 <li>nft:lan<!-- -->:in</li>
@@ -42,11 +51,14 @@
 <li>nft:drop<!-- -->:forward</li>
 <li>nft:drop<!-- -->:input</li>
 <li>nft:drop<!-- -->:mac</li>
-<li>www:auth:user<!-- -->:success</li>
+<li>wg<!-- -->:update</li>
+<li>wifi:auth<!-- -->:fail</li>
+<li>wifi:auth<!-- -->:success</li>
+<li>wifi:station<!-- -->:disconnect</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="example-events">Example Events<a href="#example-events" class="hash-link" aria-label="Direct link to Example Events" title="Direct link to Example Events">​</a></h2>
 <ul>
-<li><em>wifi:auth:success</em> is published when a device connect</li>
+<li><em>wifi:auth:success</em> is published when a device connects</li>
 <li><em>device:save</em> is published when a device is updated</li>
 </ul>
 <p><a href="/pages/api/0">View the API documentation for sprbus here</a></p>
