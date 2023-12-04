@@ -634,10 +634,6 @@ body {
   margin-right: 0.25rem;
 }
 
-.mr-16 {
-  margin-right: 4rem;
-}
-
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -796,10 +792,6 @@ body {
 
 .max-w-\[280px\] {
   max-width: 280px;
-}
-
-.max-w-\[300px\] {
-  max-width: 300px;
 }
 
 .cursor-pointer {
@@ -1173,10 +1165,6 @@ body {
   background-image: url(/assets/img/screenshot-light.png);
 }
 
-.bg-\[url\(\/assets\/img\/test\/logo-spr\.png\)\] {
-  background-image: url(/assets/img/test/logo-spr.png);
-}
-
 .bg-cover {
   background-size: cover;
 }
@@ -1291,10 +1279,6 @@ body {
   padding-top: 0.75rem;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1352,10 +1336,6 @@ body {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-light {
-  font-weight: 300;
 }
 
 .font-thin {
@@ -1971,10 +1951,6 @@ body {
 
   .md\:flex {
     display: flex;
-  }
-
-  .md\:inline-flex {
-    display: inline-flex;
   }
 
   .md\:hidden {
