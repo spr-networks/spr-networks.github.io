@@ -29,8 +29,10 @@ rogue APs, and more.</p>
             <link>https://www.supernetworks.org/pages/blog/spr-mitmproxy</link>
             <guid>https://www.supernetworks.org/pages/blog/spr-mitmproxy</guid>
             <pubDate>Tue, 14 Nov 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[Overview]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+            <description><![CDATA[Update]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="update">Update<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#update" class="hash-link" aria-label="Direct link to Update" title="Direct link to Update">​</a></h2>
+<p>This post has become a guide which is being kept up to date, <a href="https://www.supernetworks.org/pages/docs/guides_plus/mitmproxy">check it out!</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
 <p>In this post we'll show how PLUS members can add a <code>mitmproxy</code> plugin to their SPR setup,
 and then use the <a href="https://www.supernetworks.org/plus.html" target="_blank" rel="noopener noreferrer">Programmable Firewall (PFW)</a> plugin to redirect traffic through <code>mitmproxy</code> with DNAT forwarding.</p>
 <p>We do not need to configure our clients with proxy settings to point to <code>mitmproxy</code>, or rewrite DNS responses,
