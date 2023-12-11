@@ -1909,7 +1909,7 @@ paths:
     get:
       tags:
         - unix_superd
-      summary: Run docker-compose up -d on a service
+      summary: Run docker compose up -d on a service
       parameters:
         - name: service
           in: path
@@ -1934,7 +1934,7 @@ paths:
     put:
       tags:
         - unix_superd
-      summary: Run docker-compose restart on a service
+      summary: Run docker compose restart on a service
       description: ''
       operationId: superdRestartService
       parameters:
@@ -1959,7 +1959,7 @@ paths:
     get:
       tags:
         - unix_superd
-      summary: Run docker-compose pull on a service
+      summary: Run docker compose pull on a service
       description: ''
       operationId: superdUpdateService
       parameters:
@@ -1984,7 +1984,7 @@ paths:
     get:
       tags:
         - unix_superd
-      summary: Run docker-compose stop on a service
+      summary: Run docker compose stop on a service
       description: ''
       operationId: superdStopService
       parameters:
