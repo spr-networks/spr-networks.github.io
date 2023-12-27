@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
-    <updated>2023-11-27T00:00:00.000Z</updated>
+    <updated>2023-12-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[2023 Year in Review]]></title>
         <id>https://www.supernetworks.org/pages/blog/spr-2023-in-review</id>
         <link href="https://www.supernetworks.org/pages/blog/spr-2023-in-review"/>
-        <updated>2023-11-27T00:00:00.000Z</updated>
+        <updated>2023-12-27T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[What a year it's been for the Secure Programmable Router (SPR) project! We've made great strides in empowering users to take control of their networks, prioritize privacy, and unlock network configurability. Let's dive right into the highlights of 2023 and peek at what's in store for the future.]]></summary>
         <content type="html"><![CDATA[<p><strong>What a year it's been for the Secure Programmable Router (SPR) project!</strong> We've made great strides in empowering users to take control of their networks, prioritize privacy, and unlock network configurability. Let's dive right into the highlights of 2023 and peek at what's in store for the future.</p>
 <p><img loading="lazy" alt="device-list" src="https://www.supernetworks.org/pages/assets/images/demo-screenshot-4fada3be970ecc66a3ac005cc64907e2.png" width="3002" height="1370" class="img_ev3q"></p>
@@ -69,7 +69,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-road-ahead">The Road Ahead:<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#the-road-ahead" class="hash-link" aria-label="Direct link to The Road Ahead:" title="Direct link to The Road Ahead:">​</a></h3>
 <ul>
 <li><strong>Empowering Plugins:</strong> Our next major focus is facilitating community-built plugins. We've already created prototypes for <a href="https://github.com/spr-networks/spr-tailscale" target="_blank" rel="noopener noreferrer">Tailscale support</a> and <a href="https://github.com/spr-networks/spr-mitmproxy" target="_blank" rel="noopener noreferrer">mitmproxy</a>, and we're working on UI integration and streamlined installation to make plugin usage as seamless as possible without sacrificing security.</li>
-<li><strong>PI5 Router with WiFi-6:</strong> Our net hadware device will be a a PI5-based router packaged with wifi-6 support.</li>
+<li><strong>PI5 Router with WiFi-6:</strong> Our next hadware device will be a a PI5-based router packaged with wifi-6 support.</li>
 <li><strong>Eliminating firmware dependence</strong> We're also <a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces" target="_blank" rel="noopener noreferrer">developing software</a> to eliminate firmware attack surfaces with WiFi.</li>
 </ul>
 <p><strong>Join the Movement:</strong></p>
