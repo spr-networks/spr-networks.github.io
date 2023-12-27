@@ -4,10 +4,83 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Thu, 16 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[2023 Year in Review]]></title>
+            <link>https://www.supernetworks.org/pages/blog/spr-2023-in-review</link>
+            <guid>https://www.supernetworks.org/pages/blog/spr-2023-in-review</guid>
+            <pubDate>Mon, 27 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[What a year it's been for the Secure Programmable Router (SPR) project! We've made great strides in empowering users to take control of their networks, prioritize privacy, and unlock network configurability. Let's dive right into the highlights of 2023 and peek at what's in store for the future.]]></description>
+            <content:encoded><![CDATA[<p><strong>What a year it's been for the Secure Programmable Router (SPR) project!</strong> We've made great strides in empowering users to take control of their networks, prioritize privacy, and unlock network configurability. Let's dive right into the highlights of 2023 and peek at what's in store for the future.</p>
+<p><img loading="lazy" alt="device-list" src="https://www.supernetworks.org/pages/assets/images/demo-screenshot-4fada3be970ecc66a3ac005cc64907e2.png" width="3002" height="1370" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="major-accomplishments">Major Accomplishments:<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#major-accomplishments" class="hash-link" aria-label="Direct link to Major Accomplishments:" title="Direct link to Major Accomplishments:">​</a></h3>
+<ul>
+<li><strong>iOS App Launch:</strong> We've extended network management to your fingertips with the release of our official <a href="https://apps.apple.com/us/app/secure-programmable-router/id6443709201" target="_blank" rel="noopener noreferrer">iOS app on the App Store</a>. We're thankful to our users from almost each and every region on the App Store.</li>
+<li><strong>PLUS Membership:</strong> Our community now has the option to support the project <a href="https://www.supernetworks.org/plus.html" target="_blank" rel="noopener noreferrer">with PLUS</a> and unlock advanced features like:<!-- -->
+<ul>
+<li>Mesh networking for seamless coverage with multiple APs</li>
+<li>Site VPN support for selectively routing traffic through a remote Wiregurd VPN</li>
+<li>Advanced firewall rules with scheduling, domain name, and regular expression support</li>
+</ul>
+</li>
+<li><strong>Shipping Dev Kits</strong>. After the global supply chain crunch, we're proud to be shipping <a href="https://www.supernetworks.org/devkit.html" target="_blank" rel="noopener noreferrer">dev kits</a> to users</li>
+<li><strong>Microsegmentation for Containers:</strong> We've taken SPR's container support to the next level with integrated container microsegmentation, enabling granular control over container and interface traffic.</li>
+<li><strong>VLAN Trunk Support:</strong> SPR can work as a wired firewall as well. Connect devices to your SPR network securely through a managed switch, with SPR terminating a VLAN Trunk Port.</li>
+<li><strong>Expanded Network Visibility:</strong> Our new <a href="https://github.com/spr-networks/sprbus" target="_blank" rel="noopener noreferrer">event bus</a>, database, and configurable alerting mechanism provide key insights into network activity, empowering users to detect and troubleshoot issues effectively and analyze IOT &amp; device traffic.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you-to-our-users">Thank you to our users!<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#thank-you-to-our-users" class="hash-link" aria-label="Direct link to Thank you to our users!" title="Direct link to Thank you to our users!">​</a></h3>
+<ul>
+<li>
+<p><strong>We Build For You:</strong> We're incredibly grateful for our active user base and their invaluable suggestions. Your feedback drives our development roadmap! Join the conversation on Discord or create a GitHub request to share your ideas. Many of SPR's capabilities come from requests. Some of the feature requests that have landed are wifi scanning from the UI, the <code>lan_upstream</code> tag for restricting and managing access to upstream local networks to enable <a href="https://www.supernetworks.org/pages/blog/secure%20router%20chaining" target="_blank" rel="noopener noreferrer">secure router chaining</a>, and load balancing support across multiple Uplink interfaces.</p>
+</li>
+<li>
+<p><strong>Privacy and Ad Blocking Excellence:</strong> SPR continues to excel as a self-hosted WireGuard + DNS Ad block solution, offering unmatched configurability with per-device rules, easy exception management, and upstream DNS over HTTPS support for enhanced privacy. Users can get these capabilities by <a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click" target="_blank" rel="noopener noreferrer">self hosting in the cloud</a> as well as running SPR at home as a router.</p>
+</li>
+<li>
+<p><strong>Network Debugging Made Easy:</strong> Users have been able to use SPR to successfully debug connectivity issues with devices like Ring cameras, pinpointing problems with Amazon's cloud services rather than home Wi-Fi although Ring may say otherwise.</p>
+</li>
+<li>
+<p><strong>Uncovering Unauthorized Access:</strong> Event logs have helped users identify and address unauthorized access attempts, including scenarios like accidental connections from new neighbors moving in. The event database can store historical records so people can look at historical data to see activity and events.</p>
+</li>
+<li>
+<p><strong>Speedier WiFi:</strong> Even with our Raspberry Pi dev kits, users report impressive speeds between <code>500-700 Mbps</code> over USB3, surpassing their previous routers. With MT7915/6 cards, SPR users today can enjoy actual WiFi 6 gigabit <code>(1000+ Mbps)</code> connectivity over 2 spatial streams as measured with iperf3.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="technical-research">Technical Research:<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#technical-research" class="hash-link" aria-label="Direct link to Technical Research:" title="Direct link to Technical Research:">​</a></h3>
+<ul>
+<li>
+<p><strong>Unscathed by MacStealer:</strong> SPR's design was further validated by the <a href="https://github.com/vanhoefm/macstealer" target="_blank" rel="noopener noreferrer">MacStealer (CVE-2022-47522)</a> flaws. MacStealer bypassed most Client Isolation approaches due to state errors in low level firmware with MAC address handling. SPR's per-device VLAN and per-device password approach is totally immune to this category of protocol flaws.</p>
+</li>
+<li>
+<p><strong>Research AP in Scapy:</strong> We've developed functional WPA2 AP research scripts in Scapy for working with Wi-Fi frames, compatible with mac80211_hwsim and real wireless cards, enabling WPA2 networking (<a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/barely-ap</a>).</p>
+</li>
+<li>
+<p><strong>Turtles WiFi Hacking</strong> While waiting for the supply chain to unlock at the start of the year, we put together some wifi security training focused on protocol. We actually let people boot a kernel for a self hosted wireless lab, in the browser. Or people can play offline in containers. This is a bit different than other labs which each people to run prebuilt software as we guide people towards working at the packet level. <a href="https://www.supernetworks.org/wifiturtles.html" target="_blank" rel="noopener noreferrer">Check it out here</a></p>
+</li>
+</ul>
+<p><img loading="lazy" alt="device-list" src="https://www.supernetworks.org/pages/assets/images/turtles-5733351d9bbcd250b9fa7b3f4c034ea5.png" width="3106" height="2028" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2023s-hardware-in-pictures">2023's Hardware In Pictures<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#2023s-hardware-in-pictures" class="hash-link" aria-label="Direct link to 2023's Hardware In Pictures" title="Direct link to 2023's Hardware In Pictures">​</a></h3>
+<p><img loading="lazy" alt="pi4" src="https://www.supernetworks.org/pages/assets/images/yellow-pi-case-a6d3fa980bc9e4e7dba63b83781bc34e.png" width="1200" height="1200" class="img_ev3q">
+<em>Pi4 with a Mediatek MT76-based USB3 Adapter</em></p>
+<p><img loading="lazy" alt="pi4" src="https://www.supernetworks.org/pages/assets/images/clearfog-dbac62afcf29e07c4e59c9bbfedb9f2e.png" width="3728" height="1182" class="img_ev3q">
+<em>Solidrun Clearfog Dev Kit</em></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-road-ahead">The Road Ahead:<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#the-road-ahead" class="hash-link" aria-label="Direct link to The Road Ahead:" title="Direct link to The Road Ahead:">​</a></h3>
+<ul>
+<li><strong>Empowering Plugins:</strong> Our next major focus is facilitating community-built plugins. We've already created prototypes for <a href="https://github.com/spr-networks/spr-tailscale" target="_blank" rel="noopener noreferrer">Tailscale support</a> and <a href="https://github.com/spr-networks/spr-mitmproxy" target="_blank" rel="noopener noreferrer">mitmproxy</a>, and we're working on UI integration and streamlined installation to make plugin usage as seamless as possible without sacrificing security.</li>
+<li><strong>PI5 Router with WiFi-6:</strong> Our net hadware device will be a a PI5-based router packaged with wifi-6 support.</li>
+<li><strong>Eliminating firmware dependence</strong> We're also <a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces" target="_blank" rel="noopener noreferrer">developing software</a> to eliminate firmware attack surfaces with WiFi.</li>
+</ul>
+<p><strong>Join the Movement:</strong></p>
+<p>We invite you to be part of the SPR journey! Contribute to development, share your feedback, and help us shape the future of open-source networking. Together, we can build a more secure, private, and customizable internet experience for everyone.</p>
+<p><strong>Visit our <a href="https://www.supernetworks.rog/" target="_blank" rel="noopener noreferrer">website</a> and <a href="https://github.com/spr-networks/super" target="_blank" rel="noopener noreferrer">GitHub repository</a> to learn more and get involved</strong></p>]]></content:encoded>
+            <category>SPR</category>
+            <category>IOS</category>
+            <category>microsegmentation</category>
+            <category>PLUS</category>
+        </item>
         <item>
             <title><![CDATA[Loading an nzyme tap on SPR]]></title>
             <link>https://www.supernetworks.org/pages/blog/spr-nzyme-tap</link>
@@ -983,58 +1056,6 @@ per-device ad blocking, and home automation.</p>]]></content:encoded>
             <category>UI</category>
             <category>React</category>
             <category>Golang</category>
-        </item>
-        <item>
-            <title><![CDATA[Announcing The SPR Project]]></title>
-            <link>https://www.supernetworks.org/pages/blog/first-blog-post</link>
-            <guid>https://www.supernetworks.org/pages/blog/first-blog-post</guid>
-            <pubDate>Mon, 10 Jan 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Hello, SPR]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hello-spr">Hello, SPR<a href="https://www.supernetworks.org/pages/blog/first-blog-post#hello-spr" class="hash-link" aria-label="Direct link to Hello, SPR" title="Direct link to Hello, SPR">​</a></h2>
-<p>I'm happy to start releasing the <strong>Secure Programmable Router</strong> project to the world. I've been running my home WiFi
-with it for the past few months and I'm beyond excited to give back to the open source community.
-I started working on this project because I think that Linux provides a tremendous amount of agility and
-power for secure home networking but I felt like there was no router project out there that pulled it all together.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-spr-project-is-about-several-things">The SPR project is about several things<a href="https://www.supernetworks.org/pages/blog/first-blog-post#the-spr-project-is-about-several-things" class="hash-link" aria-label="Direct link to The SPR project is about several things" title="Direct link to The SPR project is about several things">​</a></h2>
-<ul>
-<li>
-<p>A highly secure foundation to operate a home network where using the internet is safe and it's easy to see and control what IoT devices are up to when they are plugged in.</p>
-</li>
-<li>
-<p>Making home privacy easy instead of begrudgingly sharing telemetry with big data companies.</p>
-</li>
-<li>
-<p>Open source and empowering developers by lowering the barrier to entry for coding with home networking.</p>
-</li>
-<li>
-<p>About reducing the barrier for entry.</p>
-</li>
-<li>
-<p>Enabling scripting and rapid prototyping.</p>
-</li>
-<li>
-<p>Adapting modern networking paradigms and tools that can meets today's needs.</p>
-</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-spr-came-to-be">How SPR Came To Be<a href="https://www.supernetworks.org/pages/blog/first-blog-post#how-spr-came-to-be" class="hash-link" aria-label="Direct link to How SPR Came To Be" title="Direct link to How SPR Came To Be">​</a></h2>
-<p>During the past year, I took a serious look at <a href="https://opnsense.org/" target="_blank" rel="noopener noreferrer">opnsense</a> and <a href="https://openwrt.org/" target="_blank" rel="noopener noreferrer">OpenWRT</a>, and ordered over a dozen different wifi routers to set up my home network. I sat down and built and deployed my own OpenWRT images and to set up secure wifi networks to connect with a more serious firewall. What I found was that the setups I had managed to achieve were not only frustrating to manage, but when I went to test their security, I found time and time again that vendor wifi routers were insecure due to fundamental limitations with the network designs. On top of that, they were <a href="https://www.zerodayinitiative.com/blog/2021/11/1/pwn2ownaustin" target="_blank" rel="noopener noreferrer">riddled with software security holes</a>. Unfortunately, running the open source builds of OpenWRT often had degraded performance versus the proprietary vendor patches or required breaking secure boot.</p>
-<p>I felt frustrated because I felt like I had lost control over my own home network. I had only a basic idea of what I was running and what my devices were doing, let alone the routers themselves. Between smart bulbs and vacuum cleaners and home security cameras and speakers, TVs, gaming consoles, laptops, desktops, streaming devices, more routers, and work equipment, there was a lot of stuff that was online.</p>
-<p>I've been working in computer security for over 15 years and I often get asked for how to set up a home network.</p>
-<p>The best advice I could give people for their home wifi was to keep their mission critical systems on a dedicated wifi router, and plug that one into the main wifi router with all the other
-"stuffs" that ultimately connects to the internet. This is awkward and requires switching networks or IGMP proxying to do discovery or zeroconf. This doesn't scale well across a multi-office home with repeaters and backhaul. It also doesn't scale well in an apartment where there's competition for radio bandwidth with neighbors for essentially one of only three coveted 80mhz channels on 5ghz.</p>
-<p>The next best advice was to split out the "whatever" non-critical devices to the guest network, and the mission critical stuff on the main network. Hardening the guest network with isolation breaks discovery and streaming as well. In practice I found that most of the routers I looked at did not have good guest isolation anyway when enabled, something I will blog about later. No exploits are required, because more or less an attacker can just ask a router to send packets for them to work around hostapd's AP Isolation feature, and most of the routers will happily do what they do best, route the packets.</p>
-<p>At the end of the day though, it's fundamentally a flawed idea to have a shared passphrase across many devices because that passphrase effectively lets devices spoof each other or attempt to intercept traffic, making it tough to truly firewall devices.</p>
-<p>So then I started looking into enterprise wifi authentication: 802.1x  (EAP-PEAP, EAP-TLS, EAP-PWD). EAP-TLS really is the only secure way to do things since EAP-PEAP suffers from fundamental <a href="https://datatracker.ietf.org/doc/html/draft-josefsson-pppext-eap-tls-eap-10#section-5.8" target="_blank" rel="noopener noreferrer">man in the middle issues</a> that were <a href="https://github.com/latelee/hostapd/commit/a190189d221aaef869ae2f52f7ead75b0c327995" target="_blank" rel="noopener noreferrer">never fixed</a>. Or EAP-PWD (which is almost wpa3) would be great,  if it was supported by more devices and drivers, and well with EAP-TLS, certificate management is pain.</p>
-<p>I really wished that one could just use a unique passphrase per device. Well, it turns out that yes, that works, and hostapd supports it out of the box. With some logic and <a href="https://github.com/spr-networks/hostap/commit/279c5203e4c767701ac9fb7cf31624390437d854" target="_blank" rel="noopener noreferrer">usability and correctness fixes</a> to hostapd, and it was easy to seamlessly add new devices and their passphrases on the fly.</p>
-<p>Okay that was great. Next, I created strong device isolation with per-device subnets that could be configured to communicate with other subnets using forwarding rules. The resulting network was a bit too different than the spirit of the networking scripts in OpenWRT, and the patching became unreasonable to expect for upstream to accept, so I started from fresh ground.</p>
-<p>SPR is implemented for rapid iteration. Services are containerized so that developers can swap out core services or roll up new ones in a testable, reproducible manner. An API drives configuration to allow for customization. SPR Runs off of Ubuntu, with Docker containers, and manages the network with NFTables. It uses hostapd for the base station software, CoreDHCP for DHCP, CoreDNS for DNS, and supports Wireguard.</p>
-<p>SPR simply enables users to do better than today's status quo. It lets users run a hardened, secure network without restrictive drawbacks. It lets users connect their consumer electronics to the internet with the peace of mind that doing so does not weaken their home network security.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-next">What's Next<a href="https://www.supernetworks.org/pages/blog/first-blog-post#whats-next" class="hash-link" aria-label="Direct link to What's Next" title="Direct link to What's Next">​</a></h2>
-<p>Today SPR runs as a proof of concept on a Raspberry Pi.  With a USB dongle it's well able to handle over a dozen wifi stations and serve data from the internet with rates up to 500mbps. Work is underway to expand to new systems.</p>
-<p>I'm currently wrapping up a Web UI to make SPR user friendly. In the near future I'll be posting a road map for what's planned.</p>
-<p>Want to learn more and discuss? Join the <a href="https://discord.gg/EUjTKJPPAX" target="_blank" rel="noopener noreferrer">Discord Chat</a></p>]]></content:encoded>
-            <category>SPR</category>
-            <category>Hello World</category>
         </item>
     </channel>
 </rss>
