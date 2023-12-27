@@ -55,7 +55,7 @@
 <p><strong>Unscathed by MacStealer:</strong> SPR's design was further validated by the <a href="https://github.com/vanhoefm/macstealer" target="_blank" rel="noopener noreferrer">MacStealer (CVE-2022-47522)</a> flaws. MacStealer bypassed most Client Isolation approaches due to state errors in low level firmware with MAC address handling. SPR's per-device VLAN and per-device password approach is totally immune to this category of protocol flaws.</p>
 </li>
 <li>
-<p><strong>Research AP in Scapy:</strong> We've developed functional WPA2 AP research scripts in Scapy for working with Wi-Fi frames, compatible with mac80211_hwsim and real wireless cards, enabling WPA2 networking (<a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/barely-ap</a>).</p>
+<p><strong>Research AP in Scapy:</strong> We've developed functional WPA2 AP research scripts in Scapy for working with Wi-Fi frames, compatible with mac80211_hwsim and real wireless cards. (<a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/barely-ap</a>).</p>
 </li>
 <li>
 <p><strong>Turtles WiFi Hacking</strong> While waiting for the supply chain to unlock at the start of the year, we put together some wifi security training focused on protocol. We actually let people boot a kernel for a self hosted wireless lab, in the browser. Or people can play offline in containers. This is a bit different than other labs which each people to run prebuilt software as we guide people towards working at the packet level. <a href="https://www.supernetworks.org/wifiturtles.html" target="_blank" rel="noopener noreferrer">Check it out here</a></p>
