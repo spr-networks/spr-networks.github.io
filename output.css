@@ -1137,12 +1137,16 @@ body {
   background-color: rgb(167 139 250 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\/assets\/img\/discord\.svg\)\] {
-  background-image: url(/assets/img/discord.svg);
+.bg-\[url\(\/assets\/img\/github\.svg\)\] {
+  background-image: url(/assets/img/github.svg);
 }
 
 .bg-\[url\(\/assets\/img\/twitter\.svg\)\] {
   background-image: url(/assets/img/twitter.svg);
+}
+
+.bg-\[url\(\/assets\/img\/discord\.svg\)\] {
+  background-image: url(/assets/img/discord.svg);
 }
 
 .bg-\[url\(\/assets\/img\/bgs\/bg-dark\.png\)\] {
@@ -2029,6 +2033,10 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2051,6 +2059,10 @@ body {
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
