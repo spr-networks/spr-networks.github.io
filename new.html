@@ -11,11 +11,7 @@
     <meta property="og:title" content="Supernetwork Routers" />
     <meta
       property="og:description"
-      content="Create adaptive, micro-segmented networks for connecting and managing devices."
-    />
-    <meta
-      property="description"
-      content="Supernetworks provides comprehensive home network security, featuring advanced tools such as Ad Block and Wireguard VPN, alongside efficient Network Monitoring. SPR offers innovative micro-segmentation with Zero Trust Network Access, ensuring each device has its unique passphrase for enhanced security. Ideal for safeguarding WiFi and IoT devices, our solution offers real-time network insights. Built on open-source technology, it's compatible with Linux and Docker environments. It can also run as a Cloud-native Wireguard VPN Ad Blocker. Create adaptive, micro-segmented networks for connecting and managing devices."
+      content="SPR is designed from the ground up by veteran information security professionals with one goal in mind: allowing users to gain complete control of their networks —  even with minimal technical knowledge."
     />
     <meta
       property="og:image"
@@ -25,6 +21,10 @@
   </head>
 
   <body class="dark:bg-gray-900">
+    <!--div class="bg-violet border-b border-gray-200 px-2  py-2.5 text-center dark:bg-gray-800">
+		⭐️ If you like SPR, give it a star on <a class="text-underline" target="_blank" href="https://github.com/spr-networks/super/">GitHub!</a> ⭐️
+	</div-->
+
     <nav
       class="md:flex bg-slate-800 border-gray-200 px-2 sm:px-4 py-4 dark:bg-gray-800"
     >
@@ -88,9 +88,9 @@
             </li>
             <li>
               <a
-                href="https://www.supernetworks.org/plus.html"
+                href="https://www.supernetworks.org/pages/blog/first-blog-post"
                 class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >PLUS</a
+                >About</a
               >
             </li>
             <li>
@@ -112,13 +112,6 @@
                 href="https://www.supernetworks.org/pages/docs/intro"
                 class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >Documentation</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/docs/faq"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >FAQ</a
               >
             </li>
             <li>
@@ -150,73 +143,59 @@
                 SPR: Secure Programmable Routers
               </p>
               <p
-                class="text-lg"
+                class="uppercase text-slate-300"
                 style="text-shadow: 1px 1px 2px black"
               >
-                Create <span class="font-bold">adaptive, micro-segmented</span>
-                 networks for connecting and managing devices.
+                Your router should be
+                <span class="underline italic">yours</span> -
+                <span>Regain control of your network</span>
+              </p>
+              <p
+                class="text-lg font-light mr-16"
+                style="text-shadow: 1px 1px 2px black"
+              >
+                SPR is designed from the ground up by veteran information
+                security professionals with one goal in mind: allowing users to
+                gain complete control of their networks —  even with minimal
+                technical knowledge.
               </p>
 
-              <div class="flex flex-col gap-6">
-              <div class="flex flex-col md:flex-row gap-4" role="group">
-                <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr">
+              <div class="md:inline-flex pb-12" role="group">
+                <a
+                  href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b#install-the-spr-pi-4-image"
+                >
                   <button
                     type="button"
-                    class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2"
+                    class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg px-5 py-2 mr-6 mb-2 my-4"
                   >
-                   Setup Guide
+                    Get Started
                   </button>
                 </a>
 
-                <a href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz">
+                <a
+                  href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz"
+                >
                   <button
                     type="button"
-                    class="text-slate-50 bg-green-700 hover:text-white hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2"
+                    class="text-slate-50 bg-violet-600 hover:text-white hover:bg-violet-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg px-5 py-2 mr-2 mb-2 my-4"
                   >
-                    Download SPR PI Image
-                  </button>
-                </a>
-
-                <a href="/devkit.html">
-                  <button
-                    type="button"
-                    class="text-slate-50 bg-violet-600 hover:text-white hover:bg-violet-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2"
-                  >
-                    Buy Dev Kit
-                  </button>
-                </a>
-              </div>
-
-              <div class="flex flex-col md:flex-row gap-4" role="group">
-
-                <a href="https://apps.apple.com/us/app/secure-programmable-router/id6443709201">
-                  <img src="/assets/img/appdownload.png" width="120">
-                </a>
-
-                <a href="/plus.html">
-                  <button
-                    type="button"
-                    class="text-slate-50 border-violet-600 border hover:text-white hover:bg-violet-600 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2 mb-2"
-                  >
-                    Support SPR with PLUS
+                    Download now
                   </button>
                 </a>
 
                 <a href="https://www.supernetworks.org/pages/docs/intro">
                   <button
                     type="button"
-                    class="text-violet-50 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2 mb-4"
+                    class="text-violet-50 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg px-4 py-2.5 mr-2 mb-2 my-4"
                   >
-                    Read the docs
+                    Read the docs →
                   </button>
                 </a>
-
               </div>
-            </div>
             </div>
             <div class="hidden md:block md:w-1/4 flex justify-center">
               <img
-                src="/assets/img/logo-transparent.png"
+                src="/assets/img/test/logo-transparent.png"
                 alt=""
                 width="220"
                 class="block opacity-80 hover:opacity-100 my-8"
@@ -227,7 +206,7 @@
       </div>
 
       <div
-        class="md:mx-auto p-4 md:px-0 md:pb-16 flex flex-col items-center space-x-4 space-y-6 bg-neutral-50 dark:bg-slate-900 text-center"
+        class="md:mx-auto p-8 md:px-0 md:pb-16 flex flex-col items-center space-x-4 space-y-6 bg-neutral-50 dark:bg-slate-900 text-center"
       >
         <!--h1
           class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl"
@@ -288,28 +267,10 @@
             </ul>
           </div>
         </div>
-
-        <h1
-          class="mb-4 text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-3xl"
-        >
-          <a href="https://www.supernetworks.org/plus.html">PLUS Features</a>
-        </h1>
-
-        <div
-          class="grid grid-cols-1 md:grid-cols-1 gap-2 md:gap-1 text-left text-slate-800 dark:text-slate-200 mt-4"
-        >
-          <div>
-            <ul class="text-sm md:text-base">
-              <li>✓ Mesh/Multi AP support</li>
-              <li>✓ Site to Site Wireguard VPN Destinations</li>
-              <li>✓ Scheduled Network Rules</li>
-              <li>✓ Domain Name / Regular Expression based Firewall Rules</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </header>
+
+
 
     <section
       class="bg-gray-900 md:p-8 md:pt-24 md:pb-28 bg-cover bg-center md:bg-[url(/assets/img/bgs/bg-dark.png)]"
@@ -317,37 +278,28 @@
       <div>
         <div
           class="bg-violet-900/80 hover:bg-violet-800/70 rounded-lg p-4 md:mt-24 text-center text-xl text-slate-200 cursor-pointer max-w-md mx-auto"
-          onclick="location.href='https://demo.supernetworks.org/'"
+          onclick="location.href='http://demo.supernetworks.org/"
         >
-          <a href="https://demo.supernetworks.org/" target="_blank"
+          <a href="http://demo.supernetworks.org/" target="_blank"
             >Try the UI demo &rarr;</a
           >
         </div>
       </div>
     </section>
 
+
+
     <div
       class="p-8 md:px-0 md:py-12 flex flex-col space-y-16 bg-neutral-100 text-neutral-900 antialiased dark:bg-slate-800 dark:text-slate-50"
     >
       <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-4">
         <div class="md:w-1/3 flex items-center">
-          <!--img class="mx-auto mb-4 w-64 dark:invert rounded-full" src="/assets/img/office.png" /-->
-          <!--img class="mx-auto mb-4 w-48 opacity-90 dark:invert" src="/assets/img/chip.svg" /-->
-          <div
-            class="max-auto mb-4 w-64 bg-center h-[300px] w-[300px] bg-no-repeat bg-[url(/assets/img/office.png)] rounded-full"
-          ></div>
+          <img class="mx-auto mb-4 w-48 opacity-90 dark:invert" src="/assets/img/github.svg" />
         </div>
         <div class="md:w-2/3 flex flex-col gap-y-8">
           <h4 class="text-2xl font-mono font-bold">
-            Secure from the moment you turn on SPR
+            Secure from the moment you turn on your device
           </h4>
-          <p
-            class="uppercase"
-          >
-            Your router should be
-            <span class="underline italic">yours</span> -
-            <span>Regain control of your network</span>
-          </p>
           <p>
             SPR is self-hosted. Your data is not stored on our servers, we do
             not collect telemetry data, error reports, or any other data that
@@ -355,21 +307,31 @@
             router is truly your router.
           </p>
           <p>
-            Use SPR to lock down devices into adaptive, micro-segmented networks hardened against network spoofing attacks, traffic sniffing, and lateral movement.
-          </p>
-          <p>
-            SPR is
+            SPR is both
             <a
               class="underline"
               href="https://github.com/spr-networks/super"
               target="_blank"
               rel="noreferrer"
-              >open source.</a
+              >open source</a
             >
-            We believe in transparency and empowering users to develop on their own network.
-            The code is easy to build with containers and can even be built on-device.
-            Care is taken to use memory safe languages and dependencies with good security track
-            records. Users can also extend SPR with plugins.
+            and thoughtfully sourced. SPR’s code base is both transparent and
+            the result a careful curation process designed to ensure that SPR is
+            comprised of code only from open source projects with good security
+            track records and that deploy safer programing paradigms—such as the
+            use of
+            <a
+              class="underline"
+              href="https://media.defense.gov/2022/Nov/10/2003112742/-1/-1/0/CSI_SOFTWARE_MEMORY_SAFETY.PDF"
+              target="_blank"
+              rel="noreferrer"
+              >memory safe</a
+            >
+            languages.
+          </p>
+          <p>
+            SPR allows users to effortlessly deploy cutting edge security
+            paradigms such as zero-trust networking and device isolation.
           </p>
         </div>
       </div>
@@ -381,7 +343,7 @@
       <div class="md:w-5/6 md:mx-auto flex flex-row gap-x-4">
         <div class="md:w-2/3 flex flex-col gap-y-8">
           <h4 class="text-2xl font-mono font-bold">
-            A Secure Network shouldn't be rocket science
+            A secure network shouldn't be rocket science
           </h4>
           <p>
             SPR comes with a beautiful and intuitive graphic user interface that
@@ -405,9 +367,10 @@
         class="w-full mx-auto min-h-[270px] md:w-[540px] md:h-[350px] bg-no-repeat bg-contain bg-[url(/assets/img/api-preview.png)] dark:bg-[url(/assets/img/api-preview-dark.png)]"
         -->
         <div
-          class="md:w-1/3 flex items-center justify-center bg-no-repeat bg-cover bg-[url(/assets/img/logo.png)]"
+          class="md:w-1/3 flex items-center justify-center bg-no-repeat bg-cover bg-[url(/assets/img/test/logo-spr.png)]"
         >
-          <!--svg
+          <!--img src="/assets/img/logo-spr.png" width="300" alt="logo SPR" /-->
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -420,7 +383,7 @@
               stroke-linejoin="round"
               d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
             />
-          </svg-->
+          </svg>
         </div>
       </div>
     </div>
@@ -432,15 +395,21 @@
     >
       <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-4">
         <div class="md:w-1/3 flex items-center">
-          <img src="/assets/img/router.jpg" width="400" alt="" />
+          <img
+            _src="/assets/img/test/easy-connect-worldwide-internet-speed-laptop@2x.webp"
+            src="/assets/img/test/vecteezy_router-tech-icon_17064258.jpg"
+            width="400"
+            alt=""
+          />
         </div>
         <div class="md:w-2/3 flex flex-col gap-y-8 justify-center">
-          <h4 class="text-2xl font-mono font-bold">Supported platforms</h4>
+          <h4 class="text-2xl font-mono font-bold">
+            Bring your own device - or don't
+          </h4>
           <p>
-            SPR is designed for running on a wide variety of linux systems. We
-            support Raspberry Pis with additional hardware dongle. You can also
-            purchase a Pi DevKit
-            <a href="/devkit.html" class="underline">directly from us</a>.
+            SPR is primarily designed to run as a Wi-Fi router on Raspberry Pi
+            hardware—which you can buy
+            <a href="#" class="underline">directly from us</a>.
           </p>
           <p>
             SPR can also be deployed on your home server or a cloud provider as
@@ -553,7 +522,7 @@
       <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-8">
         <div class="md:w-7/12 flex flex-col gap-y-8 justify-center">
           <h4 class="text-2xl font-mono font-bold">
-            Customizable and programmable
+            Endlessly customizable and programmable
           </h4>
           <p>
             Go beyond the GUI. All functions and features of SPR are accessible
@@ -584,15 +553,11 @@
       </div>
     </div>
 
-    <!--a class="bg-slate-900 text-slate-300 block border-b border-slate-900 px-2 py-2.5 text-center antialiased hover:underline" target="_blank" href="https://github.com/spr-networks/super/">
-		If you like SPR, give it a ⭐️ on GitHub! &rarr;
-	</a-->
-
     <!-- bg-neutral-800 -->
     <section
       class="bg-[#110133] text-gray-100 p-8 md:px-24 md:pb-24 text-center"
     >
-      <img src="/assets/img/bgs/wifi.png" class="mx-auto max-w-[280px]" />
+      <img src="/assets/img/bgs/wifi.png" class="mx-auto max-w-[300px]" />
       <h3 class="mb-4 text-3xl font-medium tracking-tight text-slate-100 mt-8">
         WiFi Router + DNS + VPN Server
       </h3>
@@ -641,7 +606,7 @@
       <div class="grid md:grid-cols-3 md:gap-4 md:p-4">
         <div
           class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr'"
+          onClick="location.href='https://www.supernetworks.org/pages/docs/setup_guides/pi4b'"
         >
           <img
             class="mx-auto mb-4 w-8 invert"
@@ -792,20 +757,13 @@
         All Rights Reserved.
       </span>
       <ul
-        class="flex items-center mt-3 text-xs md:text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-4 md:space-x-8"
+        class="flex items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-4 md:space-x-8"
       >
         <li class="hidden md:block">
           <a
             href="https://www.supernetworks.org/pages/blog/first-blog-post"
             class="hover:underline"
             >About</a
-          >
-        </li>
-        <li class="hidden md:block">
-          <a
-            href="https://www.supernetworks.org/pages/docs/faq"
-            class="hover:underline"
-            >FAQ</a
           >
         </li>
         <!--li>
@@ -845,9 +803,6 @@
           </a>
         </li>
       </ul>
-      <a style="display: none" rel="me" href="https://infosec.exchange/@alexrad"
-        >Mastodon</a
-      >
     </footer>
 
     <script>
