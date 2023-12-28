@@ -43,7 +43,7 @@
 <p><strong>Network Debugging Made Easy:</strong> Users have been able to use SPR to successfully debug connectivity issues with devices like Ring cameras, pinpointing problems with Amazon's cloud services rather than home Wi-Fi although Ring may say otherwise.</p>
 </li>
 <li>
-<p><strong>Uncovering Unauthorized Access:</strong> Event logs have helped users identify and address unauthorized access attempts, including scenarios like accidental connections from new neighbors moving in. The event database can store historical records so people can look at historical data to see activity and events.</p>
+<p><strong>Uncovering Unauthorized Access:</strong> Event logs have helped users identify and address unauthorized access attempts, including scenarios like accidental connections from new neighbors moving in.</p>
 </li>
 <li>
 <p><strong>Speedier WiFi:</strong> Even with our Raspberry Pi dev kits, users report impressive speeds between <code>500-700 Mbps</code> over USB3, surpassing their previous routers. With MT7915/6 cards, SPR users today can enjoy actual WiFi 6 gigabit <code>(1000+ Mbps)</code> connectivity over 2 spatial streams as measured with iperf3.</p>
@@ -58,7 +58,7 @@
 <p><strong>Research AP in Scapy:</strong> We've developed functional WPA2 AP research scripts in Scapy for working with Wi-Fi frames, compatible with mac80211_hwsim and real wireless cards. (<a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/barely-ap</a>).</p>
 </li>
 <li>
-<p><strong>Turtles WiFi Hacking</strong> While waiting for the supply chain to unlock at the start of the year, we put together some wifi security training focused on protocol. We actually let people boot a kernel for a self hosted wireless lab, in the browser. Or people can play offline in containers. This is a bit different than other labs which each people to run prebuilt software as we guide people towards working at the packet level. <a href="https://www.supernetworks.org/wifiturtles.html" target="_blank" rel="noopener noreferrer">Check it out here</a></p>
+<p><strong>Turtles WiFi Hacking</strong> While waiting for the supply chain to unlock at the start of the year, we put together some wifi security training focused on protocol. We actually let people boot a kernel for a self hosted wireless lab, in the browser. Or people can play offline in containers. This is a bit different than other labs which teach people to run prebuilt software as we guide people towards working at the packet level. <a href="https://www.supernetworks.org/wifiturtles.html" target="_blank" rel="noopener noreferrer">Check it out here</a></p>
 </li>
 </ul>
 <p><img loading="lazy" alt="device-list" src="https://www.supernetworks.org/pages/assets/images/turtles-5733351d9bbcd250b9fa7b3f4c034ea5.png" width="3106" height="2028" class="img_ev3q"></p>
@@ -70,7 +70,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-road-ahead">The Road Ahead:<a href="https://www.supernetworks.org/pages/blog/spr-2023-in-review#the-road-ahead" class="hash-link" aria-label="Direct link to The Road Ahead:" title="Direct link to The Road Ahead:">​</a></h3>
 <ul>
 <li><strong>Empowering Plugins:</strong> Our next major focus is facilitating community-built plugins. We've already created prototypes for <a href="https://github.com/spr-networks/spr-tailscale" target="_blank" rel="noopener noreferrer">Tailscale support</a> and <a href="https://github.com/spr-networks/spr-mitmproxy" target="_blank" rel="noopener noreferrer">mitmproxy</a>, and we're working on UI integration and streamlined installation to make plugin usage as seamless as possible without sacrificing security.</li>
-<li><strong>PI5 Router with WiFi-6:</strong> Our next hadware device will be a a PI5-based router packaged with wifi-6 support.</li>
+<li><strong>PI5 Router with WiFi-6:</strong> Our next hardware device will be a a PI5-based router packaged with wifi-6 support.</li>
 <li><strong>Eliminating firmware dependence</strong> We're also <a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces" target="_blank" rel="noopener noreferrer">developing software</a> to eliminate firmware attack surfaces with WiFi.</li>
 </ul>
 <p><strong>Join the Movement:</strong></p>
