@@ -47,6 +47,19 @@ info:
     - `configs/auth/auth_tokens.json` is a JSON file with a list of
     authentication tokens
 
+    - `configs/auth/otp_settings.json` is a JSON file with OTP user
+    configuration.
+
+
+    ### OTP Notes
+
+    - Certain privileged operations require a valid OTP JWT. The OTP code is
+    there to provide additional security hardening.
+
+    - A user can also require OTP codes for all operations.
+
+    - The default period is 1 hour for the JWT and can be customized
+
 
     <SecurityDefinitions />
 
@@ -132,9 +145,9 @@ tags:
   - name: tokens
     x-displayName: Tokens
     description: Api Tokens
-  - name: notifications
-    x-displayName: Notifications
-    description: Notifications
+  - name: alerts
+    x-displayName: Alerts
+    description: Alerts
   - name: psk_model
     x-displayName: PSK
     description: >
@@ -185,6 +198,9 @@ tags:
   - name: link
     x-displayName: Link
     description: Configure LAN interfaces
+  - name: otp
+    x-displayName: OTP
+    description: One Time Password Authentication
 x-tagGroups:
   - name: Web API
     tags:
@@ -201,7 +217,8 @@ x-tagGroups:
       - releases
       - plugins
       - tokens
-      - notifications
+      - alerts
+      - otp
       - plus
   - name: Default API Extensions
     tags:
@@ -224,6 +241,140 @@ x-tagGroups:
       - psk_model
       - plugin_model
 paths:
+  /otp_register:
+    put:
+      tags:
+        - otp
+      summary: Configure OTP User
+      description: >-
+        Updates an OTP user with the given details. If already registered, a
+        valid code is required
+      operationId: updateOtpUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPUserRequest'
+      responses:
+        '200':
+          description: User updated successfully
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >
+            curl -X PUT -H "Authorization: Bearer [token]" -H "X-JWT-Token:
+            [jwt-token]" \
+              -d '{"Name": "name", "Code": "1234567", "UpdateAlwaysOn": false, "AlwaysOn": false}' \
+              "http://192.168.2.1/otp_register"
+    delete:
+      tags:
+        - otp
+      summary: Delete OTP User
+      description: Deletes an OTP user. Valid code required
+      operationId: deleteOtpUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPUserRequest'
+      responses:
+        '200':
+          description: User deleted successfully
+      security:
+        - bearerAuth: []
+        - basicAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >
+            curl -X DELETE -H "Authorization: Bearer [token]" -H "X-JWT-Token:
+            [jwt-token]" \
+              -d '{"Name": "name", "Code": "1234567"}' \
+              "http://192.168.2.1/otp_register"
+  /otp_validate:
+    put:
+      tags:
+        - otp
+      summary: Generate an OTP JWT
+      description: >-
+        Validates the provided OTP user details and generates the X-JWT-OTP
+        token
+      operationId: validateOtpUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPUserRequest'
+      responses:
+        '200':
+          description: User validation successful
+          content:
+            application/json:
+              schema:
+                type: string
+      security:
+        - bearerAuth: []
+        - basicAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >
+            curl -X PUT -H "Authorization: Bearer [token]" -H "X-JWT-Token:
+            [jwt-token]" \
+              -d '{"Name": "name", "Code": "code"}' \
+              "http://192.168.2.1/otp_validate"
+  /otp_status:
+    get:
+      tags:
+        - otp
+      summary: Get OTP Status
+      description: Retrieves the status of the OTP service.
+      operationId: getOtpStatus
+      responses:
+        '200':
+          description: OTP status retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OTPStatus'
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >
+            curl -H "Authorization: Bearer [token]" -H "X-JWT-Token:
+            [jwt-token]" \
+              "http://192.168.2.1/otp_status"
+  /otp_jwt_test:
+    put:
+      tags:
+        - otp
+      summary: JWT OTP Test
+      description: Endpoint to test OTP JWT validity.
+      operationId: testJwt
+      responses:
+        '200':
+          description: JWT OTP test successful
+      security:
+        - bearerAuth: []
+          OTPAuth: []
+        - basicAuth: []
+          OTPAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >
+            curl -X PUT -H "Authorization: Bearer [token]" -H "X-JWT-Token:
+            [jwt-token]" \
+              "http://192.168.2.1/otp_jwt_test"
   /devices:
     get:
       tags:
@@ -248,6 +399,42 @@ paths:
             curl -u "admin:pass" \
               "http://192.168.2.1/devices"
   /device?identity={identity}:
+    get:
+      tags:
+        - device
+      summary: Get Device including PSK
+      description: >-
+        Get a Device specified by the MAC address in the identity parameter.
+        Requires OTP Code
+      operationId: getDevice
+      parameters:
+        - name: identity
+          in: path
+          description: MAC address
+          required: true
+          schema:
+            type: string
+            example: '11:22:33:44:55:61'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceEntry'
+        '404':
+          description: Device not found
+      security:
+        - basicAuth: []
+          OTPAuth: []
+        - bearerAuth: []
+          OTPAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE -H "X-JWT-OTP:..." \
+              "http://192.168.2.1/device?identity=11:22:33:44:55:66"
     put:
       tags:
         - device
@@ -2228,6 +2415,79 @@ paths:
             curl -u "admin:pass" -X DELETE  \
               "http://192.168.2.1/plugins/plugin-test" \
               --data '{}'
+  /plugin/custom_compose_paths:
+    get:
+      tags:
+        - plugins
+      summary: Get Custom Compose Paths
+      description: Retrieves the current set of custom compose paths.
+      operationId: getCustomComposePaths
+      responses:
+        '200':
+          description: List of custom compose paths
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      security:
+        - basicAuth: []
+          OTPAuth: []
+        - bearerAuth: []
+          OTPAuth: []
+    put:
+      tags:
+        - plugins
+      summary: Update Custom Docker Compose Paths for plugins
+      description: >-
+        Updates the permit list of docker compose files that can be launched
+        from disk
+      operationId: updateCustomComposePaths
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: Custom compose paths updated successfully
+      security:
+        - basicAuth: []
+          OTPAuth: []
+        - bearerAuth: []
+          OTPAuth: []
+  /plugin/install_user_url:
+    put:
+      tags:
+        - plugins
+      summary: Install from Git URL
+      description: Installs a plugin from the provided user URL on github.
+      operationId: installPluginFromUrl
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+              example: https://github.com/spr-networks/spr-sample-plugin.git
+      responses:
+        '200':
+          description: Plugin installation initiated successfully
+      security:
+        - basicAuth: []
+          OTPAuth: []
+        - bearerAuth: []
+          OTPAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -H "X-JWT-OTP: ..." -X PUT \
+              "http://192.168.2.1/plugin/install_user_url" --data "https://github.com/spr-networks/spr-sample-plugin.git"
   /plugins/dns/block/config:
     get:
       tags:
@@ -2765,12 +3025,14 @@ paths:
                   $ref: '#/components/schemas/Token'
       security:
         - basicAuth: []
+          OTPAuth: []
         - bearerAuth: []
+          OTPAuth: []
       x-codeSamples:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" \
+            curl -u "admin:pass" -H "X-JWT-OTP:..." \
               "http://192.168.2.1/tokens"
     put:
       tags:
@@ -2809,12 +3071,14 @@ paths:
                 - /docker/info
       security:
         - basicAuth: []
+          OTPAuth: []
         - bearerAuth: []
+          OTPAuth: []
       x-codeSamples:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" -X PUT \
+            curl -u "admin:pass" -H "X-JWT-OTP:..." -X PUT \
               "http://192.168.2.1/tokens" --data {"ScopedPaths": ["/status", "/docker/info"]}
     delete:
       tags:
@@ -3176,42 +3440,42 @@ paths:
           source: |
             curl -u "admin:pass" \
               "http://192.168.2.1/logs"
-  /notifications:
+  /alerts:
     get:
       tags:
-        - notifications
-      summary: Get Notifications
-      description: Get list of conditions for notifications
-      operationId: getNotifications
+        - alerts
+      summary: Retrieve all alerts
+      description: Returns a list of all alert settings.
+      operationId: getAlerts
       responses:
         '200':
-          description: successful operation
+          description: A list of alert settings
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Notification'
-      security:
-        - basicAuth: []
-        - bearerAuth: []
+                  $ref: '#/components/schemas/AlertSetting'
       x-codeSamples:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/notifications"
+            curl -X GET "http://192.168.2.1/alerts"
     put:
       tags:
-        - notifications
-      summary: Add Notification
-      description: At least one condition is required to identify the packet
-      operationId: addNotification
+        - alerts
+      summary: Add or Update Alerts
+      description: >
+        If an alert setting does not exist, it will be created, otherwise
+        updated
+      operationId: updateAlerts
       requestBody:
-        $ref: '#/components/requestBodies/Notification'
+        $ref: '#/components/requestBodies/AlertSetting'
       responses:
         '200':
-          description: successful operation
+          description: Successful operation
+        '400':
+          description: Invalid input
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3219,52 +3483,46 @@ paths:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" -X PUT \
-              "http://192.168.2.1/notifications" --data '{"Conditions": {"Prefix": "drop:input"}, "Notification": true}'
-  /notifications/{id}:
-    put:
-      tags:
-        - notifications
-      summary: Update Notification
-      description: At least one condition is required to identify the packet
-      operationId: updateNotification
-      parameters:
-        - name: id
-          in: path
-          description: Notication ID
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Notification'
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X PUT \
-              "http://192.168.2.1/notifications/1" < notification.json
+            curl -u "admin:pass" -X PUT  \
+              "http://192.168.2.1/alerts" \
+              --data '{"TopicPrefix": "security", "MatchAnyOne": false, "InvertRule": false, "Conditions": [{"JPath": "$.status"}], "Actions": [{"SendNotification": true}], "Name": "SecurityAlert", "Disabled": false, "RuleId": "rule123"}'
+  /alerts/{index}:
     delete:
       tags:
-        - notifications
-      summary: Delete Notification
-      description: Delete notification with numeric index specified by the id parameter
-      operationId: deleteNotification
+        - alerts
+      summary: Delete an alert by index
+      description: Deletes a specific alert setting by its index.
+      operationId: deleteAlertByIndex
       parameters:
-        - name: id
+        - name: index
           in: path
-          description: Notication ID
           required: true
           schema:
             type: integer
+            example: 1
       responses:
         '200':
-          description: successful operation
+          description: Alert deleted
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -X DELETE "http://192.168.2.1/alerts/{index}"
+    put:
+      tags:
+        - alerts
+      summary: Update Alert by Index
+      description: >
+        Update an alert setting at a specific index. If the alert setting does
+        not exist at this index, it will be created. Fields are optional.
+      operationId: updateAlertByIndex
+      requestBody:
+        $ref: '#/components/requestBodies/AlertSetting'
+      responses:
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid input
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3272,8 +3530,9 @@ paths:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" -X DELETE \
-              "http://192.168.2.1/notifications/1"
+            curl -u "admin:pass" -X PUT  \
+              "http://192.168.2.1/alerts/1" \
+              --data '{"TopicPrefix": "system", "MatchAnyOne": true, "InvertRule": true, "Conditions": [{"JPath": "$.error"}], "Actions": [{"StoreAlert": true}], "Name": "SystemFailureAlert", "Disabled": true, "RuleId": "rule456"}'
   /startPlusExtension:
     get:
       tags:
@@ -3736,6 +3995,80 @@ paths:
               "http://192.168.2.1/plugins/dyndns/refresh"
 components:
   schemas:
+    OTPUserRequest:
+      type: object
+      properties:
+        Name:
+          type: string
+        Code:
+          type: string
+        UpdateAlwaysOn:
+          type: boolean
+        AlwaysOn:
+          type: boolean
+    OTPStatus:
+      type: object
+      properties:
+        State:
+          type: string
+        AlwaysOn:
+          type: boolean
+    AlertSetting:
+      type: object
+      properties:
+        TopicPrefix:
+          type: string
+          required: true
+        MatchAnyOne:
+          type: boolean
+          required: false
+        InvertRule:
+          type: boolean
+          required: false
+        Conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConditionEntry'
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionConfig'
+        Name:
+          type: string
+        Disabled:
+          type: boolean
+        RuleId:
+          type: string
+    ConditionEntry:
+      type: object
+      properties:
+        JPath:
+          type: string
+    ActionConfig:
+      type: object
+      properties:
+        SendNotification:
+          type: boolean
+        StoreAlert:
+          type: boolean
+        StoreTopicSuffix:
+          type: string
+        MessageTitle:
+          type: string
+        MessageBody:
+          type: string
+        NotificationType:
+          type: string
+        ActionType:
+          type: string
+        GrabEvent:
+          type: boolean
+        GrabValues:
+          type: boolean
+        GrabFields:
+          type: array
+          items:
+            type: string
     GroupEntry:
       type: object
       properties:
@@ -4905,6 +5238,16 @@ components:
           type: boolean
           example: true
   requestBodies:
+    AlertSetting:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: My AlertSetting
+                title: AlertSetting
+              - $ref: '#/components/schemas/AlertSetting'
+      description: AlertSetting object that needs to be added
+      required: true
     DeviceEntry:
       content:
         application/json:
@@ -5149,6 +5492,13 @@ components:
         for more examples.
       type: http
       scheme: bearer
+    OTPAuth:
+      type: JWT
+      in: header
+      name: X-JWT-OTP
+      description: >-
+        A valid JWT proving the OTP was validated recently via the
+        `/otp_validate` endpoint
   examples:
     DeviceEntry:
       value:

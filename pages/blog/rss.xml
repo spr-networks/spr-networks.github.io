@@ -22,7 +22,7 @@
 <li><strong>PLUS Membership:</strong> Our community now has the option to support the project <a href="https://www.supernetworks.org/plus.html" target="_blank" rel="noopener noreferrer">with PLUS</a> and unlock advanced features like:<!-- -->
 <ul>
 <li>Mesh networking for seamless coverage with multiple APs</li>
-<li>Site VPN support for selectively routing traffic through a remote Wiregurd VPN</li>
+<li>Site VPN support for selectively routing traffic through a remote Wireguard VPN</li>
 <li>Advanced firewall rules with scheduling, domain name, and regular expression support</li>
 </ul>
 </li>
@@ -71,7 +71,7 @@
 <ul>
 <li><strong>Empowering Plugins:</strong> Our next major focus is facilitating community-built plugins. We've already created prototypes for <a href="https://github.com/spr-networks/spr-tailscale" target="_blank" rel="noopener noreferrer">Tailscale support</a> and <a href="https://github.com/spr-networks/spr-mitmproxy" target="_blank" rel="noopener noreferrer">mitmproxy</a>, and we're working on UI integration and streamlined installation to make plugin usage as seamless as possible without sacrificing security.</li>
 <li><strong>PI5 Router with WiFi-6:</strong> Our next hardware device will be a a PI5-based router packaged with wifi-6 support.</li>
-<li><strong>Eliminating firmware dependence</strong> We're also <a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces" target="_blank" rel="noopener noreferrer">developing software</a> to eliminate firmware attack surfaces with WiFi.</li>
+<li><strong>Eliminating firmware risk</strong> We're also <a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces" target="_blank" rel="noopener noreferrer">developing software</a> to eliminate firmware attack surfaces with WiFi.</li>
 </ul>
 <p><strong>Join the Movement:</strong></p>
 <p>We invite you to be part of the SPR journey! Contribute to development, share your feedback, and help us shape the future of open-source networking. Together, we can build a more secure, private, and customizable internet experience for everyone.</p>
