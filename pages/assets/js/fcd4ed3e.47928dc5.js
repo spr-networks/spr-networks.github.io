@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[5629],{95017:s=>{s.exports=JSON.parse('{"label":"spyware","permalink":"/pages/blog/tags/spyware","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
