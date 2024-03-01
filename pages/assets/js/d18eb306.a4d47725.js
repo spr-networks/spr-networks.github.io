@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[4829],{77477:s=>{s.exports=JSON.parse('{"label":"usgov","permalink":"/pages/blog/tags/usgov","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);

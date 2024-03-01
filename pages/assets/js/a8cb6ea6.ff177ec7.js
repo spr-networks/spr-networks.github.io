@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[5973],{70346:s=>{s.exports=JSON.parse('{"label":"safety","permalink":"/pages/blog/tags/safety","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
