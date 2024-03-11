@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[5732],{61650:s=>{s.exports=JSON.parse('{"label":"iwd","permalink":"/pages/blog/tags/iwd","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);

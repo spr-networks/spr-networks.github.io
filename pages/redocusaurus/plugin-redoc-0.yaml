@@ -109,6 +109,9 @@ tags:
   - name: group
     x-displayName: Groups
     description: Groups are used to manage device connectivity and firewall rules
+  - name: policy
+    x-displayName: Policies
+    description: Policies manage device connectivity and firewall rules
   - name: psk
     x-displayName: PSK
     description: Manage Device Passphrases
@@ -1455,6 +1458,7 @@ paths:
                         "Interface": "eth0",
                         "SrcIP": "192.168.1.100",
                         "RouteDst": "172.12.0.2",
+                        "Policies": ["api"],
                         "Groups": ["group1", "group2"],
                         "Tags": ["tag1", "tag2"]
                       }'
@@ -1487,6 +1491,7 @@ paths:
                         "Interface": "eth0",
                         "SrcIP": "192.168.1.100",
                         "RouteDst": "172.12.0.2",
+                        "Policies": ["api"],
                         "Groups": ["group1", "group2"],
                         "Tags": ["tag1", "tag2"]
                       }'
@@ -4119,14 +4124,23 @@ components:
         PSKEntry:
           description: PSK Entry
           $ref: '#/components/schemas/PSKEntry'
-        Groups:
-          description: Groups for Device
+        Policies:
+          description: Policies for Device
           type: array
           items:
             type: string
           example:
-            - lan
+            - wan
             - dns
+            - lan_upstream
+        Groups:
+          description: Interconnected Groups of Devices
+          type: array
+          items:
+            type: string
+          example:
+            - cameras
+            - tvs
         DeviceTags:
           description: Tags for Device
           type: array
@@ -4482,14 +4496,23 @@ components:
           type: string
           description: IP destination to route to, for example container host IP
           example: 172.12.0.2
-        Groups:
-          description: Groups for Interface
+        Policies:
+          description: Policies for Interface
           type: array
           items:
             type: string
           example:
-            - lan
+            - api
+            - wan
             - dns
+            - lan_upstream
+        Groups:
+          description: Groups to join Interfaces to Devices
+          type: array
+          items:
+            type: string
+          example:
+            - cameras
         Tags:
           description: Tags to apply. NOTE, no impact for now
           type: array
@@ -5510,10 +5533,14 @@ components:
         PskEntry:
           Type: sae
           Psk: '**'
-        Groups:
+        Policies:
           - wan
           - lan
           - dns
+          - lan_upstream
+        Groups:
+          - cameras
+          - lightbulbs
         DeviceTags:
           - private
     GroupEntry:
