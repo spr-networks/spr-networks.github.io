@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Supernetwork PLUS</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:url" content="https://www.supernetworks.org/" />
+    <meta property="og:title" content="Supernetwork Routers" />
+    <meta
+      property="og:description"
+      content="SPR PLUS provides advanced features such as Mesh and Site VPN support, and Avanced Firewall Rules with domain name and regular expression support. It allows member to support Supernetworks"
+    />
+    <meta
+      name="description"
+      content="SPR PLUS is a subscription serivce providing advanced feautres such as Mesh, Site VPN, and Advanced Firewall Rules with domain name and regular expression support. It allows member to support Supernetworks."
+    />
+    <meta
+      property="og:image"
+      content="https://www.supernetworks.org/assets/img/bgs/bg-dark.png"
+    />
+    <link href="/output.css" rel="stylesheet" />
+  </head>
+
+  <body onload="setup()" class="dark:bg-gray-900">
+    <nav
+      class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
+    >
+      <div
+        class="container flex flex-wrap justify-between items-center mx-auto"
+      >
+        <a href="/" class="flex items-center">
+          <!--img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /-->
+          <span
+            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+            >SPR</span
+          >
+        </a>
+
+        <button
+          data-collapse-toggle="mobile-menu"
+          type="button"
+          id="trigger-mobile-menu"
+          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            class="hidden w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+
+        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+          <ul
+            class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+          >
+            <li>
+              <a
+                href="/"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="plus.html"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-bold"
+                aria-current="page"
+                >PLUS</a
+              >
+            </li>
+            <li>
+              <a
+                href="features.html"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-bold"
+                aria-current="page"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Guide</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://demo.supernetworks.org/"
+                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Demo</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/docs/intro"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/docs/faq"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/blog"
+                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="relative pt-8 md:pt-24">
+      <!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
+      <div
+        class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
+      >
+        <h1
+          class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl"
+        >
+          Get SPR Plus
+        </h1>
+        <p
+          class="max-w-2xl mb-8 text-gray-700 dark:text-slate-300 sm:text-lg md:text-md"
+        >
+          <b>Super</b> is free for personal use, <b>Plus</b> offers extended
+          features &amp; lets you back the development of SPR
+        </p>
+
+        <!--div class="flex items-center gap-8">
+				<div class="flex items-center">
+				    <input id="radio-subscription-yearly" type="radio" value="yearly" name="default-radio" class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 radio-subscription">
+				    <label for="default-radio-2" class="ml-2 text-lg text-gray-900 dark:text-gray-300">Yearly <span class="text-sm text-green-600">Save 16%</span></label>
+				</div>
+
+
+				<div class="flex items-center">
+				    <input checked id="radio-subscription-monthly" type="radio" value="monthly" name="default-radio" class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 radio-subscription">
+				    <label for="default-radio-2" class="ml-2 text-lg text-gray-900 dark:text-gray-300">Monthly</label>
+				</div>
+			</div-->
+
+        <div style="clear: both"></div>
+
+        <div
+          class="w-4/6 md:w-4/6 lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-12 text-center text-slate-800 mt-12 divide-y-2 md:divide-y-0"
+        >
+          <div>
+            <h2 class="text-xl mb-2 dark:text-slate-200">Super</h2>
+            <h2 class="text-md text-slate-600 mb-2 dark:text-slate-400">
+              Free
+            </h2>
+
+            <a href="https://www.supernetworks.org/">
+              <button
+                type="button"
+                value="free"
+                class="btn-plan w-full text-white bg-violet-600 hover:bg-violet-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-4"
+              >
+                Use SPR
+              </button>
+            </a>
+            <h4 class="text-lg font-medium mt-2 mb-6 dark:text-slate-600">
+              For personal use
+            </h4>
+
+            <div class="flex flex-col items-center">
+              <ul class="text-left whitespace-nowrap dark:text-slate-400">
+                <li><span class="text-violet-200">✓</span> Access control</li>
+                <li><span class="text-violet-300">✓</span> Device groups</li>
+                <li>
+                  <span class="text-violet-400">✓</span> Multicast support
+                </li>
+                <li>
+                  <span class="text-violet-500">✓</span> Traffic statistics
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-xl mb-2 mt-12 md:mt-0 dark:text-slate-200">
+              Plus 🎉
+            </h2>
+            <h2
+              id="title-plus-per-month"
+              class="text-md text-slate-600 dark:text-slate-400 mb-2"
+            >
+              $8 per month
+            </h2>
+
+            <a href="#signup_section">
+              <button
+                type="button"
+                value="plus"
+                __class="btn-plan w-full text-white bg-purple-600 hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-4"
+                class="btn-plan w-full text-white bg-fuchsia-600 hover:bg-fuchsia-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-4"
+              >
+                Get SPR PLUS
+              </button>
+            </a>
+            <h4 class="text-lg font-medium mt-2 mb-6 dark:text-slate-600">
+              For premium features
+            </h4>
+
+            <div class="flex flex-col items-center">
+              <ul class="text-left whitespace-nowrap dark:text-slate-400">
+                <li>
+                  <span class="text-purple-200">✓</span> Programmable Firewall
+                  (PFW)
+                </li>
+                <li><span class="text-purple-300">✓</span> Mesh Support</li>
+                <li><span class="text-purple-400">✓</span> Site forwarding</li>
+                <li>
+                  <span class="text-purple-400">✓</span> Priority feature
+                  requests
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--div>
+					<h2 class="text-xl mb-2 mt-12 md:mt-0 dark:text-slate-200">Supporter 🎉</h2>
+					<h2 class="text-md text-slate-600 mb-2 dark:text-slate-400">$10 per month</h2>
+
+					<a href="https://www.supernetworks.org/pages/docs/intro">
+						<button type="button"
+							value="supporter"
+							class="btn-plan w-full text-white bg-fuchsia-600 hover:bg-fuchsia-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-4">
+							Support SPR
+						</button>
+					</a>
+					<h4 class="text-lg font-medium mt-2 mb-6 dark:text-slate-600">For PLUS &amp; supporting SPR</h4>
+
+					<ul class="text-left w-2/3 md:w-full mx-auto whitespace-nowrap dark:text-slate-400">
+						<li><span class="text-fuchsia-200">✓</span> Programmable Firewall (PFW)</li>
+						<li><span class="text-fuchsia-300">✓</span> Scheduled Firewall rules</li>
+						<li><span class="text-fuchsia-600">✓</span> Premium Support</li>
+					</ul>
+				</div-->
+        </div>
+      </div>
+    </header>
+
+    <!-- SPR Virtual / SPR Cloud -->
+
+    <div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center text-md">
+      <h2 class="text-3xl text-slate-800 dark:text-slate-200 mb-8">
+        Virtual Mode
+      </h2>
+      <p class="mb-16 text-gray-700 dark:text-slate-300 text-center">
+        Virtual Mode offers the same features as SPR without running a wireless
+        AP. This version does not require an extra WiFi adaptor and can run in
+        the cloud for a personal VPN, inside Docker or a Virtual Machine (VM) on
+        your local computer for testing.
+      </p>
+
+      <div class="table w-full gap-4 mb-16">
+        <div class="table-header-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-left text-stone-800 dark:text-stone-400 font-bold py-2 w-2/5"
+            >
+              Features
+            </div>
+            <div
+              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              SPR
+            </div>
+            <div
+              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              SPR Virtual Mode
+            </div>
+          </div>
+        </div>
+
+        <div class="table-row-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              WiFi
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              DNS
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              DHCP
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              VPN
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              API
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md">
+      <h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">
+        Compare plans &amp; features
+      </h2>
+
+      <div class="table w-full gap-4 mb-16">
+        <div class="table-header-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-left text-stone-800 dark:text-stone-400 font-bold py-2 w-2/5"
+            >
+              Basics
+            </div>
+            <div
+              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              SPR
+            </div>
+            <div
+              class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              PLUS
+            </div>
+            <!--div class="table-cell text-left text-stone-500 dark:text-stone-400 py-2 w-1/5">Supporter</div-->
+          </div>
+        </div>
+
+        <div class="table-row-group dark:text-stone-300">
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              Devices
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              Device Policies, Groups, and Tags
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              Tags
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              VPN Devices
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              API Tokens
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-sm"
+            >
+              Unlimited
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table w-full gap-4 mb-16">
+        <div class="table-header-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-lg text-left text-stone-800 dark:text-stone-400 font-bold py-2 w-2/5"
+            >
+              Features
+            </div>
+            <div
+              class="table-cell text-lg text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              Free
+            </div>
+            <div
+              class="table-cell text-lg text-left text-stone-500 dark:text-stone-400 py-2 w-1/5"
+            >
+              PLUS
+            </div>
+          </div>
+        </div>
+        <div class="table-row-group">
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              WPA2 & WPA3 Support
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              IEEE 802.11 ax (WiFi 6)
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              Per-device passphrases
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-virtual-mode"
+              >
+                Virtual Mode
+              </div>
+              <div
+                id="tooltip-virtual-mode"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90"
+              >
+                Run SPR without running a wireless AP in the cloud or on self
+                hosted hardware
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              API Access
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-adblock"
+              >
+                AdBlock
+              </div>
+              <div
+                id="tooltip-adblock"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90"
+              >
+                Import blocklists or create your own, enable blocking for
+                everyone or specific devices
+              </div>
+            </div>
+
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div class="tooltip-trigger" data-tooltip-target="tooltip-dns">
+                DNS over HTTPS
+              </div>
+              <div
+                id="tooltip-dns"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90"
+              >
+                SPR uses DNS over HTTPs by default for lookups
+              </div>
+            </div>
+
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div class="tooltip-trigger" data-tooltip-target="tooltip-vpn">
+                Wireguard VPN
+              </div>
+              <div
+                id="tooltip-vpn"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90 text-center"
+              >
+                Connect to your home network from the internet using WireGuard(©
+                Jason A. Donenfeld) <br />or setup a standalone version of SPR
+                in the cloud
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-firewall"
+              >
+                Firewall
+              </div>
+              <div
+                id="tooltip-firewall"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90"
+              >
+                Add custom netfilter rules to block, allow or forward traffic
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-vote-features"
+              >
+                Priority feature requests
+              </div>
+              <div
+                id="tooltip-vote-features"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90 text-center"
+              >
+                Help the Supernetworks Team decide what to build
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-plugin-mesh"
+              >
+                WiFi Mesh
+              </div>
+              <div
+                id="tooltip-plugin-mesh"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90 text-center"
+              >
+                Run a LAN with multiple SPR Access Points, with a wired backhaul
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-vpn-site"
+              >
+                Site-to-Site VPN
+              </div>
+              <div
+                id="tooltip-vpn-site"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90 text-center"
+              >
+                Connect to your home network from the internet using WireGuard(©
+                Jason A. Donenfeld) <br />or setup a standalone version of SPR
+                in the cloud
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div class="tooltip-trigger" data-tooltip-target="tooltip-pfw">
+                Programmable Firewall
+              </div>
+              <div
+                id="tooltip-pfw"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90 text-center"
+              >
+                Programmable Firewall (<strong>PFW</strong>) allows the user to
+                setup certain actions when a specific event occur, <br />
+                for example connecting to a server, or at a specific time during
+                the day.
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div class="tooltip-trigger" data-tooltip-target="tooltip-sched">
+                Scheduled Firewall Rules
+              </div>
+              <div
+                id="tooltip-sched"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90"
+              >
+                Block social media during the day, enable
+                <em>Focus mode</em> during working hours
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+          <!--div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              WebAuthn
+              <span class="bg-violet-400 p-1 rounded-lg text-white text-xs"
+                >beta</span
+              >
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div-->
+          <div class="table-row">
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2"
+            >
+              <div
+                class="tooltip-trigger"
+                data-tooltip-target="tooltip-notifications"
+              >
+                Custom Alerts
+              </div>
+              <div
+                id="tooltip-notifications"
+                role="tooltip"
+                class="inline-block invisible absolute z-10 py-2 px-3 text-sm font-medium text-white bg-stone-700 rounded-lg shadow-sm tooltip dark:bg-gray-700 opacity-90 text-center"
+              >
+                Get notifications in the apps when a event occur, for example if
+                a <br />
+                device tries to talk to a blocked service or a new connection is
+                made.<br />
+                User can decide to confirm traffic with <em>Allow</em> or
+                <em>Deny</em> for <br />
+                fine-grained traffic control of devices.
+              </div>
+            </div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            ></div>
+            <div
+              class="table-cell text-left border-b dark:border-slate-800 py-2 text-violet-500"
+            >
+              ✓
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup -->
+    <div
+      id="signup_section"
+      class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md"
+    >
+      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+      <stripe-pricing-table
+        pricing-table-id="prctbl_1Nq7DbExHB2JfQTK5NzhuCh8"
+        publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfcAmQVMWZ5USEOPtghDILSfaAFRJHwDfhzMa00sdqXzGZV"
+      >
+      </stripe-pricing-table>
+    </div>
+
+    <footer
+      class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 md:py-8"
+    >
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        >© 2023-2024
+        <a href="https://www.supernetworks.org" class="hover:underline"
+          >Supernetworks, Inc.</a
+        >
+        All Rights Reserved.
+      </span>
+      <ul
+        class="flex items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-4 md:space-x-8"
+      >
+        <li class="hidden md:block">
+          <a
+            href="https://www.supernetworks.org/pages/blog/first-blog-post"
+            class="hover:underline"
+            >About</a
+          >
+        </li>
+        <li class="hidden md:block">
+          <a
+            href="https://www.supernetworks.org/pages/docs/faq"
+            class="hover:underline"
+            >FAQ</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:underline flex justify-start"
+            href="https://github.com/spr-networks/super/"
+          >
+            <div
+              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/github.svg)] dark:invert dark:opacity-70"
+            ></div>
+            <div class="inline-flex align-self-center">github</div>
+          </a>
+        </li>
+        <li>
+          <a
+            class="hover:underline flex justify-start"
+            href="https://twitter.com/spr_networks"
+          >
+            <div
+              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/twitter.svg)] dark:invert dark:opacity-70"
+            ></div>
+            <div class="inline-flex align-self-center">spr_networks</div>
+          </a>
+        </li>
+        <li>
+          <a
+            class="hover:underline flex justify-start"
+            href="https://discord.gg/EUjTKJPPAX"
+          >
+            <div
+              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/discord.svg)] dark:invert dark:opacity-70"
+            ></div>
+            <div class="inline-flex align-self-center">Discord</div>
+          </a>
+        </li>
+      </ul>
+      <a style="display: none" rel="me" href="https://infosec.exchange/@alexrad"
+        >Mastodon</a
+      >
+    </footer>
+
+    <style>
+      .tooltip-trigger {
+        cursor: help;
+        /*
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-decoration-color: #ababab;
+			*/
+      }
+    </style>
+
+    <script>
+      form_submit = function (form, e) {
+        e.preventDefault()
+
+        let scriptURL =
+          'https://script.google.com/macros/s/AKfycbwcHvyt0AY3ny2ThNXycGnGiYktcWVcRg5DbQbp-v8meHNdvQqBgcx6Rs7TXhgysTYWJw/exec'
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            const submitMessage = document.getElementById('submit_message')
+            submitMessage.innerHTML = '<h2>Form Submitted!</h2>'
+            submitMessage.innerHTML += '<br/><p>Thank you</p>'
+          })
+          .catch((error) => console.error('Error!', error.message))
+      }
+
+      function setup() {
+        const messageForm = document.getElementById('signup_form')
+
+        messageForm.addEventListener('submit', function (event) {
+          event.preventDefault()
+          const email = this.elements.Email
+          const name = this.elements.Name
+          if (
+            email.value &&
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value) &&
+            name.value &&
+            name.value.trim() !== ''
+          ) {
+            form_submit(this, event)
+          }
+        })
+      }
+      // plan redir
+      /*
+      document.querySelectorAll('.btn-plan').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault()
+          let plan = el.getAttribute('value')
+          if (plan == 'free') {
+            //location.href = 'https://www.supernetworks.org/pages/docs/setup_guides/pi4b'
+          }
+
+          let isYearly = false /*document.getElementById(
+            'radio-subscription-yearly'
+          ).checked
+          console.log('TODO', 'plan:', plan, 'yearly:', isYearly)
+
+          // redir to payment form
+          //if (plan == 'plus') {} else if (plan == 'supporter') {}
+        })
+      })
+      */
+
+      function toggleTooltip() {
+        let elId = this.getAttribute('data-tooltip-target')
+        document.getElementById(elId).classList.toggle('invisible')
+      }
+
+      document.querySelectorAll('.tooltip-trigger').forEach((el) => {
+        el.addEventListener('mouseover', toggleTooltip)
+        el.addEventListener('mouseout', toggleTooltip)
+      })
+
+      document.querySelectorAll('.radio-subscription').forEach((el) => {
+        el.addEventListener('click', function () {
+          let value = this.getAttribute('value') // monthly || yearly
+
+          let elTitle = document.getElementById('title-plus-per-month')
+          let price = value == 'monthly' ? '$8' : '$6'
+          elTitle.innerText = `${price} per month`
+        })
+      })
+
+      let el = document.getElementById('trigger-mobile-menu')
+      el.addEventListener('click', function () {
+        let menu = document.getElementById('mobile-menu')
+        menu.classList.toggle('hidden')
+      })
+    </script>
+  </body>
+</html>
