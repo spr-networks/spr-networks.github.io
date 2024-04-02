@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[5443],{27894:s=>{s.exports=JSON.parse('{"label":"tailscale","permalink":"/pages/blog/tags/tailscale","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
