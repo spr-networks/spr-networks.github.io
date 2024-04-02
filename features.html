@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Supernetwork Routers</title>
+    <title>Supernetworks SPR Features Page</title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -9,14 +9,8 @@
     />
     <meta property="og:url" content="https://www.supernetworks.org/" />
     <meta property="og:title" content="Supernetwork Routers" />
-    <meta
-      property="og:description"
-      content="Create adaptive, micro-segmented networks for connecting and managing devices."
-    />
-    <meta
-      name="description"
-      content="Supernetworks provides comprehensive home network security, featuring advanced tools such as Ad Block and Wireguard VPN, alongside efficient Network Monitoring. SPR offers innovative micro-segmentation with Zero Trust Network Access, ensuring each device has its unique passphrase for enhanced security. Ideal for safeguarding WiFi and IoT devices, our solution offers real-time network insights. Built on open-source technology, it's compatible with Linux and Docker environments. It can also run as a Cloud-native Wireguard VPN Ad Blocker. Create adaptive, micro-segmented networks for connecting and managing devices."
-    />
+    <meta property="og:description" content="SPR Features" />
+    <meta name="description" content="SPR Features" />
     <meta
       property="og:image"
       content="https://www.supernetworks.org/assets/img/bgs/bg-dark.png"
@@ -24,17 +18,17 @@
     <link href="/output.css" rel="stylesheet" />
   </head>
 
-  <body class="dark:bg-gray-900">
+  <body onload="setup()" class="dark:bg-gray-900">
     <nav
-      class="md:flex bg-slate-800 border-gray-200 px-2 sm:px-4 py-4 dark:bg-gray-800"
+      class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
     >
       <div
         class="container flex flex-wrap justify-between items-center mx-auto"
       >
-        <a href="#" class="flex items-center">
+        <a href="/" class="flex items-center">
           <!--img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /-->
           <span
-            class="self-center text-xl font-semibold whitespace-nowrap text-white"
+            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
             >SPR</span
           >
         </a>
@@ -43,7 +37,7 @@
           data-collapse-toggle="mobile-menu"
           type="button"
           id="trigger-mobile-menu"
-          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -80,58 +74,60 @@
           >
             <li>
               <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-white bg-slate-700 rounded md:bg-transparent md:text-gray-200 md:p-0 dark:text-white"
+                href="/"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 aria-current="page"
                 >Home</a
               >
             </li>
             <li>
               <a
-                href="https://www.supernetworks.org/plus.html"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                href="plus.html"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-bold"
+                aria-current="page"
                 >PLUS</a
               >
             </li>
             <li>
               <a
                 href="features.html"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-bold"
+                aria-current="page"
                 >Features</a
               >
             </li>
             <li>
               <a
                 href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >Guide</a
               >
             </li>
             <li>
               <a
                 href="http://demo.supernetworks.org/"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Demo</a
               >
             </li>
             <li>
               <a
                 href="https://www.supernetworks.org/pages/docs/intro"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >Documentation</a
               >
             </li>
             <li>
               <a
                 href="https://www.supernetworks.org/pages/docs/faq"
-                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-slate-900 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >FAQ</a
               >
             </li>
             <li>
               <a
                 href="https://www.supernetworks.org/pages/blog"
-                class="block py-2 pr-4 pl-3 text-gray-400 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Blog</a
               >
             </li>
@@ -140,689 +136,916 @@
       </div>
     </nav>
 
-    <header
-    __class="relative"
-    _class="relative bg-cover bg-center bg-slate-900 bg-slate-500 bg-[url(/assets/img/bgs/bg-dark.png)] bg-blend-multiply"
-    class="relative bg-neutral-50"
-
-    >
+    <header class="relative pt-8 md:pt-24">
+      <!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
       <div
-        __class="pt-8 md:py-48 flex flex-col text-neutral-50 antialiased bg-cover bg-center bg-slate-900 bg-slate-500 bg-[url(/assets/img/bgs/bg-dark.png)] bg-blend-multiply"
-        _class="pt-8 md:py-32 flex flex-col text-neutral-50 antialiased bg-cover bg-center bg-slate-900"
-        class="pt-8 md:py-32 md:pb-64 flex flex-col text-neutral-900 antialiased bg-slate-950"
+        class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
       >
-        <div
-          class="px-4 md:px-0 md:w-10/12 md:mx-auto flex flex-col items-center justify-center gap-y-4"
+        <h1
+          class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl"
         >
-          <div class="flex flex-col md:flex-row items-center text-neutral-50">
-            <div class="md:w-3/4 flex flex-col space-y-8">
-              <h2
-                class="text-4xl font-bold"
-              >
-                Secure Programmable Routers
-            </h2>
-              <p
-                class="text-lg"
-                _style="text-shadow: 1px 1px 2px black"
-              >
-
-              Open Source, secure, user friendly and fast wifi routers for your home
-              <br/>
-              <br/>
-              Do you think there is a security expert who believes:
-              <ul class="flex flex-col space-y-2">
-              <li>a. Everyone should share a password for network access</li>
-              <li>b. All devices on a network (with a shared password!) should be allowed to talk to each other</li>
-              <li>c. Anyone can safely browse to any site on the internet</li>
-              </ul>
-
-              <br/>
-              <span class="font-bold"> Same here. </span> <br/>  That’s why, out of the box, SPR ensures:
-              <ul class="flex flex-col space-y-2">
-              <li> &#x27A4; Everyone gets their own password (Never worry about your wifi password again)</li>
-              <li> &#x27A4; Devices can’t just talk to each other  (Does your doorbell really need to talk to your printer?)</li>
-              <li> &#x27A4; Per-Device DNS Rules & Ad Block Lists (Keep your family safe)</li>
-              </ul>
-
-
-              <div class="flex flex-col gap-6">
-              <div class="flex flex-col md:flex-row gap-4" role="group">
-                <!--a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr">
-                  <button
-                    type="button"
-                    class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2"
-                  >
-                   Setup Guide
-                  </button>
-                </a-->
-
-                <a href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz">
-                  <button
-                    type="button"
-                    class="text-slate-50 bg-green-700 hover:text-white hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2"
-                  >
-                    Download SPR PI Image
-                  </button>
-                </a>
-
-                <a href="/devkit.html">
-                  <button
-                    type="button"
-                    class="text-slate-50 bg-violet-600 hover:text-white hover:bg-violet-800 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2"
-                  >
-                    Buy Dev Kit
-                  </button>
-                </a>
-              </div>
-
-              <!--div class="flex flex-col md:flex-row gap-4" role="group">
-
-                <a href="https://apps.apple.com/us/app/secure-programmable-router/id6443709201">
-                  <img src="/assets/img/appdownload.png" width="120">
-                </a>
-
-                <a href="/plus.html">
-                  <button
-                    type="button"
-                    class="text-slate-50 border-violet-600 border hover:text-white hover:bg-violet-600 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2 mb-2"
-                  >
-                    Support SPR with PLUS
-                  </button>
-                </a>
-
-                <a href="https://www.supernetworks.org/pages/docs/intro">
-                  <button
-                    type="button"
-                    class="text-violet-50 focus:ring-4 focus:ring-blue-300 font-medium md:rounded px-5 py-2 mb-4"
-                  >
-                    Read the docs
-                  </button>
-                </a>
-
-              </div-->
-            </div>
-            </div>
-            <div class="hidden md:block md:w-1/4 flex justify-center">
-              <!--img
-                src="/assets/img/logo-transparent.png"
-                alt=""
-                width="220"
-                class="block opacity-80 hover:opacity-100 my-8"
-              /-->
-
-              <div
-              class="w-[320px] h-[320px] rounded-full bg-slate-900 flex justify-center drop-shadow-md"
-            >
-
-              <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="text-slate-400 opacity-60 w-56"
-
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
-              />
-            </svg>
-          </div>
-
-            </div>
-          </div>
-        </div>
+          SPR Features
+        </h1>
+        <p
+          class="max-w-4xl mb-6 text-gray-700 dark:text-slate-300 sm:text-lg md:text-md md:mb-10 sm:mb-8"
+        >
+          The world's best security and networking capabilities for the home. <br/>
+          Now open source, in your hands, and easy to configure.
+        </p>
       </div>
-
-    <div
-    class="-mt-32 z-index-1000 mx-auto max-h-[720px] __overflow-y-hidden max-w-full md:max-w-5xl bg-neutral-200 dark:bg-gray-800 md:bg-transparent"
-  >
-    <div
-      class="border-neutral-800 border bg-gray-950 dark:bg-black py-3 px-3 md:px-5 md:py-5 rounded-t-3xl rounded-b-3xl cursor-pointer"
-      onclick="location.href='https://demo.supernetworks.org/'"
-    >
-      <div class="overflow-hidden md:py-0 rounded-t-2xl rounded-b-2xl">
-        <!--img class="w-full max-w-[1024px]" src="/assets/img/screenshot-light.png" /-->
-        <div
-          class="w-full max-w-[1024px] min-h-[240px] md:h-[660px] bg-no-repeat bg-contain bg-[url(/assets/img/screenshot-home-light.png)] dark:bg-[url(/assets/img/screenshot-dark.png)]"
-        ></div>
-      </div>
-
-      <a class="block -mt-9 text-center text-xs text-gray-300 hover:text-slate-100" href="https://demo.supernetworks.org/" target="_blank">Try the UI demo &rarr;</a>
-
-    </div>
-
-    <div class="-mt-32 h-24"></div>
-
-  </div>
-
-
-
-
-
-
     </header>
 
     <div
-      class="p-8 md:px-0 md:py-12 md:pt-20 flex flex-col space-y-16 bg-neutral-100 text-neutral-900 antialiased dark:bg-slate-800 dark:text-slate-50"
+      class="md:mx-auto p-4 md:px-0 md:pb-16 flex flex-col items-center space-x-4 space-y-8 text-center"
     >
-      <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-4">
-        <div class="md:w-1/3 flex items-center">
-          <!--img class="mx-auto mb-4 w-64 dark:invert rounded-full" src="/assets/img/office.png" /-->
-          <!--img class="mx-auto mb-4 w-48 opacity-90 dark:invert" src="/assets/img/chip.svg" /-->
-          <div
-            class="max-auto mb-4 w-64 bg-center h-[300px] w-[300px] bg-no-repeat bg-[url(/assets/img/office.png)] rounded-full"
-          ></div>
-        </div>
-        <div class="md:w-2/3 flex flex-col gap-y-8">
-          <h4 class="text-2xl font-mono font-bold">
-            Secure from the moment you turn on SPR
-          </h4>
-          <p>
-            Keeping other devices secure means ensuring we don’t become a way into your network.  That’s why we’ve built it on top of golang, a memory safe language that isn’t subject to many of the vulnerabilities that continuously plagues many wifi routers which are almost exclusively written in C, PHP, or Perl.
-          </p>
-          <p>
-            SPR is self-hosted and   <a
-                class="underline"
-                href="https://github.com/spr-networks/super"
-                target="_blank"
-                rel="noreferrer"
-                >open source.</a>.
-            Your data is not stored on our servers, we do
-            not collect telemetry data, error reports, or any other data that
-            could expose your information to us or anyone else. With SPR, your
-            router is truly your router.
-          </p>
-          <p>
-            We believe in transparency and empowering users to develop on their own network.
-            The code is easy to build with containers and can even be built on-device.
-            Users can also extend SPR with plugins.
-          </p>
-        </div>
+
+    <!-- TABLE HERE -->
+
+    <div class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md">
+      <!--h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">
+        SPR Features
+      </h2-->
+
+      
+<div class="table w-full">
+  <div class="table-header-group">
+    <div class="table-row">
+      <div class="table-cell text-lg text-left text-stone-800 dark:text-stone-400 font-bold py-2 px-4 w-2/5">
+        Features
+      </div>
+      <div class="table-cell text-lg text-center text-stone-500 dark:text-stone-400 py-2 px-4 w-1/5">
+        SPR
+      </div>
+      <div class="table-cell text-lg text-center text-stone-500 dark:text-stone-400 py-2 px-4 w-1/5">
+        Typical Home Router
+      </div>
+      <div class="table-cell text-lg text-center text-stone-500 dark:text-stone-400 py-2 px-4 w-1/5">
+        Official OpenWRT
+      </div>
+      <div class="table-cell text-lg text-center text-stone-500 dark:text-stone-400 py-2 px-4 w-1/5">
+        Bridged Firewall (e.g. PFSense)
+      </div>
+    </div>
+  </div>
+  <div class="table-row-group">
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4">WiFi</h4>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Unlimited Per Device WiFi Passwords
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
       </div>
     </div>
 
-    <div class="bg-slate-800 py-8">
-      <h4 class="text-center text-xl text-slate-100 flex items-center space-x-8 justify-center">
-
-
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="text-white opacity-80 w-8"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
-        />
-      </svg>
-
-        <a href="https://sendfox.com/supernetworks">
-          Sign Up for the Community Newsletter
-        </a>
-
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="text-white opacity-80 w-8"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
-        />
-      </svg>
-      </h4>
-    </div>
-
-
-    <div
-      class="p-8 md:px-0 md:py-12 flex flex-col space-y-16 bg-white text-neutral-900 antialiased dark:bg-slate-900 dark:text-slate-50"
-    >
-      <div class="md:w-5/6 md:mx-auto flex flex-row gap-x-4">
-        <div class="md:w-2/3 flex flex-col gap-y-8 pb-8">
-          <h4 class="text-2xl font-mono font-bold">
-            A Secure Network shouldn't be rocket science
-          </h4>
-          <p>
-            SPR comes with a beautiful and intuitive graphic user interface that
-            allows you to monitor your network and deploy powerful
-            <em>finely tailored</em> security features with ease.
-          </p>
-          <p>
-            DNS ad blocking, VPN support, firewall rules, device isolation, and
-            many other security features can be deployed with just a few clicks.
-          </p>
-          <p>
-            With policy rules you can manage your network with intuitive groups rather than IP and MAC address tables.
-            SPR supports advanced capabilities like policy based routing and site VPNs to network together all your devices.
-          </p>
-        </div>
-
-        <!--
-        class="w-full mx-auto min-h-[270px] md:w-[540px] md:h-[350px] bg-no-repeat bg-contain bg-[url(/assets/img/api-preview.png)] dark:bg-[url(/assets/img/api-preview-dark.png)]"
-        -->
-        <div
-          class="md:w-1/3 flex items-center justify-center bg-no-repeat bg-cover bg-[url(/assets/img/logo.png)]"
-        >
-          <!--svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="text-blue-900 opacity-30 mt-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
-            />
-          </svg-->
-        </div>
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Full WPA3 Support for Per-Device Passwords
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
       </div>
     </div>
 
-    <hr />
-
-    <!--div
-    class="p-8 md:px-0 md:py-12 flex flex-col space-y-16 bg-white text-neutral-900 antialiased"
-  >
-    <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-4">
-      <div class="md:w-1/3 flex items-center">
-        <img src="/assets/img/router.jpg" width="400" alt="" />
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        WiFi to WiFi Relay to Existing Network
       </div>
-      <div class="md:w-2/3 flex flex-col gap-y-8 justify-center">
-        <h4 class="text-2xl font-mono font-bold">LINUX</h4>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        WiFi 6 & 6-E
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Mesh with Wired Backhaul
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-fuchsia-600 w-1/5">
+        ✓*
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Mesh With Wireless 802.11s
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4"></h4>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4">Privacy</h4>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Block IOT Devices from Snooping
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Data, Metadata Stays Local
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        DNS Over HTTPS Privacy
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        DNS Privacy Blocklists
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Self Hosted VPN
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Policy Based Routing for Outbound Site VPN
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-fuchsia-600 w-1/5">
+        ✓*
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        WireGuard™
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        IPSec
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4"></h4>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4">DNS</h4>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Blocklist Scheduling
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-fuchsia-600 w-1/5">
+        ✓*
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        DNS Rebinding Protection
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        DNAT Rewriting of Hardcoded DNS Queries
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Customizable, Per-Device DNS Overrides & Blocks
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Policy Driven Blocklists By Device Tag
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Ad Blocking
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Dynamic DNS
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4"></h4>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4">Firewall</h4>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Extensive IP/MAC Spoofing Protection 
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Immune to MACStealer Attacks
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Default Device Isolation. One VLAN, Subnet Per Device
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Connectivity by Policy, Groups, and Tags
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Manual Effort for Strict Firewall Policy: IP, Subnet, VLAN Configuration
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Container Firewall
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Secure Router Chaining
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Scheduled Firewall Rules
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-fuchsia-600 w-1/5">
+        ✓*
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Inbound Firewall
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Outbound Firewall
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Forwarding Firewall
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        DNAT Rewriting
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Multi-WAN/Uplink Load Balancing
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        802.1Q Wired VLANs
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4"></h4>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4">Developer Friendly</h4>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Open Source
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        REST Open API
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Plugin System
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Third Party Container Support
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4"></h4>
+
+    <h4 class="text-md font-bold text-stone-800 dark:text-stone-400 py-4 px-4">Observability</h4>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Exportable Event System
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Custom Alerts & Notifications
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Detailed Traffic Logs & Statistics
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        DNS Logs
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        No Arbitrary Data Limits
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="table-cell text-left border-b dark:border-slate-800 dark:text-stone-400 py-2 px-4 w-2/5">
+        Apple Push Notifications
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        ✓
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+      <div class="table-cell text-center border-b dark:border-slate-800 px-4 py-2 text-violet-400 w-1/5">
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+      <div class="text-left text-sm my-16 flex flex-row space-x-4">
         <p>
-          TBD
+          <span
+            class="text-violet-400"
+          >
+            ✓
+          </span>
+          SPR Free
         </p>
+
+        <p>
+          <span
+            class="text-fuchsia-600"
+          >
+            ✓*
+          </span>
+          SPR PLUS
+        </p>
+
       </div>
+      <!--p class="text-left text-neutral-500 text-sm italic">Note: Random router is a random competitor</p-->
     </div>
-  </div-->
-
-  <hr />
-
-
-    <div
-      class="p-8 md:px-0 md:py-12 flex flex-col space-y-16 bg-slate-950 text-neutral-50 antialiased"
-    >
-      <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-4">
-        <div class="md:w-1/3 flex items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-48 h-48 text-yellow-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-            />
-          </svg>
-        </div>
-        <div class="md:w-2/3 flex flex-col gap-y-8 justify-center">
-          <h4 class="text-2xl font-mono font-bold">
-            Don’t compromise on performance
-          </h4>
-          <p>
-            SPR is built for speed and can be deployed on even the most advanced
-            networking hardware on the market today, including hardware that
-            supports Wi-Fi 6.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="p-8 md:px-0 md:py-16 flex flex-col space-y-16 bg-slate-900 text-neutral-50 antialiased"
-    >
-      <div class="md:w-5/6 md:mx-auto flex flex-col md:flex-row gap-x-8">
-        <div class="md:w-5/12 flex flex-col gap-y-8 justify-center">
-          <h4 class="text-2xl font-mono font-bold">
-            Customizable and programmable
-          </h4>
-          <p>
-            Go beyond the GUI. All functions and features of SPR are accessible
-            via an
-            <a
-              href="https://www.supernetworks.org/pages/api/0#section/API-Extensions"
-               class="underline"
-              >API</a
-            >, allowing power users to not only programmatically define how the
-            network connects, but pull detailed information about devices on
-            your network.
-          </p>
-          <p>
-            Open source and easy to develop for — <em>securely</em>. SPR uses
-            containerized services to allow for rapid development, simple
-            deployment of new features, and hot swapping of core network
-            services, such as DNS and DHCP.
-          </p>
-          <p>
-            Tools for hackers, penetration testers, and other explorers. SPR
-            makes controlling and monitoring data flows on your network easier —
-            making research into the functionality of devices and software on
-            your network less cumbersome.
-          </p>
-          <div class="flex flex-row space-x-4 text-sm">
-            <a href="https://github.com/spr-networks/curated-super-plugins" target="_blank" class="underline">Available Plugins</a>
-            <a href="https://www.supernetworks.org/pages/docs/guides/development/extension-dev" target="_blank" class="underline">Plugin development guide</a>
-            <a href="https://www.supernetworks.org/pages/docs/services/sprbus" target="_blank" class="underline">SPRbus</a>
-          </div>
-
-        </div>
-        <div class="md:w-7/12 mt-4 md:mt-0 flex items-center">
-          <div
-          class="border-neutral-900 border bg-gray-950 dark:bg-black py-3 px-3 md:p-4 rounded-t-3xl rounded-b-3xl cursor-pointer drop-shadow-md"
-          onclick="location.href='https://demo.supernetworks.org/'"
-        >
-          <div class="overflow-hidden md:py-0 rounded-t-2xl rounded-b-2xl">
-          <img src="assets/img/sprbus-cli.gif" />
-          </div></div>
-          <!--img src="/assets/img/api-preview.png" width="100%" alt="" /-->
-        </div>
-      </div>
-    </div>
-
-    <!--a class="bg-slate-900 text-slate-300 block border-b border-slate-900 px-2 py-2.5 text-center antialiased hover:underline" target="_blank" href="https://github.com/spr-networks/super/">
-		If you like SPR, give it a ⭐️ on GitHub! &rarr;
-	</a-->
-
-    <!-- bg-neutral-800 -->
-    <section
-      class="bg-[#110133] text-gray-100 p-8 md:px-24 md:pb-24 text-center"
-    >
-      <img src="/assets/img/bgs/wifi.png" class="mx-auto max-w-[280px]" />
-      <h3 class="mb-4 text-3xl font-medium tracking-tight text-slate-100 mt-8">
-        WiFi Router + DNS + VPN Server
-      </h3>
-      <!--p class="text-slate-500">With this software, hobbyists and
-		developers alike can innovate, build, and deploy flexible networks
-		with best of class network security.</p-->
-      <p class="text-slate-100 md:px-32">
-        SPR is built to run as a WiFi router managing the host network, but it
-        can also run in a network namespace as a virtualized standalone VPN
-        &amp; DNS Service, locally or <a target="_blank" class="underline" href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr">in the cloud</a>.
-      </p>
-      <ul
-        class="flex flex-wrap items-center justify-center mt-2 font-medium text-neutral-100"
-      >
-        <li class="flex items-center md:px-4 py-3">
-          <img
-            class="mr-1"
-            style="width: 32px; height: 20px; filter: invert(0.9)"
-            src="/assets/img/ubuntu.svg"
-          />
-          Ubuntu
-        </li>
-        <li class="flex items-center md:px-4 py-3">
-          <img
-            class="mr-1"
-            style="width: 32px; height: 20px; filter: invert(0.9)"
-            src="/assets/img/docker.svg"
-          />
-          Docker
-        </li>
-        <li class="flex items-center md:px-4 py-3">
-          <img
-            class="mr-1"
-            style="width: 32px; height: 20px; filter: invert(0.9)"
-            src="/assets/img/wireguard.svg"
-          />
-          Wireguard
-        </li>
-      </ul>
-    </section>
-
-    <section
-      class="bg-gray-900 md:p-8 md:py-16"
-      style="background-size: 100% auto; background-position: center 0"
-    >
-      <div class="grid md:grid-cols-3 md:gap-4 md:p-4">
-        <div
-          class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr'"
-        >
-          <img
-            class="mx-auto mb-4 w-8 invert"
-            src="/assets/img/raspberrypi.svg"
-          />
-          <a
-            class="text-xl text-bold"
-            href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
-            >Raspberry Pi Setup Guide</a
-          >
-          <p>Get running on a Raspberry Pi 4 with Ubuntu for ARM64</p>
-        </div>
-
-        <div
-          class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://www.supernetworks.org/pages/blog'"
-        >
-          <img
-            class="mx-auto mb-4 w-8 invert"
-            src="/assets/img/rss_feed_FILL0_wght400_GRAD0_opsz48.svg"
-          />
-          <a
-            class="text-xl text-bold"
-            href="https://www.supernetworks.org/pages/blog"
-            >The Blog</a
-          >
-          <p>Articles about linux networking, wifi, and security</p>
-        </div>
-
-        <div
-          class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://github.com/spr-networks/'"
-        >
-          <img class="mx-auto mb-4 w-8 invert" src="/assets/img/github.svg" />
-          <a class="text-xl text-bold" href="https://github.com/spr-networks/"
-            >Github</a
-          >
-          <p>View the projects, get the code, file issues</p>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 md:gap-4 md:p-4">
-        <div
-          class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://www.supernetworks.org/pages/docs/intro'"
-        >
-          <img
-            class="mx-auto mb-4 w-8 invert"
-            src="/assets/img/description_FILL0_wght400_GRAD0_opsz48.svg"
-          />
-          <a
-            class="text-xl text-bold"
-            href="https://www.supernetworks.org/pages/docs/intro"
-            >Documentation</a
-          >
-          <p>Learn more about SPR and view the API Documenation</p>
-        </div>
-
-        <div
-          class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://discord.gg/EUjTKJPPAX'"
-        >
-          <img class="mx-auto mb-4 w-8 invert" src="/assets/img/discord.svg" />
-          <a class="text-xl text-bold" href="https://discord.gg/EUjTKJPPAX"
-            >Join the Discord Chat</a
-          >
-          <p>Chat with the SPR community, get help setting up, ask questions</p>
-        </div>
-
-        <div
-          class="bg-neutral-800/60 hover:bg-neutral-800/70 md:rounded-lg p-8 text-center text-slate-100 cursor-pointer"
-          onClick="location.href='https://www.supernetworks.org/pages/docs/security'"
-        >
-          <img
-            class="mx-auto mb-4 w-8 invert"
-            src="/assets/img/security_FILL0_wght400_GRAD0_opsz48.svg"
-          />
-          <a
-            class="text-xl text-bold"
-            href="https://www.supernetworks.org/pages/docs/security"
-            >Security Overview</a
-          >
-          <p>
-            Threat modeling, security practices, and security contact
-            information
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!--div
-      class="bg-white dark:bg-gray-900 p-4 flex flex-col space-y-8 divide-y dark:divide-slate-700"
-    >
-      <div class="md:p-8 md:flex items-center space-x-4 space-y-4 mx-4">
-        <div class="px-8">
-          <img
-            class="w-[128px] opacity-80 mx-auto dark:invert"
-            src="/assets/img/wifi_FILL0_wght400_GRAD0_opsz48.svg"
-          />
-        </div>
-        <div class="flex flex-col space-y-2">
-          <h3 class="text-2xl dark:text-slate-300">
-            Hardened 802.11 Authentication and Access Control
-          </h3>
-          <p class="text-slate-500">
-            Give each device a unique WPA2/3 password, to create trusted device
-            identities without certificate enrollment. This zero-install
-            solution works for anything from a smart toaster-oven to a next-gen
-            laptop. Place devices into predefined or custom network groups to
-            set their internet access, approved network peers and allowed
-            protocols.
-          </p>
-        </div>
-      </div>
-
-      <div class="py-4 md:p-8 md:flex items-center space-x-4 space-y-4 mx-4">
-        <div class="px-8">
-          <img
-            class="w-[128px] opacity-80 mx-auto dark:invert"
-            src="/assets/img/github.svg"
-          />
-        </div>
-
-        <div class="flex flex-col space-y-2">
-          <h3 class="text-2xl dark:text-slate-300">Open Source First</h3>
-          <p class="text-slate-500">
-            SPR is open source and homelab ready. It uses containerized services
-            to allow for rapid development, simple deployment of new features,
-            and hot swapping of core network services, such as DNS and DHCP.
-          </p>
-          <a
-            class="text-slate-600 mt-3 hover:underline"
-            href="https://github.com/spr-networks/super/"
-            >Check out the code &rarr;</a
-          >
-        </div>
-      </div>
-    </div-->
-
-    <footer
-      class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 md:py-8"
-    >
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-        >© 2024
-        <a href="https://www.supernetworks.org" class="hover:underline"
-          >Supernetworks, Inc.</a
-        >
-        All Rights Reserved.
-      </span>
-      <ul
-        class="flex items-center mt-3 text-xs md:text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-4 md:space-x-8"
-      >
-        <li class="hidden md:block">
-          <a
-            href="https://www.supernetworks.org/pages/blog/first-blog-post"
-            class="hover:underline"
-            >About</a
-          >
-        </li>
-        <li class="hidden md:block">
-          <a
-            href="https://www.supernetworks.org/privacy-policy.html"
-            class="hover:underline"
-            >Privacy Policy</a
-          >
-        </li>
-        <li class="hidden md:block">
-          <a
-            href="https://www.supernetworks.org/terms-of-service.html"
-            class="hover:underline"
-            >Terms of Service</a
-          >
-        </li>
-        <li class="hidden md:block">
-          <a
-            href="https://www.supernetworks.org/pages/docs/faq"
-            class="hover:underline"
-            >FAQ</a
-          >
-        </li>
-        <!--li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-        </li-->
-        <li>
-          <a
-            class="hover:underline flex justify-start"
-            href="https://github.com/spr-networks/super/"
-          >
-            <div
-              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/github.svg)] dark:invert dark:opacity-70"
-            ></div>
-            <div class="inline-flex align-self-center">github</div>
-          </a>
-        </li>
-        <li>
-          <a
-            class="hover:underline flex justify-start"
-            href="https://twitter.com/spr_networks"
-          >
-            <div
-              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/twitter.svg)] dark:invert dark:opacity-70"
-            ></div>
-            <div class="inline-flex align-self-center">spr_networks</div>
-          </a>
-        </li>
-        <li>
-          <a
-            class="hover:underline flex justify-start"
-            href="https://discord.gg/EUjTKJPPAX"
-          >
-            <div
-              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/discord.svg)] dark:invert dark:opacity-70"
-            ></div>
-            <div class="inline-flex align-self-center">Discord</div>
-          </a>
-        </li>
-      </ul>
-      <a style="display: none" rel="me" href="https://infosec.exchange/@alexrad"
-        >Mastodon</a
-      >
-    </footer>
-
-    <script>
-      let el = document.getElementById('trigger-mobile-menu')
-      el.addEventListener('click', function () {
-        let menu = document.getElementById('mobile-menu')
-        menu.classList.toggle('hidden')
-      })
-    </script>
   </body>
 </html>
