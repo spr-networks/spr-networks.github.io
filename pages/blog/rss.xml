@@ -13,9 +13,9 @@
             <link>https://www.supernetworks.org/pages/blog/spr-tailscale-integration</link>
             <guid>https://www.supernetworks.org/pages/blog/spr-tailscale-integration</guid>
             <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Introducing SPR-TailScale]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introducing-spr-tailscale">Introducing SPR-TailScale<a href="https://www.supernetworks.org/pages/blog/spr-tailscale-integration#introducing-spr-tailscale" class="hash-link" aria-label="Direct link to Introducing SPR-TailScale" title="Direct link to Introducing SPR-TailScale">​</a></h2>
-<p>We've released a new iteration of the <a href="https://github.com/spr-networks/spr-tailscale" target="_blank" rel="noopener noreferrer">TailScale integration for SPR</a>!
+            <description><![CDATA[Introducing SPR-Tailscale]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introducing-spr-tailscale">Introducing SPR-Tailscale<a href="https://www.supernetworks.org/pages/blog/spr-tailscale-integration#introducing-spr-tailscale" class="hash-link" aria-label="Direct link to Introducing SPR-Tailscale" title="Direct link to Introducing SPR-Tailscale">​</a></h2>
+<p>We've released a new iteration of the <a href="https://github.com/spr-networks/spr-tailscale" target="_blank" rel="noopener noreferrer">Tailscale integration for SPR</a>!
 This plugin was put together with <a href="https://twitter.com/willy_wong" target="_blank" rel="noopener noreferrer">@willy_wong</a>.</p>
 <p><img loading="lazy" alt="spr-tailscale" src="https://www.supernetworks.org/pages/assets/images/combo-6570affc7ea16f7b29e7fafdfb216593.png" width="2210" height="1218" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="under-the-hood">Under The Hood<a href="https://www.supernetworks.org/pages/blog/spr-tailscale-integration#under-the-hood" class="hash-link" aria-label="Direct link to Under The Hood" title="Direct link to Under The Hood">​</a></h2>
@@ -24,12 +24,12 @@ The first was addressing a key missing feature for SPR: interface-based firewall
 <p><img loading="lazy" alt="firewall-custom-interface-rule-add" src="https://www.supernetworks.org/pages/assets/images/firewall-custom-interface-rule-add-6c2885f7af0f5fd0911a4fde33cb4c27.png" width="1280" height="599" class="img_ev3q"></p>
 <p>This capability lets SPR perform container microsegmentation.  Any interface can be treated this way actually.
 It allows for connecting interfaces with policies and groups that SPR has not been explicitly programmed for, as well as providing them API access.</p>
-<p>The TailScale plugin sets up its own policy based routing and firewall rules, so being able to run it inside of its own network namespace is ideal.
+<p>The Tailscale plugin sets up its own policy based routing and firewall rules, so being able to run it inside of its own network namespace is ideal.
 SPR then uses the custom interface rule to route to the container's network and let it do the forwarding on its own.</p>
 <p>Next, setting it up was awkward, painful. To fix this the SPR team added UX for plugins, and the ability to install a plugin via a URL with an OTP code verification. And today we've released this capability for <code>spr-tailscale</code>!  It's supported from SPR version 0.3.7</p>
 <p><img loading="lazy" alt="spr-tailscale" src="https://www.supernetworks.org/pages/assets/images/tailscale-ui-29391be90e22dc10a329d1a499d63c55.png" width="2384" height="1158" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-can-it-do-">What can it do ?<a href="https://www.supernetworks.org/pages/blog/spr-tailscale-integration#what-can-it-do-" class="hash-link" aria-label="Direct link to What can it do ?" title="Direct link to What can it do ?">​</a></h2>
-<p>This integration lets SPR devices selectively access TailScale peers. And similarly, TailScale peers can be joined to SPR groups to give them access to SPR devices.</p>
+<p>This integration lets SPR devices selectively access Tailscale peers. And similarly, Tailscale peers can be joined to SPR groups to give them access to SPR devices.</p>
 <p>The Plugin presents a React Based UI and simplifies the install. After the install, a user needs to present their Auth Key and they're good to go.</p>
 <p>The container can run as an exit node as well.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="links">Links<a href="https://www.supernetworks.org/pages/blog/spr-tailscale-integration#links" class="hash-link" aria-label="Direct link to Links" title="Direct link to Links">​</a></h2>
@@ -222,7 +222,7 @@ to convert identifiers to device icons or go from something like a MAC address t
 <p>Check out the guide for more details about <a href="https://www.supernetworks.org/pages/docs/guides/alerts">how to configure alerts</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="need-a-feature">Need a feature?<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#need-a-feature" class="hash-link" aria-label="Direct link to Need a feature?" title="Direct link to Need a feature?">​</a></h2>
 <p>If you'd like to see more added or have a question, don't hesitate to file a github issue or reach out on our discord</p>
-<p><img loading="lazy" alt="alerts-overview" src="https://www.supernetworks.org/pages/assets/images/alerts-overview-56a12de61748d397aa699ebbd74bc063.png" width="2806" height="1638" class="img_ev3q"></p>]]></content:encoded>
+<p><img loading="lazy" alt="alerts-overview" src="https://www.supernetworks.org/pages/assets/images/alerts-overview-d5e7da7dec59633aa0c6ddc31986bf74.png" width="2806" height="1638" class="img_ev3q"></p>]]></content:encoded>
             <category>SPR</category>
             <category>alerts</category>
             <category>jpath</category>
