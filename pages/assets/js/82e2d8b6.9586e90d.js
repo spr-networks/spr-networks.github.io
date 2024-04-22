@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[6343],{65699:s=>{s.exports=JSON.parse('{"label":"dragonfly","permalink":"/pages/blog/tags/dragonfly","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
