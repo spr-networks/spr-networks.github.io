@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hardware Products</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:url" content="https://www.supernetworks.org/" />
+    <meta property="og:title" content="Supernetworks Router Development Kits" />
+    <meta
+      property="og:description"
+      content="SPR - Hardware Products"
+    />
+    <meta
+      name="description"
+      content="Supernetworks provides comprehensive home network security, featuring advanced tools such as Ad Block and Wireguard VPN, alongside efficient Network Monitoring. Order a development kit to run SPR for your home wifi."
+    />
+    <meta
+      property="og:image"
+      content="https://www.supernetworks.org/assets/img/clearfog.png"
+    />
+    <link href="/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <style>
+      #muzak {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      .vaporwave {
+        margin: 0;
+        overflow: hidden;
+        background: url(https://www.supernetworks.org/assets/img/bgs/bg-dark.png);
+        width: 800px;
+      }
+    </style>
+
+    <script>
+      form_submit = function (form, e) {
+        e.preventDefault()
+        const submitMessage = document.getElementById('submit_message')
+        submitMessage.innerHTML = '<h2>Submitting...</h2>'
+
+        let scriptURL =
+          'https://script.google.com/macros/s/AKfycbyc2tk4fyDao1griv8u9hM_vW93sShs5UqiD9i_6UKB-LolHLkwCyPYoapZtK4KE5V5AQ/exec'
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            submitMessage.innerHTML = '<h2>Form Submitted!</h2>'
+            submitMessage.innerHTML += '<br/><p>Thank you</p>'
+          })
+          .catch((error) => console.error('Error!', error.message))
+      }
+
+      function setup() {
+        const messageForm = document.getElementById('signup_form')
+
+        messageForm.addEventListener('submit', function (event) {
+          event.preventDefault()
+          const email = this.elements.Email
+          const name = this.elements.Name
+          if (
+            email.value &&
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value) &&
+            name.value &&
+            name.value.trim() !== ''
+          ) {
+            form_submit(this, event)
+          }
+        })
+      }
+
+      let player
+      let started = false
+      // Load the YouTube API and create a player
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('muzak', {
+          height: '400',
+          width: '4000',
+          videoId: 'ea_UOPzuyZU',
+          playerVars: {
+            autoplay: 0,
+            controls: 1,
+            mute: 1,
+            start: 0,
+            rel: 0,
+            showinfo: 0
+          },
+          events: {
+            onReady: onPlayerReady
+          }
+        })
+      }
+
+      function onPlayerReady(event) {
+        event.target.seekTo(0, true)
+        event.target.pauseVideo()
+      }
+
+      toggleVapor = function () {
+        let ele = document.getElementById('3dcontainer')
+        if (!ele) {
+          return
+        }
+
+        //document.body.classList.toggle('vaporwave');
+
+        if (ele.classList.contains('vaporwave')) {
+          ele.classList.remove('vaporwave')
+          if (player) {
+            player.mute()
+            player.pauseVideo()
+          }
+        } else {
+          ele.classList.add('vaporwave')
+          if (player) {
+            if (!started) {
+              started = true
+              //player.seekTo(0, true)
+            }
+            player.unMute()
+            player.playVideo()
+          }
+        }
+      }
+    </script>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_wHrv9J5yEKPecDYT9ligBWKlIi2LBDL7I4heu69ayOT',{api_host:'https://us.i.posthog.com'})
+    </script>
+  </head>
+
+  <body onload="setup()" class="dark:bg-gray-900">
+    <nav
+      class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
+    >
+      <div
+        class="container flex flex-wrap justify-between items-center mx-auto"
+      >
+        <a href="#" class="flex items-center">
+          <!--img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /-->
+          <span
+            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+            >SPR</span
+          >
+        </a>
+
+        <button
+          data-collapse-toggle="mobile-menu"
+          type="button"
+          id="trigger-mobile-menu"
+          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            class="hidden w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+
+        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+          <ul
+            class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+          >
+            <li>
+              <a
+                href="/"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/blog/first-blog-post"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Guide</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://demo.supernetworks.org/"
+                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Demo</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/docs/intro"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/docs/faq"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.supernetworks.org/pages/blog"
+                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="relative pt-8 md:pt-24">
+      <!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
+      <div
+        class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
+      >
+        <h2
+          class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl"
+        >
+          SPR on the SolidRun Clearfog
+        </h2>
+        <p
+          class="max-w-2xl text-gray-700 dark:text-slate-300 sm:text-lg md:text-md"
+        >
+          We offer a complete SolidRun kit for running SPR as a primary router or mesh node. These devices carry a 10Gbps SFP port and a 5xport 1gbps switch in addition to a dedicated 1gbps uplink ethernet port.
+        </p>
+      </div>
+    </header>
+    <div
+      class="px-4 md:px-0 md:w-2/3 py-12 mx-auto text-center md:text-md dark:text-slate-200"
+    >
+      <h2 class="text-3xl text-slate-800 mb-16 dark:text-slate-200">
+        Clearfog C9130 Pro Dev Kits
+      </h2>
+      <div
+        class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
+      >
+
+            <img
+              src="/assets/img/clearfog.png"
+              class="mx-auto max-w-full md:max-w-lg"
+            />
+        <div>
+          <span class="font-semibold">Board Info</span>
+          <ul class="text-left list-disc list-inside md:text-md">
+            <li>Packaged with MT7915e 3x3 DBDC WiFi 6-e card and External Antennas</li>
+            <li>1 x SFP+ 10 GbE port for high-speed data transfer</li>
+            <li>1 x Port dedicated Ethernet</li>
+            <li>5 x Switched Ethernet RJ45 10/100/1000</li>
+            <li>
+              2 x upgradable MiniPCIe slots for expansion and customization, one of which hosts WiFi
+            </li>
+            <li>1 x M.2 slot for additional storage</li>
+            <li>
+              Marvell OCTEON based CN9130 Quad core Arm Cortex A72 up to 2.2 GHz
+            </li>
+            <li>4GB of RAM</li>
+            <li>8GB eMMC storage</li>
+            <li>microSD slot for additoinal storage</li>
+            <li>Micro USB Debugging and Programming</li>
+            <li>SIM holder for cellular connectivity</li>
+            <li>1x USB 3.0 for high-speed data transfer</li>
+          </ul>
+        </div>
+      </div>
+      <a
+        class="hover:underline"
+        href="https://www.solid-run.com/embedded-networking/marvell-octeon-tx2-family/clearfog-cn9130/"
+        >Find out more about the OCTEON boards at SolidRun</a
+      >
+      <br/>
+
+    </div>
+
+
+
+        <div>
+          <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+          <stripe-pricing-table pricing-table-id="prctbl_1PCuw8ExHB2JfQTK7JrEUgI0"
+          publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfcAmQVMWZ5USEOPtghDILSfaAFRJHwDfhzMa00sdqXzGZV">
+          </stripe-pricing-table>
+        </div>
+
+
+    <footer
+      class="w-full p-4 md:flex md:items-center md:justify-between md:p-6 md:py-8"
+    >
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        >© 2023-2024
+        <a href="https://www.supernetworks.org" class="hover:underline"
+          >Supernetworks, Inc.</a
+        >
+        All Rights Reserved.
+      </span>
+      <ul
+        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-8"
+      >
+        <li>
+          <a
+            href="https://www.supernetworks.org/pages/blog/first-blog-post"
+            class="hover:underline"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.supernetworks.org/pages/docs/faq"
+            class="hover:underline"
+            >FAQ</a
+          >
+        </li>
+        <!--li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+        </li-->
+        <li>
+          <a
+            class="hover:underline flex justify-start"
+            href="https://github.com/spr-networks/super/"
+          >
+            <div
+              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/github.svg)] dark:invert dark:opacity-70"
+            ></div>
+            <div class="inline-flex align-self-center">github</div>
+          </a>
+        </li>
+        <li>
+          <a
+            class="hover:underline flex justify-start"
+            href="https://twitter.com/spr_networks"
+          >
+            <div
+              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/twitter.svg)] dark:invert dark:opacity-70"
+            ></div>
+            <div class="inline-flex align-self-center">spr_networks</div>
+          </a>
+        </li>
+        <li>
+          <a
+            class="hover:underline flex justify-start"
+            href="https://discord.gg/EUjTKJPPAX"
+          >
+            <div
+              class="inline-flex w-5 h-5 pl-6 bg-no-repeat bg-[url(/assets/img/discord.svg)] dark:invert dark:opacity-70"
+            ></div>
+            <div class="inline-flex align-self-center">Discord</div>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <style>
+      .tooltip-trigger {
+        cursor: help;
+        /*
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-decoration-color: #ababab;
+			*/
+      }
+    </style>
+
+    <script>
+      // plan redir
+      document.querySelectorAll('.btn-plan').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault()
+          let plan = el.getAttribute('value')
+          if (plan == 'free') {
+            location.href = 'https://www.supernetworks.org/pages/docs/setup_guides/pi4b'
+          }
+
+          let isYearly = document.getElementById(
+            'radio-subscription-yearly'
+          ).checked
+
+          // redir to payment form
+          //if (plan == 'plus') {} else if (plan == 'supporter') {}
+        })
+      })
+
+      function toggleTooltip() {
+        let elId = this.getAttribute('data-tooltip-target')
+        document.getElementById(elId).classList.toggle('invisible')
+      }
+
+      document.querySelectorAll('.tooltip-trigger').forEach((el) => {
+        el.addEventListener('mouseover', toggleTooltip)
+        el.addEventListener('mouseout', toggleTooltip)
+      })
+
+      document.querySelectorAll('.radio-subscription').forEach((el) => {
+        el.addEventListener('click', function () {
+          let value = this.getAttribute('value') // monthly || yearly
+
+          let elTitle = document.getElementById('title-plus-per-month')
+          let price = value == 'monthly' ? '$6' : '$5'
+          elTitle.innerText = `${price} per month`
+        })
+      })
+
+      let el = document.getElementById('trigger-mobile-menu')
+      el.addEventListener('click', function () {
+        let menu = document.getElementById('mobile-menu')
+        menu.classList.toggle('hidden')
+      })
+    </script>
+  </body>
+</html>
