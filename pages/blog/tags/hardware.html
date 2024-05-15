@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="SPR" href="/pages/opensearch.xml"><link rel="stylesheet" href="/pages/assets/css/styles.43d1ec03.css">
-<script src="/pages/assets/js/runtime~main.a7629d33.js" defer="defer"></script>
+<script src="/pages/assets/js/runtime~main.8fa620a4.js" defer="defer"></script>
 <script src="/pages/assets/js/main.ddfe0de0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,7 +25,7 @@ these devices all the way from Wales are highly capable. With the support of the
 <p>When we started building Supernetworks, people on forums would say PIs even with adapters would be too slow for a router and can&#x27;t push past 100mbps, but we quickly found that to be nonsense, and were able to max out USB3 dongles for speeds over 650 Mbps with WiFi 6 and hit line speed (1Gbps) over the built-in ethernet as well as a USB3 Ethernet adapter. With WiFi 6 dongles, the speeds got even faster. All it took was some IRQ balancing to keep packet processing, USB3, and the built-in ethernet from thrashing the same core on interrupts. The dongles are key because although the PIs have a built-in wifi card, it does not make a great Access Point. At the time the built in card was missing WPA3 support, still has a limited internal antenna, and still today has no support for AP/VLAN for isolation.</p>
 <p>One of the key limitations of using only a single USB3 WiFi dongle is that it is single-band. With the PI5 and HATs we can address this.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-pi5-hats">The PI5 Hats<a href="#the-pi5-hats" class="hash-link" aria-label="Direct link to The PI5 Hats" title="Direct link to The PI5 Hats">​</a></h2>
-<p>Together with design firms we&#x27;ve been able to iterate with PI 5s to turn them into dual-band/tri-band devices. The PI5 HATs allow expanding a PI5 with PCI Express to add devices. To fully power Mediatek MT7915/6 cards we needed a custom HAT that could driver more power.</p>
+<p>Together with design firms we&#x27;ve been able to iterate with PI 5s to turn them into dual-band/tri-band devices. The PI5 HATs allow expanding a PI5 with PCI Express to add devices. To fully power Mediatek MT7915/6 cards we needed a custom HAT that could drive more power.</p>
 <p><img loading="lazy" alt="PI5 Hat" src="/pages/assets/images/pi5hatA-c7ba0e20a6545ba0bb2349771804e827.png" width="1024" height="815" class="img_ev3q"></p>
 <p>The HATs sit on top of the PI5 and connect over the GPIO pins for power and the FPC cable for PCI.</p>
 <p><img loading="lazy" alt="PI5 Pod" src="/pages/assets/images/pi5podpic-ddab06ff59314c134ae8cc429742a66a.jpg" width="1510" height="1118" class="img_ev3q"></p>
