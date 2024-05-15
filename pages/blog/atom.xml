@@ -2,11 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
-    <updated>2024-04-22T00:00:00.000Z</updated>
+    <updated>2024-05-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
     <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[PI5 Hats and More, Unleashing the Power of Modular Router Hardware]]></title>
+        <id>https://www.supernetworks.org/pages/blog/pi5-hardware-2024</id>
+        <link href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024"/>
+        <updated>2024-05-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Modular Router Hardware]]></summary>
+        <content type="html"><![CDATA[<div style="display:flex;justify-content:center;align-items:center"><img src="https://www.supernetworks.org/pages/assets/images/logopuzzle-02d5bc1d39938265e169b7df32ba4f65.png" style="width:50%"></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="modular-router-hardware">Modular Router Hardware<a href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024#modular-router-hardware" class="hash-link" aria-label="Direct link to Modular Router Hardware" title="Direct link to Modular Router Hardware">​</a></h2>
+<p>I'm excited to announce that Supernetworks will be releasing Compute Module based and Pi5 Expansion HAT based access points. The HATs and Compute Modules are expected to be generally available this summer.</p>
+<p>The second tenant of Sustainability is Reuse. Companies like <a href="https://frame.work/" target="_blank" rel="noopener noreferrer">Framework</a> have been spearheading the charge towards a better form of computing by building upgradable laptops and soon other devices.</p>
+<p>With what the Raspberry Pi Foundation offers people, we are able to bring some of the benefits of modular computing to Access Points as well. Modularity takes ownership one step further, letting people reuse the hardware for other projects, and upgrade it to make it powerful, without any soldering required.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-raspberry-pis-rock">Why Raspberry Pis Rock<a href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024#why-raspberry-pis-rock" class="hash-link" aria-label="Direct link to Why Raspberry Pis Rock" title="Direct link to Why Raspberry Pis Rock">​</a></h2>
+<p>For us it's been easy to admire the Raspberry Pi community in particular. They're not perfect, but across the board,
+these devices all the way from Wales are highly capable. With the support of the community, Ubuntu, and many other people, software support for them is generally good for quality, security, and keeping current with the innovation that happens on Linux every single day.</p>
+<p>When we started building Supernetworks, people on forums would say PIs even with adapters would be too slow for a router and can't push past 100mbps, but we quickly found that to be nonsense, and were able to max out USB3 dongles for speeds over 650 Mbps with WiFi 6 and hit line speed (1Gbps) over the built-in ethernet as well as a USB3 Ethernet adapter. With WiFi 6 dongles, the speeds got even faster. All it took was some IRQ balancing to keep packet processing, USB3, and the built-in ethernet from thrashing the same core on interrupts. The dongles are key because although the PIs have a built-in wifi card, it does not make a great Access Point. At the time the built in card was missing WPA3 support, still has a limited internal antenna, and still today has no support for AP/VLAN for isolation.</p>
+<p>One of the key limitations of using only a single USB3 WiFi dongle is that it is single-band. With the PI5 and HATs we can address this.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-pi5-hats">The PI5 Hats<a href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024#the-pi5-hats" class="hash-link" aria-label="Direct link to The PI5 Hats" title="Direct link to The PI5 Hats">​</a></h2>
+<p>Together with design firms we've been able to iterate with PI 5s to turn them into dual-band/tri-band devices. The PI5 HATs allow expanding a PI5 with PCI Express to add devices. To fully power Mediatek MT7915/6 cards we needed a custom HAT that could driver more power.</p>
+<p><img loading="lazy" alt="PI5 Hat" src="https://www.supernetworks.org/pages/assets/images/pi5hatA-c7ba0e20a6545ba0bb2349771804e827.png" width="1024" height="815" class="img_ev3q"></p>
+<p>The HATs sit on top of the PI5 and connect over the GPIO pins for power and the FPC cable for PCI.</p>
+<p><img loading="lazy" alt="PI5 Pod" src="https://www.supernetworks.org/pages/assets/images/pi5podpic-ddab06ff59314c134ae8cc429742a66a.jpg" width="1510" height="1118" class="img_ev3q"></p>
+<p>Together with the MT7916 cards this makes the Pi5 into a highly capable dual-band access point, with one of the bands potentially being 6ghz. With an additional USB dongle it is possible to run the Pi5 as a tri-band router.  We've been able to fully saturate all three bands. It's only when a 160Mhz channel is used (with speeds over 1 Gpbs) that we start to see I/O tuning matter for maintaining full bandwidth across USB3 and the mPCIE wifi card.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="speed-tests-show-off-pi5-io">Speed Tests Show Off Pi5 I/O<a href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024#speed-tests-show-off-pi5-io" class="hash-link" aria-label="Direct link to Speed Tests Show Off Pi5 I/O" title="Direct link to Speed Tests Show Off Pi5 I/O">​</a></h2>
+<p>On the Pi5s we're actually seeing the best speeds we've ever seen with the MT7916 cards.</p>
+<p><img loading="lazy" alt="Speed" src="https://www.supernetworks.org/pages/assets/images/combospeed-e28f69fb89e269cd1fe4940903cb8592.png" width="1012" height="1078" class="img_ev3q"></p>
+<p>The image on the left represents a banwidth test using the built-in ethernet for uplink.
+The image on the right represents a bandwidth test with only wifi as the built-in ethernet tops out at 1Gbps.</p>
+<p>Using an AX210 card on an intel laptop instead of the iPhone 15, to connect to the Pi5, we've seen 160 MHz connection throughput momentarily top out at 1.9Gbps  over TCP, from close range.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<p>The HAT enables Raspberry Pi 5s to achieve impressive wifi throughput and full coverage for wifi bands. While we scale up production, we're also finishing up wifi enclosures. We have an <a href="https://docs.google.com/forms/d/1rO-MQ1rLbe3qI4wav2FWSNIbFzKI3Md3hMPRY4YPTr8/edit?usp=forms_home&amp;ths=true" target="_blank" rel="noopener noreferrer">interest form</a> if you'd like to stay posted on updates. You can also <a href="https://www.supernetworks.org/hat.html" target="_blank" rel="noopener noreferrer">preorder a HAT today</a></p>]]></content>
+        <author>
+            <name>Alex Radocea</name>
+            <uri>https://twitter.com/defendtheworld</uri>
+        </author>
+        <category label="pi5" term="pi5"/>
+        <category label="raspberry" term="raspberry"/>
+        <category label="hardware" term="hardware"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Dragonfly Pake]]></title>
         <id>https://www.supernetworks.org/pages/blog/midnightsun-qualifiers-2024-dragonfly</id>
@@ -1043,45 +1081,5 @@ Answer yes to fetch this or edit this later (<strong>Endpoint</strong> in the Wi
         <category label="VPN" term="VPN"/>
         <category label="WireGuard" term="WireGuard"/>
         <category label="AWS" term="AWS"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Run Virtual SPR on a DigitalOcean Droplet]]></title>
-        <id>https://www.supernetworks.org/pages/blog/virtual-spr-on-a-digital-ocean-droplet</id>
-        <link href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-digital-ocean-droplet"/>
-        <updated>2022-10-03T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Introduction]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-digital-ocean-droplet#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
-<p>This guide shows how to setup Virtual SPR on a DigitalOcean Droplet and connect to it using WireGuard VPN.</p>
-<p>For a more general and in-depth guide see the <a href="https://www.supernetworks.org/pages/blog/virtual%20SPR">Virtual SPR Guide</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-droplet">Create a Droplet<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-digital-ocean-droplet#create-a-droplet" class="hash-link" aria-label="Direct link to Create a Droplet" title="Direct link to Create a Droplet">​</a></h2>
-<p>Login to <a href="https://cloud.digitalocean.com/" target="_blank" rel="noopener noreferrer">DigitalOcean</a> and click <em>Create Droplet</em>.</p>
-<p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-1-bedee1ad9531fc8bcda5933b7dfa45c9.png" width="2880" height="1622" class="img_ev3q"></p>
-<p>Select prefered Region and Datacenter (<em>Amsterdam</em> and <em>AMS3</em> in the example),
-go with default <em>Ubuntu 22.04 x64</em> for OS and version.</p>
-<p>For Droplet Size, the smallest <em>$4/month</em> Basic with 512 MB RAM is enough but feel free to choose another one.</p>
-<p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-2-ca9699589bf6a28aa093388e8024b00b.png" width="2880" height="1618" class="img_ev3q"></p>
-<p>If you already have a ssh key configured for a project you can choose the pubkey or click <em>New SSH Key</em> for <em>Choose Authentication Method</em>.</p>
-<p>Click <em>Create Droplet</em> &amp; wait for it to spin up.</p>
-<p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-3-aaefd596e6c71828de8211b4bb61d104.png" width="2880" height="1621" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="install-virtual-spr">Install Virtual SPR<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-digital-ocean-droplet#install-virtual-spr" class="hash-link" aria-label="Direct link to Install Virtual SPR" title="Direct link to Install Virtual SPR">​</a></h2>
-<p>When the droplet has started, copy the ipv4 address and ssh into the box using your ssh key as root:</p>
-<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">ssh -i .ssh/id_rsa root@paste-ipv4-address-here</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>Run the SPR virtual installer as root on the droplet:</p>
-<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virtual_install.sh)"</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>The script will download the <a href="https://github.com/spr-networks/super" target="_blank" rel="noopener noreferrer">SPR repository</a> and run <em>virtual_install.sh</em> (you can also checkout the <a href="https://github.com/spr-networks/super" target="_blank" rel="noopener noreferrer">repository</a> and run the script manually if you want to inspect the script before running it.)</p>
-<p>If you want to add another device, just run the setup script again:</p>
-<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">cd super</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">./virtual_install.sh</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>Now you have a WireGuard VPN config ready, either scan the QR Code or paste the config into the <a href="https://www.wireguard.com/install/" target="_blank" rel="noopener noreferrer">WireGuard client</a>.</p>
-<p>For more information on setting up the client see <a href="https://www.supernetworks.org/pages/blog/virtual%20SPR#configure-the-vpn-client-on-your-device">the Virtual SPR Guide</a> on how to connect your VPN client to the droplet instance.</p>]]></content>
-        <author>
-            <name>Philip Olausson</name>
-            <uri>https://twitter.com/capslcc</uri>
-        </author>
-        <category label="SPR" term="SPR"/>
-        <category label="Virtual" term="Virtual"/>
-        <category label="Cloud" term="Cloud"/>
-        <category label="VPN" term="VPN"/>
-        <category label="WireGuard" term="WireGuard"/>
-        <category label="DigitalOcean" term="DigitalOcean"/>
     </entry>
 </feed>

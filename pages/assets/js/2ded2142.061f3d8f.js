@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[8999],{26254:s=>{s.exports=JSON.parse('{"label":"pi5","permalink":"/pages/blog/tags/pi-5","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);
