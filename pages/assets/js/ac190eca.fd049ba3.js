@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkspr_docs=self.webpackChunkspr_docs||[]).push([[3924],{15912:s=>{s.exports=JSON.parse('{"label":"apple","permalink":"/pages/blog/tags/apple","allTagsPath":"/pages/blog/tags","count":1,"unlisted":false}')}}]);

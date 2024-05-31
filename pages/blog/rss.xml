@@ -4,10 +4,42 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Wed, 08 May 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[BSS Randomization]]></title>
+            <link>https://www.supernetworks.org/pages/blog/bssid-randomizaiton</link>
+            <guid>https://www.supernetworks.org/pages/blog/bssid-randomizaiton</guid>
+            <pubDate>Fri, 31 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[How Does WiFi Location Positioning & Tracking Work?]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-wifi-location-positioning--tracking-work">How Does WiFi Location Positioning &amp; Tracking Work?<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#how-does-wifi-location-positioning--tracking-work" class="hash-link" aria-label="Direct link to How Does WiFi Location Positioning &amp; Tracking Work?" title="Direct link to How Does WiFi Location Positioning &amp; Tracking Work?">​</a></h2>
+<p>All Apple Smartphones and Laptops as well as Google Devices passively collect Access Point Names (the SSID) and their hardware address (the BSSID), and they then tag it with the GPS location. With billions of customers, tech giants have been able to build databases taht contain the physical position of almost every access point in the world.</p>
+<p>Researchers from the University of Maryland published that the privacy features in the public APIs were insufficient to protect the privacy of individuals.
+<a href="https://www.cs.umd.edu/~dml/papers/wifi-surveillance-sp24.pdf" target="_blank" rel="noopener noreferrer">See the paper from Erik Rye, Dave Levin for the details: "Surveilling the Masses with Wi-Fi-Based Positioning Systems" </a></p>
+<p>Krebs On Security has throughough co<a href="https://krebsonsecurity.com/2024/05/why-your-wi-fi-router-doubles-as-an-apple-airtag/" target="_blank" rel="noopener noreferrer">"Why Your Wi-Fi Router Doubles as an Apple AirTag"</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-the-impact-on-privacy">What Is the Impact On Privacy?<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#what-is-the-impact-on-privacy" class="hash-link" aria-label="Direct link to What Is the Impact On Privacy?" title="Direct link to What Is the Impact On Privacy?">​</a></h2>
+<p>When traveling, access points will reveal their updated location to the general public, who can query the APIs and trick them to reveal location information. It also means that this feature could be used to stalk someone if knowing the SSID and BSSID of their router, to find their new location after they move homes for example. Apple and Google have since added some hardening to help mitigate the attack but the risks still largely remain.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-does-this-data-look-like">What does this data look like?<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#what-does-this-data-look-like" class="hash-link" aria-label="Direct link to What does this data look like?" title="Direct link to What does this data look like?">​</a></h2>
+<p>The BSSID and SSID data is not private and available in Beacons and Probe Responses, which end up in the data used by Apple and Google to collect positioning information.</p>
+<p><img loading="lazy" alt="image" src="https://www.supernetworks.org/pages/assets/images/wireshark-bssid-rand-e93c539fd22ae27bfd8b92e82b27b008.png" width="1572" height="850" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-bssid-randomization">What is BSSID Randomization?<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#what-is-bssid-randomization" class="hash-link" aria-label="Direct link to What is BSSID Randomization?" title="Direct link to What is BSSID Randomization?">​</a></h2>
+<p>BSSID Randomization is assigning a random MAC address to the Access Point.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-enable-bssid-randomization">Why Enable BSSID Randomization?<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#why-enable-bssid-randomization" class="hash-link" aria-label="Direct link to Why Enable BSSID Randomization?" title="Direct link to Why Enable BSSID Randomization?">​</a></h2>
+<p>When this happens, the position databases no longer link an access point between locations. The databases can not be queried with only the SSID Name, so the position of the AP will be protected.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-_nomap-isnt-enough">Why _nomap Isn't enough<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#why-_nomap-isnt-enough" class="hash-link" aria-label="Direct link to Why _nomap Isn't enough" title="Direct link to Why _nomap Isn't enough">​</a></h2>
+<p>Apple and Google have added a feature, where if the SSID name has "_nomap" appended in the name, they will not include it in their database. This does not prevent companies that want to collect this information from collecting it anyway. It's also unrealistic for users to change their SSID name because they have to reconfigure all of their devices, which is a non-starter for most people with busy lives.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-enable-bssid-randomization-with-spr-">How to Enable BSSID Randomization with SPR ?<a href="https://www.supernetworks.org/pages/blog/bssid-randomizaiton#how-to-enable-bssid-randomization-with-spr-" class="hash-link" aria-label="Direct link to How to Enable BSSID Randomization with SPR ?" title="Direct link to How to Enable BSSID Randomization with SPR ?">​</a></h2>
+<p>In the 3.13 release we have added a UI option to randomize the MAC address on startup. This supports both APs and interfaces working as wireless clients for internet uplink. It will assign a random address using the specified locally administered OUI bit. A user can also pick a common OUI from common-place routers to cloak with instead.</p>
+<p><img loading="lazy" alt="image" src="https://www.supernetworks.org/pages/assets/images/bssid-rand-dd3563dde347f9b544b3363ba1877a7a.png" width="1312" height="966" class="img_ev3q"></p>
+<h2></h2>]]></content:encoded>
+            <category>wifi positioning</category>
+            <category>privacy</category>
+            <category>tracking</category>
+            <category>apple</category>
+            <category>google</category>
+        </item>
         <item>
             <title><![CDATA[PI5 Hats and More, Unleashing the Power of Modular Router Hardware]]></title>
             <link>https://www.supernetworks.org/pages/blog/pi5-hardware-2024</link>
@@ -33,6 +65,7 @@ these devices all the way from Wales are highly capable. With the support of the
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="speed-tests-show-off-pi5-io">Speed Tests Show Off Pi5 I/O<a href="https://www.supernetworks.org/pages/blog/pi5-hardware-2024#speed-tests-show-off-pi5-io" class="hash-link" aria-label="Direct link to Speed Tests Show Off Pi5 I/O" title="Direct link to Speed Tests Show Off Pi5 I/O">​</a></h2>
 <p>On the Pi5s we're actually seeing the best speeds we've ever seen with the MT7916 cards.</p>
 <p><img loading="lazy" alt="Speed" src="https://www.supernetworks.org/pages/assets/images/combospeed-e28f69fb89e269cd1fe4940903cb8592.png" width="1012" height="1078" class="img_ev3q"></p>
+<p>Not bad for a package that fits in the palm of your hand.</p>
 <p>The image on the left represents a bandwidth test using the built-in ethernet for uplink.
 The image on the right represents a bandwidth test with only wifi as the built-in ethernet tops out at 1Gbps.</p>
 <p>Using an AX210 card on an intel laptop instead of the iPhone 15, to connect to the Pi5, we've seen 160 MHz connection throughput momentarily top out at 1.9Gbps  over TCP, from close range.</p>
@@ -954,50 +987,6 @@ Run the SPR virtual installer with sudo:</p>
             <category>VPN</category>
             <category>WireGuard</category>
             <category>Google Cloud</category>
-        </item>
-        <item>
-            <title><![CDATA[Run Virtual SPR on a AWS Micro Tier Instance]]></title>
-            <link>https://www.supernetworks.org/pages/blog/virtual-spr-on-a-aws-micro-tier-instance</link>
-            <guid>https://www.supernetworks.org/pages/blog/virtual-spr-on-a-aws-micro-tier-instance</guid>
-            <pubDate>Fri, 07 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Introduction]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-aws-micro-tier-instance#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
-<p>This guide shows how to setup Virtual SPR on a Micro Tier Instance on AWS, and connect to it using WireGuard VPN.</p>
-<p>The result is a private VPN with a custom DNS server able to block ads, log traffic, and more features included in SPR.</p>
-<p>For a more general and in-depth guide see the <a href="https://www.supernetworks.org/pages/blog/virtual%20SPR">Virtual SPR Guide</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-instance">Create a Instance<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-aws-micro-tier-instance#create-a-instance" class="hash-link" aria-label="Direct link to Create a Instance" title="Direct link to Create a Instance">​</a></h2>
-<p>Sign in to <a href="https://console.aws.amazon.com/ec2/home" target="_blank" rel="noopener noreferrer">AWS Console</a> and navigate to <em>Instances</em> in the menu.
-Click <strong>Launch Instances</strong> for your selected region.</p>
-<p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/aws-1-bdfd66fa6b9c8d0ed108eb8f38ee259a.png" width="2880" height="1562" class="img_ev3q"></p>
-<p>Name your instance and select Ubuntu and 64-bit (x86) as architecture under OS Images.</p>
-<p>For instance type choose any micro tier eligible for free, t2.micro is used in the example.</p>
-<p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/aws-2-1d0a29f7e8401ee36884f579741adc3a.png" width="2880" height="1563" class="img_ev3q"></p>
-<p>If you already have a keypair that you want to use, select it under <em>Key pair</em> or click <strong>Create new key pair</strong>, save the .pem-file to your ~/.ssh directory and make sure only your user can read it.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="allow-vpn-access">Allow VPN access<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-aws-micro-tier-instance#allow-vpn-access" class="hash-link" aria-label="Direct link to Allow VPN access" title="Direct link to Allow VPN access">​</a></h3>
-<p>Under <em>Network settings</em> click <strong>Edit</strong> and scroll down to <strong>Add security group rule</strong>.
-Select UDP &amp; port 5128, "vpn" as description and if you want to allow access from a specific source ip or range.</p>
-<p><img loading="lazy" src="https://www.supernetworks.org/pages/assets/images/aws-3-f078d071e2539fa79b380f117e5c6387.png" width="2880" height="1562" class="img_ev3q"></p>
-<p>Click <strong>Launch Instance</strong> in the bottom right.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="install-virtual-spr">Install Virtual SPR<a href="https://www.supernetworks.org/pages/blog/virtual-spr-on-a-aws-micro-tier-instance#install-virtual-spr" class="hash-link" aria-label="Direct link to Install Virtual SPR" title="Direct link to Install Virtual SPR">​</a></h2>
-<p>Navigate to <em>Instances</em>, the newly created instance should be available in the listing and shown as Running, click it.
-Copy the value under Public IPv4 address and ssh into the box as the ubuntu user:</p>
-<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">ssh -i ~/.ssh/awsspr.pem ubuntu@paste-ipv4-address-here</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p><em>NOTE</em> You can also use the <em>Instance Connect</em>-feature if you don't have access to a ssh client. Click <strong>Connect</strong> under the <em>Instance Summary</em> to get access to a terminal.</p>
-<p>Run the SPR virtual installer with sudo:</p>
-<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virtual_install.sh)"</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p><em>NOTE: If the script cannot get the public ip address of the instance from one of the network interfaces, it will ask to fetch this from <a href="https://ifconfig.me/" target="_blank" rel="noopener noreferrer">https://ifconfig.me</a>.
-Answer yes to fetch this or edit this later (<strong>Endpoint</strong> in the WireGuard config).</em></p>
-<p>The script will download the <a href="https://github.com/spr-networks/super" target="_blank" rel="noopener noreferrer">SPR repository</a> and run <em>virtual_install.sh</em> (you can also checkout the <a href="https://github.com/spr-networks/super" target="_blank" rel="noopener noreferrer">repository</a> and run the script manually if you want to inspect the script before running it.)</p>
-<p>If you want to add another device, just run the setup script again:</p>
-<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">cd super</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">sudo ./virtual_install.sh</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>Now you have a WireGuard VPN config ready, either scan the QR Code or paste the config into the <a href="https://www.wireguard.com/install/" target="_blank" rel="noopener noreferrer">WireGuard client</a>.</p>
-<p>For more information on setting up the client see <a href="https://www.supernetworks.org/pages/blog/virtual%20SPR#configure-the-vpn-client-on-your-device">the Virtual SPR Guide</a> on how to connect your VPN client to the instance.</p>]]></content:encoded>
-            <category>SPR</category>
-            <category>Virtual</category>
-            <category>Cloud</category>
-            <category>VPN</category>
-            <category>WireGuard</category>
-            <category>AWS</category>
         </item>
     </channel>
 </rss>
