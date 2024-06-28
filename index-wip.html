@@ -293,28 +293,26 @@
               A Secure Network Does Not Have To Be 🚀🧑‍🔬
               <span class="gradient-text">Rocket Science</span>
             </h1>
-            <p class="text-2xl font-light">
+            <!--p class="text-2xl font-light">
               Supernetworks makes Fast, Secure, &amp; Feature-Packed routers
-            </p>
+            </p-->
 
             <div
               class="flex flex-col md:flex-row gap-4 justify-center antialiased"
               role="group"
             >
-              <!--a
-                href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz"
-              >
-                <button
-                  type="button"
-                  class="w-full md:w-auto text-slate-50 bg-green-700 hover:text-white hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded px-5 py-2"
-                >
-                  Download SPR PI Image
-                </button>
-              </a-->
               <a
+                id="btn-download"
                 href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz"
                 class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
                 >Download SPR PI Image
+              </a>
+
+              <a
+                id="btn-get-started"
+                href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b#install-the-spr-pi-4-image"
+                class="hidden bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                >Install Guide
               </a>
 
               <a
@@ -343,7 +341,7 @@
       <section
         class="py-12 pb-24 bg-gradient-to-b from-slate-950 to-slate-900 antialiased"
       >
-        <div class="container mx-auto space-y-16">
+        <div class="container mx-auto space-y-16 md:w-2/3">
           <h2
             class="text-center text-3xl md:text-4xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent"
           >
@@ -351,31 +349,30 @@
           </h2>
 
           <div class="flex flex-col-reverse md:flex-row items-start">
-            <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0 text-zinc-100">
+            <div class="grid md:grid-cols-2 gap-8 px-8 md:px-0 text-zinc-100">
               <div>
                 <h3 class="text-lg font-semibold text-yellow-500">
-                  ⚠️ Password Sharing
+                  WiFi Password Sharing Is Risky
                 </h3>
                 <p class="text-md">
-                  Sharing passwords means devices can snoop traffic and
-                  man-in-the-middle packets. When recycling or selling an old
-                  device, does a device reset really remove passwords correctly?
+                  The wifi password could be stolen from old devices when
+                  they're thrown away or sold. It is tedious and time consuming
+                  to redo the setup on all your devices. Malicious or breached
+                  devices can also snoop or intercept traffic.
                   <!--Who has time to redo all of their existing wifi passwords?-->
                 </p>
               </div>
               <div>
                 <h3 class="text-lg font-semibold text-yellow-500">
-                  ⚠️ Insecure IoT Devices
+                  Insecure IoT Devices Cause Breaches
                 </h3>
                 <p class="">
-                  Many IoT devices are hackable, never get security updates, and
-                  may not respect your home privacy. Cloud connectivity
-                  <!--means an
-                  attack on the IoT company -->can lead to access to your
-                  network without your knowledge
+                  Many IoT devices are insecure, rarely updated with security
+                  fixes, and may not respect your home privacy when they connect
+                  to the cloud.
                 </p>
               </div>
-              <div class="row-span-2 text-center content-center">
+              <!--div class="row-span-2 text-center content-center">
                 <div class="drop-shadow">
                   <img
                     src="/assets/img/bgs/bg.png"
@@ -386,10 +383,10 @@
                     Homes are more connected than ever
                   </p>
                 </div>
-              </div>
+              </div-->
               <div>
                 <h3 class="text-lg font-semibold text-yellow-500">
-                  ⚠️ Limited Network Isolation
+                  Limited Network Isolation Compounds Risk
                 </h3>
                 <p class="">
                   Why should your vacuum be able talk to your doorbell?
@@ -415,12 +412,11 @@
                 </div-->
               <div>
                 <h3 class="text-lg font-semibold text-yellow-500">
-                  🚫☁️ Cloud Companies Collect Too Much
+                  Your Network Leaks Data To Cloud Companies
                 </h3>
                 <p class="">
-                  Your home network is yours, and your personal data does not
-                  have to be constantly beamed out and away. Firewall off
-                  continuous data collection
+                  Keep your home network private. Block constant data collection
+                  from IOT devices, websites, and mobile phones.
                 </p>
               </div>
             </div>
@@ -469,15 +465,15 @@
         <div
           class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center"
         >
-          <div class="mb-8 md:mb-0">
+          <div class="mb-8">
             <h2
               class="text-4xl md:text-5xl font-bold text-neutral-50 mb-6 md:mb-8"
             >
               Lightning-Fast WiFi Speeds
             </h2>
-            <p class="text-xl font-light mb-6 md:mb-8">
+            <!--p class="text-xl font-light mb-6 md:mb-8">
               Experience true WiFi 6 speeds with SPR
-            </p>
+            </p-->
             <ul class="mb-8 text-lg">
               <li class="mb-2 flex items-center">
                 ⚡ 80MHz channels see real speeds above 700 Mbps
@@ -486,10 +482,13 @@
                 ⚡ 160MHz channels see real speeds above 1000 Mbps
               </li>
             </ul>
-            <p class="text-lg font-light">
-              Load balancing ensures your network can handle heavy traffic while
-              supporting a fully featured firewall
-            </p>
+            <ul class="text-lg font-light">
+              <li>Hardware that sustains heavy I/O workloads</li>
+              <li>
+                Load balancing ensures your network can handle heavy traffic
+                while supporting a fully featured firewall
+              </li>
+            </ul>
           </div>
           <div class="w-full flex flex-col md:flex-row">
             <div class="w-full overflow-hidden">
@@ -523,7 +522,7 @@
               <h3
                 class="text-sm font-light bg-slate-800 text-neutral-200 p-2 px-4 inline shadow shadow-slate-950/50 rounded-lg"
               >
-                with the best wifi security
+                With the Best WiFi Security
               </h3>
             </div>
 
@@ -687,10 +686,8 @@
 
       <section class="antialiased">
         <div class="bg-gradient-to-b from-slate-900 to-slate-950">
-          <div class="container mx-auto pb-16">
-            <div
-              class="space-y-4 mb-8 text-center md:w-3/5 p-8 text-center mx-auto"
-            >
+          <div class="container mx-auto">
+            <div class="space-y-4 text-center md:w-3/5 p-8 text-center mx-auto">
               <h2 class="text-4xl md:text-4xl font-bold">
                 Self-Hosted, Privacy Preserving, and Feature Rich
               </h2>
@@ -708,24 +705,25 @@
                 - could maybe skip this section since its mentioned further down
             -->
 
-            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
-              <div
-                class="relative p-8 rounded-lg text-zinc-100"
-                style="
-                  background: linear-gradient(
-                    295deg,
-                    rgba(244, 145, 194, 0.3) 160px,
-                    rgba(31, 41, 55, 1) 20%
-                  );
-                "
-              >
-                <h3 class="text-2xl font-bold">Block anything</h3>
-                <p class="w-1/2 font-light">
-                  Block ads and trackers at the network level for all your
-                  devices
-                </p>
-                <div class="absolute bottom-8 right-8 w-16">
-                  <!--svg
+            <div class="md:space-y-8 pb-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
+                <div
+                  class="relative p-8 rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(244, 145, 194, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Block anything</h3>
+                  <p class="w-1/2 font-light">
+                    Block ads and trackers at the network level for all your
+                    devices
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <!--svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                     class="w-full text-rose-300"
@@ -740,126 +738,124 @@
                       />
                     </g>
                   </svg-->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-full text-rose-300"
-                  >
-                    <path
-                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                    />
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-rose-300"
+                    >
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  class="relative p-8 rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(114, 213, 179, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Firewall &amp; Routing</h3>
+                  <p class="w-1/2 font-light">
+                    Control your network with sophisticated firewall rules and
+                    routing options
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-green-200"
+                    >
+                      <path
+                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(252, 211, 77, 0.5) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Customizable Alerts</h3>
+                  <p class="w-1/2 font-light">
+                    Stay informed about important network events with a
+                    customizable alert system
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-amber-200"
+                    >
+                      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                    </svg>
+                  </div>
                 </div>
               </div>
 
-              <div
-                class="relative p-8 rounded-lg text-zinc-100"
-                style="
-                  background: linear-gradient(
-                    295deg,
-                    rgba(114, 213, 179, 0.3) 160px,
-                    rgba(31, 41, 55, 1) 20%
-                  );
-                "
-              >
-                <h3 class="text-2xl font-bold">Firewall &amp; Routing</h3>
-                <p class="w-1/2 font-light">
-                  Control your network with sophisticated firewall rules and
-                  routing options
-                </p>
-                <div class="absolute bottom-8 right-8 w-16">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-full text-green-200"
-                  >
-                    <path
-                      d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="relative p-8 rounded-lg text-zinc-100"
-                style="
-                  background: linear-gradient(
-                    295deg,
-                    rgba(252, 211, 77, 0.5) 160px,
-                    rgba(31, 41, 55, 1) 20%
-                  );
-                "
-              >
-                <h3 class="text-2xl font-bold">Customizable Alerts</h3>
-                <p class="w-1/2 font-light">
-                  Stay informed about important network events with a
-                  customizable alert system
-                </p>
-                <div class="absolute bottom-8 right-8 w-16">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-full text-amber-200"
-                  >
-                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6 md:my-8"
-            >
-              <div
-                class="relative p-8 rounded-lg text-zinc-100"
-                style="
-                  background: linear-gradient(
-                    295deg,
-                    rgba(138, 179, 250, 0.3) 160px,
-                    rgba(31, 41, 55, 1) 20%
-                  );
-                "
-              >
-                <h3 class="text-2xl font-bold">Built-in VPN</h3>
-                <p class="w-1/2 font-light">
-                  Secure your connections with native WireGuard VPN support
-                </p>
-                <div class="absolute bottom-8 right-8 w-16">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-full text-sky-200"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M7 3.34V5a3 3 0 0 0 3 3" />
-                    <path
-                      d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"
-                    />
-                    <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-                    <path d="M12 2a10 10 0 1 0 9.54 13" />
-                    <path d="M20 6V4a2 2 0 1 0-4 0v2" />
-                    <rect width="8" height="5" x="14" y="6" rx="1" />
-                  </svg>
-                  <!--svg
+              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
+                <div
+                  class="relative p-8 rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(138, 179, 250, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Built-in VPN</h3>
+                  <p class="w-1/2 font-light">
+                    Secure your connections with native WireGuard VPN support
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full text-sky-200"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 3.34V5a3 3 0 0 0 3 3" />
+                      <path
+                        d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"
+                      />
+                      <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+                      <path d="M12 2a10 10 0 1 0 9.54 13" />
+                      <path d="M20 6V4a2 2 0 1 0-4 0v2" />
+                      <rect width="8" height="5" x="14" y="6" rx="1" />
+                    </svg>
+                    <!--svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-full text-sky-200"
                     viewBox="0 0 24 24"
@@ -877,67 +873,190 @@
                     <path d="m13.8 17.7 3.9-3.9" />
                     <circle cx="12" cy="19.5" r="2.5" />
                   </svg-->
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(156, 98, 190, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Traffic Monitoring</h3>
+                  <p class="w-1/2 font-light">
+                    Gain insights into your network usage with real-time
+                    monitoring and statistics
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-violet-200"
+                    >
+                      <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                      <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(153, 246, 228, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Plugins</h3>
+                  <p class="w-1/2 font-light">
+                    Expand SPR's capabilities with plugins for Tailscale,
+                    Wireshark, and more
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-teal-200"
+                    >
+                      <path
+                        d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <a id="vpn"></a>
+      <section class="bg-slate-950 antialiased">
+        <div class="container mx-auto pb-8">
+          <div
+            class="relative bg-slate-950 md:border border-slate-800 rounded-3xl overflow-hidden h-[400px] p-16"
+          >
+            <div class="md:w-2/3 space-y-8">
+              <h4 class="text-3xl font-semibold">
+                Secure VPN in the cloud with SPR
+              </h4>
+              <p>
+                Run a self-hosted VPN, DNS & other services to filter & redirect
+                traffic,<br />
+                block ads, and more.
+              </p>
+
+              <p>
+                Read the setup guide to get started using your cloud provider,
+                or if you host it yourself
+              </p>
+
+              <div class="pt-8 space-x-4">
+                <a
+                  href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr"
+                  _class="shadow-xl shadow-slate-950/50 bg-gradient-to-b from-violet-700 to-violet-700 text-neutral-100 text-sm font-medium py-3 px-6 hover:opacity-90 transition duration-300"
+                  class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                >
+                  Get Started with Virtual SPR
+                </a>
+                <a
+                  href="https://marketplace.digitalocean.com/apps/spr"
+                  class="border-2 border-sky-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                >
+                  DigitalOcean Marketplace
+                </a>
+              </div>
+            </div>
+
+            <div id="planets-cloud">
               <div
-                class="relative p-8 rounded-lg text-zinc-100"
-                style="
-                  background: linear-gradient(
-                    295deg,
-                    rgba(156, 98, 190, 0.3) 160px,
-                    rgba(31, 41, 55, 1) 20%
-                  );
-                "
+                class="absolute top-24 -right-32 w-[640px] h-[640px] border border-slate-600 rounded-full bg-[rgba(255,255,255,0.024)]"
               >
-                <h3 class="text-2xl font-bold">Traffic Monitoring</h3>
-                <p class="w-1/2 font-light">
-                  Gain insights into your network usage with real-time
-                  monitoring and statistics
-                </p>
-                <div class="absolute bottom-8 right-8 w-16">
+                <!-- aws -->
+                <div
+                  class="z-100 absolute top-0 left-32 ml-4 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
+                  style="
+                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
+                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
+                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
+                  "
+                >
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-8 h-8 mx-auto"
+                    style="fill: #fff"
+                    role="img"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-full text-violet-200"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-                    <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                    <title>Amazon AWS</title>
+                    <path
+                      d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"
+                    />
                   </svg>
                 </div>
               </div>
               <div
-                class="relative p-8 rounded-lg text-zinc-100"
-                style="
-                  background: linear-gradient(
-                    295deg,
-                    rgba(153, 246, 228, 0.3) 160px,
-                    rgba(31, 41, 55, 1) 20%
-                  );
-                "
+                class="absolute top-24 -right-32 w-[480px] h-[480px] border border-slate-600 rounded-full m-[80px] bg-[rgba(255,255,255,0.027)]"
               >
-                <h3 class="text-2xl font-bold">Plugins</h3>
-                <p class="w-1/2 font-light">
-                  Expand SPR's capabilities with plugins for Tailscale,
-                  Wireshark, and more
-                </p>
-                <div class="absolute bottom-8 right-8 w-16">
+                <!-- azure -->
+                <div
+                  class="z-100 absolute top-0 left-52 -mt-8 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
+                  style="
+                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
+                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
+                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
+                  "
+                >
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-8 h-8 mx-auto"
+                    style="fill: #fff"
+                    role="img"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-full text-teal-200"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
+                    <title>Microsoft Azure</title>
                     <path
-                      d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"
+                      d="M22.379 23.343a1.62 1.62 0 0 0 1.536-2.14v.002L17.35 1.76A1.62 1.62 0 0 0 15.816.657H8.184A1.62 1.62 0 0 0 6.65 1.76L.086 21.204a1.62 1.62 0 0 0 1.536 2.139h4.741a1.62 1.62 0 0 0 1.535-1.103l.977-2.892 4.947 3.675c.28.208.618.32.966.32m-3.084-12.531 3.624 10.739a.54.54 0 0 1-.51.713v-.001h-.03a.54.54 0 0 1-.322-.106l-9.287-6.9h4.853m6.313 7.006c.116-.326.13-.694.007-1.058L9.79 1.76a1.722 1.722 0 0 0-.007-.02h6.034a.54.54 0 0 1 .512.366l6.562 19.445a.54.54 0 0 1-.338.684"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="absolute top-24 -right-32 w-[320px] h-[320px] border border-slate-600 rounded-full m-[160px] bg-[rgba(255,255,255,0.03)]"
+              >
+                <!-- docean -->
+                <div
+                  class="z-100 absolute top-8 right-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
+                  style="
+                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
+                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
+                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
+                  "
+                >
+                  <svg
+                    class="w-8 h-8 mx-auto"
+                    style="fill: #fff"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>DigitalOcean</title>
+                    <path
+                      d="M12.04 0C5.408-.02.005 5.37.005 11.992h4.638c0-4.923 4.882-8.731 10.064-6.855a6.95 6.95 0 014.147 4.148c1.889 5.177-1.924 10.055-6.84 10.064v-4.61H7.391v4.623h4.61V24c7.86 0 13.967-7.588 11.397-15.83-1.115-3.59-3.985-6.446-7.575-7.575A12.8 12.8 0 0012.039 0zM7.39 19.362H3.828v3.564H7.39zm-3.563 0v-2.978H.85v2.978z"
                     />
                   </svg>
                 </div>
@@ -1087,15 +1206,290 @@
         </div>
       </section-->
 
-      <section id="plus" class="antialiased bg-slate-950 pb-16">
+      <section id="products" class="antialiased bg-slate-950">
+        <div
+          class="container py-8 mx-auto bg-gradient-to-b from-gray-900 to-slate-950 rounded-3xl"
+        >
+          <div class="my-8 space-y-8">
+            <h2 class="text-4xl text-center font-bold">Product Store</h2>
+            <div>
+              <p class="text-center text-lg font-extralight">
+                Ready to try SPR? Order a Wifi Kit today. Visit
+                <a
+                  href="order.html"
+                  class="text-sky-400 hover:text-sky-300 transition duration-300"
+                  >the store</a
+                >
+                for more product options
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1">
+            <div
+              class="md:col-span-2 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300"
+            >
+              <div
+                class="flex flex-col md:flex-row items-center space-x-8"
+                onclick="location.href='https://buy.stripe.com/28o8x65BS1LM2ZibIM'"
+              >
+                <div class="flex-1 space-y-8 text-center p-8">
+                  <img
+                    src="/assets/img/spr-pod-sm.jpg"
+                    alt="SPR Pod"
+                    class="rounded-lg shadow-md md:w-3/4 mx-auto"
+                  />
+                </div>
+                <div class="flex-1 p-4 space-y-8">
+                  <div class="space-y-2">
+                    <h3 class="text-2xl font-semibold">WiFi Pod</h3>
+
+                    <div class="flex space-x-2">
+                      <h4
+                        class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
+                      >
+                        home wifi
+                      </h4>
+                    </div>
+                  </div>
+
+                  <p>
+                    Fast, secure dual band wifi for all your devices. Operates
+                    2.4Ghz and 5Ghz/6Ghz bands simultaneously. Runs on a fast
+                    2.4GHz quad-core CPU. Supports wired clients with a USB
+                    Ethernet Adapter for Downlink to a switch.
+                  </p>
+
+                  <!--hr class="border-zinc-700" />
+                  <h5 class="text-xl font-bold">US$399.99</h5-->
+
+                  <button
+                    _class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                    class="bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                  >
+                    Order now
+                  </button>
+
+                  <!--div class="space-y-4">
+                    <h3 class="font-light uppercase">This kit includes</h3>
+                    <ul class="list-disc text-sm ms-4">
+                      <li>Pod Enclosure</li>
+                      <li>PI5 Active Cooler</li>
+                      <li>SPR PI5 WiFi HAT & FPC Cable</li>
+                      <li>Mini PCIe 3x3 DBDC mt7915e WiFi Card</li>
+                      <li>Laird Antennas</li>
+                      <li>64GB USB SSD</li>
+                      <li>
+                        4GB Raspberry PI5 with standard peripherals (2x USB3, 2x
+                        USB2, 1Gbps Ethernet)
+                      </li>
+                    </ul>
+                  </div-->
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1">
+              <div
+                class="md:col-span-2 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300"
+              >
+                <div
+                  class="flex flex-col md:flex-row items-center space-x-8"
+                  onclick="location.href='https://buy.stripe.com/aEU5kU9S83TU8jCaEJ'"
+                >
+                  <div class="flex-1 space-y-8 text-center p-8">
+                    <img
+                      src="/assets/img/clearfog.png"
+                      alt="ClearFog Router Kit"
+                      class="w-full"
+                    />
+                  </div>
+
+                  <div class="flex-1 p-4 space-y-8">
+                    <div class="space-y-2">
+                      <h3 class="text-2xl font-semibold">
+                        ClearFog Router Kit
+                      </h3>
+
+                      <div class="flex space-x-2">
+                        <h4
+                          class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
+                        >
+                          pro user
+                        </h4>
+                        <h4
+                          class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
+                        >
+                          wired
+                        </h4>
+                      </div>
+                    </div>
+
+                    <p>
+                      Clearfog Pro SBC Router, WiFi Card, Built In Ethernet
+                      Switch, Ethernet Uplink, and 10gbps SFP+ Port, 3 External
+                      Antennas
+                    </p>
+
+                    <!--hr class="border-zinc-700" />
+                  <h5 class="text-xl font-bold">US$699.99</h5-->
+                    <button
+                      _class="bg-gradient-to-b from-sky-700 to-sky-800 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                      class="bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                    >
+                      Order now
+                    </button>
+                    <!--div class="space-y-4">
+                    <h3 class="font-light uppercase">This kit includes</h3>
+                    <ul class="list-disc text-sm ms-4">
+                      <li>Steel enclosure</li>
+                      <li>CN9130 Pro board, 4GB RAM 8GB eMMC</li>
+                      <li>
+                        3x3 DBDC WiFi 6 card with 2.4ghz and 5ghz/6ghz band
+                        support
+                      </li>
+                      <li>10gbps SFP+ port</li>
+
+                      <li>5x 1Gbps switch</li>
+                      <li>1 Gbps Ethernet port</li>
+                      <li>3 External Antennas</li>
+                    </ul>
+                  </div-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--div
+              class="md:col-span-2 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300 rounded-b-3xl"
+            >
+              <div
+                class="flex flex-col md:flex-row items-center space-x-8"
+                onclick="location.href='order.html'"
+              >
+                <div class="flex-1 space-y-8 text-center p-8">
+                  <img
+                    src="/assets/img/spr-fold-sm.jpg"
+                    alt="PI4 Router Kit"
+                    class="rounded-lg shadow-md md:w-3/4 mx-auto"
+                  />
+                </div>
+                <div class="flex-1 p-4 space-y-8">
+                  <div class="space-y-2">
+                    <h3 class="text-2xl font-semibold">SPR Sprout</h3>
+
+                    <div class="flex space-x-2">
+                      <h4
+                        class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
+                      >
+                        travel
+                      </h4>
+                      <h4
+                        class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
+                      >
+                        development
+                      </h4>
+                    </div>
+                  </div>
+
+                  <p>
+                    SPR Starter Kit for development with SPR. USB Adapter
+                    supports one WiFi 6 band. Makes a great travel router with
+                    the built-in wifi uplink feature.
+                  </p>
+
+                  <button
+                    class="bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                  >
+                    Order now
+                  </button>
+                </div>
+              </div>
+            </div-->
+
+            <!--div class="grid md:grid-cols-2" onclick="location.href='order.html'">
+            <div
+              class="col-span-1 p-6 md:p-8 cursor-pointer text-center space-y-6 hover:bg-gray-900 transition duration-300"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="/assets/img/spr-fold-sm.jpg"
+                  alt="PI4 Router Kit"
+                  class="h-40 rounded-md"
+                />
+              </div>
+
+              <div class="flex items-center justify-center space-x-2">
+                <h3 class="text-2xl font-semibold">WiFi Sprout</h3>
+                <h5 class="text-2xl opacity-40 font-normal">US$279.99</h5>
+              </div>
+
+              <p>
+                SPR Starter Kit for development with SPR. USB Adapter supports
+                one WiFi 6 band. Makes a great travel router with the built-in
+                wifi uplink feature.
+              </p>
+
+              <hr class="border-zinc-700" />
+              <div class="space-y-2">
+                <h3 class="font-light uppercase">This kit includes</h3>
+                <p class="text-sm">
+                  8GB Raspberry Pi 4, Netgear A8000 WiFi 6-e Single Band USB
+                  Adapter, <br />64GB USB SSD, Power Adapter, Custom
+                  Enclosure<br /><br />
+                </p>
+              </div>
+
+              <button
+                class="bg-gradient-to-b from-sky-700 to-sky-800 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+              >
+                Order now
+              </button>
+            </div>
+
+            <div
+              class="col-span-1 p-6 md:p-8 cursor-pointer text-center space-y-6 hover:bg-gray-900 transition duration-300"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="/assets/img/cm4board.png"
+                  alt="CM4 Capsule"
+                  class="h-40 rounded-md"
+                />
+              </div>
+
+              <div class="flex items-center justify-center space-x-2">
+                <h3 class="text-2xl font-semibold">WiFi Capsule</h3>
+                <h5 class="text-2xl opacity-40 font-normal">US$349.99</h5>
+              </div>
+
+              <p>
+                Fast, secure dual-band dual-channel wifi for all your devices.
+                Operates 2.4Ghz and 5Ghz/6Ghz bands simultaneously. Does not
+                support wired clients.
+              </p>
+
+       
+
+              <button
+                class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+              >
+                Preorder now
+              </button>
+            </div-->
+          </div>
+        </div>
+      </section>
+
+      <section id="plus" class="antialiased bg-slate-950">
         <div class="container mx-auto">
           <div
-            class="md:rounded-3xl p-8 md:p-16 shadow shadow-slate-950/20"
+            class="md:rounded-3xl p-8 md:p-16 shadow shadow-slate-950/20 cursor-pointer"
             onclick="location.href='https://www.supernetworks.org/plus.html'"
           >
             <div class="text-center space-y-8 text-neutral-200">
               <h2 class="text-4xl font-semibold drop-shadow-lg">
-                PLUS Subscription Service
+                Support SPR with PLUS
               </h2>
               <p class="text-lg drop-shadow-md font-light">
                 SPR is free for personal use, PLUS offers extended features &
@@ -1186,396 +1580,6 @@
                     Extend your network coverage with seamless support for SPR
                     Mesh devices.
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="products" class="antialiased bg-slate-950">
-        <div
-          class="container px-8 py-16 md:p-16 mx-auto bg-gradient-to-b from-gray-900 to-slate-950 rounded-3xl"
-        >
-          <div class="mb-12 space-y-8">
-            <h2 class="text-4xl text-center font-bold">Product Store</h2>
-            <p class="text-center text-lg font-extralight">
-              Ready to try SPR? You can run the software on a Raspberry Pi 4.
-              The kits are modular &amp; upgradeable. <br />
-              Grab the Complete Starter Kit for everything you need to get
-              started.
-            </p>
-          </div>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2"
-            onclick="location.href='order.html'"
-          >
-            <div
-              _class="col-span-2 bg-gradient-to-b from-gray-900 to-gray-800 rounded-lg p-6 md:p-8 shadow"
-              class="md:col-span-2 p-6 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300"
-            >
-              <div class="flex flex-col md:flex-row items-center space-x-8">
-                <div>
-                  <img
-                    src="/assets/img/pi5hat.png"
-                    alt="PI5 HAT"
-                    class="rounded-lg shadow-md h-[240px]"
-                  />
-                </div>
-                <div class="p-4 space-y-4">
-                  <h3 class="text-2xl font-semibold mb-4">PI5 HAT</h3>
-                  <ul class="text-md">
-                    <li class="mb-2 flex items-center">
-                      <img
-                        class="flex-shrink-0 h-5 w-5 mr-2"
-                        src="/assets/img/circlecheck.svg"
-                      />
-                      Upgrade your PI5 with a powerful WiFi card
-                    </li>
-                    <li class="mb-2 flex items-start">
-                      <img
-                        class="flex-shrink-0 h-5 w-5 mr-2"
-                        src="/assets/img/circlecheck.svg"
-                      />
-                      Dual-band, dual-channel WiFi card & antenna bundle add-on
-                    </li>
-                  </ul>
-
-                  <button
-                    _class="w-full bg-gradient-to-b from-violet-700 to-violet-700 text-neutral-100 text-sm font-medium py-3 px-6 hover:opacity-90 transition duration-300"
-                    class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                  >
-                    Preorder now
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-span-1 p-6 md:p-8 cursor-pointer text-center space-y-8 hover:bg-gray-900 transition duration-300"
-            >
-              <div class="flex justify-center">
-                <img
-                  src="/assets/img/yellow-pi-case.png"
-                  alt="PI4 Router Kit"
-                  class="h-40 rounded-md"
-                />
-              </div>
-
-              <h3 class="text-2xl font-semibold mb-4">PI4 Development Kit</h3>
-
-              <p>
-                SPR Starter Kit for development with SPR. USB Adapter supports
-                one WiFi 6 band
-              </p>
-              <!--div class="p-4 space-y-4">
-                  <ul class="text-md">
-                    <li class="flex items-center">
-                      <img
-                        class="flex-shrink-0 h-5 w-5 mr-2"
-                        src="/assets/img/circlecheck.svg"
-                      />
-                      Single-channel USB WiFi 6-e support
-                    </li>
-                    <li class="mb-2 flex items-start">
-                      <img
-                        class="flex-shrink-0 h-5 w-5 mr-2"
-                        src="/assets/img/circlecheck.svg"
-                      />
-                      Can be extended with USB3
-                    </li>
-                    <li class="mb-2 flex items-start">
-                      <img
-                        class="flex-shrink-0 h-5 w-5 mr-2"
-                        src="/assets/img/circlecheck.svg"
-                      />
-                      Coming soon: Long-range 802.11ah HaLow support
-                    </li>
-                  </ul>
-                </div-->
-              <button
-                class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-              >
-                Order now
-              </button>
-            </div>
-
-            <!--div
-              class="bg-gray-800 rounded-lg p-6 md:p-8 shadow-lg hover-scale"
-            >
-              <h3 class="text-2xl font-semibold mb-4">PI5 Pod</h3>
-              <div class="mb-6 md:mb-8">
-                <img
-                  src="/assets/img/podrender.jpg"
-                  alt="PI5 Router Pod"
-                  class="rounded-lg shadow-md h-[220px]"
-                />
-              </div>
-              <ul class="text-lg mb-6 md:mb-8 items-start">
-                <li class="mb-2 flex">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  PI5 HAT bundled with PI5 router, active cooler, and custom
-                  enclosure
-                </li>
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Dual-band, dual-channel WiFi card
-                </li>
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Extend with USB3
-                </li>
-              </ul>
-              <button
-                class="w-full bg-green-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-600 transition duration-300"
-              >
-                Preorder now
-              </button>
-            </div-->
-
-            <!--div
-              class="bg-gray-800 rounded-lg p-6 md:p-8 shadow-lg hover-scale"
-            >
-              <h3 class="text-2xl font-semibold mb-4">CM4 Capsule</h3>
-              <div
-                class="flex justify-center space-x-4 md:space-x-8 mb-6 md:mb-8"
-              >
-                <img
-                  src="/assets/img/cm4board.png"
-                  alt="CM4"
-                  class="rounded-lg shadow-md h-[220px]"
-                />
-              </div>
-              <ul class="text-lg mb-6 md:mb-8 items-start">
-                <li class="mb-2 flex">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Perfect for managing IoT devices and extending your WiFi
-                  network
-                </li>
-                <li class="mb-2 flex">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Dual-band, dual-channel WiFi card
-                </li>
-                <li class="mb-2 flex">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Custom enclosure
-                </li>
-                <li class="mb-2 flex">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Upgradable hardware with swappable CM4 and mini PCIe card
-                </li>
-              </ul>
-              <button
-                class="w-full bg-green-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-600 transition duration-300"
-              >
-                Preorder now
-              </button>
-            </div-->
-
-            <div
-              _class="col-span-1 bg-gradient-to-b from-gray-900 to-gray-800 rounded-lg p-6 md:p-8 shadow-lg text-center space-y-8"
-              class="col-span-1 p-6 md:p-8 cursor-pointer text-center space-y-8 hover:bg-gray-900 transition duration-300"
-            >
-              <div class="h-40 flex items-center justify-center">
-                <img
-                  src="/assets/img/clearfog.png"
-                  alt="ClearFog Router Kit"
-                  class="h-28"
-                />
-              </div>
-
-              <h3 class="text-2xl font-semibold">ClearFog Router Kit</h3>
-              <p>
-                Clearfog Pro SBC Router, WiFi Card, Built In Ethernet Switch,
-                Ethernet Uplink, and 10gbps SFP+ Port
-              </p>
-              <!--div>
-              <ul class="text-md mb-6 md:mb-8">
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  10 Gbps SFP+ port
-                </li>
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  1 dedicated Ethernet port
-                </li>
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  5-port Gb Ethernet switch
-                </li>
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Dual-band, dual-channel WiFi card
-                </li>
-                <li class="mb-2 flex items-start">
-                  <img
-                    class="flex-shrink-0 h-5 w-5 mr-2"
-                    src="/assets/img/circlecheck.svg"
-                  />
-                  Custom steel enclosure
-                </li>
-              </ul>
-            </div-->
-
-              <button
-                class="bg-gradient-to-b from-sky-700 to-sky-800 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-              >
-                Order now
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <a id="vpn"></a>
-      <section class="bg-slate-950 antialiased">
-        <div class="container mx-auto">
-          <div
-            class="relative bg-slate-950 md:border border-slate-800 rounded-3xl overflow-hidden h-[400px] p-16"
-          >
-            <div class="md:w-2/3 space-y-8">
-              <h4 class="text-3xl font-semibold">
-                Secure VPN in the cloud with SPR
-              </h4>
-              <p>
-                Run a self-hosted VPN, DNS & other services to filter & redirect
-                traffic,<br />
-                block ads, and more.
-              </p>
-
-              <p>
-                Read the setup guide to get started using your cloud provider,
-                or if you host it yourself
-              </p>
-
-              <div class="pt-8 space-x-4">
-                <a
-                  href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr"
-                  _class="shadow-xl shadow-slate-950/50 bg-gradient-to-b from-violet-700 to-violet-700 text-neutral-100 text-sm font-medium py-3 px-6 hover:opacity-90 transition duration-300"
-                  class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >
-                  Get Started with Virtual SPR
-                </a>
-                <a
-                  href="https://marketplace.digitalocean.com/apps/spr"
-                  class="border-2 border-sky-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >
-                  DigitalOcean Marketplace
-                </a>
-              </div>
-            </div>
-
-            <div id="planets-cloud">
-              <div
-                class="absolute top-24 -right-32 w-[640px] h-[640px] border border-slate-600 rounded-full bg-[rgba(255,255,255,0.024)]"
-              >
-                <!-- aws -->
-                <div
-                  class="z-100 absolute top-0 left-32 ml-4 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
-                  style="
-                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
-                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
-                  "
-                >
-                  <svg
-                    class="w-8 h-8 mx-auto"
-                    style="fill: #fff"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>Amazon AWS</title>
-                    <path
-                      d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="absolute top-24 -right-32 w-[480px] h-[480px] border border-slate-600 rounded-full m-[80px] bg-[rgba(255,255,255,0.027)]"
-              >
-                <!-- azure -->
-                <div
-                  class="z-100 absolute top-0 left-52 -mt-8 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
-                  style="
-                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
-                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
-                  "
-                >
-                  <svg
-                    class="w-8 h-8 mx-auto"
-                    style="fill: #fff"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>Microsoft Azure</title>
-                    <path
-                      d="M22.379 23.343a1.62 1.62 0 0 0 1.536-2.14v.002L17.35 1.76A1.62 1.62 0 0 0 15.816.657H8.184A1.62 1.62 0 0 0 6.65 1.76L.086 21.204a1.62 1.62 0 0 0 1.536 2.139h4.741a1.62 1.62 0 0 0 1.535-1.103l.977-2.892 4.947 3.675c.28.208.618.32.966.32m-3.084-12.531 3.624 10.739a.54.54 0 0 1-.51.713v-.001h-.03a.54.54 0 0 1-.322-.106l-9.287-6.9h4.853m6.313 7.006c.116-.326.13-.694.007-1.058L9.79 1.76a1.722 1.722 0 0 0-.007-.02h6.034a.54.54 0 0 1 .512.366l6.562 19.445a.54.54 0 0 1-.338.684"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="absolute top-24 -right-32 w-[320px] h-[320px] border border-slate-600 rounded-full m-[160px] bg-[rgba(255,255,255,0.03)]"
-              >
-                <!-- docean -->
-                <div
-                  class="z-100 absolute top-8 right-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
-                  style="
-                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
-                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
-                  "
-                >
-                  <svg
-                    class="w-8 h-8 mx-auto"
-                    style="fill: #fff"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>DigitalOcean</title>
-                    <path
-                      d="M12.04 0C5.408-.02.005 5.37.005 11.992h4.638c0-4.923 4.882-8.731 10.064-6.855a6.95 6.95 0 014.147 4.148c1.889 5.177-1.924 10.055-6.84 10.064v-4.61H7.391v4.623h4.61V24c7.86 0 13.967-7.588 11.397-15.83-1.115-3.59-3.985-6.446-7.575-7.575A12.8 12.8 0 0012.039 0zM7.39 19.362H3.828v3.564H7.39zm-3.563 0v-2.978H.85v2.978z"
-                    />
-                  </svg>
                 </div>
               </div>
             </div>
@@ -2017,7 +2021,200 @@
         </div>
       </section>
 
-      <section class="text-center items-center py-32 border-t border-slate-800">
+      <section class="bg-slate-950 text-neutral-300 antialiased py-8">
+        <div class="container mx-auto p-8 md:px-0">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="md:w-5/12 flex flex-col gap-y-8">
+              <h4 class="text-3xl font-semibold">Get started with SPR</h4>
+
+              <div class="space-y-8">
+                <p>
+                  <a href="#products" class="underline">We offer hardware</a>
+                  for running SPR and it can run on a wide variety of Linux
+                  systems that support Docker. Raspberry PI4/5 and Compute
+                  Modules are widely tested.
+                </p>
+
+                <p>
+                  Check out
+                  <a
+                    class="underline"
+                    href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr"
+                    >the setup guide</a
+                  >. SPR is open source and can run in Docker containers as a
+                  cloud-only VPN or as a WiFi router.
+                </p>
+
+                <p>
+                  Prebuilt containers are available for ARM64 and AMD64, OS
+                  Images are available for
+                  <a
+                    class="underline"
+                    href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
+                    >Raspberry Pi</a
+                  >
+                  and
+                  <a
+                    class="underline"
+                    href="https://github.com/spr-networks/super/releases"
+                    >ClearFog</a
+                  >.
+                </p>
+
+                <div class="md:flex space-y-2 md:space-x-2 md:space-y-0">
+                  <a
+                    class="bg-slate-700 text-neutral-50 text-sm font-normal py-2.5 px-4 rounded hover:opacity-90 transition duration-300 flex items-center space-x-2 whitespace-nowrap"
+                    href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr"
+                  >
+                    Setup Guide
+                  </a>
+
+                  <a
+                    class="bg-slate-700 text-neutral-50 text-sm font-normal py-2.5 px-4 rounded hover:opacity-90 transition duration-300 flex items-center space-x-2"
+                    href="https://github.com/spr-networks/super/"
+                  >
+                    <div
+                      class="h-[20px] w-5 bg-no-repeat bg-contain bg-left"
+                      style="
+                        background-image: url('/assets/img/github.svg');
+                        filter: invert(100%) brightness(200%);
+                        background-size: auto;
+                      "
+                    ></div>
+                    <div class="whitespace-nowrap">Containers &amp; Code</div>
+                  </a>
+                  <a
+                    class="bg-slate-700 text-neutral-50 text-sm font-normal py-2.5 px-4 rounded hover:opacity-90 transition duration-300 flex items-center space-x-2"
+                    href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-download"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" x2="12" y1="15" y2="3" />
+                    </svg>
+
+                    <div class="whitespace-nowrap">Image for Raspberry PI</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-6/12 space-y-8 pt-16">
+              <div class="space-y-4">
+                <div class="flex space-x-4 items-center justify-between">
+                  <h4 class="text-lg font-semibold">
+                    Run as a Host Rounter &amp; Firewall with Docker
+                  </h4>
+
+                  <a
+                    class="copy text-xs text-neutral-400"
+                    data-target="#setup-git-pull"
+                    href="#"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-copy"
+                    >
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                      <path
+                        d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <pre
+                  id="setup-git-pull"
+                  class="bg-gray-800 text-white p-4 rounded-md font-mono text-sm w-full overflow-x-scroll"
+                >
+git clone https://github.com/spr-networks/super
+cd super
+docker-compose pull
+docker-compose up -d</pre
+                >
+                <p class="text-sm text-neutral-300">
+                  This will manage the system network and conflicts with network
+                  manager, see the
+                  <a
+                    class="underline"
+                    href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr"
+                    >setup guide</a
+                  >
+                  for details
+                </p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="flex space-x-4 items-center justify-between">
+                  <h4 class="text-lg font-semibold">VPN Only Quick Setup</h4>
+
+                  <a
+                    class="copy text-xs text-neutral-400"
+                    data-target="#setup-vpn-cmd"
+                    href="#"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-copy"
+                    >
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                      <path
+                        d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <pre
+                  id="setup-vpn-cmd"
+                  class="bg-gray-800 text-white p-4 rounded-md font-mono text-sm w-full overflow-x-scroll"
+                >
+sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virtual_install.sh)"</pre
+                >
+
+                <p class="text-sm text-neutral-300">
+                  The script will install everything &amp; start SPR VPN. See
+                  the
+                  <a
+                    class="underline"
+                    href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr"
+                    >virtual setup guide</a
+                  >
+                  for more info
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-center items-center py-24 border-t border-slate-800">
         <div class="space-y-8 mb-16">
           <h2 class="text-5xl text-neutral-100 font-light drop-shadow-lg">
             Upgrade Your Network Today
@@ -2172,6 +2369,13 @@
   </body>
 
   <script>
+    //get started button show when download start
+    document
+      .getElementById('btn-download')
+      .addEventListener('click', function () {
+        document.getElementById('btn-get-started').classList.remove('hidden')
+      })
+
     let el = document.getElementById('trigger-mobile-menu')
     let menu = document.getElementById('mobile-menu')
     el.addEventListener('click', function () {
@@ -2222,5 +2426,20 @@
       let src = `/assets/img/screenshot-light-${n}.png`
       document.getElementById('demo-image').setAttribute('src', src)
     }, 3500)
+
+    //copy cmds to clipboard
+    document.querySelectorAll('.copy').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        let sel = el.getAttribute('data-target')
+        let elSel = document.querySelector(sel)
+        let val = elSel?.innerText.replace(/\n/g, ' && ')
+        navigator.clipboard.writeText(val)
+        el.innerText = 'Copied to clipboard'
+
+        return false
+      })
+    })
   </script>
 </html>
