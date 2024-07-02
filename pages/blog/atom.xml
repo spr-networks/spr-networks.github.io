@@ -8,7 +8,7 @@
     <subtitle>SPR Blog</subtitle>
     <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[BSS Randomization]]></title>
+        <title type="html"><![CDATA[BSSID Randomization]]></title>
         <id>https://www.supernetworks.org/pages/blog/bssid-randomization</id>
         <link href="https://www.supernetworks.org/pages/blog/bssid-randomization"/>
         <updated>2024-05-31T00:00:00.000Z</updated>
