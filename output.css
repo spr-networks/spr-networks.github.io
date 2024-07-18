@@ -1083,10 +1083,6 @@ h1,h2,h3,h4 {
   height: 20px;
 }
 
-.h-\[220px\] {
-  height: 220px;
-}
-
 .h-\[300px\] {
   height: 300px;
 }
@@ -3064,11 +3060,6 @@ h1,h2,h3,h4 {
   padding-bottom: 0.75rem;
 }
 
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -3105,10 +3096,6 @@ h1,h2,h3,h4 {
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.ps-8 {
-  padding-inline-start: 2rem;
 }
 
 .pt-12 {
