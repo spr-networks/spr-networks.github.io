@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+pod<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -152,6 +152,17 @@
   </head>
   <body class="bg-gray-900 text-white">
     <header class="gradient-bg text-white py-4 fixed top-0 left-0 right-0 z-50">
+      <div class="fixed top-4 right-4 z-50">
+        <div class="fixed top-4 right-4 z-50">
+          <a href="#products" class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+
       <div class="container mx-auto px-4">
         <div
           class="flex flex-col md:flex-row md:justify-between md:items-center"
@@ -207,7 +218,7 @@
               </li>
               <li>
                 <a
-                  href="https://www.supernetworks.org/features.html"
+                  href="features.html"
                   class="hover:text-sky-400 transition duration-300 nav-item"
                   >Features</a
                 >
@@ -1116,6 +1127,16 @@
                 >
                 for more product options
               </p>
+
+              <div class="py-12 text-center">
+                <a
+                  href="/order.html"
+                  class="bg-gradient-to-b from-blue-500 to-blue-700 text-neutral-100 text-lg font-normal py-2 px-4 rounded-3xl hover:opacity-90 transition duration-300"
+                >
+                  More Products
+                </a>
+              </div>
+
             </div>
           </div>
 
@@ -1125,11 +1146,16 @@
             >
               <div
                 class="flex flex-col md:flex-row items-center space-x-8"
-                onclick="location.href='https://buy.stripe.com/28o8x65BS1LM2ZibIM'"
+                onclick="location.href='/pod-order.html'"
               >
-                <div class="flex-1 space-y-8 text-center p-8">
+                <div class="flex-1 flex-row space-y-8 text-center p-8">
                   <img
                     src="/assets/img/pod.png"
+                    alt="SPR Pod"
+                    class="rounded-lg md:w-6/12 mx-auto transition duration-300 ease-in-out hover:scale-150"
+                  />
+                  <img
+                    src="/assets/img/pod-white.png"
                     alt="SPR Pod"
                     class="rounded-lg md:w-6/12 mx-auto transition duration-300 ease-in-out hover:scale-150"
                   />
@@ -1372,6 +1398,17 @@
               </button>
             </div-->
           </div>
+          <!-- New "More Products" section -->
+          <div class="py-12 text-center">
+            <a
+              href="/order.html"
+              class="bg-gradient-to-b from-blue-500 to-blue-700 text-neutral-100 text-lg font-normal py-4 px-8 rounded-3xl hover:opacity-90 transition duration-300"
+            >
+              More Products
+            </a>
+          </div>
+        </div>
+
         </div>
       </section>
 
@@ -2140,7 +2177,7 @@
                       aria-current="page"
                       data-target="#get-started-host"
                       class="inline-block p-4 text-slate-200 bg-gray-800 rounded-t-lg active"
-                      >Host Rounter &amp; Firewall with Docker</a
+                      >Host Router &amp; Firewall with Docker</a
                     >
                   </li>
                   <li class="me-2">
