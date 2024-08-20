@@ -64,7 +64,7 @@ info:
     <SecurityDefinitions />
 
 
-    # API Extensions
+    # API Plugins
 
     API extensions operate through a reverse proxy into a unix socket. They
     allow for hosting
@@ -193,7 +193,7 @@ tags:
     x-displayName: Releases
     description: Manage SPR Release Channel and Version
   - name: plus
-    x-displayName: Plus
+    x-displayName: PLUS
     description: PLUS features
   - name: uplink
     x-displayName: Uplink
@@ -204,6 +204,21 @@ tags:
   - name: otp
     x-displayName: OTP
     description: One Time Password Authentication
+  - name: mesh-node
+    x-displayName: Mesh Node APIs
+    description: >-
+      The mesh extension lets users grow the network with multiple SPR Access
+      Points
+  - name: mesh-common
+    x-displayName: Mesh Common APIs
+    description: >-
+      The mesh extension lets users grow the network with multiple SPR Access
+      Points
+  - name: mesh-parent
+    x-displayName: Mesh Main Router APIs
+    description: >-
+      The mesh extension lets users grow the network with multiple SPR Access
+      Points
 x-tagGroups:
   - name: Web API
     tags:
@@ -223,13 +238,18 @@ x-tagGroups:
       - alerts
       - otp
       - plus
-  - name: Default API Extensions
+  - name: Standard Plugin APIs
     tags:
       - dnsblock
       - dnslog
       - wireguard
       - lookup
       - dyndns
+  - name: Mesh Extension APIs
+    tags:
+      - mesh-common
+      - mesh-parent
+      - mesh-node
   - name: Internal Unix Socket APIs
     tags:
       - unix_wifid
@@ -2315,29 +2335,6 @@ paths:
           description: successful operation
       requestBody:
         $ref: '#/components/requestBodies/AbstractDHCPRequest'
-  /wireguardUpdate:
-    put:
-      tags:
-        - unix_wireguard
-      summary: Update Wireguard Peer
-      description: Handle networking tasks for a new wireguard peer
-      operationId: newWireguardUpdate
-      responses:
-        '200':
-          description: successful operation
-      requestBody:
-        $ref: '#/components/requestBodies/WireguardUpdate'
-    delete:
-      tags:
-        - unix_wireguard
-      summary: Delete wireguard peer
-      description: Handle networking tasks for removing a wireguard peer
-      operationId: delWireguardUpdate
-      responses:
-        '200':
-          description: successful operation
-      requestBody:
-        $ref: '#/components/requestBodies/WireguardUpdate'
   /plugins:
     get:
       tags:
@@ -2493,525 +2490,6 @@ paths:
           source: |
             curl -u "admin:pass" -H "X-JWT-OTP: ..." -X PUT \
               "http://192.168.2.1/plugin/install_user_url" --data "https://github.com/spr-networks/spr-sample-plugin.git"
-  /plugins/dns/block/config:
-    get:
-      tags:
-        - dnsblock
-      summary: Retrieve coredns-block config
-      description: Returns coredns-block config
-      operationId: showConfig
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: string
-                example: config
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/block/config"
-  /plugins/dns/block/override:
-    put:
-      tags:
-        - dnsblock
-      summary: Add override domain
-      description: Add domain to be blocked/permitted by DNS
-      operationId: addBlockDomains
-      requestBody:
-        $ref: '#/components/requestBodies/DNSDomainOverride'
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X PUT  \
-              "http://192.168.2.1/plugins/dns/block/override" \
-              --data '{"Type": "Permit", "Domain": "example.com.", "ResultIP": "1.1.1.1", "ClientIP": "*", "Expiration": 0}'
-    delete:
-      tags:
-        - dnsblock
-      summary: Delete override domain
-      description: Delete domain to be blocked/permitted by DNS
-      operationId: deleteBlockDomains
-      requestBody:
-        $ref: '#/components/requestBodies/DNSDomainOverride'
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X DELETE  \
-              "http://192.168.2.1/plugins/dns/block/override" \
-              --data '{"Domain": "example.com.", "Type": "Permit"}'
-  /plugins/dns/block/blocklist:
-    get:
-      tags:
-        - dnsblock
-      summary: Retrieve blocklists
-      description: Returns blocklist URIs
-      operationId: showDNSBlocklist
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DNSListEntry'
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/block/blocklist"
-    put:
-      tags:
-        - dnsblock
-      summary: Add blocklist
-      description: Add blocklist entry
-      operationId: addDNSBlocklist
-      requestBody:
-        $ref: '#/components/requestBodies/DNSListEntry'
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X PUT  \
-              "http://192.168.2.1/plugins/dns/block/blocklist" \
-              --data '{"URI": "http://asdf.com", "Enabled": true}'
-    delete:
-      tags:
-        - dnsblock
-      summary: Delete blocklist entry
-      description: Delete a blocklist entry
-      operationId: deleteDNSBlocklist
-      requestBody:
-        $ref: '#/components/requestBodies/DNSListEntry'
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X DELETE  \
-              "http://192.168.2.1/plugins/dns/block/blocklist" \
-              --data '{"URI": "http://asdf.com"}'
-  /plugins/dns/block/exclusions:
-    get:
-      tags:
-        - dnsblock
-      summary: Retrieve IPs excluded from blocking
-      description: Returns IPs excluded from DNS block
-      operationId: showDNSExclusions
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-                example:
-                  - 192.168.2.102
-                  - 192.168.2.112
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/block/exclusions"
-    put:
-      tags:
-        - dnsblock
-      summary: Add IP to exclude
-      description: Add IP address to exclusion list
-      operationId: addDNSExclusion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-              description: ip to exclude
-              example: 192.168.2.102
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X PUT  \
-              "http://192.168.2.1/plugins/dns/block/exclusions" \
-              --data '"192.168.2.102"'
-    delete:
-      tags:
-        - dnsblock
-      summary: Delete IP from exclusion list
-      description: Delete IP address from exclusion list
-      operationId: deleteDNSExclusion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-              description: ip to delete exclude for
-              example: 192.168.2.102
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X DELETE  \
-              "http://192.168.2.1/plugins/dns/block/exclusions" \
-              --data '"192.168.2.102"'
-  /plugins/dns/block/dump_domains:
-    get:
-      tags:
-        - dnsblock
-      summary: Dump all domains loaded from block lists
-      description: Returns aggregate list of all block domains
-      operationId: dumpDNSEntries
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-                example:
-                  - asdf.com
-                  - example.com
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: >
-            curl -u "admin:pass"
-            "http://192.168.2.1/plugins/dns/block/dump_domains"
-  /plugins/dns/block/metrics:
-    get:
-      tags:
-        - dnsblock
-      summary: Get metrics
-      description: Returns metrics for DNS block
-      operationId: getDNSMetrics
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DNSBlockMetrics'
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/block/metrics"
-  /plugins/dns/log/config:
-    get:
-      tags:
-        - dnslog
-      summary: Retrieve coredns-jsonlog configuration
-      operationId: showDnsLogConfig
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                example:
-                  - HostPrivacyIPList:
-                      - 192.168.1.10
-                  - DomainIgnoreList:
-                      - asdf.com
-                      - asdf2.com
-                      - test.com.
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/log/config"
-  /plugins/dns/log/host_privacy_list:
-    get:
-      tags:
-        - dnslog
-      summary: Retrieve list of privacy hosts
-      description: List of hosts to exclude from DNS Log
-      operationId: showHostPrivacyList
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: string
-                example:
-                  - 192.168.1.10
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/log/host_privacy_list"
-    put:
-      tags:
-        - dnslog
-      summary: Set the list of privacy hosts
-      operationId: setHostPrivacyList
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                type: string
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X PUT  \
-              "http://192.168.2.1/plugins/dns/log/host_privacy_list" \
-              --data '["192.168.1.10", "192.168.1.14"]'
-  /plugins/dns/log/domain_ignores:
-    get:
-      tags:
-        - dnslog
-      summary: Retrieve list of domains to exclude from logging
-      operationId: getDomainIgnores
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: string
-                example:
-                  - localhost
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/log/domain_ignores"
-  /plugins/dns/log/domain_ignore/{domain}:
-    put:
-      tags:
-        - dnslog
-      summary: Add domain to exclude from logs
-      operationId: addDomainIgnore
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      parameters:
-        - name: domain
-          in: path
-          description: domain name
-          required: true
-          schema:
-            type: string
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X PUT \
-              "http://192.168.2.1/plugins/dns/log/domain_ignore/example.com"
-    delete:
-      tags:
-        - dnslog
-      summary: Remove domain from exclude list
-      operationId: deleteDomainIgnore
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      parameters:
-        - name: domain
-          in: path
-          description: domain name
-          required: true
-          schema:
-            type: string
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X DELETE \
-              "http://192.168.2.1/plugins/dns/log/domain_ignore/example.com"
-  /plugins/dns/log/history/{ip}:
-    get:
-      tags:
-        - dnslog
-      summary: Retrieve recent DNS history for a given IP
-      operationId: getDNSHistory
-      parameters:
-        - name: ip
-          in: path
-          description: ip address
-          required: true
-          schema:
-            type: string
-            example: 1.1.1.1
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                example:
-                  - Q:
-                      - Name: supernetworks.org.
-                        Qtype: 1
-                        Qclass: 1
-                    A:
-                      - Hdr:
-                          Name: supernetworks.org.
-                          Rrtype: 1
-                          Class: 1
-                          Ttl: 30
-                          Rdlength: 4
-                        A: 172.67.71.52
-                      - Hdr:
-                          Name: supernetworks.org.
-                          Rrtype: 1
-                          Class: 1
-                          Ttl: 30
-                          Rdlength: 4
-                        A: 104.26.7.38
-                      - Hdr:
-                          Name: supernetworks.org.
-                          Rrtype: 1
-                          Class: 1
-                          Ttl: 30
-                          Rdlength: 4
-                        A: 104.26.6.38
-                    Type: NOERROR
-                    FirstName: supernetworks.org.
-                    FirstAnswer: 172.67.71.52
-                    Local: '[::]:53'
-                    Remote: 127.0.0.1:60237
-                    Timestamp: '2022-03-28T21:47:49.563958-07:00'
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/dns/log/history/192.168.1.10"
-    delete:
-      tags:
-        - dnslog
-      summary: Delete Device History by IP
-      description: Delete device history in the IP parameter
-      operationId: deleteDNSHistory
-      parameters:
-        - name: ip
-          in: path
-          description: ip address
-          required: true
-          schema:
-            type: string
-            example: 1.1.1.1
-      responses:
-        '200':
-          description: successful operation
-      security:
-        - basicAuth: []
-        - bearerAuth: []
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: |
-            curl -u "admin:pass" -X DELETE \
-              "http://192.168.2.1/plugins/dns/log/history/192.168.1.10"
   /tokens:
     get:
       tags:
@@ -3639,13 +3117,688 @@ paths:
           source: |
             curl -u "admin:pass" -X PUT \
               "http://192.168.2.1/tokens" --data {}
-  /plugins/wireguard/peers:
+  /ping/{interface}/{address}:
+    put:
+      tags:
+        - network
+      summary: Perform an ICMP ping test
+      description: Performs an ICMP ping test from a specified interface to a given address
+      operationId: performICMPPingTest
+      parameters:
+        - name: interface
+          in: path
+          description: Network interface to use for the ping test
+          required: true
+          schema:
+            type: string
+        - name: address
+          in: path
+          description: IP address to ping
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - 10.523ms
+                  - 9.872ms
+                  - 11.245ms
+                  - 10.101ms
+        '400':
+          description: Bad request (invalid interface, address, or socket error)
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -X PUT http://localhost/ping/eth0/8.8.8.8
+  /ping/{interface}/{address}/udp:
+    put:
+      tags:
+        - network
+      summary: Perform a UDP ping test
+      description: Performs a UDP ping test from a specified interface to a given address
+      operationId: performUDPPingTest
+      parameters:
+        - name: interface
+          in: path
+          description: Network interface to use for the UDP ping test
+          required: true
+          schema:
+            type: string
+        - name: address
+          in: path
+          description: IP address and port to ping
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - 15.789ms
+                  - 14.234ms
+                  - 16.012ms
+                  - 15.456ms
+        '400':
+          description: Bad request (invalid interface, address, or socket error)
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -X PUT http://localhost/ping/eth0/8.8.8.8:53/udp
+  /multicastSettings:
     get:
       tags:
-        - wireguard
-      summary: Peers
-      description: Returns a list of peers connected to Wireguard
-      operationId: getWireguardPeers
+        - firewall
+      summary: Get multicast settings
+      description: Retrieves the current multicast settings
+      operationId: getMulticastSettings
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MulticastSettings'
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl http://localhost/multicastSettings
+    put:
+      tags:
+        - firewall
+      summary: Update multicast settings
+      description: Updates the multicast settings
+      operationId: updateMulticastSettings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MulticastSettings'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MulticastSettings'
+        '400':
+          description: Bad request (invalid multicast address)
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -X PUT -H "Content-Type: application/json" \
+              -d '{"Disabled":false,"Addresses":[{"Address":"224.0.0.251:5353"}],"DisableMDNSAdvertise":false,"MDNSName":"MyDevice"}' \
+              http://localhost/multicastSettings
+  /ip/interfaces:
+    get:
+      tags:
+        - general
+      summary: Get IP to interface mappings
+      description: Retrieves the current IP to interface mappings
+      operationId: getIPInterfaceMappings
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+                example:
+                  192.168.1.1: eth0
+                  10.0.0.1: wlan0
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl http://localhost/ip/interfaces
+  /plugins/mesh/config:
+    get:
+      summary: Get mesh configuration
+      description: Retrieves the current mesh network configuration
+      operationId: getMeshConfig
+      tags:
+        - mesh-common
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeshConfig'
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/mesh/config"
+  /plugins/mesh/leafMode/{enable}:
+    put:
+      summary: Set leaf mode
+      description: Enable or disable leaf mode for the mesh node
+      operationId: setLeafMode
+      tags:
+        - mesh-node
+      parameters:
+        - name: enable
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - enable
+              - disable
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid enable parameter
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/leafMode/enable"
+  /plugins/mesh/leafMode:
+    get:
+      summary: Get leaf mode status
+      description: Retrieves the current status of leaf mode
+      operationId: getLeafModeStatus
+      tags:
+        - mesh-common
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: boolean
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/mesh/leafMode"
+  /plugins/mesh/leafRouters:
+    get:
+      summary: Get list of leaf routers
+      description: Retrieves a list of all leaf routers the main router has configured
+      operationId: getLeafRouters
+      tags:
+        - mesh-parent
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LeafRouter'
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/mesh/leafRouters"
+  /plugins/mesh/leafRouter:
+    put:
+      summary: Add or update a leaf router
+      description: Adds a new leaf router or updates an existing one
+      operationId: updateLeafRouter
+      tags:
+        - mesh-parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeafRouter'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/leafRouter" \
+              -H "Content-Type: application/json" \
+              -d '{"APIToken": "token123", "IP": "192.168.1.2"}'
+    delete:
+      summary: Remove a leaf router
+      description: Removes a leaf router from the main router's mesh network
+      operationId: deleteLeafRouter
+      tags:
+        - mesh-parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeafRouter'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE \
+              "http://192.168.2.1/plugins/mesh/leafRouter" \
+              -H "Content-Type: application/json" \
+              -d '{"IP": "192.168.1.2"}'
+  /plugins/mesh/stationConnect:
+    put:
+      summary: Mesh node reports station connection
+      description: >-
+        Endpoint for mesh nodes to notify the main router/AP about a new station
+        connection to the mesh network
+      operationId: reportStationConnect
+      tags:
+        - mesh-parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WifiConnectEvent'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/stationConnect" \
+              -H "Content-Type: application/json" \
+              -d '{"Event": "connect", "Iface": "wlan0", "Mac": "00:11:22:33:44:55", "Router": "192.168.1.1"}'
+  /plugins/mesh/stationConnectFailure:
+    put:
+      summary: Mesh node reports station connection failure
+      description: >-
+        Endpoint for mesh nodes to notify the main router/AP about a failed
+        station connection attempt
+      operationId: reportStationConnectFailure
+      tags:
+        - mesh-parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WifiConnectFailureEvent'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/stationConnectFailure" \
+              -H "Content-Type: application/json" \
+              -d '{"Type": "connection_failure", "MAC": "00:11:22:33:44:55", "Reason": "auth_timeout", "Status": "failure", "Router": "192.168.1.1"}'
+  /plugins/mesh/stationDisconnect:
+    put:
+      summary: Mesh node reports station disconnection
+      description: >-
+        Endpoint for mesh nodes to notify the main router/AP about a station
+        disconnection from the mesh network
+      operationId: reportStationDisconnect
+      tags:
+        - mesh-parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WifiConnectEvent'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/stationDisconnect" \
+              -H "Content-Type: application/json" \
+              -d '{"Event": "disconnect", "Iface": "wlan0", "Mac": "00:11:22:33:44:55", "Router": "192.168.1.1"}'
+  /plugins/mesh/syncDevices:
+    put:
+      summary: Synchronize devices
+      description: >-
+        Mesh nodes handle this request when the main AP/Router sends down the
+        devices listing
+      operationId: syncDevices
+      tags:
+        - mesh-node
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/DeviceEntry'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/syncDevices" \
+              -H "Content-Type: application/json" \
+              -d '{"device1": {"Name": "Device1", "MAC": "00:11:22:33:44:55", "WGPubKey": "pubkey123", "VLANTag": "100", "RecentIP": "192.168.1.10", "PSKEntry": {"Type": "wpa2", "Psk": "password123"}, "Groups": ["group1"], "DeviceTags": ["tag1"]}}'
+  /plugins/mesh/setSSID:
+    put:
+      summary: Set SSID
+      description: The main router uses this call to set the SSID on mesh nodes
+      operationId: setSSID
+      tags:
+        - mesh-node
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/setSSID" \
+              -H "Content-Type: application/json" \
+              -d '"MyMeshNetwork"'
+  /plugins/mesh/setOTP:
+    put:
+      summary: Set OTP settings
+      description: >-
+        The main router uses this call to sync the OTP login code on the mesh
+        nodes
+      operationId: setOTPSettings
+      tags:
+        - mesh-node
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OTPSettingsRequest'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/setOTP" \
+              -H "Content-Type: application/json" \
+              -d '{"Token": "token123", "Settings": {"OTPUsers": [{"Name": "user1", "Secret": "secret123", "Confirmed": true, "AlwaysOn": false}], "JWTDurationSeconds": 3600}}'
+  /plugins/mesh/syncOTP:
+    put:
+      summary: Synchronize OTP settings
+      description: Tells the main router to sync the OTP code on the mesh nodes
+      operationId: syncOTPSettings
+      tags:
+        - mesh-parent
+      responses:
+        '200':
+          description: Successful response
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/syncOTP"
+  /plugins/mesh/setParentCredentials:
+    put:
+      summary: Set parent credentials
+      description: >-
+        Sets the credentials for the parent node in the mesh network, used for
+        informing the parent about connection events
+      operationId: setParentCredentials
+      tags:
+        - mesh-node
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ParentCredentials'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Invalid request
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/mesh/setParentCredentials" \
+              -H "Content-Type: application/json" \
+              -d '{"ParentIP": "192.168.1.1", "ParentAPIToken": "token123", "ParentCA": "-----BEGIN CERTIFICATE-----..."}'
+    delete:
+      summary: Remove parent credentials
+      description: Removes the credentials for the parent node from the mesh node
+      operationId: removeParentCredentials
+      tags:
+        - mesh-node
+      responses:
+        '200':
+          description: Successful response
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE \
+              "http://192.168.2.1/plugins/mesh/setParentCredentials"
+  /plugins/mesh/cert:
+    get:
+      summary: Get mesh TLS certificate
+      description: >
+        Retrieves the TLS certificate for the mesh network.
+
+        This endpoint implements HMAC Authentication using the mesh node's API
+        key.
+      operationId: getMeshCertificate
+      tags:
+        - mesh-node
+      parameters:
+        - in: header
+          name: X-SPR-Mesh-TLS-Hash
+          schema:
+            type: string
+          required: false
+          description: >
+            HMAC signature of the certificate file contents, using the Mesh's
+            API Key.
+
+            This header is used to verify the integrity and authenticity of the
+            certificate.
+
+            The client should validate this HMAC to ensure the certificate
+            hasn't been tampered with.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/x-x509-ca-cert:
+              schema:
+                type: string
+                format: binary
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/mesh/cert
+  /plugins/dns/block/config:
+    get:
+      tags:
+        - dnsblock
+      summary: Retrieve coredns-block config
+      description: Returns coredns-block config
+      operationId: showConfig
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: config
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/dns/block/config"
+  /plugins/dns/block/override:
+    put:
+      tags:
+        - dnsblock
+      summary: Add override domain
+      description: Add domain to be blocked/permitted by DNS
+      operationId: addBlockDomains
+      requestBody:
+        $ref: '#/components/requestBodies/DNSDomainOverride'
+      responses:
+        '200':
+          description: successful operation
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT  \
+              "http://192.168.2.1/plugins/dns/block/override" \
+              --data '{"Type": "Permit", "Domain": "example.com.", "ResultIP": "1.1.1.1", "ClientIP": "*", "Expiration": 0}'
+    delete:
+      tags:
+        - dnsblock
+      summary: Delete override domain
+      description: Delete domain to be blocked/permitted by DNS
+      operationId: deleteBlockDomains
+      requestBody:
+        $ref: '#/components/requestBodies/DNSDomainOverride'
+      responses:
+        '200':
+          description: successful operation
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE  \
+              "http://192.168.2.1/plugins/dns/block/override" \
+              --data '{"Domain": "example.com.", "Type": "Permit"}'
+  /plugins/dns/block/blocklist:
+    get:
+      tags:
+        - dnsblock
+      summary: Retrieve blocklists
+      description: Returns blocklist URIs
+      operationId: showDNSBlocklist
       responses:
         '200':
           description: successful operation
@@ -3654,7 +3807,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/WireguardPeer'
+                  $ref: '#/components/schemas/DNSListEntry'
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3663,23 +3816,18 @@ paths:
           label: CLI
           source: |
             curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/wireguard/peers"
-  /plugins/wireguard/peer:
+              "http://192.168.2.1/plugins/dns/block/blocklist"
     put:
       tags:
-        - wireguard
-      summary: Peer
-      description: Creates a new peer
-      operationId: addWireguardPeer
+        - dnsblock
+      summary: Add blocklist
+      description: Add blocklist entry
+      operationId: addDNSBlocklist
       requestBody:
-        $ref: '#/components/requestBodies/WireguardPeer'
+        $ref: '#/components/requestBodies/DNSListEntry'
       responses:
         '200':
           description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WireguardConfig'
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3687,15 +3835,196 @@ paths:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" -X PUT \
-              "http://192.168.2.1/plugins/wireguard/peer" --data '{}'
-  /plugins/wireguard/config:
+            curl -u "admin:pass" -X PUT  \
+              "http://192.168.2.1/plugins/dns/block/blocklist" \
+              --data '{"URI": "http://asdf.com", "Enabled": true}'
+    delete:
+      tags:
+        - dnsblock
+      summary: Delete blocklist entry
+      description: Delete a blocklist entry
+      operationId: deleteDNSBlocklist
+      requestBody:
+        $ref: '#/components/requestBodies/DNSListEntry'
+      responses:
+        '200':
+          description: successful operation
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE  \
+              "http://192.168.2.1/plugins/dns/block/blocklist" \
+              --data '{"URI": "http://asdf.com"}'
+  /plugins/dns/block/exclusions:
     get:
       tags:
-        - wireguard
-      summary: Config
-      description: Return Wireguard server config
-      operationId: getWireguardConfig
+        - dnsblock
+      summary: Retrieve IPs excluded from blocking
+      description: Returns IPs excluded from DNS block
+      operationId: showDNSExclusions
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - 192.168.2.102
+                  - 192.168.2.112
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/dns/block/exclusions"
+    put:
+      tags:
+        - dnsblock
+      summary: Add IP to exclude
+      description: Add IP address to exclusion list
+      operationId: addDNSExclusion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              description: ip to exclude
+              example: 192.168.2.102
+      responses:
+        '200':
+          description: successful operation
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT  \
+              "http://192.168.2.1/plugins/dns/block/exclusions" \
+              --data '"192.168.2.102"'
+    delete:
+      tags:
+        - dnsblock
+      summary: Delete IP from exclusion list
+      description: Delete IP address from exclusion list
+      operationId: deleteDNSExclusion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              description: ip to delete exclude for
+              example: 192.168.2.102
+      responses:
+        '200':
+          description: successful operation
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE  \
+              "http://192.168.2.1/plugins/dns/block/exclusions" \
+              --data '"192.168.2.102"'
+  /plugins/dns/block/dump_domains:
+    get:
+      tags:
+        - dnsblock
+      summary: Dump all domains loaded from block lists
+      description: Returns aggregate list of all block domains
+      operationId: dumpDNSEntries
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - asdf.com
+                  - example.com
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >
+            curl -u "admin:pass"
+            "http://192.168.2.1/plugins/dns/block/dump_domains"
+  /plugins/dns/block/metrics:
+    get:
+      tags:
+        - dnsblock
+      summary: Get metrics
+      description: Returns metrics for DNS block
+      operationId: getDNSMetrics
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DNSBlockMetrics'
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/dns/block/metrics"
+  /plugins/dns/log/config:
+    get:
+      tags:
+        - dnslog
+      summary: Retrieve coredns-jsonlog configuration
+      operationId: showDnsLogConfig
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                example:
+                  - HostPrivacyIPList:
+                      - 192.168.1.10
+                  - DomainIgnoreList:
+                      - asdf.com
+                      - asdf2.com
+                      - test.com.
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/dns/log/config"
+  /plugins/dns/log/host_privacy_list:
+    get:
+      tags:
+        - dnslog
+      summary: Retrieve list of privacy hosts
+      description: List of hosts to exclude from DNS Log
+      operationId: showHostPrivacyList
       responses:
         '200':
           description: successful operation
@@ -3703,16 +4032,8 @@ paths:
             application/json:
               schema:
                 type: string
-                example: |
-                  [Interface]
-                  Address = 192.168.3.1/24
-                  ListenPort = 51280
-                  PrivateKey = 6KVVbcmXanU/6mByHy17eNO9DXe9BQJWOyaA204JYH4=
-
-                  [Peer]
-                  PublicKey = 7SdFRh8o76RjUn/y4c7cQgCcCXA85s47/gVAdem3bBI=
-                  PresharedKey = w9bfMAfqRnLjnlHofX+JSzaRDADrW1tvyW1UWzXJjrg=
-                  AllowedIPs = 192.168.3.2/32
+                example:
+                  - 192.168.1.10
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3721,31 +4042,47 @@ paths:
           label: CLI
           source: |
             curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/wireguard/config"
-  /plugins/wireguard/status:
+              "http://192.168.2.1/plugins/dns/log/host_privacy_list"
+    put:
+      tags:
+        - dnslog
+      summary: Set the list of privacy hosts
+      operationId: setHostPrivacyList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: successful operation
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT  \
+              "http://192.168.2.1/plugins/dns/log/host_privacy_list" \
+              --data '["192.168.1.10", "192.168.1.14"]'
+  /plugins/dns/log/domain_ignores:
     get:
       tags:
-        - wireguard
-      summary: Status
-      description: Return Wireguard server and peer status
-      operationId: getWireguardStatus
+        - dnslog
+      summary: Retrieve list of domains to exclude from logging
+      operationId: getDomainIgnores
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                type: object
+                type: string
                 example:
-                  wg0:
-                    privateKey: 6KVVbcmXanU/6mByHy17eNO9DXe9BQJWOyaA204JYH4=
-                    publicKey: 7SdFRh8o76RjUn/y4c7cQgCcCXA85s47/gVAdem3bBI=
-                    listenPort: 51280,
-                    peers:
-                      HvtqvLJ1F33eHmR5Yk9PLZfTHg7w6sazPZtZi9u8pBQ=:
-                        presharedKey: w9bfMAfqRnLjnlHofX+JSzaRDADrW1tvyW1UWzXJjrg=
-                        allowedIps:
-                          - 192.168.3.2/32
+                  - localhost
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3754,22 +4091,124 @@ paths:
           label: CLI
           source: |
             curl -u "admin:pass" \
-              "http://192.168.2.1/plugins/wireguard/status"
-  /plugins/wireguard/up:
+              "http://192.168.2.1/plugins/dns/log/domain_ignores"
+  /plugins/dns/log/domain_ignore/{domain}:
     put:
       tags:
-        - wireguard
-      summary: Up
-      description: Start Wireguard if not running
-      operationId: wireguardUp
+        - dnslog
+      summary: Add domain to exclude from logs
+      operationId: addDomainIgnore
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                type: boolean
-                example: true
+                type: array
+                items:
+                  type: object
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          description: domain name
+          required: true
+          schema:
+            type: string
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/dns/log/domain_ignore/example.com"
+    delete:
+      tags:
+        - dnslog
+      summary: Remove domain from exclude list
+      operationId: deleteDomainIgnore
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          description: domain name
+          required: true
+          schema:
+            type: string
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X DELETE \
+              "http://192.168.2.1/plugins/dns/log/domain_ignore/example.com"
+  /plugins/dns/log/history/{ip}:
+    get:
+      tags:
+        - dnslog
+      summary: Retrieve recent DNS history for a given IP
+      operationId: getDNSHistory
+      parameters:
+        - name: ip
+          in: path
+          description: ip address
+          required: true
+          schema:
+            type: string
+            example: 1.1.1.1
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  - Q:
+                      - Name: supernetworks.org.
+                        Qtype: 1
+                        Qclass: 1
+                    A:
+                      - Hdr:
+                          Name: supernetworks.org.
+                          Rrtype: 1
+                          Class: 1
+                          Ttl: 30
+                          Rdlength: 4
+                        A: 172.67.71.52
+                      - Hdr:
+                          Name: supernetworks.org.
+                          Rrtype: 1
+                          Class: 1
+                          Ttl: 30
+                          Rdlength: 4
+                        A: 104.26.7.38
+                      - Hdr:
+                          Name: supernetworks.org.
+                          Rrtype: 1
+                          Class: 1
+                          Ttl: 30
+                          Rdlength: 4
+                        A: 104.26.6.38
+                    Type: NOERROR
+                    FirstName: supernetworks.org.
+                    FirstAnswer: 172.67.71.52
+                    Local: '[::]:53'
+                    Remote: 127.0.0.1:60237
+                    Timestamp: '2022-03-28T21:47:49.563958-07:00'
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3777,23 +4216,25 @@ paths:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" -X PUT \
-              "http://192.168.2.1/plugins/wireguard/up"
-  /plugins/wireguard/down:
-    put:
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/dns/log/history/192.168.1.10"
+    delete:
       tags:
-        - wireguard
-      summary: Down
-      description: Stop Wireguard if running
-      operationId: wireguardDown
+        - dnslog
+      summary: Delete Device History by IP
+      description: Delete device history in the IP parameter
+      operationId: deleteDNSHistory
+      parameters:
+        - name: ip
+          in: path
+          description: ip address
+          required: true
+          schema:
+            type: string
+            example: 1.1.1.1
       responses:
         '200':
           description: successful operation
-          content:
-            application/json:
-              schema:
-                type: boolean
-                example: true
       security:
         - basicAuth: []
         - bearerAuth: []
@@ -3801,8 +4242,8 @@ paths:
         - lang: cURL
           label: CLI
           source: |
-            curl -u "admin:pass" -X PUT \
-              "http://192.168.2.1/plugins/wireguard/down"
+            curl -u "admin:pass" -X DELETE \
+              "http://192.168.2.1/plugins/dns/log/history/192.168.1.10"
   /plugins/lookup/asn/{ips}:
     get:
       tags:
@@ -3998,8 +4439,225 @@ paths:
           source: |
             curl -u "admin:pass" \
               "http://192.168.2.1/plugins/dyndns/refresh"
+  /wireguardUpdate:
+    put:
+      tags:
+        - unix_wireguard
+      summary: Update Wireguard Peer
+      description: Handle networking tasks for a new wireguard peer
+      operationId: newWireguardUpdate
+      responses:
+        '200':
+          description: successful operation
+      requestBody:
+        $ref: '#/components/requestBodies/WireguardUpdate'
+    delete:
+      tags:
+        - unix_wireguard
+      summary: Delete wireguard peer
+      description: Handle networking tasks for removing a wireguard peer
+      operationId: delWireguardUpdate
+      responses:
+        '200':
+          description: successful operation
+      requestBody:
+        $ref: '#/components/requestBodies/WireguardUpdate'
+  /plugins/wireguard/peers:
+    get:
+      tags:
+        - wireguard
+      summary: Peers
+      description: Returns a list of peers connected to Wireguard
+      operationId: getWireguardPeers
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WireguardPeer'
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/wireguard/peers"
+  /plugins/wireguard/peer:
+    put:
+      tags:
+        - wireguard
+      summary: Peer
+      description: Creates a new peer
+      operationId: addWireguardPeer
+      requestBody:
+        $ref: '#/components/requestBodies/WireguardPeer'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WireguardConfig'
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/wireguard/peer" --data '{}'
+  /plugins/wireguard/config:
+    get:
+      tags:
+        - wireguard
+      summary: Config
+      description: Return Wireguard server config
+      operationId: getWireguardConfig
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: |
+                  [Interface]
+                  Address = 192.168.3.1/24
+                  ListenPort = 51280
+                  PrivateKey = 6KVVbcmXanU/6mByHy17eNO9DXe9BQJWOyaA204JYH4=
+
+                  [Peer]
+                  PublicKey = 7SdFRh8o76RjUn/y4c7cQgCcCXA85s47/gVAdem3bBI=
+                  PresharedKey = w9bfMAfqRnLjnlHofX+JSzaRDADrW1tvyW1UWzXJjrg=
+                  AllowedIPs = 192.168.3.2/32
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/wireguard/config"
+  /plugins/wireguard/status:
+    get:
+      tags:
+        - wireguard
+      summary: Status
+      description: Return Wireguard server and peer status
+      operationId: getWireguardStatus
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  wg0:
+                    privateKey: 6KVVbcmXanU/6mByHy17eNO9DXe9BQJWOyaA204JYH4=
+                    publicKey: 7SdFRh8o76RjUn/y4c7cQgCcCXA85s47/gVAdem3bBI=
+                    listenPort: 51280,
+                    peers:
+                      HvtqvLJ1F33eHmR5Yk9PLZfTHg7w6sazPZtZi9u8pBQ=:
+                        presharedKey: w9bfMAfqRnLjnlHofX+JSzaRDADrW1tvyW1UWzXJjrg=
+                        allowedIps:
+                          - 192.168.3.2/32
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" \
+              "http://192.168.2.1/plugins/wireguard/status"
+  /plugins/wireguard/up:
+    put:
+      tags:
+        - wireguard
+      summary: Up
+      description: Start Wireguard if not running
+      operationId: wireguardUp
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: boolean
+                example: true
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/wireguard/up"
+  /plugins/wireguard/down:
+    put:
+      tags:
+        - wireguard
+      summary: Down
+      description: Stop Wireguard if running
+      operationId: wireguardDown
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: boolean
+                example: true
+      security:
+        - basicAuth: []
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: |
+            curl -u "admin:pass" -X PUT \
+              "http://192.168.2.1/plugins/wireguard/down"
 components:
   schemas:
+    MulticastSettings:
+      type: object
+      properties:
+        Disabled:
+          type: boolean
+          description: Whether multicast is disabled
+        Addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/MulticastAddress'
+          description: List of multicast addresses
+        DisableMDNSAdvertise:
+          type: boolean
+          description: Whether MDNS advertisement is disabled
+        MDNSName:
+          type: string
+          description: MDNS name
+      example:
+        Disabled: false
+        Addresses:
+          - Address: 224.0.0.251:5353
+        DisableMDNSAdvertise: false
+        MDNSName: MyDevice
+    MulticastAddress:
+      type: object
+      properties:
+        Address:
+          type: string
+          description: Multicast address in the format IP:PORT
+          example: 224.0.0.251:5353
     OTPUserRequest:
       type: object
       properties:
@@ -4359,23 +5017,6 @@ components:
           type: string
           pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
           example: 192.168.2.1
-    WireguardUpdate:
-      type: object
-      properties:
-        IP:
-          type: string
-          pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
-          example: 192.168.2.102
-        PublicKey:
-          description: Base64 public key
-          type: string
-          example: 7SdFRh8o76RjUn/y4c7cQgCcCXA85s47/gVAdem3bBI=
-        Iface:
-          type: string
-          example: wg0
-        Name:
-          type: string
-          example: wfh-laptop
     AbstractDHCPRequest:
       type: object
       properties:
@@ -4696,71 +5337,52 @@ components:
       properties:
         Name:
           type: string
-          description: plugin name
+          description: Plugin name
           example: dns-block
         URI:
           type: string
-          description: plugin URI
+          description: Plugin URI
           example: dns/block
         UnixPath:
           type: string
-          description: plugin path for unix socket
+          description: Plugin path for unix socket
           example: /state/dns/dns_block_plugin
+        Enabled:
+          type: boolean
+          description: Plugin state
+          example: true
+        Plus:
+          type: boolean
+          description: Indicates if this is a PLUS plugin
+          example: false
+        GitURL:
+          type: string
+          description: Git repository URL for the plugin
+          example: https://github.com/example/dns-block-plugin.git
         ComposeFilePath:
           type: string
-          description: relative path to docker compose file
+          description: Relative path to docker compose file
           example: plugins/plugin/docker-compose.yml
-        Enabled:
+        HasUI:
           type: boolean
-          description: plugin state
+          description: Indicates if the plugin has a user interface
           example: true
-          required: false
-    DNSDomainOverride:
-      type: object
-      properties:
-        Type:
-          type: string
-          description: type of override (permit or block)
-          example: permit
-        Domain:
-          type: string
-          description: domain name to override
-          example: example.com
-        ResultIP:
-          type: string
-          description: ip to return
-          example: 1.2.3.4
-          pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
-        ClientIP:
-          type: string
-          description: target to apply to, '*' for all
-          example: 192.168.2.102
-          pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
-        Expiration:
-          type: integer
-          description: if non zero has unix time for when the entry should disappear
-          example: 0
-    DNSListEntry:
-      type: object
-      properties:
-        URI:
-          type: string
-          example: http://asdf.com/
-        Enabled:
+        SandboxedUI:
           type: boolean
+          description: Indicates if the plugin UI is sandboxed
           example: true
-    DNSBlockMetrics:
-      type: object
-      properties:
-        TotalQueries:
-          type: integer
-          example: 1024
-        BlockedQueries:
-          type: integer
-          example: 512
-        BlockedDomains:
-          type: integer
-          example: 1000
+        InstallTokenPath:
+          type: string
+          description: Path to the installation token
+          example: /config/plugins/dns-block/install-token
+        ScopedPaths:
+          type: array
+          items:
+            type: string
+          description: List of scoped paths for the plugin
+          example:
+            - /config/plugins/dns-block
+            - /state/plugins/dns-block
     HostapdStatus:
       type: object
       properties:
@@ -5070,6 +5692,270 @@ components:
         He_oper_chwidth:
           type: integer
           example: 1
+    FirewallConfig:
+      type: object
+      properties:
+        ForwardingRules:
+          description: Forwarding Rules
+          type: array
+          items:
+            $ref: '#/components/schemas/FirewallForward'
+        BlockRules:
+          description: Block Rules
+          type: array
+          items:
+            $ref: '#/components/schemas/FirewallBlock'
+        ForwardingBlockRules:
+          description: Forwarding Block Rules
+          type: array
+          items:
+            $ref: '#/components/schemas/FirewallBlockForward'
+        ServicePorts:
+          description: Service Ports
+          type: array
+          items:
+            $ref: '#/components/schemas/ServicePort'
+    Token:
+      type: object
+      properties:
+        Name:
+          type: string
+          example: TestToken
+        Token:
+          type: string
+          example: dG9rbnRva250b2tudG9rbnRva250b2tudG9rbnRva24K
+        ScopedPaths:
+          type: array
+          items:
+            type: string
+          example:
+            - wifi
+        Expire:
+          type: integer
+          example: 1656440879
+    Notification:
+      type: object
+      properties:
+        Conditions:
+          type: object
+          properties:
+            Prefix:
+              type: string
+              example: drop:input
+            Protocol:
+              type: string
+              example: tcp
+            DstIP:
+              type: string
+              example: 1.1.1.1
+            DstPort:
+              type: integer
+              example: 80
+            SrcIP:
+              type: string
+              example: 192.168.2.10
+            SrcPort:
+              type: integer
+              example: 1234
+        Notification:
+          type: boolean
+          example: true
+    ParentCredentials:
+      type: object
+      properties:
+        ParentIP:
+          type: string
+        ParentAPIToken:
+          type: string
+        ParentCA:
+          type: string
+    LeafRouter:
+      type: object
+      properties:
+        APIToken:
+          type: string
+        IP:
+          type: string
+        TLSCA:
+          type: string
+          description: >-
+            This field should be left empty when adding or updating a leaf
+            router.
+    MeshConfig:
+      type: object
+      properties:
+        ParentCredentials:
+          $ref: '#/components/schemas/ParentCredentials'
+        LeafRouters:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeafRouter'
+    WifiConnectEvent:
+      type: object
+      description: >-
+        Event data sent by a mesh node to the main router/AP for station
+        connections and disconnections
+      properties:
+        Event:
+          type: string
+          description: Type of event (e.g., "connect" or "disconnect")
+        Iface:
+          type: string
+          description: Network interface on the mesh node where the event occurred
+        Mac:
+          type: string
+          description: MAC address of the station
+        Router:
+          type: string
+          description: IP address of the mesh node reporting the event
+    WifiConnectFailureEvent:
+      type: object
+      description: >-
+        Event data sent by a mesh node to the main router/AP for failed station
+        connection attempts
+      properties:
+        Type:
+          type: string
+          description: Type of failure event (e.g., "connection_failure")
+        MAC:
+          type: string
+          description: MAC address of the station that failed to connect
+        Reason:
+          type: string
+          description: Reason for the connection failure
+        Status:
+          type: string
+          description: Status of the connection attempt (e.g., "failure")
+        Router:
+          type: string
+          description: IP address of the mesh node reporting the failure
+    OTPUser:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: Name of the OTP user
+        Secret:
+          type: string
+          description: Secret key for the OTP
+        Confirmed:
+          type: boolean
+          description: Whether the OTP has been confirmed
+        AlwaysOn:
+          type: boolean
+          description: Whether OTP is always required for this user
+    OTPSettings:
+      type: object
+      properties:
+        OTPUsers:
+          type: array
+          items:
+            $ref: '#/components/schemas/OTPUser'
+        JWTDurationSeconds:
+          type: integer
+          description: Duration of the JWT token in seconds
+    OTPSettingsRequest:
+      type: object
+      properties:
+        Token:
+          type: string
+          description: Authentication token for the request
+        Settings:
+          $ref: '#/components/schemas/OTPSettings'
+    DNSDomainOverride:
+      type: object
+      properties:
+        Type:
+          type: string
+          description: type of override (permit or block)
+          example: permit
+        Domain:
+          type: string
+          description: domain name to override
+          example: example.com
+        ResultIP:
+          type: string
+          description: ip to return
+          example: 1.2.3.4
+          pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
+        ClientIP:
+          type: string
+          description: target to apply to, '*' for all
+          example: 192.168.2.102
+          pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
+        Expiration:
+          type: integer
+          description: if non zero has unix time for when the entry should disappear
+          example: 0
+    DNSListEntry:
+      type: object
+      properties:
+        URI:
+          type: string
+          example: http://asdf.com/
+        Enabled:
+          type: boolean
+          example: true
+    DNSBlockMetrics:
+      type: object
+      properties:
+        TotalQueries:
+          type: integer
+          example: 1024
+        BlockedQueries:
+          type: integer
+          example: 512
+        BlockedDomains:
+          type: integer
+          example: 1000
+    LookupASN:
+      type: object
+      properties:
+        IP:
+          description: IP address
+          type: string
+          example: 1.1.1.1
+        ASN:
+          description: ASN identifier
+          type: string
+          example: 13335
+        Name:
+          description: ASN Name
+          type: string
+          example: CLOUDFLARENET
+        Country:
+          description: ASN Country
+          type: string
+          example: US
+    GodyndnsConfig:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: GodyndnsConfig
+              - $ref: '#/components/schemas/GodyndnsConfig'
+      description: >-
+        Dyndns Configuration. See
+        [godns](https://github.com/TimothyYe/godns#configuration-file-format)
+        for details
+      required: true
+    WireguardUpdate:
+      type: object
+      properties:
+        IP:
+          type: string
+          pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
+          example: 192.168.2.102
+        PublicKey:
+          description: Base64 public key
+          type: string
+          example: 7SdFRh8o76RjUn/y4c7cQgCcCXA85s47/gVAdem3bBI=
+        Iface:
+          type: string
+          example: wg0
+        Name:
+          type: string
+          example: wfh-laptop
     WireguardPeer:
       type: object
       properties:
@@ -5118,148 +6004,6 @@ components:
         Peer:
           description: Client peer
           $ref: '#/components/schemas/WireguardPeer'
-    LookupASN:
-      type: object
-      properties:
-        IP:
-          description: IP address
-          type: string
-          example: 1.1.1.1
-        ASN:
-          description: ASN identifier
-          type: string
-          example: 13335
-        Name:
-          description: ASN Name
-          type: string
-          example: CLOUDFLARENET
-        Country:
-          description: ASN Country
-          type: string
-          example: US
-    FirewallConfig:
-      type: object
-      properties:
-        ForwardingRules:
-          description: Forwarding Rules
-          type: array
-          items:
-            $ref: '#/components/schemas/FirewallForward'
-        BlockRules:
-          description: Block Rules
-          type: array
-          items:
-            $ref: '#/components/schemas/FirewallBlock'
-        ForwardingBlockRules:
-          description: Forwarding Block Rules
-          type: array
-          items:
-            $ref: '#/components/schemas/FirewallBlockForward'
-        ServicePorts:
-          description: Service Ports
-          type: array
-          items:
-            $ref: '#/components/schemas/ServicePort'
-    GodyndnsConfig:
-      type: object
-      properties:
-        Provider:
-          type: string
-          example: Cloudflare
-        Email:
-          type: string
-          example: root@localhost.domain
-        Password:
-          type: string
-          example: stringypassword
-        LoginToken:
-          type: string
-          example: logintoken++
-        IpUrl:
-          type: string
-          example: https://ip4.seeip.org
-        Ipv6Url:
-          type: string
-          example: https://ip6.seeip.org
-        IpType:
-          type: string
-          example: IPv4
-        Interval:
-          type: integer
-          description: How many seconds to wait before checking for an update
-          example: 300
-        Socks5Proxy:
-          type: string
-          description: socks5 proxy to use
-        Resolver:
-          type: string
-          description: DNS Resolver to use
-          example: 8.8.8.8
-        RunOnce:
-          type: boolean
-          description: Run once and exit (note always set to true)
-          example: true
-        Domains:
-          type: array
-          items:
-            $ref: '#/components/schemas/GodyndnsDomain'
-    GodyndnsDomain:
-      type: object
-      properties:
-        DomainName:
-          type: string
-          example: supernetworks.org
-        SubDomains:
-          type: array
-          items:
-            type: string
-          example:
-            - dyndns
-    Token:
-      type: object
-      properties:
-        Name:
-          type: string
-          example: TestToken
-        Token:
-          type: string
-          example: dG9rbnRva250b2tudG9rbnRva250b2tudG9rbnRva24K
-        ScopedPaths:
-          type: array
-          items:
-            type: string
-          example:
-            - wifi
-        Expire:
-          type: integer
-          example: 1656440879
-    Notification:
-      type: object
-      properties:
-        Conditions:
-          type: object
-          properties:
-            Prefix:
-              type: string
-              example: drop:input
-            Protocol:
-              type: string
-              example: tcp
-            DstIP:
-              type: string
-              example: 1.1.1.1
-            DstPort:
-              type: integer
-              example: 80
-            SrcIP:
-              type: string
-              example: 192.168.2.10
-            SrcPort:
-              type: integer
-              example: 1234
-        Notification:
-          type: boolean
-          example: true
   requestBodies:
     AlertSetting:
       content:
@@ -5330,16 +6074,6 @@ components:
               - $ref: '#/components/schemas/DHCPUpdate'
       description: DHCPUpdate object that needs to be added
       required: true
-    WireguardUpdate:
-      content:
-        application/json:
-          schema:
-            allOf:
-              - description: WireguardUpdate
-                title: WireguardUpdate
-              - $ref: '#/components/schemas/WireguardUpdate'
-      description: WireguardUpdate object that needs to be added
-      required: true
     PluginEntry:
       content:
         application/json:
@@ -5359,47 +6093,6 @@ components:
                 title: InterfaceEntry
               - $ref: '#/components/schemas/InterfaceEntry'
       description: InterfaceEntry to be added or updated
-      required: true
-    DNSDomainOverride:
-      content:
-        application/json:
-          schema:
-            allOf:
-              - description: My DNSDomainOverride
-                title: DNSDomainOverride
-              - $ref: '#/components/schemas/DNSDomainOverride'
-      description: DNSDomainOverride object that needs to be added
-      required: true
-    DNSListEntry:
-      content:
-        application/json:
-          schema:
-            allOf:
-              - description: My DNSListEntry
-                title: DNSListEntry
-              - $ref: '#/components/schemas/DNSListEntry'
-      description: DNSListEntry object that needs to be added
-      required: true
-    WireguardPeer:
-      content:
-        application/json:
-          schema:
-            allOf:
-              - description: Peer
-              - $ref: '#/components/schemas/WireguardPeer'
-      description: Device object
-      required: false
-    GodyndnsConfig:
-      content:
-        application/json:
-          schema:
-            allOf:
-              - description: GodyndnsConfig
-              - $ref: '#/components/schemas/GodyndnsConfig'
-      description: >-
-        Dyndns Configuration. See
-        [godns](https://github.com/TimothyYe/godns#configuration-file-format)
-        for details
       required: true
     ChannelParameters:
       content:
@@ -5489,6 +6182,88 @@ components:
               - $ref: '#/components/schemas/Notification'
       description: Notification object
       required: true
+    DNSDomainOverride:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: My DNSDomainOverride
+                title: DNSDomainOverride
+              - $ref: '#/components/schemas/DNSDomainOverride'
+      description: DNSDomainOverride object that needs to be added
+      required: true
+    DNSListEntry:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: My DNSListEntry
+                title: DNSListEntry
+              - $ref: '#/components/schemas/DNSListEntry'
+      description: DNSListEntry object that needs to be added
+      required: true
+    GodyndnsConfig:
+      type: object
+      properties:
+        Provider:
+          type: string
+          example: Cloudflare
+        Email:
+          type: string
+          example: root@localhost.domain
+        Password:
+          type: string
+          example: stringypassword
+        LoginToken:
+          type: string
+          example: logintoken++
+        IpUrl:
+          type: string
+          example: https://ip4.seeip.org
+        Ipv6Url:
+          type: string
+          example: https://ip6.seeip.org
+        IpType:
+          type: string
+          example: IPv4
+        Interval:
+          type: integer
+          description: How many seconds to wait before checking for an update
+          example: 300
+        Socks5Proxy:
+          type: string
+          description: socks5 proxy to use
+        Resolver:
+          type: string
+          description: DNS Resolver to use
+          example: 8.8.8.8
+        RunOnce:
+          type: boolean
+          description: Run once and exit (note always set to true)
+          example: true
+        Domains:
+          type: array
+          items:
+            $ref: '#/components/schemas/GodyndnsDomain'
+    WireguardUpdate:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: WireguardUpdate
+                title: WireguardUpdate
+              - $ref: '#/components/schemas/WireguardUpdate'
+      description: WireguardUpdate object that needs to be added
+      required: true
+    WireguardPeer:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: Peer
+              - $ref: '#/components/schemas/WireguardPeer'
+      description: Device object
+      required: false
   securitySchemes:
     basicAuth:
       description: >
