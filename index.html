@@ -152,16 +152,27 @@
   </head>
   <body class="bg-gray-900 text-white">
     <header class="gradient-bg text-white py-4 fixed top-0 left-0 right-0 z-50">
-      <div class="fixed top-4 right-4 z-50">
-        <div class="fixed top-4 right-4 z-50">
-          <a href="#products" class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </a>
-        </div>
+      <div class="fixed top-4 right-16 md:right-4 z-50">
+        <a
+          href="#products"
+          class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+        </a>
       </div>
-
 
       <div class="container mx-auto px-4">
         <div
@@ -175,7 +186,7 @@
             <div class="md:hidden">
               <button
                 id="trigger-mobile-menu"
-                class="text-white hover:text-sky-400 hover:underline transition duration-300"
+                class="mt-1 text-white hover:text-sky-400 hover:underline transition duration-300"
               >
                 <img
                   width="24"
@@ -292,14 +303,21 @@
       </div>
     </header>
 
-    <header class="bg-gradient-to-b from-neutral-950 to-slate-900">
-      <section class="container mx-auto px-4 pt-48 md:pb-24">
+    <div class="static overflow-hidden h-full">
+      <div
+        class="opacity-80 bg-[url(assets/img/bg-ambient-1.png)] bg-cover h-full w-full fixed right-0 bottom-0 bg-opacity-25"
+        style="z-index: -1"
+      ></div>
+    </div>
+
+    <header class="zz-bg-gradient-to-b from-neutral-950 to-slate-900">
+      <section class="container mx-auto px-4 pt-40 md:pb-16">
         <div
           class="flex flex-col md:flex-row items-center justify-between text-center"
         >
           <div class="mb-8 md:mb-0 space-y-12">
             <h1
-              class="text-4xl md:text-6xl font-semibold tracking-tight md:px-16"
+              class="text-4xl md:text-6xl font-medium tracking-tight md:px-16"
             >
               A Secure Network Does Not Have To Be 🚀🧑‍🔬
               <span class="gradient-text">Rocket Science</span>
@@ -309,7 +327,7 @@
             </p-->
 
             <div
-              class="flex flex-col md:flex-row gap-4 justify-center antialiased"
+              class="flex flex-col md:flex-row gap-4 items-center justify-center antialiased"
               role="group"
             >
               <!--a
@@ -336,7 +354,7 @@
               <a
                 href="#get-started"
                 class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >Technical Start Guide
+                >Get Started
               </a>
             </div>
           </div>
@@ -344,7 +362,47 @@
       </section>
     </header>
 
-    <div class="overflow-hidden">
+    <header
+      class="hidden md:flex bg-gradient-to-b from-transparent to-slate-950/60 from-40% to-40% h-[360px] border-b border-slate-900"
+      _style="
+        background: #59c173;
+        background: -webkit-linear-gradient(
+          to right,
+          #5d26c1,
+          #a17fe0,
+          #59c173
+        );
+        background: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
+      "
+    >
+      <div class="flex flex-col md:flex-row md:gap-24 md:w-2/4 md:mx-auto">
+        <div class="items-center justify-center md:pt-24">
+          <img
+            src="/assets/img/pod-small.png"
+            alt="SPR Pod"
+            class="w-[240px] mx-auto"
+            style="transform: rotate(-2deg)"
+          />
+        </div>
+        <div
+          class="md:flex-1 flex-col text-white antialiased md:pt-24 flex gap-2 items-center md:items-start"
+        >
+          <p class="text-sm pt-6">WiFi 6 Router</p>
+          <h3 class="text-4xl font-bold font-sans">Wifi Pod</h3>
+          <p class="text-xl">Fast, secure dual-band wifi</p>
+          <div class="mt-8">
+            <a
+              href="order.html"
+              class="inline bg-white text-black text-md uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--div class="overflow-hidden">
       <div
         class="h-16 bg-slate-950 -mx-16"
         style="
@@ -352,11 +410,11 @@
           border-top-right-radius: 50% 100%;
         "
       ></div>
-    </div>
+    </div-->
 
     <main>
       <section
-        class="py-12 pb-24 bg-gradient-to-b from-slate-950 to-slate-900 antialiased"
+        class="py-12 pb-16 bg-gradient-to-b from-slate-950/80 to-slate-900/80 antialiased"
       >
         <div class="container mx-auto space-y-16 md:w-2/3">
           <h2
@@ -444,7 +502,7 @@
 
       <section
         id="demo"
-        class="container px-2 md:px-0 pb-16 mx-auto antialiased text-neutral-100"
+        class="container px-2 md:px-0 py-16 mx-auto antialiased text-neutral-100"
       >
         <h2
           class="text-4xl text-center text-neutral-50 font-bold drop-shadow-md mb-6 md:mb-8"
@@ -459,7 +517,7 @@
           >
             <div class="rounded-t-2xl rounded-b-2xl">
               <img
-                d="demo-image"
+                id="demo-image"
                 class="w-full"
                 src="/assets/img/screenshot-light-1.png"
               />
@@ -733,7 +791,7 @@
                 - could maybe skip this section since its mentioned further down
             -->
 
-            <div class="md:space-y-8 pb-8">
+            <div class="md:space-y-8 md:pb-8">
               <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
                 <div
                   class="relative p-8 md:rounded-lg text-zinc-100"
@@ -1130,14 +1188,20 @@
               </p>
 
               <div class="py-12 text-center">
-                <a
+                <!--a
                   href="/order.html"
                   class="bg-gradient-to-b from-blue-500 to-blue-700 text-neutral-100 text-md font-normal py-2 px-4 rounded-3xl hover:opacity-90 transition duration-300"
                 >
                   More Products
+                </a-->
+
+                <a
+                  href="order.html"
+                  class="inline bg-white text-black text-sm uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                >
+                  More Products
                 </a>
               </div>
-
             </div>
           </div>
 
@@ -1409,8 +1473,6 @@
             </a>
           </div-->
         </div>
-
-        </div>
       </section>
 
       <!--section id="plus" class="antialiased bg-slate-950">
@@ -1521,9 +1583,9 @@
 
       <a id="how-to-use"></a>
       <!-- howto use cases -->
-      <section class="bg-[#020619]">
+      <section class="zz-bg-[#020619]">
         <div
-          class="rounded-3xl-skip bg-gradient-to-b from-transparent via-gray-900 to-gray-900 shadow shadow-slate-900/50"
+          class="rounded-3xl-skip zz-bg-gradient-to-b from-transparent via-gray-900 to-gray-900 shadow shadow-slate-900/50"
         >
           <div
             class="h-[300px] bg-auto bg-no-repeat bg-[url(/assets/img/bg-grids.png)] opacity-40"
@@ -1889,7 +1951,7 @@
       </section>
 
       <a id="vpn"></a>
-      <section class="antialiased bg-gray-900 mt-8">
+      <section class="antialiased md:mt-8">
         <div class="container mx-auto">
           <div
             class="relative bg-slate-950 md:border border-slate-800 md:rounded-3xl md:overflow-hidden md:h-[400px] p-16"
@@ -1917,12 +1979,12 @@
                   Get Started with Virtual SPR
                 </a>
                 <a
-                href="https://aws.amazon.com/marketplace/pp/prodview-btrmy3vaqxmqk"
-                class="block md:inline border-2 border-yellow-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                target="_blank"
-              >
-                AWS Marketplace
-              </a>
+                  href="https://aws.amazon.com/marketplace/pp/prodview-btrmy3vaqxmqk"
+                  class="block md:inline border-2 border-yellow-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+                  target="_blank"
+                >
+                  AWS Marketplace
+                </a>
                 <a
                   href="https://marketplace.digitalocean.com/apps/spr"
                   class="block md:inline border-2 border-sky-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
@@ -2185,7 +2247,7 @@
                       aria-current="page"
                       data-target="#get-started-host"
                       class="inline-block p-4 text-slate-200 bg-gray-800 rounded-t-lg active"
-                      >Host Router &amp; Firewall with Docker</a
+                      >Host Router in Docker</a
                     >
                   </li>
                   <li class="me-2">
@@ -2321,7 +2383,9 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
         </div>
       </section>
 
-      <section class="text-center items-center py-24 border-t border-slate-800">
+      <section
+        class="antialiased text-center items-center py-24 border-t border-slate-800"
+      >
         <div class="space-y-8 mb-16">
           <h2 class="text-5xl text-neutral-100 font-light drop-shadow-lg">
             Upgrade Your Network Today
@@ -2335,19 +2399,40 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
           />
         </div-->
 
-        <div class="space-x-4 space-y-8">
+        <div
+          class="flex flex-col md:flex-row space-y-8 md:space-x-4 md:space-y-0 justify-center items-center"
+        >
           <a
             href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
-            class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-lg hover:opacity-90 transition duration-300"
+            class="inline bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
             >Get Started</a
           >
 
           <a
             href="https://sendfox.com/supernetworks"
-            _class="bg-gradient-to-b from-sky-500 to-sky-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-            class="border-2 border-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-lg hover:opacity-90 transition duration-300"
-            >Sign up for Newsletter</a
+            class="inline-block space-x-2 box-border border-2 border-violet-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
           >
+            <div class="flex space-x-2 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-rss"
+              >
+                <path d="M4 11a9 9 0 0 1 9 9" />
+                <path d="M4 4a16 16 0 0 1 16 16" />
+                <circle cx="5" cy="19" r="1" />
+              </svg>
+
+              <span>Stay in the loop</span>
+            </div>
+          </a>
 
           <a
             class="block md:inline"
