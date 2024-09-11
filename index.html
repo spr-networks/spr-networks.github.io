@@ -152,7 +152,7 @@
   </head>
   <body class="bg-gray-900 text-white">
     <header class="gradient-bg text-white py-4 fixed top-0 left-0 right-0 z-50">
-      <div class="fixed top-4 right-16 md:right-4 z-50">
+      <div class="fixed top-4 right-4 z-50">
         <a
           href="#products"
           class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
@@ -186,7 +186,7 @@
             <div class="md:hidden">
               <button
                 id="trigger-mobile-menu"
-                class="mt-1 text-white hover:text-sky-400 hover:underline transition duration-300"
+                class="text-white hover:text-sky-400 hover:underline transition duration-300"
               >
                 <img
                   width="24"
@@ -392,7 +392,7 @@
           <p class="text-xl">Fast, secure dual-band wifi</p>
           <div class="mt-8">
             <a
-              href="order.html"
+              href="pod-order.html"
               class="inline bg-white text-black text-md uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
             >
               Shop Now
@@ -2264,7 +2264,7 @@
                   <div class="space-y-4" id="get-started-host">
                     <div class="flex space-x-4 items-center justify-between">
                       <h4 class="text-lg font-semibold">
-                        Run as a Host Rounter &amp; Firewall with Docker
+                        Run as a Host Router &amp; Firewall with Docker
                       </h4>
 
                       <a
@@ -2305,11 +2305,11 @@
                     >
 git clone https://github.com/spr-networks/super
 cd super
-docker-compose pull
-docker-compose up -d</pre
+bash base/setup.sh
+docker compose up -pull always -d</pre
                     >
                     <p class="text-sm text-neutral-300">
-                      This will manage the system network and conflicts with
+                      This will manage the system network, firewall, and interfaces. Note: this replaces
                       network manager, see the
                       <a
                         class="underline"
@@ -2366,7 +2366,7 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
                     >
 
                     <p class="text-sm text-neutral-300">
-                      The script will install everything &amp; start SPR VPN.
+                      The script installs and &amp; starts SPR VPN in a virtual network.
                       See the
                       <a
                         class="underline"
