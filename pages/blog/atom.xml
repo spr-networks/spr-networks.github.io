@@ -14,7 +14,8 @@
         <updated>2024-09-16T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Envision a homelab scenario with a feature-rich router that's suitable as a container host with storage and memory. Locking down the router's container network policy is surprisingly difficult to set up and manage.]]></summary>
         <content type="html"><![CDATA[<p>Envision a homelab scenario with a feature-rich router that's suitable as a container host with storage and memory. Locking down the router's container network policy is surprisingly difficult to set up and manage.</p>
-<p>SPR makes it easy.</p>
+<p>SPR makes it easy with secure by default network controls. Instead of worrying about IP ranges and interfaces,
+join the interfaces to the groups of devices they can communicate with and set internet access policy.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="first-consider-inbound-access-to-the-container">First Consider Inbound Access To The Container<a href="https://www.supernetworks.org/pages/blog/docker-networking-containment#first-consider-inbound-access-to-the-container" class="hash-link" aria-label="Direct link to First Consider Inbound Access To The Container" title="Direct link to First Consider Inbound Access To The Container">​</a></h2>
 <p>Let's assume the container has a webserver running on a typical port ( 8000), which is exposed to the host network on the same port (8000) in the host network.  But we don't want any client device to get access to it, only localhost.</p>
 <p>Okay so launch docker with an IP to bind on, and set a firewall rule to restrict access right and drop other address inputs? <code>docker run -p 127.0.0.1:8000:8000 ....</code></p>
