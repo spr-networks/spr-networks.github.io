@@ -117,14 +117,35 @@
       })
     </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16781748800"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16781748800"
+    ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-      gtag('config', 'AW-16781748800');
+      gtag('config', 'AW-16781748800')
     </script>
+    <script>
+      function gtag_report_conversion(url, id = '0CIsCKeomoQaEMDUlMI-') {
+        var callback = function () {
+          if (typeof url != 'undefined') {
+            window.location = url
+          }
+        }
+        let send_to = `AW-16781748800/${id}`
+        gtag('event', 'conversion', {
+          send_to,
+          event_callback: callback
+        })
+        return false
+      }
+    </script>
+
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -372,7 +393,8 @@
               </li>
               <li class="md:ps-8">
                 <a
-                  class="hover:underline flex justify-start"
+                  class="hover:underline flex justify-start link-conversion"
+                  data-id="0CIsCKeomoQaEMDUlMI-"
                   href="https://github.com/spr-networks/super/"
                 >
                   <div
@@ -2505,6 +2527,15 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
         </div>
       </section>
 
+      <!--a
+      class="bg-stone-950/80 text-slate-300 block border-t border-slate-800 px-2 py-3 text-sm text-center antialiased hover:underline"
+      target="_blank"
+      href="https://github.com/spr-networks/super/"
+    >
+      If you like SPR, give it a <span class="text-yellow-300">★</span> on
+      GitHub! &rarr;
+    </a-->
+
       <section
         class="antialiased text-center items-center py-24 border-t border-slate-800"
       >
@@ -2532,7 +2563,8 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
 
           <a
             href="https://sendfox.com/supernetworks"
-            class="inline-block space-x-2 box-border border-2 border-violet-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+            data-id="WOilCIi5qoQaEMDUlMI-"
+            class="inline-block space-x-2 box-border border-2 border-violet-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300 link-conversion"
           >
             <div class="flex space-x-2 items-center">
               <svg
@@ -2557,7 +2589,8 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
           </a>
 
           <a
-            class="block md:inline"
+            class="block md:inline link-conversion"
+            data-id="5Zo9COnJqoQaEMDUlMI-"
             href="https://apps.apple.com/us/app/secure-programmable-router/id6443709201"
           >
             <img
@@ -2579,7 +2612,7 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
           class="flex flex-col space-y-4 md:flex-row md:space-y-0 justify-between items-center"
         >
           <p class="text-zinc-300">
-            &copy; 2024 Supernetworks, Inc. All rights reserved.
+            &copy; 2025 Supernetworks, Inc. All rights reserved.
           </p>
 
           <ul class="flex flex-row space-x-4 font-light pt-0">
@@ -2770,6 +2803,14 @@ sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virt
           el.querySelector(id).classList.remove('hidden')
           return false
         })
+      })
+    })
+
+    document.querySelectorAll('.link-conversion').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        let href = el.getAttribute('href')
+        let id = el.getAttribute('data-id')
+        gtag_report_conversion(href, id)
       })
     })
   </script>
