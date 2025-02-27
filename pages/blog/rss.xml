@@ -4,10 +4,43 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Wed, 16 Oct 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[How to sleep better when your bed is a backdoor]]></title>
+            <link>https://www.supernetworks.org/pages/blog/sleep-better-backdoors</link>
+            <guid>https://www.supernetworks.org/pages/blog/sleep-better-backdoors</guid>
+            <pubDate>Thu, 27 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to Sleep Better When Your Bed is a Backdoor]]></description>
+            <content:encoded><![CDATA[<p>How to Sleep Better When Your Bed is a Backdoor</p>
+<p>The folks at over at Truffle Security performed some excellent research on the Eight Sleep Internet connected bed <a href="https://trufflesecurity.com/blog/removing-jeff-bezos-from-my-bed" target="_blank" rel="noopener noreferrer">"Removing Jeff Bezos From My Bed ◆ Truffle Security Co.</a> .  It will come as no surprise to anyone who follows IoT security that the bed has some serious security problems, most notably the ability for Eight Sleep's engineering team to be able to ssh in to the bed's on-board computer, via what appears to be a shared support account.</p>
+<p>What can one do with this kind of access?</p>
+<p>Let's start with the basics:</p>
+<blockquote>
+<p>They can know when you sleep<br>
+<!-- -->They can detect when there are 2 people sleeping in the bed instead of 1<br>
+<!-- -->They can know when it's night, and no people are in the bed<br>
+<!-- -->Imagine your ex works for Eight Sleep. Or imagine they want to know when you're not home.<br>
+<!-- -->(Of course, they can also change the bed's temperature, turn on the vibrating feature, turn off your alarm clock, and any of the other normal controls they have power over.)<br>
+<!-- -->Beyond the basics, what does access to a device on your home network grant them? Any other device connected to that home network - smart fridges, smart stoves, smart washing machines, laptops - is typically routable via your bed. The (in)security of those devices is now entrusted to random Eight Sleep engineers.</p>
+</blockquote>
+<p>It's easy to focus on the immediate access this gives to the information that this gives Eight Sleep, but generally speaking, using IoT devices like this generally means you've chosen to give up some level of privacy.</p>
+<p><strong>The part that you definitely didn't sign up for was the sheer number of devices that intentionally and/or unintentionally provide remote access into a network that typically allows every device to talk to every other device.</strong></p>
+<p><strong>An attacker could:</strong></p>
+<ul>
+<li><strong>Passively observe network traffic on your home network by sniffing</strong></li>
+<li><strong>Attack other devices by using Machine In The Middle technique against other WiFi Devices with shared passwords</strong></li>
+<li><strong>Get precise location information by sniffing nearby SSIDs</strong></li>
+<li><strong>Extend their access to other devices by exploiting poor configuration and vulnerabilities in the remote attack surface of other network devices</strong></li>
+</ul>
+<p>And if you think you can just shut off internet access to this bed, you'd be wrong.  Like an increasing number of devices, it requires internet access to function.  While the blog post does have a hack that allows you to replace the WiFi connected device with an aquarium chiller.  This is impractical for most people, especially if you think about how many other IoT devices there are in your home.</p>
+<p>The best solution to this problem is device isolation.  Many modern enterprises already do this, and your home deserves the same level of security.</p>]]></content:encoded>
+            <category>iot</category>
+            <category>segmentation</category>
+            <category>isolation</category>
+        </item>
         <item>
             <title><![CDATA[Security Fixes & Conntrack Hardening in SPR]]></title>
             <link>https://www.supernetworks.org/pages/blog/spr-conntrack-hardening</link>
@@ -914,55 +947,6 @@ get all of the data that has been sent, even beyond the MTU size.</p>
             <category>fragmentation</category>
             <category>pwntools</category>
             <category>tcpip</category>
-        </item>
-        <item>
-            <title><![CDATA[How to use the SPR 1-click install on DigitalOcean]]></title>
-            <link>https://www.supernetworks.org/pages/blog/virtual-spr-1click</link>
-            <guid>https://www.supernetworks.org/pages/blog/virtual-spr-1click</guid>
-            <pubDate>Sun, 10 Sep 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[Introduction]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
-<p>This guide allows you to setup your own cloud VPN using SPR for <em>$4/month</em> on the DigitalOcean Marketplace. It features ad blocking, firewall rules,
-and device micro-segmentation.</p>
-<p>If you want to dive in directly: <a href="https://cloud.digitalocean.com/droplets/new?app=spr&amp;onboarding_origin=marketplace&amp;appId=145188909&amp;refcode=24603f3ca4bd&amp;region=nyc1&amp;size=s-1vcpu-512mb-10gb&amp;type=applications&amp;image=supernetworks-spr" target="_blank" rel="noopener noreferrer">Click here</a> to create a droplet using the SPR image. Else, follow along in the steps below.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1---create-a-spr-droplet">Step 1 - Create a SPR Droplet<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#step-1---create-a-spr-droplet" class="hash-link" aria-label="Direct link to Step 1 - Create a SPR Droplet" title="Direct link to Step 1 - Create a SPR Droplet">​</a></h2>
-<p>To create a SPR Droplet from the <a href="https://marketplace.digitalocean.com/apps/spr" target="_blank" rel="noopener noreferrer">Digital Ocean marketplace</a>, press the <strong>Create SPR Droplet</strong> button:</p>
-<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-1click-1-49a5e2b818eaf57523761496d9b739c2.png" width="2880" height="1800" class="img_ev3q"></p>
-<p>Pressing the button will take you to the DigitalOcean control panel.
-If you are not logged into your DigitalOcean account, you need to login. If you don't have an account, you can <a href="https://cloud.digitalocean.com/registrations/new" target="_blank" rel="noopener noreferrer">sign up for one</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-2---configure-your-droplet">Step 2 - Configure your droplet<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#step-2---configure-your-droplet" class="hash-link" aria-label="Direct link to Step 2 - Configure your droplet" title="Direct link to Step 2 - Configure your droplet">​</a></h2>
-<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-2-ca9699589bf6a28aa093388e8024b00b.png" width="2880" height="1618" class="img_ev3q"></p>
-<p>Select a region &amp; be sure to create a SSH key if you don't have one configured already.</p>
-<p>For Droplet Size, the smallest <em>$4/month</em> with 512 MB RAM is enough but feel free to choose another one.</p>
-<p>After you've made all your choices, press <strong>Create droplet</strong>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-3---access-your-droplet">Step 3 - Access your droplet<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#step-3---access-your-droplet" class="hash-link" aria-label="Direct link to Step 3 - Access your droplet" title="Direct link to Step 3 - Access your droplet">​</a></h2>
-<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-1click-2-25c041efb916052c1c9aa4c51a77e7c9.png" width="2880" height="1092" class="img_ev3q"></p>
-<p>In the droplet listing you can see the IP address, click <strong>Get started</strong> to see the tutorial and how to access you server.</p>
-<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-1click-3-5995a05f684eba0d12dc3e7f07c6d52c.png" width="2880" height="1800" class="img_ev3q"></p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">ssh root@165.232.129.119</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-4---generate-a-vpn-key-and-connect">Step 4 - Generate a VPN Key and Connect<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#step-4---generate-a-vpn-key-and-connect" class="hash-link" aria-label="Direct link to Step 4 - Generate a VPN Key and Connect" title="Direct link to Step 4 - Generate a VPN Key and Connect">​</a></h2>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">cd /home/spr/super &amp;&amp; ./virtual_install.sh</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>You can scan the QR Code generated from the terminal</p>
-<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/cloud-digital-ocean-qrcode-a1db6df0e5b64359d51b43908792c3bf.png" width="4068" height="3022" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-5----connecting-to-spr">Step 5 -- Connecting to SPR<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#step-5----connecting-to-spr" class="hash-link" aria-label="Direct link to Step 5 -- Connecting to SPR" title="Direct link to Step 5 -- Connecting to SPR">​</a></h2>
-<p>To connect to the SPR UI/API, it's possible to connect via the VPN, or to connect with an SSH tunnel</p>
-<p>For the ssh tunnel approach, reconnect to the droplet, with forwarding options</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">ssh root@165.22.182.180  -N -L 8000:127.0.0.1:8000</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>Then navigate to localhost:8000. The password is auto generated by the droplet and presented on the first login .</p>
-<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">[+] login information:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">==========================================================</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"> http tunnel: ssh 165.22.182.180 -N -L 8000:127.0.0.1:8000</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">         url: http://localhost:8000/</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    username: admin</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    password: SmczeGzcEPbBmQEi</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">       token: 6Yd2MtMSkm0TiDG2ZIWqoFqxgiHN9HzRJ24m/U8HKw4=</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">==========================================================</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>You can update the admin password by modifying <code>/home/spr/super/configs/auth/auth_users.json</code> directly.</p>
-<p>Alternately, when connected to the VPN, the default address for the SPR frontend will be at 192.168.2.1. This can be updated
-under the 'supernetworks' panel.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://www.supernetworks.org/pages/blog/virtual-spr-1click#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
-<p>With this guide we've described how to setup virtual SPR to get a secure, self-hosted VPN for $4/month. The setup allows <em>you</em> to route and redirect traffic, block ads, and automate networks tasks.</p>
-<p>See the <a href="https://github.com/spr-networks/spr-virtual-image-build" target="_blank" rel="noopener noreferrer">spr-virtual-image-build</a> repository on GitHub for how the image is built.</p>
-<p>Read more about running SPR in the cloud in <a href="https://www.supernetworks.org/pages/blog/virtual%20SPR#configure-the-vpn-client-on-your-device">the Virtual SPR Guide</a>.</p>]]></content:encoded>
-            <category>SPR</category>
-            <category>Virtual</category>
-            <category>Cloud</category>
-            <category>VPN</category>
-            <category>WireGuard</category>
-            <category>DigitalOcean</category>
         </item>
     </channel>
 </rss>
