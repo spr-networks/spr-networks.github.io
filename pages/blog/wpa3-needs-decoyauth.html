@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://us.i.posthog.com">
 <script>!function(t,e){var o,s,r,a;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,n,p){function c(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(r=t.createElement("script")).type="text/javascript",r.async=!0,r.src=n.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(a=t.getElementsByTagName("script")[0]).parentNode.insertBefore(r,a);var g=e;for(void 0!==p?g=e[p]=[]:p="posthog",g.people=g.people||[],g.toString=function(t){var e="posthog";return"posthog"!==p&&(e+="."+p),t||(e+=" (stub)"),e},g.people.toString=function(){return g.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),s=0;s<o.length;s++)c(g,o[s]);e._i.push([i,n,p])},e.__SV=1)}(document,window.posthog||[]),posthog.init("phc_wHrv9J5yEKPecDYT9ligBWKlIi2LBDL7I4heu69ayOT",{api_host:"https://us.i.posthog.com",id:"default"})</script><link rel="stylesheet" href="/pages/assets/css/styles.2174a242.css">
-<script src="/pages/assets/js/runtime~main.7adf2bea.js" defer="defer"></script>
+<script src="/pages/assets/js/runtime~main.8692b88f.js" defer="defer"></script>
 <script src="/pages/assets/js/main.546785d6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,7 +56,7 @@ This limits how well this can be applied.</p>
 <p>The naive base case is to perform the SAE protocol, for each password, in parallel. This means as more devices
 are on the network, this is not really feasible, as this causes a linearly increasing amount of packet spam.</p>
 <p><a href="https://eprint.iacr.org/2013/127.pdf" target="_blank" rel="noopener noreferrer">O-PAKE</a> protocols seek to instead allow peers to efficiently try multiple passwords using interpolation.</p>
-<p>The <a href="https://github.com/DistriNet/decoyauth" target="_blank" rel="noopener noreferrer">DecoyAuth Project</a> solving O-PAKE for WPA3&#x27;s Dragonfly.</p>
+<p>The <a href="https://github.com/DistriNet/decoyauth" target="_blank" rel="noopener noreferrer">DecoyAuth Project</a> explores solving applying O-PAKE for WPA3&#x27;s Dragonfly.</p>
 <p>The current best proposed approach has the following characteristics where N is the number of passwords:</p>
 <ul>
 <li>A polynomial interpolation can be broadcast to all clients (with O(n) size)</li>

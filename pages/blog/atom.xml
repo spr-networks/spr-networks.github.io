@@ -50,7 +50,7 @@ This limits how well this can be applied.</p>
 <p>The naive base case is to perform the SAE protocol, for each password, in parallel. This means as more devices
 are on the network, this is not really feasible, as this causes a linearly increasing amount of packet spam.</p>
 <p><a href="https://eprint.iacr.org/2013/127.pdf" target="_blank" rel="noopener noreferrer">O-PAKE</a> protocols seek to instead allow peers to efficiently try multiple passwords using interpolation.</p>
-<p>The <a href="https://github.com/DistriNet/decoyauth" target="_blank" rel="noopener noreferrer">DecoyAuth Project</a> solving O-PAKE for WPA3's Dragonfly.</p>
+<p>The <a href="https://github.com/DistriNet/decoyauth" target="_blank" rel="noopener noreferrer">DecoyAuth Project</a> explores solving applying O-PAKE for WPA3's Dragonfly.</p>
 <p>The current best proposed approach has the following characteristics where N is the number of passwords:</p>
 <ul>
 <li>A polynomial interpolation can be broadcast to all clients (with O(n) size)</li>
