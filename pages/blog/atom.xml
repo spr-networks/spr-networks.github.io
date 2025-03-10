@@ -2,11 +2,43 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
-    <updated>2025-03-06T00:00:00.000Z</updated>
+    <updated>2025-03-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
     <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Google Just Removed uBlock Origin from the Chrome Store Today!]]></title>
+        <id>https://www.supernetworks.org/pages/blog/google-removed-ublock</id>
+        <link href="https://www.supernetworks.org/pages/blog/google-removed-ublock"/>
+        <updated>2025-03-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[uBlock Origin is the best browser-based content blocker available on the web today. And it's user supported, free to use.]]></summary>
+        <content type="html"><![CDATA[<p>uBlock Origin is the best browser-based content blocker available on the web today. And it's user supported, free to use.
+Sadly today Google just pulled the plug on it by enforcing their new v3 manifest.</p>
+<p>Users need to migrate or employ dns based content and ad blocking, which SPR can provide.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-temporary-workaround-">A Temporary Workaround ...<a href="https://www.supernetworks.org/pages/blog/google-removed-ublock#a-temporary-workaround-" class="hash-link" aria-label="Direct link to A Temporary Workaround ..." title="Direct link to A Temporary Workaround ...">​</a></h3>
+<p><a href="https://github.com/uBlockOrigin/uBlock-issues/issues/3563" target="_blank" rel="noopener noreferrer">uBlock is tracking the situation on Github</a>.
+Inside a user provides the following workaround for Chrome Users until June:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Disable:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">chrome://flags/#extension-manifest-v2-deprecation-warning</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">chrome://flags/#extension-manifest-v2-deprecation-disabled</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">chrome://flags/#extension-manifest-v2-deprecation-unsupported</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Enable:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">chrome://flags/#allow-legacy-mv2-extensions</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ublock-origin-lite">uBlock Origin Lite<a href="https://www.supernetworks.org/pages/blog/google-removed-ublock#ublock-origin-lite" class="hash-link" aria-label="Direct link to uBlock Origin Lite" title="Direct link to uBlock Origin Lite">​</a></h3>
+<p>Raymond Hill has developed a v3 compatible solution. It's available on Chrome today at <a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh" target="_blank" rel="noopener noreferrer">uBlock Origin Lite</a>.</p>
+<p>Unfortunately, dynamic content blocking is crippled.  Under the guise of "performance", they've moved to a static, declarative model that limits
+the capabilities of browser extensions for this purpose. Most users would probably agree that all the performance needed is recovered by blocking wasteful content from loading.
+The <a href="https://github.com/uBlockOrigin/uBOL-home/wiki/Frequently-asked-questions-(FAQ)#filtering-capabilities-which-cant-be-ported-to-mv3" target="_blank" rel="noopener noreferrer">uBlock Origin Lite FAQ</a> covers the details.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="migrating-to-other-browsers">Migrating to Other Browsers<a href="https://www.supernetworks.org/pages/blog/google-removed-ublock#migrating-to-other-browsers" class="hash-link" aria-label="Direct link to Migrating to Other Browsers" title="Direct link to Migrating to Other Browsers">​</a></h3>
+<p><a href="https://www.mozilla.org/en-US/firefox/new/?redirect_source=getfirefox-com" target="_blank" rel="noopener noreferrer">Firefox</a> and <a href="https://brave.com/" target="_blank" rel="noopener noreferrer">Brave</a> support uBlock. To use with Brave you should first disable the built in ad Blocker</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dns-based-content-blocking--ad-blocking">DNS Based Content Blocking &amp; Ad Blocking<a href="https://www.supernetworks.org/pages/blog/google-removed-ublock#dns-based-content-blocking--ad-blocking" class="hash-link" aria-label="Direct link to DNS Based Content Blocking &amp; Ad Blocking" title="Direct link to DNS Based Content Blocking &amp; Ad Blocking">​</a></h3>
+<p>SPR supports <a href="https://www.supernetworks.org/pages/docs/guides/dns" target="_blank" rel="noopener noreferrer">builtin content blocking</a> with domain level controls. Rules can be applied by globally, by device, or by tag, along with dynamic, temporary exceptions. And no software install is needed on the end points. We have a <a href="https://www.supernetworks.org/pages/docs/knowledgebase/pihole-technitium-adguard" target="_blank" rel="noopener noreferrer">feature overview</a> comparing various dns based ad blocking solutions.</p>]]></content>
+        <author>
+            <name>Alex Radocea</name>
+            <uri>https://twitter.com/defendtheworld</uri>
+        </author>
+        <category label="ads" term="ads"/>
+        <category label="privacy" term="privacy"/>
+        <category label="tracking" term="tracking"/>
+        <category label="adblock" term="adblock"/>
+        <category label="contentblocker" term="contentblocker"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Advancing DecoyAuth is Key to Making WiFi & WPA3 More Secure]]></title>
         <id>https://www.supernetworks.org/pages/blog/wpa3-needs-decoyauth</id>
@@ -994,66 +1026,5 @@ and barely-ap at <a href="https://github.com/spr-networks/barely-ap" target="_bl
         <category label="Linux" term="Linux"/>
         <category label="Nexmon" term="Nexmon"/>
         <category label="Seemoo Labs" term="Seemoo Labs"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Attack Surface Reduction Research (Part 1)]]></title>
-        <id>https://www.supernetworks.org/pages/blog/barely-ap-surfaces</id>
-        <link href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces"/>
-        <updated>2023-10-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Reducing Attack Surfaces (Part 1)]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reducing-attack-surfaces-part-1">Reducing Attack Surfaces (Part 1)<a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces#reducing-attack-surfaces-part-1" class="hash-link" aria-label="Direct link to Reducing Attack Surfaces (Part 1)" title="Direct link to Reducing Attack Surfaces (Part 1)">​</a></h2>
-<p>SPR lets users create adaptive, micro-segmented networks for connecting and managing devices.
-In addition to fine-grained network visibility we also build hardened software and
-work to avoid common security flaws. As SPR has matured we've started taking on further efforts
-to eliminate attack surfaces.</p>
-<p>When it comes to native code: we introduce none. As in, we have not written new native code for SPR anywhere.
-We have one BPF filter, and its otherwise golang all the way down. We also do not run standard native services
-where we can avoid them. We have replaced traditional C code for services such as DNS and DHCP with golang implementations, namely CoreDNS and CoreDHCP.</p>
-<p>The remaining native code targets that we have in SPR are as follows:</p>
-<ul>
-<li>The Linux kernel. For example: ethernet, the tcp/ip stack, nftables, the mac80211 framework and vendor drivers</li>
-<li>802.11 Firmware, Ethernet Firmware</li>
-<li>Hostapd</li>
-<li>PPP Daemon (off by default)</li>
-<li>OS Services (Ubuntu)</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="targeting-the-whole-wifi-stack">Targeting the Whole WiFi Stack<a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces#targeting-the-whole-wifi-stack" class="hash-link" aria-label="Direct link to Targeting the Whole WiFi Stack" title="Direct link to Targeting the Whole WiFi Stack">​</a></h2>
-<p>We believe the wifi firmware to be today's most insecure target (along with the vendor drivers). Many firmwares are blackbox,
-poorly documented, and opaque to public security research. We want SPR to be immune to attacks like <a href="https://blog.exodusintel.com/2017/07/26/broadpwn/" target="_blank" rel="noopener noreferrer">Broadpwn</a>
-and <a href="https://i.blackhat.com/USA-19/Thursday/us-19-Pi-Exploiting-Qualcomm-WLAN-And-Modem-Over-The-Air-wp.pdf" target="_blank" rel="noopener noreferrer">Qualcomm Exploitation</a>.</p>
-<p>We've previously published <a href="https://github.com/spr-networks/barely-ap" target="_blank" rel="noopener noreferrer">barely-ap</a> to teach people about WiFi authentication.
-It can and does work with real wifi chips running in monitor mode to connect clients over the air. We've tested with Android, iOS, and Linux devices.</p>
-<p>The plan is to build a series of experiments to host high-speed wifi.</p>
-<p>In the near term:</p>
-<ol>
-<li>Develop a Proof-of-Concept AP with scapy in monitor mode (DONE)</li>
-<li>Develop a shim from monitor frames to hostapd running under mac80211_hwsim. This is a work in progress.
-We would like to see a rust kernel driver/userland daemon for this</li>
-</ol>
-<p>Future:</p>
-<ol start="3">
-<li>A full AP written in rust, operating on raw 802.11 frames (not relying on the Linux kernel 802.11 subsystem)</li>
-<li>Rust protocol firmware for a wifi chip.</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="developing-a-shim-explained">Developing a Shim Explained<a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces#developing-a-shim-explained" class="hash-link" aria-label="Direct link to Developing a Shim Explained" title="Direct link to Developing a Shim Explained">​</a></h2>
-<p>By running the card in monitor mode,  protocol parsing in the card firmware is substantially reduced if not altogether eliminated.</p>
-<p>And with relaying frames over to macsim, hostapd is good to go.
-What needs to happen however is making this incredibly fast, and researching rate negotiation and
-what calls might need to be made to firmware to enable higher coding rates.</p>
-<p>By using hostapd and the kernel mac80211 stack, we still maintain some native attack surface, however we get a known working,
-security-tested AP that will be compatible with a wide variety of devices, without the firmware protocol parsing and the vendor driver parsing.</p>
-<p>For next steps, a proof-of-concept with scapy is actually much too slow. We want to start
-with a rust userland daemon leveraging iouring. If that doesn't fly then we'll go to a shim in the kernel.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="interested-in-working-with-us-please-reach-out">Interested in working with us? Please reach out<a href="https://www.supernetworks.org/pages/blog/barely-ap-surfaces#interested-in-working-with-us-please-reach-out" class="hash-link" aria-label="Direct link to Interested in working with us? Please reach out" title="Direct link to Interested in working with us? Please reach out">​</a></h2>
-<p>We are actively seeking an intern to help develop rust+wifi for SPR.</p>
-<p>You can contact us at  spr-wifi [ a-t ] supernetworks.org  or hop on the <a href="https://discord.gg/EUjTKJPPAX" target="_blank" rel="noopener noreferrer">discord</a></p>]]></content>
-        <author>
-            <name>Alex Radocea</name>
-            <uri>https://twitter.com/defendtheworld</uri>
-        </author>
-        <category label="Python" term="Python"/>
-        <category label="Scapy" term="Scapy"/>
-        <category label="WiFi" term="WiFi"/>
-        <category label="Linux" term="Linux"/>
     </entry>
 </feed>
