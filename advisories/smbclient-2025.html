@@ -1,0 +1,233 @@
+<html>
+<header>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-16781748800"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'AW-16781748800')
+  </script>
+  <script>
+    function gtag_report_conversion(url, id = '0CIsCKeomoQaEMDUlMI-') {
+      var callback = function () {
+        if (typeof url != 'undefined') {
+          window.location = url
+        }
+      }
+      let send_to = `AW-16781748800/${id}`
+      gtag('event', 'conversion', {
+        send_to,
+        event_callback: callback
+      })
+      return false
+    }
+  </script>
+
+</header>
+<pre>
+
+
+
+
+        #####  ####   ####               Supernetworks
+        ##     ## ##  ##  ##        https://www.supernetworks.org
+         ####  ####   ####
+            ## ##     ##  ##       https://www.supernetworks.org/advisories/smbclient-2025.html
+        #####  ##     ##  ##
+       /////   //     //  //
+      //      //     //  //
+      ////   ////   ////
+         // //  // //  //
+     /////  ////   ////
+
+macOS SMBClient Vulnerabilities
+
+Credit: Dave G. <daveg@supernetworks.org>  Alex Radocea <alex@supernetworks.org> and
+1. Smbfs.kext: Remote Kernel Heap Overflow in smb2_rq_decompress_read (CVE-2025-24269)
+2. Kerberos Helper: Remote _asn1_free() on uninitialized stack variable in _KRBDecodeNegTokenInit (CVE-2025-24235)
+3. Smbfs.kext: Unprivileged SIGTERM via SMBIOC_UPDATE_NOTIFIER_PID (No CVE)
+Intro
+SMBClient is macOS client code for the SMB filesystem, allowing OS X to mount remote file shares.  As of macOS Big Sur, SMB is the preferred file sharing protocol.  SMBClient is a mixture of userland and kernel code.
+As a result, this represents a significant amount of attack surface.   There is, of course, the common kernel attack surface of ioctls() as well as a host of other vnode operations.  SMB network communication is generally managed within the kernel, but there are also places where this data ends up passed to userland processes.
+Some of this surface is also accessible as a remote 2-click attack via the smb:// url handler.  If an attacker can coerce a user into clicking a link to a malicious server, that server is now interacting with a mix of kernel code and userland code.
+It is important to note that iOS’ attack surface is different than macOS.  While there is some common code, the SMB protocol implementation doesn’t appear to run in the kernel and attacking a user would target userland, involving the Files application and SMB Frameworks.
+— 1. Remote Kernel Heap Overflow in smb2_rq_decompress_read
+
+At [1], compress_len is read off the wire. When using chained_compress with SMB2_COMPRESSION_LZNT1, SMB2_COMPRESSION_LZ77, SMB2_COMPRESSION_LZ77_HUFFMAN, the path at [2] is taken but compress_len is never validated for the memory copy at [3] as MB_MSYSTEM translates to a bcopy into compress_startp.  This leads to a heap memory overflow. The overflow quantity is further set by the attacker as `md_get_mem` copies on the remaining bytes in the mbuf.
+The attacker also has some choice in the size of the allocated memory being corrupted as they can set the initial buffer length up to 2*kDefaultMaxIOSize (16MB) [0].
+ 
+     buffer_len = originalCompressedSegmentSize * 2;
+    SMB_MALLOC_DATA(bufferp, buffer_len, Z_WAITOK) [0];
+    if (bufferp == NULL) {
+        error = ENOMEM;
+        goto bad;
+    }
+    compress_startp = bufferp;
+…         if (chained_compress) {
+            /* Chained compression - Get CompressedDataLength */
+            error = md_get_uint32le(&compressed_mdp, &compress_len);  [1]
+            if (error) {
+                goto bad;
+            }
+            SMB_LOG_COMPRESS("compress_len: %d (0x%x) \n", compress_len, compress_len);
+        }
+…
+                if (chained_compress) {
+                    /*
+                     * Handle Chained Compression
+                     * Get OriginalPayloadSize
+                     */
+                    error = md_get_uint32le(&compressed_mdp, &original_payload_size);
+                    if (error) {
+                        goto bad;
+                    }
+                    SMB_LOG_COMPRESS("original_payload_size: %d \n", original_payload_size);
+#if 0
+                    /*
+                     * Oddly, Windows server will send a compress length that
+                     * is bigger than the decompressed length which will cause
+                     * this check to fail. Why they dont just send the non
+                     * compressed data?
+                     *
+                     * Sanity check the compress length
+                     */
+                    if (compress_len > (originalCompressedSegmentSize - CurrentDecompressedDataSize)) {  [2]
+                        SMBERROR("Algorithm %d compress_len %d > remaining to decompress len %d? \n",
+                                 algorithm, compress_len,
+                                 (originalCompressedSegmentSize - CurrentDecompressedDataSize));
+                        error = EINVAL;
+                        goto bad;
+                    }
+#endif …
+[3]
+                /* Copy compressed data to preallocated buffer in compress_startp */
+                error = md_get_mem(&compressed_mdp, (caddr_t) compress_startp, compress_len,
+                                   MB_MSYSTEM);
+                if (error) {
+                    goto bad;
+                }
+The `SMB_MALLOC_DATA` macro is a wrapper for kalloc_data, so the overflow occurs on a buffer in the xnu data heap which offers some hardening by restricting the presence of pointers to overwrite.
+Fix: compress_len is validated, along with several other improvements.
+
+
+
+
+2. Kerberos Helper: Remote _asn1_free() on uninitialized stack variable in _KRBDecodeNegTokenInit
+There is a remotely accessible free on uninitialized memory in the _KRBDecodeNegTokenInit function in Kerberos Helper, a library used during SMB session establishment.  This can be triggered by clicking on an smb:// URL or via mount_smbfs.   This can potentially result in remote code execution.
+A decompilation of _KRBDecodeNegTokenInit shows:
+     1 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+     2 long _KRBDecodeNegTokenInit(undefined8 param_1,undefined8 param_2)
+
+     3 {
+...
+[1] 12    union {
+        NegotiationToken rfc2478;
+        NegotiationTokenWin win;
+    } u;
+...
+    19    gss_buffer_desc_struct output_buffer;
+...
+    25    output_buffer.length = 0;
+    26    output_buffer.value = (void *)0x0;
+    27    local_b0 = _CFDataGetBytePtr(param_2);
+    28    local_b8 = _CFDataGetLength(param_2);
+    29    local_34 = _gss_decapsulate_token(&local_b8,_DAT_7ff94001ef48,&output_buffer);
+    30    if (local_34 != 0) {
+[2] 31    decode_negtokenfailed:
+    32      _gss_release_buffer(&local_34,&output_buffer);
+    33      lVar6 = 0;
+[3] 34      goto free_negtoken_3;
+    35    }
+...
+[4] 40    u = 0;
+    41    auStack_a0[0] = 0;
+    42    iVar1 = _decode_NegotiationToken(output_buffer.value,output_buffer.length,&u,0);
+    43    if (iVar1 == 0) {
+    44      if ((int)u != 1) goto decode_negtokenfailed;
+    45  LAB_7ff904084e3a:
+    46      local_40 = 0;
+    47    }
+    48    else {
+    49      auStack_a0[3] = 0;
+    50      plStack_80 = (long *)0x0;
+    51      auStack_a0[1] = 0;
+    52      auStack_a0[2] = 0;
+    53      u = 0;
+    54      auStack_a0[0] = 0;
+    55      iVar2 = _decode_NegotiationTokenWin(output_buffer.value,output_buffer.length,&u,0);
+    56      if ((iVar2 != 0) || ((int)u != 1)) {
+    57        _gss_release_buffer(&local_34,&output_buffer);
+    58        lVar6 = 0;
+    59        goto free_negtokenwin_2;
+  ...
+   120   free_gss_1:
+   121     _gss_release_buffer(&local_34,&output_buffer);
+   122     if (iVar1 != 0) {
+   123   free_negtokenwin_2:
+   124       _free_NegotiationTokenWin(&u);
+   125       return lVar6;
+   126     }
+   127   free_negtoken_3:
+[5]128    _free_NegotiationToken(&u);
+   129     return lVar6;
+   130   }
+During authentication, NegotiationToken [1] is declared on the stack but not initialized.  If gss_decapsulate_token fails, the return value will be non-zero [2].  When gss_decapsulate_token() fails, it will goto [3] to free_negtoken_3, skipping the initialization logic for NegotiationToken [4]. At this point,  _free_NegotiationToken is called on uninitialized memory.
+Skipping a few steps, _free_NegotiationToken() will ultimately call _asn1_free() (https://github.com/apple-oss-distributions/Heimdal/blob/dbe4ef6aab8c600de89e8f4b56d2a41c7eada4ba/lib/asn1/template.c#L868), using the token type (rfc2478 or win) as a template to parse and free the uninitialized data.  This gives multiple opportunities to manipulate memory.
+Fix:
+This issue was fixed by calling memset() before the NegotiationToken is used.
+
+
+
+
+3. Unprivileged SIGTERM kill() via SMBIOC_UPDATE_NOTIFIER_PID
+The smbfs kernel module has an ioctl called `SMBIOC_UPDATE_NOTIFIER_PID`. This ioctl is used to register the pid of the mc_notifier userland process with the kernel, as an IPC mechanism.  When an SMB mounted filesystem unmounts, the kernel will send a SIGTERM signal to the PID.
+There is no check within the kernel to ensure that the userid of the process that called the ioctl can send a signal to the process belonging to the process ID submitted.
+As a result, an unprivileged process can send SIGTERM to any process on the system. This will cause most processes to exit cleanly.
+Since this signal is sent from the kernel, it can be used to kill launchd, immediately crashing the Mac.
+This vulnerability can only be exploited if an attacker can open /dev/nsmb and can send an ioctl, so is likely not immediately exploitable from within the sandbox.
+macOS’s implementation of multichannel SMB support relies on a userland process, mc_notifier.  When an SMB filesystem unmounts, the kernel will notify the mc_notifier process that the filesystem is being unmounted via the delivery of a SIGTERM signal:
+        /* Signal the mc_notifier to kill itself*/
+        if (mc_notifier_pid != -1) {
+[1]            proc_signal(mc_notifier_pid, SIGTERM);
+            mc_notifier_pid = -1;
+        }
+    }
+Of course, the question is, how is the mc_notifier_pid set.  The answer lies in the SMBIOC_UPDATE_NOTIFIER_PID ioctl():
+case SMBIOC_UPDATE_NOTIFIER_PID:
+        {
+            SMBDEBUG("SMBIOC_UPDATE_NOTIFIER_PID received.\n");
+            lck_rw_lock_shared(&sdp->sd_rwlock);
+            /* free global lock now since we now have sd_rwlock */
+            lck_rw_unlock_shared(dev_rw_lck);
+            lck_mtx_lock(&mc_notifier_lck);
+            struct smbioc_notifier_pid* notifier_info = (struct smbioc_notifier_pid*)data;
+            /*
+             * Check if we already have an open notifier
+             * In that case prevent from opening more then 1
+             */
+[1]         if (mc_notifier_pid != -1) {
+                char name[1024];
+                proc_name(mc_notifier_pid, (char*) &name, 1024);
+                if (!strncmp((char*) &name, "mc_notifier", 11)) {
+                    error = EEXIST;
+                }
+            } else {
+ [2]            mc_notifier_pid = notifier_info->pid;
+            }
+…
+There is a check to see if mc_notifier has been set [1] .  If it hasn’t been set, then the notifier pid will be set [2].  This ioctl can be called by any user, and amongst other things, the ioctl can be run without a filesystem being mounted, and thus prior to mc_notifier launching.  If an attacker sets this, then mounts and unmounts an SMB filesystem, they can deliver a SIGTERM directly from the kernel to any process, regardless of userid.
+Most processes will exit gracefully upon receiving SIGTERM, allowing a local attacker the ability to kill any process.  This can be a denial of service, with the ability to kill most processes, including launchd (which effectively crashes the OS, requiring a reboot) and can also be used to further certain attacks.
+Fix
+---
+This vulnerability was patched by adding an entitlement check to the SMBIOC_UPDATE_NOTIFIER_PID ioctl() call.
+
+</pre>
+</html>
