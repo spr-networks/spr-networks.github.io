@@ -49,16 +49,21 @@
 
 macOS SMBClient Vulnerabilities
 
-Credit: Dave G. <daveg@supernetworks.org>  Alex Radocea <alex@supernetworks.org> and
+Credit: Dave G. <daveg@supernetworks.org>  and Alex Radocea <alex@supernetworks.org>
+
 1. Smbfs.kext: Remote Kernel Heap Overflow in smb2_rq_decompress_read (CVE-2025-24269)
 2. Kerberos Helper: Remote _asn1_free() on uninitialized stack variable in _KRBDecodeNegTokenInit (CVE-2025-24235)
 3. Smbfs.kext: Unprivileged SIGTERM via SMBIOC_UPDATE_NOTIFIER_PID (No CVE)
+
 Intro
+
 SMBClient is macOS client code for the SMB filesystem, allowing OS X to mount remote file shares.  As of macOS Big Sur, SMB is the preferred file sharing protocol.  SMBClient is a mixture of userland and kernel code.
 As a result, this represents a significant amount of attack surface.   There is, of course, the common kernel attack surface of ioctls() as well as a host of other vnode operations.  SMB network communication is generally managed within the kernel, but there are also places where this data ends up passed to userland processes.
 Some of this surface is also accessible as a remote 2-click attack via the smb:// url handler.  If an attacker can coerce a user into clicking a link to a malicious server, that server is now interacting with a mix of kernel code and userland code.
 It is important to note that iOS’ attack surface is different than macOS.  While there is some common code, the SMB protocol implementation doesn’t appear to run in the kernel and attacking a user would target userland, involving the Files application and SMB Frameworks.
-— 1. Remote Kernel Heap Overflow in smb2_rq_decompress_read
+
+
+1. Remote Kernel Heap Overflow in smb2_rq_decompress_read
 
 At [1], compress_len is read off the wire. When using chained_compress with SMB2_COMPRESSION_LZNT1, SMB2_COMPRESSION_LZ77, SMB2_COMPRESSION_LZ77_HUFFMAN, the path at [2] is taken but compress_len is never validated for the memory copy at [3] as MB_MSYSTEM translates to a bcopy into compress_startp.  This leads to a heap memory overflow. The overflow quantity is further set by the attacker as `md_get_mem` copies on the remaining bytes in the mbuf.
 The attacker also has some choice in the size of the allocated memory being corrupted as they can set the initial buffer length up to 2*kDefaultMaxIOSize (16MB) [0].
