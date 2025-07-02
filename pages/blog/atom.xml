@@ -2,11 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.supernetworks.org/pages/blog</id>
     <title>SPR Blog</title>
-    <updated>2025-05-15T00:00:00.000Z</updated>
+    <updated>2025-07-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.supernetworks.org/pages/blog"/>
     <subtitle>SPR Blog</subtitle>
     <icon>https://www.supernetworks.org/pages/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[SMB Flaws in macOS]]></title>
+        <id>https://www.supernetworks.org/pages/blog/macos-smb-flaws</id>
+        <link href="https://www.supernetworks.org/pages/blog/macos-smb-flaws"/>
+        <updated>2025-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Supernetworks macOS SMB Client Vulnerabilities]]></summary>
+        <content type="html"><![CDATA[<p>Supernetworks macOS SMB Client Vulnerabilities</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-to-know">What to Know<a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws#what-to-know" class="hash-link" aria-label="Direct link to What to Know" title="Direct link to What to Know">​</a></h2>
+<p>Supernetworks identified several vulnerabilities in macOS Sequoia’s SMB client code.<br>
+<!-- -->The worst of which can result in remote kernel code execution via an SMB URL delivered through any application that allows clickable URLs (e.g. messaging apps. Browsers, email client).  This isn’t necessarily a one click attack, as a user may need to click through some UI elements to trigger the exploit. A privileged network position could also be used to carry out a man-in-the-middle attack against a user that typically uses SMB shares. It goes without saying that this also operates as a local privilege escalation from a non privileged user to kernel code execution.</p>
+<div><video width="100%" height="100%" playsinline="" controls="" src="/pages/video/blogs/smbclient/2025-03-31-smbclient.mov" type="video/mp4"></video></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="executive-summary">Executive Summary<a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws#executive-summary" class="hash-link" aria-label="Direct link to Executive Summary" title="Direct link to Executive Summary">​</a></h3>
+<p>SMBClient is the codebase responsible for handling file sharing connections to remote file servers.  This codebase contains a mix of userland and kernel code to allow users to mount Windows and macOS file servers.  A significant portion of the SMB protocol management occurs exclusively in the smbfs kernel extension, which in turn means that SMB represents a kernel attack surface to attackers.</p>
+<p>While iOS does have SMB support via Files.app, it does not appear to be impacted by any of these vulnerabilities and implements some portion of SMB in userland in addition to not supporting the compression feature.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cve-2025-24269">CVE-2025-24269<a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws#cve-2025-24269" class="hash-link" aria-label="Direct link to CVE-2025-24269" title="Direct link to CVE-2025-24269">​</a></h3>
+<p>This vulnerability is due to a heap overflow within the smb compression code, where an untrusted length value is read from the server and never validated. The flaw relates to the same part of the protocol implementation flaw that affected SMBGhost <a href="https://nvd.nist.gov/vuln/detail/cve-2020-0796" target="_blank" rel="noopener noreferrer">(CVE-2020-0796)</a> Windows vulnerability.</p>
+<p>CVE-2025-24269 is also the kind of flaw an LLM happens to be decent at discovering. The commented out code path has a helpful prompt stating developer exasperation.</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">#if 0</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    /*</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     * Oddly, Windows server will send a compress length that</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     * is bigger than the decompressed length which will cause</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     * this check to fail. Why they dont just send the non</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     * compressed data?</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     *</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     * Sanity check the compress length</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     */</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    if (compress_len &gt; (originalCompressedSegmentSize - CurrentDecompressedDataSize)) {  [2]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                        SMBERROR("Algorithm %d compress_len %d &gt; remaining to decompress len %d? \n",</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                 algorithm, compress_len,</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                 (originalCompressedSegmentSize - CurrentDecompressedDataSize));</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                        error = EINVAL;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                        goto bad;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">#endif …</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>As the buffer is in a data zone, exploitation will require finding kernel space data buffers worth corrupting remotely, or a bypass of Apple's heap zone hardening countermeasures.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="related-work">Related Work<a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws#related-work" class="hash-link" aria-label="Direct link to Related Work" title="Direct link to Related Work">​</a></h2>
+<p>On Linux Doyensec found a substantial series of flaws with <a href="https://blog.doyensec.com/2025/01/07/ksmbd-1.html" target="_blank" rel="noopener noreferrer">ksmbd</a>,
+which Sean Heelan has also been using to <a href="https://sean.heelan.io/2025/05/22/how-i-used-o3-to-find-cve-2025-37899-a-remote-zeroday-vulnerability-in-the-linux-kernels-smb-implementation/" target="_blank" rel="noopener noreferrer">evaluate o3 and other LLM's bug finding abilities</a>. After SMBleed and SMBGhost, <a href="https://support.apple.com/en-us/122373" target="_blank" rel="noopener noreferrer">more flaws</a> keep popping up in Microsoft's implementation as well.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="remediation">Remediation<a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws#remediation" class="hash-link" aria-label="Direct link to Remediation" title="Direct link to Remediation">​</a></h3>
+<p>These issues were fixed in <a href="https://support.apple.com/en-us/122373" target="_blank" rel="noopener noreferrer">macOS 15.4</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="technical-details">Technical Details<a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws#technical-details" class="hash-link" aria-label="Direct link to Technical Details" title="Direct link to Technical Details">​</a></h3>
+<p>The technical details for these vulnerabilities can be found at:</p>
+<p><a href="http://supernetworks.org/advisores/smbclient-2025.html" target="_blank" rel="noopener noreferrer">http://supernetworks.org/advisores/smbclient-2025.html</a>.</p>]]></content>
+        <author>
+            <name>Alex Radocea</name>
+            <uri>https://twitter.com/defendtheworld</uri>
+        </author>
+        <author>
+            <name>Dave G</name>
+        </author>
+        <category label="smb" term="smb"/>
+        <category label="fuzzing" term="fuzzing"/>
+        <category label="macos" term="macos"/>
+        <category label="apple" term="apple"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[We've Added Guest SSID Support]]></title>
         <id>https://www.supernetworks.org/pages/blog/guest-ssid-on-spr</id>
@@ -956,66 +995,5 @@ rogue APs, and more.</p>
         <category label="nzyme" term="nzyme"/>
         <category label="defense" term="defense"/>
         <category label="blue-team" term="blue-team"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Transparent Socket Forwarding with SPR and MITMProxy]]></title>
-        <id>https://www.supernetworks.org/pages/blog/spr-mitmproxy</id>
-        <link href="https://www.supernetworks.org/pages/blog/spr-mitmproxy"/>
-        <updated>2023-11-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Update]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="update">Update<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#update" class="hash-link" aria-label="Direct link to Update" title="Direct link to Update">​</a></h2>
-<p>This post has become a guide which is being kept up to date, <a href="https://www.supernetworks.org/pages/docs/guides/guides_plus/mitmproxy">check it out!</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
-<p>In this post we'll show how PLUS members can add a <code>mitmproxy</code> plugin to their SPR setup,
-and then use the <a href="https://www.supernetworks.org/plus.html" target="_blank" rel="noopener noreferrer">Programmable Firewall (PFW)</a> plugin to redirect traffic through <code>mitmproxy</code> with DNAT forwarding.</p>
-<p>We do not need to configure our clients with proxy settings to point to <code>mitmproxy</code>, or rewrite DNS responses,
-since we are using the PFW feature to do the redirection.</p>
-<p><a href="https://github.com/spr-networks/spr-mitmproxy" target="_blank" rel="noopener noreferrer">This plugin is available on github.</a></p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prepare-the-plugin">Prepare the plugin<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#prepare-the-plugin" class="hash-link" aria-label="Direct link to Prepare the plugin" title="Direct link to Prepare the plugin">​</a></h3>
-<p>from the SPR directory, typically <code>/home/spr/super</code></p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">cd plugins</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">git clone https://github.com/spr-networks/spr-mitmproxy</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">echo [\"plugins/spr-mitmproxy/docker-compose.yml\"] &gt; ../configs/base/custom_compose_paths.json</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">cd spr-mitmproxy</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">docker compose build</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configure-spr">Configure SPR<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#configure-spr" class="hash-link" aria-label="Direct link to Configure SPR" title="Direct link to Configure SPR">​</a></h3>
-<ol>
-<li>Navigate to the SPR UI. Add mitmproxy under the Plugins page</li>
-</ol>
-<ul>
-<li>be sure its been added to <code>configs/base/custom_compose_paths.json</code> as above</li>
-<li>Enable it by toggling the slider
-<img decoding="async" loading="lazy" src="https://github.com/spr-networks/spr-mitmproxy/assets/37549748/dcc0f1ea-724a-4ed0-856a-56444ea2569f" alt="" class="img_ev3q"></li>
-</ul>
-<ol start="2">
-<li>Add <code>mitmweb0</code> to the custom interface rules. You can verify your container's network address in the Container tab -&gt;
-Under <code>Firewall-&gt; Custom Interface Access</code> Add a new rule, make sure mitmproxy has <code>wan</code> at least to access the internet.</li>
-</ol>
-<p><img decoding="async" loading="lazy" src="https://github.com/spr-networks/spr-mitmproxy/assets/37549748/71d4c8c9-3812-452f-86df-a7d19fb703a6" alt="" class="img_ev3q"></p>
-<ol start="3">
-<li>
-<p>Create a forwarding rule to the container web interface :8081. Pick an arbitrary IP in the subnet -- although not the same one as the container as that confuses dnat.
-<img decoding="async" loading="lazy" src="https://github.com/spr-networks/spr-mitmproxy/assets/37549748/ff1424c6-b6ad-48d4-8ffe-03186f61abc6" alt="" class="img_ev3q"></p>
-</li>
-<li>
-<p>Create a site forward rule with PFW for traffic to intercept
-<img decoding="async" loading="lazy" src="https://github.com/spr-networks/spr-mitmproxy/assets/37549748/4d5e49b4-5860-4aad-ac17-510589ee31c5" alt="" class="img_ev3q"></p>
-</li>
-</ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="using-mitmproxy">Using mitmproxy<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#using-mitmproxy" class="hash-link" aria-label="Direct link to Using mitmproxy" title="Direct link to Using mitmproxy">​</a></h3>
-<p>Then make a curl request from any of the LAN devices, and it should populate on the mitmweb host. This was the :8081 host that was earlier defined
-<img decoding="async" loading="lazy" src="https://github.com/spr-networks/spr-mitmproxy/assets/37549748/a70a9f7e-91b9-4798-926b-2cb625f71e78" alt="" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="leveraging-transparent-sockets">Leveraging Transparent Sockets<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#leveraging-transparent-sockets" class="hash-link" aria-label="Direct link to Leveraging Transparent Sockets" title="Direct link to Leveraging Transparent Sockets">​</a></h2>
-<p>Behind the scenes, <code>mitmproxy</code> is using transparent sockets with DNAT. Inside the container network,
-we establish dnat rules to <code>mitmproxy</code> from incoming ports <code>80</code>, <code>443</code>.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">#!/bin/bash</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">nft -f - &lt;&lt; EOF</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">table inet nat {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        chain prerouting {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                type nat hook prerouting priority filter; policy accept;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                tcp dport { 80, 443 } dnat ip to 127.0.0.1:9999</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">EOF</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">mitmweb -p 9999 -m transparent --web-host 0.0.0.0</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="wed-love-to-hear-from-you">We'd love to hear from you<a href="https://www.supernetworks.org/pages/blog/spr-mitmproxy#wed-love-to-hear-from-you" class="hash-link" aria-label="Direct link to We'd love to hear from you" title="Direct link to We'd love to hear from you">​</a></h2>
-<p>We're always thrilled to get feedback on plugins people would like to see, and we're
-excited to hear about what people will be able to do with <code>mitmproxy</code> running
-alongside SPR. Drop a line at <a href="mailto:outreach+s@supernetworks.org" target="_blank" rel="noopener noreferrer">outreach[at]supernetworks.org</a> or join us on <a href="https://discord.com/invite/EUjTKJPPAX" target="_blank" rel="noopener noreferrer">discord</a></p>]]></content>
-        <author>
-            <name>Alex Radocea</name>
-            <uri>https://twitter.com/defendtheworld</uri>
-        </author>
-        <category label="mitmproxy" term="mitmproxy"/>
-        <category label="microsegmentation" term="microsegmentation"/>
-        <category label="transparent sockets" term="transparent sockets"/>
-        <category label="PLUS" term="PLUS"/>
     </entry>
 </feed>
