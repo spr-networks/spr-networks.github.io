@@ -42,6 +42,8 @@
 <li>Devastatingly, you leak to the adversary</li>
 </ol>
 <p><img decoding="async" loading="lazy" alt="bobmitm" src="https://www.supernetworks.org/pages/assets/images/bob-4603cde3438196c3bb9b388fd420ea5c.png" width="1934" height="1214" class="img_ev3q"></p>
+<p>Then perhaps a little bit later the real bob shows up. This is how the rest of the conversation could go.</p>
+<p><img decoding="async" loading="lazy" alt="bobmitm" src="https://www.supernetworks.org/pages/assets/images/bob-later-3c87c72a1c5f1848bd0fc2cac6bda3e0.png" width="1920" height="1212" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-cryptographic-toolbox-we-should-be-using">The Cryptographic Toolbox We Should Be Using<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-cryptographic-toolbox-we-should-be-using" class="hash-link" aria-label="Direct link to The Cryptographic Toolbox We Should Be Using" title="Direct link to The Cryptographic Toolbox We Should Be Using">​</a></h2>
 <p>These problems are completely avoidable. We have battle-tested protocols:</p>
 <ul>
