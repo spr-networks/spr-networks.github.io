@@ -4,10 +4,71 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Tue, 01 Jul 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Jul 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Identity Is A Bitchat Challenge]]></title>
+            <link>https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat</link>
+            <guid>https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat</guid>
+            <pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[The Intersection of Vibe Coding and Security]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-intersection-of-vibe-coding-and-security">The Intersection of Vibe Coding and Security<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-intersection-of-vibe-coding-and-security" class="hash-link" aria-label="Direct link to The Intersection of Vibe Coding and Security" title="Direct link to The Intersection of Vibe Coding and Security">​</a></h2>
+<p>Many of us have seen glimpses of what agentic generative coding does for security. We see the missteps, and sometimes wonder about the shallow bugs that pile on. Config managers that are almost always arbitrary file upload city. Glue layers that become bash command launch as a service. And most frustratingly, code generation that's excellent at pretending forward progress has been made when no meaningful change has occurred. One of the most impressive parts of agentic coding is exactly that: how convincing it is by appearance and how easily we're tricked about the depth of substance in the code gen. In some ways we extend our trust of people to the stochastic code parrots, assuming that they went and actually did the work a human would have probably done.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="vibe-identity-an-obvious-flaw">Vibe Identity: An Obvious Flaw<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#vibe-identity-an-obvious-flaw" class="hash-link" aria-label="Direct link to Vibe Identity: An Obvious Flaw" title="Direct link to Vibe Identity: An Obvious Flaw">​</a></h2>
+<p>I'm no stranger to e2e breaks, and have been following along over the past decade. Some of my favorite breaks I have found personally include Vaudenay oracles against Kakao, LINE, and bypassable OTR signature verification in iCloud Keychain compromising the password sync.</p>
+<p>So this morning when BitChat came up I took some time to look through the code and write up some demos. My first thought was we really don't want or need another protocol, many aspects of Noise would fit in for finer points around true forward secrecy and identity.</p>
+<p>But BitChat's most glaring issue is identity. There's essentially no trust/auth built in today. So I would not really think about this as a secure messenger. The protocol has an identity key system, but it's only decorative as implemented and has misleading security claims. The 32-byte public key gets shuffled around with ephemeral key pairs as an opaque blob. There user verification is unfortunately disconnected from any trust and authentication. These are the hallmarks of vibe code (in)security.</p>
+<p>Secure messaging systems do usually provide a way for users to establish trust, and that's what Bitchat does not have.</p>
+<p>Some possible mechanisms:</p>
+<ul>
+<li>QR codes</li>
+<li>Preshared keys</li>
+<li>Visual fingerprint verification ^</li>
+<li>Third party vending</li>
+</ul>
+<p>^ Visual fingerprints are very tricky. For Telegram v1, I reported a problem with the SHA1 truncation to 128 bits, leading to a 2^64 birthday attack against the visual verification. It's possible to find near matches visually that may fool humans very easily as well. Current Telegram is still missing a lot of fundamental features, so I actively discourage its use still today.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-favorites-identity-system">The Favorites Identity System<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-favorites-identity-system" class="hash-link" aria-label="Direct link to The Favorites Identity System" title="Direct link to The Favorites Identity System">​</a></h2>
+<p>However bitchat does have a "Favorite" system in which a client is supposed to forever store a Public Key/Peer Id pair. This is essentially trust on first chat, but there is no trust built into the protocol because the Identity <s>vibe</s> key doesn't authenticate anything.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-mitm-attack">The MITM Attack<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-mitm-attack" class="hash-link" aria-label="Direct link to The MITM Attack" title="Direct link to The MITM Attack">​</a></h2>
+<p>The broken identity authentication/verification enables a trivial man-in-the-middle attacks with the "Favorites" feature</p>
+<p>You're Alice.</p>
+<ol>
+<li>An attacker intercepts and presents <strong>Bob's Identity Key</strong>, along with their own ephemeral pair</li>
+<li>BitChat accepts this because it can't verify the ephemerals belong to the real Bob, as the Identity key does no authentication</li>
+<li>You think you're chatting with Bob, one of your marked "favorites", since they have a Star.</li>
+<li>The attacker pretending to be "Bob" asks you, Alice, about your favorite secrets</li>
+<li>Devastatingly, you leak to the adversary</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="bobmitm" src="https://www.supernetworks.org/pages/assets/images/bob-4603cde3438196c3bb9b388fd420ea5c.png" width="1934" height="1214" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-cryptographic-toolbox-we-should-be-using">The Cryptographic Toolbox We Should Be Using<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-cryptographic-toolbox-we-should-be-using" class="hash-link" aria-label="Direct link to The Cryptographic Toolbox We Should Be Using" title="Direct link to The Cryptographic Toolbox We Should Be Using">​</a></h2>
+<p>These problems are completely avoidable. We have battle-tested protocols:</p>
+<ul>
+<li><strong>Signal Protocol</strong>: The gold standard via libsignal</li>
+<li><strong>Noise Protocol Framework</strong>: Modern, flexible framework for secure communication</li>
+<li><strong>OTR</strong>: Proven secure messaging protocol</li>
+<li><strong>Existing Decentralized Solutions</strong>: Briar and Reticulum have already tackled decentralized messaging. I am not familiar with the insides of these but they are worth looking into working with instead of re-rolling yet another thing to lock down.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-bigger-picture">The Bigger Picture<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-bigger-picture" class="hash-link" aria-label="Direct link to The Bigger Picture" title="Direct link to The Bigger Picture">​</a></h2>
+<p>BitChat illustrates a common pattern: it's fun to break ground and rewrite a path as if it's new, but cryptography and trust is treacherously easy to get confused about and notoriously difficult to write cleanly and securely due to fundamental security oversights and implementation issues. Secure messaging is largely a solved problem. We have the tools and expertise to build systems that are both decentralized and secure.</p>
+<p>Thinking more deeply about this I think cryptography is the easy part. It will be the resilience to denial of service and electronic disruption that will challenge any decentralized communication mechanism when it's most needed.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reporting-the-issue">Reporting The Issue<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#reporting-the-issue" class="hash-link" aria-label="Direct link to Reporting The Issue" title="Direct link to Reporting The Issue">​</a></h2>
+<p><a href="https://github.com/jackjackbits/bitchat/issues/19" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" alt="trouble" src="https://www.supernetworks.org/pages/assets/images/reported-128499e7e173d99f18e766cb2df02701.png" width="1120" height="874" class="img_ev3q"></a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="moving-forward">Moving Forward<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#moving-forward" class="hash-link" aria-label="Direct link to Moving Forward" title="Direct link to Moving Forward">​</a></h2>
+<p>For projects like bitchat:</p>
+<ol>
+<li>Start with security fundamentals—identity verification isn't optional</li>
+<li>Reuse proven protocols—don't reinvent the cryptographic wheel</li>
+<li>Think like an attacker</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="final-thoughts">Final Thoughts<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#final-thoughts" class="hash-link" aria-label="Direct link to Final Thoughts" title="Direct link to Final Thoughts">​</a></h2>
+<p>In cryptography, details matter. A protocol that has the right vibes can have fundamental substance flaws that compromise everything it claims to protect.</p>
+<p>For users: wait for more mature implementations that take security seriously. For developers: learn from others' mistakes. The tools for building secure, decentralized communication exist. Use them.</p>]]></content:encoded>
+            <category>e2e</category>
+            <category>identity</category>
+            <category>bluetooth</category>
+        </item>
         <item>
             <title><![CDATA[SMB Flaws in macOS]]></title>
             <link>https://www.supernetworks.org/pages/blog/macos-smb-flaws</link>
@@ -901,22 +962,6 @@ to convert identifiers to device icons or go from something like a MAC address t
             <category>IOS</category>
             <category>microsegmentation</category>
             <category>PLUS</category>
-        </item>
-        <item>
-            <title><![CDATA[Loading an nzyme tap on SPR]]></title>
-            <link>https://www.supernetworks.org/pages/blog/spr-nzyme-tap</link>
-            <guid>https://www.supernetworks.org/pages/blog/spr-nzyme-tap</guid>
-            <pubDate>Thu, 16 Nov 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[Nzyme lets people monitor their wifi networks with sensors that collect wifi data (as well as network traffic).]]></description>
-            <content:encoded><![CDATA[<p><a href="https://www.nzyme.org/" target="_blank" rel="noopener noreferrer">Nzyme</a> lets people monitor their wifi networks with sensors that collect wifi data (as well as network traffic).</p>
-<p>It can detect common wifi attack tools and tactics like deauths for getting WPA2 handshakes to crack,
-rogue APs, and more.</p>
-<p>We've put together a plugin that can run alongside the SPR AP without affecting the channels, by creating a monitor interface. While this won't be able to detect Rogue APs, it can detect some anomalous activity.</p>
-<p>The plugin is available at <a href="https://github.com/spr-networks/spr-nzyme-tap/" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/spr-nzyme-tap/</a></p>]]></content:encoded>
-            <category>wifi</category>
-            <category>nzyme</category>
-            <category>defense</category>
-            <category>blue-team</category>
         </item>
     </channel>
 </rss>
