@@ -46,127 +46,235 @@
 
       gtag('config', 'AW-16781748800');
     </script>
+    
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #1a202c, #2d3748);
+      }
+      .gradient-text {
+        background: -webkit-linear-gradient(45deg, #4fd1c5, #6ee7b7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
   </head>
 
   <body onload="setup()" class="dark:bg-gray-900">
-    <nav
-      class="md:flex bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
-    >
-      <div
-        class="container flex flex-wrap justify-between items-center mx-auto"
-      >
-        <a href="/" class="flex items-center">
-          <!--img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /-->
-          <span
-            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-            >SPR</span
-          >
-        </a>
+    <header class="gradient-bg text-white py-4 fixed top-0 left-0 right-0 z-50">
 
-        <button
-          data-collapse-toggle="mobile-menu"
-          type="button"
-          id="trigger-mobile-menu"
-          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row md:justify-between md:items-center"
         >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <svg
-            class="hidden w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
+          <div class="flex justify-between items-center">
+            <a href="/" class="text-lg font-semibold tracking-tight">
+              <span class="text-2xl font-bold gradient-text">SPR</span> by
+              Supernetworks
+            </a>
 
-        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul
-            class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+            <div class="fixed top-0 right-16 md:right-10 py-4">
+              <a
+                href="/#products"
+                class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div class="flex space-x-4 md:hidden">
+              <button
+                id="trigger-mobile-menu"
+                class="text-white hover:text-sky-400 hover:underline transition duration-300"
+              >
+                <img
+                  width="24"
+                  height="24"
+                  src="/assets/img/mobilemenus.svg"
+                  alt="Menu"
+                />
+              </button>
+            </div>
+          </div>
+          <nav
+            class="hidden md:flex md:items-center md:space-x-8"
+            id="mobile-menu"
           >
-            <li>
-              <a
-                href="/"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="plus.html"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-bold"
-                aria-current="page"
-                >PLUS</a
-              >
-            </li>
-            <li>
-              <a
-                href="features.html"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
-                >Features</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >Guide</a
-              >
-            </li>
-            <li>
-              <a
-                href="http://demo.supernetworks.org/"
-                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >Demo</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/docs/intro"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >Documentation</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/docs/faq"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >FAQ</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/blog"
-                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >Blog</a
-              >
-            </li>
-          </ul>
+            <ul
+              class="flex flex-col md:flex-row mt-4 space-y-4 md:mt-0 md:space-y-0 md:space-x-8 text-sm font-normal"
+            >
+              <li>
+                <a
+                  href="/#products"
+                  class="hover:text-sky-400 transition duration-300 nav-item"
+                  >Products</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="/#how-to-use"
+                  class="hover:text-sky-400 transition duration-300 nav-item"
+                  >Solutions</a
+                >
+              </li>
+              <li>
+                <!--a
+                  href="features.html"
+                  class="hover:text-sky-400 transition duration-300 nav-item"
+                  >Features</a
+              -->
+
+                <div class="">
+                  <div class="dropdown inline-block relative">
+                    <a
+                      href="/features.html"
+                      class="inline-flex items-center hover:text-sky-400 transition duration-300 nav-item"
+                    >
+                      <span class="mr-1">Features</span>
+                      <svg
+                        class="hidden md:flex fill-current h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                      </svg>
+                    </a>
+                    <ul
+                      class="bg-gray-800 flex space-y-4 dropdown-menu absolute hidden text-neutral-200 p-8 w-48 -ml-8"
+                    >
+                      <li>
+                        <a
+                          class="block whitespace-no-wrap hover:text-sky-400"
+                          href="https://www.supernetworks.org/pages/docs/guides/dns"
+                          >Ad Block</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block whitespace-no-wrap hover:text-sky-400"
+                          href="https://www.supernetworks.org/pages/docs/guides/firewall"
+                          >Firewall &amp; Routing</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block whitespace-no-wrap hover:text-sky-400"
+                          href="https://www.supernetworks.org/pages/docs/guides/alerts"
+                          >Alerts</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block whitespace-no-wrap hover:text-sky-400"
+                          href="/#vpn"
+                          >VPN</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block whitespace-no-wrap hover:text-sky-400"
+                          href="https://www.supernetworks.org/pages/docs/guides/logs"
+                          >Traffic Monitoring</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="hover:text-sky-400"
+                          href="https://www.supernetworks.org/pages/docs/guides/plugins"
+                          >Plugins</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="/plus.html"
+                  class="hover:text-sky-400 transition duration-300 nav-item"
+                  >PLUS</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="https://www.supernetworks.org/pages/docs/faq"
+                  class="hover:text-sky-400 transition duration-300 nav-item"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.supernetworks.org/pages/blog"
+                  class="hover:text-sky-400 transition duration-300 nav-item"
+                  >Blog</a
+                >
+              </li>
+              <li class="md:ps-8">
+                <a
+                  class="hover:underline flex justify-start link-conversion"
+                  data-id="0CIsCKeomoQaEMDUlMI-"
+                  href="https://github.com/spr-networks/super/"
+                >
+                  <div
+                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
+                    style="
+                      background-image: url('/assets/img/github.svg');
+                      filter: invert(100%) brightness(200%);
+                    "
+                  ></div>
+                </a>
+              </li>
+              <!--li>
+                <a
+                  class="hover:underline flex justify-start"
+                  href="https://twitter.com/spr_networks"
+                >
+                  <div
+                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
+                    style="
+                      background-image: url('/assets/img/twitter.svg');
+                      filter: invert(100%) brightness(200%);
+                    "
+                  ></div>
+                </a>
+              </li-->
+              <li>
+                <a
+                  class="hover:underline flex justify-start"
+                  href="https://discord.gg/EUjTKJPPAX"
+                >
+                  <div
+                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
+                    style="
+                      background-image: url('/assets/img/discord.svg');
+                      filter: invert(100%) brightness(200%);
+                    "
+                  ></div>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </nav>
+    </header>
 
-    <header class="relative pt-8 md:pt-24">
+    <div class="relative pt-20 md:pt-32">
       <!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
       <div
         class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
@@ -293,8 +401,14 @@
 					</ul>
 				</div-->
         </div>
+        
+        <div class="mt-8">
+          <p class="text-lg text-gray-600 dark:text-gray-400 text-center">
+            • Router hardware purchase includes PLUS code
+          </p>
+        </div>
       </div>
-    </header>
+    </div>
 
     <!-- SPR Virtual / SPR Cloud -->
 

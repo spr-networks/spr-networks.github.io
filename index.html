@@ -26,7 +26,7 @@
     />
     <meta
       property="og:image"
-      content="https://www.sprnetworks.com/images/spr-pod.jpg"
+      content="https://www.sprnetworks.com/images/cm5-router.png"
     />
 
     <!-- Twitter -->
@@ -586,24 +586,26 @@
         background: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
       "
     >
-      <div class="flex flex-col md:flex-row md:gap-24 md:w-2/4 md:mx-auto">
-        <div class="items-center justify-center md:pt-24">
-          <img
-            src="/assets/img/pod-small.webp"
-            alt="SPR Pod"
-            class="w-[240px] mx-auto"
-            style="transform: rotate(-2deg)"
-          />
+      <div class="flex flex-col md:flex-row md:gap-12 md:w-3/4 md:mx-auto pb-16">
+        <div class="items-center justify-center md:pt-24 md:flex-1">
+          <a href="compute-board.html" class="block">
+            <img
+              src="/assets/img/cm5-router.png"
+              alt="CM5 Router"
+              class="w-full max-w-[400px] mx-auto hover:scale-105 transition-transform duration-300"
+              style="transform: rotate(-2deg)"
+            />
+          </a>
         </div>
         <div
-          class="md:flex-1 flex-col text-white antialiased md:pt-24 flex gap-2 items-center md:items-start"
+          class="md:flex-1 flex-col text-white antialiased md:pt-24 flex gap-2 items-center md:items-center text-center"
         >
-          <p class="text-sm pt-6">WiFi 6 Router</p>
-          <h3 class="text-4xl font-bold font-sans">Wifi Pod</h3>
-          <p class="text-xl">Fast, secure dual-band wifi</p>
+          <h3 class="text-4xl font-bold font-sans">WiFi 6 PoE+ Router (CM5)</h3>
+          <p class="text-xl">Fast, secure dual-band wifi with PoE+ power</p>
+          <p class="text-sm mt-2 text-gray-200">• Router hardware purchase includes PLUS code</p>
           <div class="mt-8">
             <a
-              href="pod-order.html"
+              href="compute-board.html"
               class="inline bg-white text-black text-md uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
             >
               Shop Now
@@ -624,8 +626,281 @@
     </div-->
 
     <main>
+
+      <section class="antialiased">
+        <div class="bg-gradient-to-b from-slate-900 to-slate-950">
+          <div class="container mx-auto">
+            <div class="space-y-4 text-center md:w-3/5 p-8 text-center mx-auto">
+              <h2 class="text-4xl md:text-4xl font-bold">
+                Self-Hosted, Privacy Preserving, and Feature Rich
+              </h2>
+              <p class="text-lg font-extralight">
+                Unlike other products that rely on the cloud for advanced
+                features,<br />
+                we bring them all to you,
+                <span class="border-b">on-device</span>
+              </p>
+              <!--p class="text-lg font-extralight">
+                Unlock even more features like Scheduled Firewall
+                Policies, Domain-Name Based Firewall Rules, &amp; Mesh with
+                <a
+                  href="https://www.supernetworks.org/plus.html"
+                  class="text-sky-400 hover:text-sky-300 transition duration-300"
+                  >PLUS</a
+                >
+                subscription
+              </p-->
+            </div>
+
+            <!--
+              1: block, firewall, alert - protect your network/family
+              2: vpn, stats, plugins - other cool features
+                - could maybe skip this section since its mentioned further down
+            -->
+
+            <div class="md:space-y-8 md:pb-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
+                <div
+                  class="relative p-8 md:rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(244, 145, 194, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Block anything</h3>
+                  <p class="w-1/2 font-light">
+                    Block ads and trackers at the network level for all your
+                    devices
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <!--svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="w-full text-rose-300"
+                    viewbox="0 0 80 80"
+                  >
+                    <g fill="currentColor">
+                      <path
+                        d="M80 40.08c0-8.978-3.04-17.635-8.64-24.689h0l-.32-.321c-.16-.16-.16-.321-.32-.481l-2.56-2.726h0C60.64 4.168 50.72 0 40 0h-.16 0-.16C29.12.16 19.36 4.168 11.84 11.703h0l-2.72 2.886c-.16.16-.16.321-.32.481l-.32.16h0C3.04 22.285 0 31.102 0 40.08s3.04 17.635 8.64 24.689h0l.32.321c.16.16.16.321.32.481l2.56 2.725h0C19.36 75.832 29.12 80 39.68 80h.16 0H40c10.56 0 20.64-4.168 28.16-11.703h0l2.56-2.886c.16-.16.16-.321.32-.481l.32-.321h0C76.96 57.876 80 49.058 80 40.08zM63.84 13.948c-.16 0-.32.16-.48.16-.32.16-.64.321-.8.321-.64.321-1.44.481-2.24.802-.16 0-.32.16-.48.16-.96.321-1.76.481-2.72.802h0c-.16 0-.48.16-.64.16-1.44-3.848-3.2-7.214-5.28-9.78 4.64 1.443 8.96 4.008 12.64 7.375zM39.68 4.649h0c4.48 0 8.96 4.649 12.16 12.665-3.68.641-7.68.962-11.84.962s-8.32-.32-12.16-.962C30.88 9.459 35.36 4.81 39.68 4.649zM28.32 6.734c-1.92 2.565-3.68 5.772-5.12 9.619h-.32 0c-.96-.321-1.92-.481-2.72-.802-.16 0-.32-.16-.48-.16-.64-.321-1.44-.641-2.08-.962-.32-.16-.48-.16-.8-.321-.16-.16-.32-.16-.64-.321 3.68-3.046 7.68-5.611 12.16-7.054zM16.16 66.212c.16 0 .32-.16.48-.16.32-.16.48-.16.8-.321.64-.321 1.44-.481 2.24-.802.16 0 .32-.16.48-.16.96-.32 1.76-.481 2.72-.802h0 .32c1.44 3.688 3.2 7.054 5.12 9.619-4.48-1.603-8.64-4.168-12.16-7.375zm23.68 9.299h0c-4.48-.16-8.96-4.649-12-12.505 3.84-.641 8-.962 12.16-.962s8 .321 11.84.962c-3.04 7.856-7.68 12.505-12 12.505zm11.36-1.924c2.08-2.565 3.84-5.932 5.28-9.78.16 0 .48.16.64.16h0c.96.321 1.92.481 2.72.802.16 0 .32.16.48.16.8.321 1.44.481 2.24.802.32.16.48.16.8.321.16 0 .32.16.64.32-3.84 3.207-8.16 5.772-12.8 7.215zm16.16-11.062h0c-.48 0-.8-.16-1.28-.321s-1.12-.481-1.6-.641c-.16 0-.32-.16-.48-.16-1.92-.802-4-1.282-6.08-1.924.48-1.924.96-3.848 1.28-5.772h-4.8c-.32 1.764-.64 3.367-1.12 4.81-4.16-.802-8.64-1.122-13.28-1.122-4.8 0-9.28.481-13.6 1.283-.48-1.603-.8-3.206-1.12-4.97h-4.8c.32 2.084.8 4.008 1.28 5.932-1.92.481-3.84 1.122-5.6 1.763-.16.16-.48.16-.64.321-.48.16-1.12.481-1.6.641-.32 0-.8.16-1.12.321h0C8 56.914 5.28 49.7 4.8 42.325h4v-4.649h-4c.48-7.375 3.2-14.429 7.84-20.04l.16-.16c.32.16.8.321 1.12.481.64.32 1.12.481 1.76.802.16 0 .32.16.48.16 1.76.641 3.68 1.283 5.76 1.764-.48 1.764-.8 3.527-1.12 5.291h4.8l.96-4.329c4.32.802 8.96 1.282 13.6 1.282s9.12-.481 13.28-1.122c.32 1.283.64 2.725.96 4.329h4.8c-.32-1.763-.64-3.527-1.12-5.291 2.08-.481 4-1.122 5.92-1.924.16 0 .48-.16.64-.16.64-.16 1.12-.481 1.76-.641.32-.16.8-.321 1.12-.481h0c4.64 5.772 7.52 12.826 8 20.2h-4.8v4.649h4.8c-.8 7.214-3.52 14.429-8.16 20.04zM29.92 39.759c0 1.924-.32 3.527-.8 4.81s-1.28 2.405-2.08 3.367c-.96.802-2.08 1.443-3.36 1.924-1.28.321-2.88.641-4.8.641h-4.96c-.32 0-.64-.16-.96-.321s-.16-.641-.16-1.122V30.941c0-.481.16-.802.32-.962s.48-.321.96-.321h5.28c1.92 0 3.36.16 4.64.641s2.4 1.122 3.2 1.924 1.6 1.924 2.08 3.206c.32 1.282.64 2.725.64 4.329zm-4.32.16c0-.962-.16-1.924-.32-2.725s-.64-1.603-1.12-2.245-1.12-1.122-1.92-1.443-1.76-.481-3.2-.481h-2.08v14.108h2.24c1.12 0 2.08-.16 2.88-.481s1.44-.802 1.92-1.283c.48-.641.96-1.282 1.12-2.244.32-.962.48-2.084.48-3.206zm24.8 8.978c0 .321 0 .481-.16.641s-.16.321-.32.481-.32.16-.48.32c-.16 0-.32.16-.64.16h-1.76c-.32 0-.64 0-.96-.16-.32 0-.48-.16-.8-.481-.16-.16-.48-.481-.64-.802s-.48-.802-.64-1.283l-5.12-9.619c-.32-.641-.64-1.122-.96-1.924-.32-.641-.64-1.283-.8-1.924h0c0 .802 0 1.603.16 2.244v2.405 10.902c0 .16 0 .16-.16.321 0 .16-.16.16-.32.16s-.32.16-.64.16h-.96-.96c-.32 0-.48 0-.64-.16-.16 0-.16-.16-.32-.16v-.321V31.26c0-.481.16-.802.48-1.122s.64-.321 1.12-.321h2.24c.48 0 .8 0 .96.16.32 0 .48.16.8.321.16.16.48.321.64.641a9.18 9.18 0 0 0 .64 1.122l4 7.535c.16.481.48.962.64 1.282.16.481.48.962.64 1.283.16.481.48.802.64 1.283s.32.802.64 1.283h0v-2.405-2.245V30.3c0-.16 0-.16.16-.321 0-.16.16-.16.32-.16s.32-.16.64-.16h.96.96c.32 0 .48 0 .64.16.16 0 .16.16.32.16v.321 18.597h-.32z"
+                      />
+                      <path
+                        d="M67.2 44.248c0 1.122-.16 2.084-.64 2.886s-.96 1.443-1.6 2.084c-.64.481-1.44.962-2.4 1.282s-1.92.481-3.04.481c-.64 0-1.44 0-1.92-.16L56 50.34c-.48-.16-.8-.32-1.12-.481s-.48-.321-.64-.481-.16-.321-.32-.641c0-.32-.16-.641-.16-1.122v-.802c0-.16 0-.481.16-.481 0-.16.16-.16.16-.321 0 0 .16-.16.32-.16s.32.16.64.321.64.321 1.12.641c.48.16.96.481 1.6.641s1.28.321 2.08.321c.48 0 .96 0 1.44-.16s.8-.321.96-.481c.32-.16.48-.481.64-.802s.16-.641.16-1.122-.16-.802-.32-1.283l-.96-.962c-.48-.321-.8-.481-1.44-.802-.48-.16-1.12-.481-1.6-.802s-1.12-.481-1.6-.802-.96-.641-1.44-1.122-.8-.962-.96-1.603c-.32-.641-.32-1.283-.32-2.245s.16-1.924.48-2.565c.32-.802.8-1.443 1.44-1.924s1.28-.802 2.24-1.122c.8-.321 1.76-.321 2.72-.321.48 0 .96 0 1.44.16.48 0 .96.16 1.44.321s.8.321 1.12.481.48.32.64.32c.16.16.16.16.16.321 0 0 0 .16.16.321v.481.641.802.481c0 .16-.16.16-.16.321 0 0-.16.16-.32.16s-.32 0-.48-.16l-.96-.481c-.32-.16-.8-.321-1.28-.481s-.96-.16-1.6-.16c-.48 0-.8 0-1.12.16s-.64.321-.8.481-.32.481-.48.641c-.16.321-.16.641-.16.802 0 .481.16.802.32 1.122l.96.962c.48.321.96.481 1.44.802.48.16 1.12.481 1.6.802s1.12.481 1.6.802.96.641 1.44 1.122.8.962.96 1.603c-.16.16 0 .802 0 1.764z"
+                      />
+                    </g>
+                  </svg-->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-rose-300"
+                    >
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  class="relative p-8 md:rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(114, 213, 179, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Firewall &amp; Routing</h3>
+                  <p class="w-1/2 font-light">
+                    Control your network with sophisticated firewall rules and
+                    routing options
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-green-200"
+                    >
+                      <path
+                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 md:rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(252, 211, 77, 0.5) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Customizable Alerts</h3>
+                  <p class="w-1/2 font-light">
+                    Stay informed about important network events with a
+                    customizable alert system
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-amber-200"
+                    >
+                      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
+                <div
+                  class="relative p-8 md:rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(138, 179, 250, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Built-in VPN</h3>
+                  <p class="w-1/2 font-light">
+                    Secure your connections with native WireGuard VPN support
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full text-sky-200"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 3.34V5a3 3 0 0 0 3 3" />
+                      <path
+                        d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"
+                      />
+                      <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+                      <path d="M12 2a10 10 0 1 0 9.54 13" />
+                      <path d="M20 6V4a2 2 0 1 0-4 0v2" />
+                      <rect width="8" height="5" x="14" y="6" rx="1" />
+                    </svg>
+                    <!--svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-full text-sky-200"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="4.5" r="2.5" />
+                    <path d="m10.2 6.3-3.9 3.9" />
+                    <circle cx="4.5" cy="12" r="2.5" />
+                    <path d="M7 12h10" />
+                    <circle cx="19.5" cy="12" r="2.5" />
+                    <path d="m13.8 17.7 3.9-3.9" />
+                    <circle cx="12" cy="19.5" r="2.5" />
+                  </svg-->
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 md:rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(156, 98, 190, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Traffic Monitoring</h3>
+                  <p class="w-1/2 font-light">
+                    Gain insights into your network usage with real-time
+                    monitoring and statistics
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-violet-200"
+                    >
+                      <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                      <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 md:rounded-lg text-zinc-100"
+                  style="
+                    background: linear-gradient(
+                      295deg,
+                      rgba(153, 246, 228, 0.3) 160px,
+                      rgba(31, 41, 55, 1) 20%
+                    );
+                  "
+                >
+                  <h3 class="text-2xl font-bold">Plugins</h3>
+                  <p class="w-1/2 font-light">
+                    Expand SPR's capabilities with plugins for Tailscale,
+                    Wireshark, and more
+                  </p>
+                  <div class="absolute bottom-8 right-8 w-16">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="w-full text-teal-200"
+                    >
+                      <path
+                        d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
       <section
-        class="py-12 pb-16 bg-gradient-to-b from-slate-950/80 to-slate-900/80 antialiased"
+        class="py-24 pb-16 bg-gradient-to-b from-slate-950/80 to-slate-900/80 antialiased"
       >
         <div class="container mx-auto space-y-16 md:w-2/3">
           <h2
@@ -974,276 +1249,6 @@
         </div>
       </section>
 
-      <section class="antialiased">
-        <div class="bg-gradient-to-b from-slate-900 to-slate-950">
-          <div class="container mx-auto">
-            <div class="space-y-4 text-center md:w-3/5 p-8 text-center mx-auto">
-              <h2 class="text-4xl md:text-4xl font-bold">
-                Self-Hosted, Privacy Preserving, and Feature Rich
-              </h2>
-              <p class="text-lg font-extralight">
-                Unlike other products that rely on the cloud for advanced
-                features,<br />
-                we bring them all to you,
-                <span class="border-b">on-device</span>
-              </p>
-              <!--p class="text-lg font-extralight">
-                Unlock even more features like Scheduled Firewall
-                Policies, Domain-Name Based Firewall Rules, &amp; Mesh with
-                <a
-                  href="https://www.supernetworks.org/plus.html"
-                  class="text-sky-400 hover:text-sky-300 transition duration-300"
-                  >PLUS</a
-                >
-                subscription
-              </p-->
-            </div>
-
-            <!--
-              1: block, firewall, alert - protect your network/family
-              2: vpn, stats, plugins - other cool features
-                - could maybe skip this section since its mentioned further down
-            -->
-
-            <div class="md:space-y-8 md:pb-8">
-              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(244, 145, 194, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Block anything</h3>
-                  <p class="w-1/2 font-light">
-                    Block ads and trackers at the network level for all your
-                    devices
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <!--svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    class="w-full text-rose-300"
-                    viewbox="0 0 80 80"
-                  >
-                    <g fill="currentColor">
-                      <path
-                        d="M80 40.08c0-8.978-3.04-17.635-8.64-24.689h0l-.32-.321c-.16-.16-.16-.321-.32-.481l-2.56-2.726h0C60.64 4.168 50.72 0 40 0h-.16 0-.16C29.12.16 19.36 4.168 11.84 11.703h0l-2.72 2.886c-.16.16-.16.321-.32.481l-.32.16h0C3.04 22.285 0 31.102 0 40.08s3.04 17.635 8.64 24.689h0l.32.321c.16.16.16.321.32.481l2.56 2.725h0C19.36 75.832 29.12 80 39.68 80h.16 0H40c10.56 0 20.64-4.168 28.16-11.703h0l2.56-2.886c.16-.16.16-.321.32-.481l.32-.321h0C76.96 57.876 80 49.058 80 40.08zM63.84 13.948c-.16 0-.32.16-.48.16-.32.16-.64.321-.8.321-.64.321-1.44.481-2.24.802-.16 0-.32.16-.48.16-.96.321-1.76.481-2.72.802h0c-.16 0-.48.16-.64.16-1.44-3.848-3.2-7.214-5.28-9.78 4.64 1.443 8.96 4.008 12.64 7.375zM39.68 4.649h0c4.48 0 8.96 4.649 12.16 12.665-3.68.641-7.68.962-11.84.962s-8.32-.32-12.16-.962C30.88 9.459 35.36 4.81 39.68 4.649zM28.32 6.734c-1.92 2.565-3.68 5.772-5.12 9.619h-.32 0c-.96-.321-1.92-.481-2.72-.802-.16 0-.32-.16-.48-.16-.64-.321-1.44-.641-2.08-.962-.32-.16-.48-.16-.8-.321-.16-.16-.32-.16-.64-.321 3.68-3.046 7.68-5.611 12.16-7.054zM16.16 66.212c.16 0 .32-.16.48-.16.32-.16.48-.16.8-.321.64-.321 1.44-.481 2.24-.802.16 0 .32-.16.48-.16.96-.32 1.76-.481 2.72-.802h0 .32c1.44 3.688 3.2 7.054 5.12 9.619-4.48-1.603-8.64-4.168-12.16-7.375zm23.68 9.299h0c-4.48-.16-8.96-4.649-12-12.505 3.84-.641 8-.962 12.16-.962s8 .321 11.84.962c-3.04 7.856-7.68 12.505-12 12.505zm11.36-1.924c2.08-2.565 3.84-5.932 5.28-9.78.16 0 .48.16.64.16h0c.96.321 1.92.481 2.72.802.16 0 .32.16.48.16.8.321 1.44.481 2.24.802.32.16.48.16.8.321.16 0 .32.16.64.32-3.84 3.207-8.16 5.772-12.8 7.215zm16.16-11.062h0c-.48 0-.8-.16-1.28-.321s-1.12-.481-1.6-.641c-.16 0-.32-.16-.48-.16-1.92-.802-4-1.282-6.08-1.924.48-1.924.96-3.848 1.28-5.772h-4.8c-.32 1.764-.64 3.367-1.12 4.81-4.16-.802-8.64-1.122-13.28-1.122-4.8 0-9.28.481-13.6 1.283-.48-1.603-.8-3.206-1.12-4.97h-4.8c.32 2.084.8 4.008 1.28 5.932-1.92.481-3.84 1.122-5.6 1.763-.16.16-.48.16-.64.321-.48.16-1.12.481-1.6.641-.32 0-.8.16-1.12.321h0C8 56.914 5.28 49.7 4.8 42.325h4v-4.649h-4c.48-7.375 3.2-14.429 7.84-20.04l.16-.16c.32.16.8.321 1.12.481.64.32 1.12.481 1.76.802.16 0 .32.16.48.16 1.76.641 3.68 1.283 5.76 1.764-.48 1.764-.8 3.527-1.12 5.291h4.8l.96-4.329c4.32.802 8.96 1.282 13.6 1.282s9.12-.481 13.28-1.122c.32 1.283.64 2.725.96 4.329h4.8c-.32-1.763-.64-3.527-1.12-5.291 2.08-.481 4-1.122 5.92-1.924.16 0 .48-.16.64-.16.64-.16 1.12-.481 1.76-.641.32-.16.8-.321 1.12-.481h0c4.64 5.772 7.52 12.826 8 20.2h-4.8v4.649h4.8c-.8 7.214-3.52 14.429-8.16 20.04zM29.92 39.759c0 1.924-.32 3.527-.8 4.81s-1.28 2.405-2.08 3.367c-.96.802-2.08 1.443-3.36 1.924-1.28.321-2.88.641-4.8.641h-4.96c-.32 0-.64-.16-.96-.321s-.16-.641-.16-1.122V30.941c0-.481.16-.802.32-.962s.48-.321.96-.321h5.28c1.92 0 3.36.16 4.64.641s2.4 1.122 3.2 1.924 1.6 1.924 2.08 3.206c.32 1.282.64 2.725.64 4.329zm-4.32.16c0-.962-.16-1.924-.32-2.725s-.64-1.603-1.12-2.245-1.12-1.122-1.92-1.443-1.76-.481-3.2-.481h-2.08v14.108h2.24c1.12 0 2.08-.16 2.88-.481s1.44-.802 1.92-1.283c.48-.641.96-1.282 1.12-2.244.32-.962.48-2.084.48-3.206zm24.8 8.978c0 .321 0 .481-.16.641s-.16.321-.32.481-.32.16-.48.32c-.16 0-.32.16-.64.16h-1.76c-.32 0-.64 0-.96-.16-.32 0-.48-.16-.8-.481-.16-.16-.48-.481-.64-.802s-.48-.802-.64-1.283l-5.12-9.619c-.32-.641-.64-1.122-.96-1.924-.32-.641-.64-1.283-.8-1.924h0c0 .802 0 1.603.16 2.244v2.405 10.902c0 .16 0 .16-.16.321 0 .16-.16.16-.32.16s-.32.16-.64.16h-.96-.96c-.32 0-.48 0-.64-.16-.16 0-.16-.16-.32-.16v-.321V31.26c0-.481.16-.802.48-1.122s.64-.321 1.12-.321h2.24c.48 0 .8 0 .96.16.32 0 .48.16.8.321.16.16.48.321.64.641a9.18 9.18 0 0 0 .64 1.122l4 7.535c.16.481.48.962.64 1.282.16.481.48.962.64 1.283.16.481.48.802.64 1.283s.32.802.64 1.283h0v-2.405-2.245V30.3c0-.16 0-.16.16-.321 0-.16.16-.16.32-.16s.32-.16.64-.16h.96.96c.32 0 .48 0 .64.16.16 0 .16.16.32.16v.321 18.597h-.32z"
-                      />
-                      <path
-                        d="M67.2 44.248c0 1.122-.16 2.084-.64 2.886s-.96 1.443-1.6 2.084c-.64.481-1.44.962-2.4 1.282s-1.92.481-3.04.481c-.64 0-1.44 0-1.92-.16L56 50.34c-.48-.16-.8-.32-1.12-.481s-.48-.321-.64-.481-.16-.321-.32-.641c0-.32-.16-.641-.16-1.122v-.802c0-.16 0-.481.16-.481 0-.16.16-.16.16-.321 0 0 .16-.16.32-.16s.32.16.64.321.64.321 1.12.641c.48.16.96.481 1.6.641s1.28.321 2.08.321c.48 0 .96 0 1.44-.16s.8-.321.96-.481c.32-.16.48-.481.64-.802s.16-.641.16-1.122-.16-.802-.32-1.283l-.96-.962c-.48-.321-.8-.481-1.44-.802-.48-.16-1.12-.481-1.6-.802s-1.12-.481-1.6-.802-.96-.641-1.44-1.122-.8-.962-.96-1.603c-.32-.641-.32-1.283-.32-2.245s.16-1.924.48-2.565c.32-.802.8-1.443 1.44-1.924s1.28-.802 2.24-1.122c.8-.321 1.76-.321 2.72-.321.48 0 .96 0 1.44.16.48 0 .96.16 1.44.321s.8.321 1.12.481.48.32.64.32c.16.16.16.16.16.321 0 0 0 .16.16.321v.481.641.802.481c0 .16-.16.16-.16.321 0 0-.16.16-.32.16s-.32 0-.48-.16l-.96-.481c-.32-.16-.8-.321-1.28-.481s-.96-.16-1.6-.16c-.48 0-.8 0-1.12.16s-.64.321-.8.481-.32.481-.48.641c-.16.321-.16.641-.16.802 0 .481.16.802.32 1.122l.96.962c.48.321.96.481 1.44.802.48.16 1.12.481 1.6.802s1.12.481 1.6.802.96.641 1.44 1.122.8.962.96 1.603c-.16.16 0 .802 0 1.764z"
-                      />
-                    </g>
-                  </svg-->
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-rose-300"
-                    >
-                      <path
-                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(114, 213, 179, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Firewall &amp; Routing</h3>
-                  <p class="w-1/2 font-light">
-                    Control your network with sophisticated firewall rules and
-                    routing options
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-green-200"
-                    >
-                      <path
-                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(252, 211, 77, 0.5) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Customizable Alerts</h3>
-                  <p class="w-1/2 font-light">
-                    Stay informed about important network events with a
-                    customizable alert system
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-amber-200"
-                    >
-                      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(138, 179, 250, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Built-in VPN</h3>
-                  <p class="w-1/2 font-light">
-                    Secure your connections with native WireGuard VPN support
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-full text-sky-200"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M7 3.34V5a3 3 0 0 0 3 3" />
-                      <path
-                        d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"
-                      />
-                      <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-                      <path d="M12 2a10 10 0 1 0 9.54 13" />
-                      <path d="M20 6V4a2 2 0 1 0-4 0v2" />
-                      <rect width="8" height="5" x="14" y="6" rx="1" />
-                    </svg>
-                    <!--svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-full text-sky-200"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="4.5" r="2.5" />
-                    <path d="m10.2 6.3-3.9 3.9" />
-                    <circle cx="4.5" cy="12" r="2.5" />
-                    <path d="M7 12h10" />
-                    <circle cx="19.5" cy="12" r="2.5" />
-                    <path d="m13.8 17.7 3.9-3.9" />
-                    <circle cx="12" cy="19.5" r="2.5" />
-                  </svg-->
-                  </div>
-                </div>
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(156, 98, 190, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Traffic Monitoring</h3>
-                  <p class="w-1/2 font-light">
-                    Gain insights into your network usage with real-time
-                    monitoring and statistics
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-violet-200"
-                    >
-                      <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-                      <path d="M22 12A10 10 0 0 0 12 2v10z" />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(153, 246, 228, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Plugins</h3>
-                  <p class="w-1/2 font-light">
-                    Expand SPR's capabilities with plugins for Tailscale,
-                    Wireshark, and more
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-teal-200"
-                    >
-                      <path
-                        d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!--section class="antialiased bg-slate-950 pb-16 px-52">
         <div class="container mx-auto grid grid-cols-3 gap-8">
           <div
@@ -1425,24 +1430,19 @@
             >
               <div
                 class="flex flex-col md:flex-row items-center space-x-8"
-                onclick="location.href='/pod-order.html'"
+                onclick="location.href='/compute-board.html'"
               >
                 <div class="flex-1 flex-row space-y-8 text-center p-8">
                   <img
-                    src="/assets/img/pod-small.webp"
-                    alt="SPR Pod"
-                    class="rounded-lg md:w-6/12 mx-auto transition duration-300 ease-in-out hover:scale-150"
-                  />
-                  <img
-                    src="/assets/img/pod-white-small.webp"
-                    alt="SPR Pod"
-                    class="rounded-lg md:w-6/12 mx-auto transition duration-300 ease-in-out hover:scale-150"
+                    src="/assets/img/cm5-router.png"
+                    alt="CM5 Router"
+                    class="rounded-lg md:w-full mx-auto"
                     style="transform: rotate(3deg)"
                   />
                 </div>
                 <div class="flex-1 p-4 space-y-8">
                   <div class="space-y-2">
-                    <h3 class="text-2xl font-semibold">WiFi Pod</h3>
+                    <h3 class="text-2xl font-semibold">WiFi 6 PoE+ Router (CM5)</h3>
 
                     <div class="flex space-x-2">
                       <h4
