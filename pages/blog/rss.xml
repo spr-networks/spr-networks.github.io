@@ -4,10 +4,40 @@
         <title>SPR Blog</title>
         <link>https://www.supernetworks.org/pages/blog</link>
         <description>SPR Blog</description>
-        <lastBuildDate>Fri, 01 Aug 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Aug 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[The Bitchat Update]]></title>
+            <link>https://www.supernetworks.org/pages/blog/the-bitchat-update</link>
+            <guid>https://www.supernetworks.org/pages/blog/the-bitchat-update</guid>
+            <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Bitchat Plugin Support on SPR]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bitchat-plugin-support-on-spr">Bitchat Plugin Support on SPR<a href="https://www.supernetworks.org/pages/blog/the-bitchat-update#bitchat-plugin-support-on-spr" class="hash-link" aria-label="Direct link to Bitchat Plugin Support on SPR" title="Direct link to Bitchat Plugin Support on SPR">​</a></h2>
+<p>I've released a <a href="https://github.com/spr-networks/bitchat-plugin" target="_blank" rel="noopener noreferrer">proof of concept</a> for Bitchat running on Linux, along with a plugin configuration for SPR!</p>
+<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/bitchat-client-5baed963670ed2a5f84fbc4bda82c30e.png" width="4504" height="1274" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="background">Background<a href="https://www.supernetworks.org/pages/blog/the-bitchat-update#background" class="hash-link" aria-label="Direct link to Background" title="Direct link to Background">​</a></h2>
+<p>Since we <a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat">last wrote</a> about Bitchat, the security response for Bitchat been pretty much perfect. Jack quickly added prominent warnings that Bitchat was in development, and very quickly (as in within a week or so), the protocol moved to use Noise Encryption, providing strong security guarantees. Not long after Bitchat made it to the App Store. And even more impressively a little while later support for <a href="https://nostr.com/" target="_blank" rel="noopener noreferrer">Nostr</a> made it in.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-vibe-update">The Vibe Update<a href="https://www.supernetworks.org/pages/blog/the-bitchat-update#the-vibe-update" class="hash-link" aria-label="Direct link to The Vibe Update" title="Direct link to The Vibe Update">​</a></h2>
+<p>Frankly it's been impressive to see how quickly Bitchat has progressed. The linux plugin I create was written by claude code and modeled after Jack's bitchat iOS client along with <a href="https://github.com/vaibhav-mattoo/bitchat-tui" target="_blank" rel="noopener noreferrer">bitchat-tui</a>. Jack has been using <a href="https://block.github.io/goose/" target="_blank" rel="noopener noreferrer">Goose</a> for helping develop BitChat.</p>
+<p>One of the key things about the plugin is that it uses bluez/bluer for publishing GATT services. Other linux implementations floating around try to pair a little to aggressively and are using rust frameworks more geared towards clients than servers. It's containerized and should work on most linux systems with bluetooth and bluez. Having a linux client makes it easy to prototype ideas that make more sense on always-powered devices where battery life isn't a problem and additional technology like a LoRa radio could be available.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-spr-integration">The SPR Integration<a href="https://www.supernetworks.org/pages/blog/the-bitchat-update#the-spr-integration" class="hash-link" aria-label="Direct link to The SPR Integration" title="Direct link to The SPR Integration">​</a></h2>
+<p>As a proof of concept, I added the ability to use a SPR to provision a per-user WiFi password over Noise.
+The PSK is derived from the user's Bitchat identity key, making the key unique to that user, and securely sent over e2e.
+If a second user asks for a password, they'll get one provisioned to them uniquely.</p>
+<p>This prevents them from being able to decrypt each other's WiFi traffic over WPA2.</p>
+<p><img decoding="async" loading="lazy" src="https://www.supernetworks.org/pages/assets/images/bitchat-wifi-6f5c1f1012240523b9f0a190b84ba734.png" width="2248" height="1496" class="img_ev3q"></p>
+<p>The plugin can be installed seamlessly with an OTP code from the url <a href="https://github.com/spr-networks/bitchat-plugin" target="_blank" rel="noopener noreferrer">https://github.com/spr-networks/bitchat-plugin</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://www.supernetworks.org/pages/blog/the-bitchat-update#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<p>What would you like to see ? Give us a shout out! Like the project? Star it on github and share it.</p>
+<p>For next steps we will likely add a teleport feature, allowing users to relay traffic over UDP/Wireguard between remote instances.</p>
+<p>This linux client can serve as a relay to expand the range and availability for Bitchat without needing centralized services.
+Many opportunities exist for bridging</p>]]></content:encoded>
+            <category>e2e</category>
+            <category>identity</category>
+            <category>bluetooth</category>
+        </item>
         <item>
             <title><![CDATA[Real-World Test: PoE+ Router Pushes 3+ Gbps Simultaneously on WiFi 6 & 2.5GbE]]></title>
             <link>https://www.supernetworks.org/pages/blog/spr-poe-router-3gbps-throughput</link>
@@ -100,6 +130,9 @@
             <pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[The Intersection of Vibe Coding and Security]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-intersection-of-vibe-coding-and-security">The Intersection of Vibe Coding and Security<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#the-intersection-of-vibe-coding-and-security" class="hash-link" aria-label="Direct link to The Intersection of Vibe Coding and Security" title="Direct link to The Intersection of Vibe Coding and Security">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>UPDATE: Since I first wrote about this, Bitchat quickly added a label that Bitchat is under development
+and will be reviewed for security. And they rapidly moved to implement end-to-end cryptography with noise.
+See the <a href="https://www.supernetworks.org/pages/blog/the-bitchat-update">bitchat update blog post</a></p></div></div>
 <p>Many of us have seen glimpses of what agentic generative coding does for security. We see the missteps, and sometimes wonder about the shallow bugs that pile on. Config managers that are almost always arbitrary file upload endpoints. Glue layers that become bash command launch as a service. And most frustratingly, code generation that's excellent at pretending forward progress has been made when no meaningful change has occurred. One of the most impressive parts of agentic coding is exactly that: how convincing it is by appearance and how easily we're tricked about the depth of substance in the code gen. In some ways we extend our trust of people to the stochastic code parrots, assuming that generative coding produced the actual work a human would have probably performed.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="vibe-identity-an-obvious-flaw">Vibe Identity: An Obvious Flaw<a href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat#vibe-identity-an-obvious-flaw" class="hash-link" aria-label="Direct link to Vibe Identity: An Obvious Flaw" title="Direct link to Vibe Identity: An Obvious Flaw">​</a></h2>
 <p>I'm no stranger to e2e breaks, and have been following along over the past decade. Some of my favorite breaks I have found personally include Vaudenay oracles against Kakao, LINE, and bypassable OTR signature verification in iCloud Keychain compromising the password sync.</p>
@@ -901,81 +934,6 @@ targets on wifi.</p>
             <category>spyware</category>
             <category>wifi</category>
             <category>implants</category>
-        </item>
-        <item>
-            <title><![CDATA[Alerts to Improve Network Visibility]]></title>
-            <link>https://www.supernetworks.org/pages/blog/spr-2024-alerts</link>
-            <guid>https://www.supernetworks.org/pages/blog/spr-2024-alerts</guid>
-            <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Alerting Made Easy]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="alerting-made-easy">Alerting Made Easy<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#alerting-made-easy" class="hash-link" aria-label="Direct link to Alerting Made Easy" title="Direct link to Alerting Made Easy">​</a></h2>
-<p>We've rolled out a lightweight alerting mechanism built right inside of SPR.</p>
-<p>So SPR already has an event system and we wanted to improve the existing notification system
-as well as persist alerts for later.</p>
-<p>We wanted something with the following properties:</p>
-<ul>
-<li>Allow powerful matching expressions</li>
-<li>Work with our lightweight key-value database for concurrent access</li>
-<li>Minimal system performance impact</li>
-<li>User Customizable, in UX with minimal coding</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-stack">The stack<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#the-stack" class="hash-link" aria-label="Direct link to The stack" title="Direct link to The stack">​</a></h2>
-<p>We carry extensive experience building threat detection products in the infosec space.
-Typically these have been substantial systems where event and graph databases manage petabytes of information,
-and reports get generated as part of data pipelines or by processing during ingestion.</p>
-<p>We wanted to keep it simple. So this is the stack we've settled on for alerts:</p>
-<ul>
-<li>Run alert matching during event ingestion</li>
-<li>Keep using BoltDB as a KV which scales well and is already built</li>
-<li>Use  <code>PaesslerAG/jsonpath</code> and <code>gval</code> for JSONPath expressions and evaluation</li>
-<li>Extensible later with custom operators and functions. We get this from <code>gval</code></li>
-<li>UX with our React frontend</li>
-</ul>
-<p>For advanced users, exporting to InfluxDB, Splunk, or ELK can be done with the <code>sprbus</code> tools or by pulling the API for events,
-so threat detection experts can integrate SPR data into more sophisticated detection tools.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="expression-matching-with-jsonpath">Expression Matching with JSONPath<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#expression-matching-with-jsonpath" class="hash-link" aria-label="Direct link to Expression Matching with JSONPath" title="Direct link to Expression Matching with JSONPath">​</a></h2>
-<p>Let's quickly take a tour of <a href="https://www.jsonpath.com/" target="_blank" rel="noopener noreferrer">JSONPath</a>.</p>
-<p><img decoding="async" loading="lazy" alt="alerts-custom" src="https://www.supernetworks.org/pages/assets/images/jsonpath-image-8ef8e05fe413ef9ceb88e276a1a282bd.jpg" width="800" height="419" class="img_ev3q"></p>
-<p>JSONPath is a query syntax for matching fields of a JSON Object.</p>
-<p>Consider the event below</p>
-<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"MAC"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"30:58:90:32:7d:e5"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"Reason"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"mismatch"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"Status"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">""</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"Type"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"wpa"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"time"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"2024-02-02T04:10:19.511662376Z"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"bucket"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"wifi:auth:fail"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token property">"MeaningOfLife"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token number">42</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><br></span></code></pre></div></div>
-<p>To retrieve the <code>MeaningOfLife</code> field, we can construct the following path:</p>
-<p><code>$.MeaningOfLife</code> which returns <code>42</code>.</p>
-<p>Looking at the basic operators for JSONPath, its very much built to recurse objects and iterate through arrays.
-<img decoding="async" loading="lazy" alt="alerts-custom" src="https://www.supernetworks.org/pages/assets/images/jsonpath-com-6305b9073dcaaccfd840112a45dc3895.jpg" width="2568" height="856" class="img_ev3q"></p>
-<p>So suppose we have an array of events, we can build a filter expression to query for matches.</p>
-<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"MAC"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"30:58:90:32:7d:e5"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"Reason"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"mismatch"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"Status"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">""</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"Type"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"wpa"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"time"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"2024-02-02T04:10:19.511662376Z"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"bucket"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">"wifi:auth:fail"</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token property">"MeaningOfLife"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token number">42</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><br></span></code></pre></div></div>
-<p>To pull out events with MeaningOfLife 42, we would apply this query:</p>
-<div class="language-JSONPath language-jsonpath codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-jsonpath codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">$[?(@.MeaningOfLife==42)]</span><br></span></code></pre></div></div>
-<p>We could also use other mathematical comparisons</p>
-<div class="language-JSONPath language-jsonpath codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-jsonpath codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">$[?(@.MeaningOfLife&gt;0)]</span><br></span></code></pre></div></div>
-<p>Or with gval we can even add numbers</p>
-<div class="language-JSONPath language-jsonpath codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-jsonpath codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">$[?(@.MeaningOfLife&gt;(1+10))]</span><br></span></code></pre></div></div>
-<p>Other useful ways to match are regular expressions on strings:</p>
-<div class="language-JSONPath language-jsonpath codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-jsonpath codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">$[?(@.Reason=~"^mismatch$")]</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="jsonpath-in-spr">JSONPath in SPR<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#jsonpath-in-spr" class="hash-link" aria-label="Direct link to JSONPath in SPR" title="Direct link to JSONPath in SPR">​</a></h3>
-<p>The best part is we don't need a SQL schema to get started. JSONPath work for all of the events in SPR.
-It may seem a bit intimidating at first, and we hide out some of the extra syntax <code>$[?@(.)]</code>. However,
-this provides a lot of flexibility and is relatively easy once you get the hang of it.</p>
-<p><img decoding="async" loading="lazy" alt="alerts-custom" src="https://www.supernetworks.org/pages/assets/images/alert-custom-5193040408fcedefce9a3c9d82bea448.png" width="2826" height="2014" class="img_ev3q"></p>
-<p>To simplify rule writing we allow multiple JSONPath queries and provide toggles
-for inverting logic as well as Match One (OR) or Match Any (AND). Each JSONPath query can match on multiple fields too.</p>
-<p>The JSONPath query language is also available under the events search view for searching.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="customizability--decorators">Customizability &amp; Decorators<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#customizability--decorators" class="hash-link" aria-label="Direct link to Customizability &amp; Decorators" title="Direct link to Customizability &amp; Decorators">​</a></h2>
-<p>Alerts can Notify in the UI or they can sit on the Alerts page for triaging. When defining an alert,
-users can fill out the 'Title' and 'Body' for the alert to display. These support a templating language,
-for populating text with fields from the Alert Event. Furthermore, we've added a few decorators with hashtags
-to convert identifiers to device icons or go from something like a MAC address to a device name or IP Address.</p>
-<p>Templates expand event fields inside of curly brackets as elow:
-<code> MAC Mismatch IP Violation {{IP.SrcIP#Device}} {{IP.SrcIP}} {{Ethernet.SrcMAC}} to {{IP.DstIP}} {{Ethernet.DstMAC}}</code></p>
-<p>Check out the guide for more details about <a href="https://www.supernetworks.org/pages/docs/guides/alerts">how to configure alerts</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="need-a-feature">Need a feature?<a href="https://www.supernetworks.org/pages/blog/spr-2024-alerts#need-a-feature" class="hash-link" aria-label="Direct link to Need a feature?" title="Direct link to Need a feature?">​</a></h2>
-<p>If you'd like to see more added or have a question, don't hesitate to file a github issue or reach out on our discord</p>
-<p><img decoding="async" loading="lazy" alt="alerts-overview" src="https://www.supernetworks.org/pages/assets/images/alerts-overview-d5e7da7dec59633aa0c6ddc31986bf74.png" width="2880" height="1562" class="img_ev3q"></p>]]></content:encoded>
-            <category>SPR</category>
-            <category>alerts</category>
-            <category>jpath</category>
-            <category>events</category>
         </item>
     </channel>
 </rss>
