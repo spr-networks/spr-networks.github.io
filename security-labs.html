@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Supernetworks Security Labs — Agentic WiFi security testing. Autonomous AI agents find memory corruption, authentication bypasses, and protocol vulnerabilities in WiFi firmware, drivers, and protocol implementations."
+    />
+    <meta
+      name="keywords"
+      content="WiFi security testing, firmware security, agentic fuzzing, memory corruption, WPA3, WiFi vulnerability research, penetration testing, security audit"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.supernetworks.org/security-labs.html" />
+    <meta property="og:title" content="Supernetworks Security Labs — Agentic WiFi Security Testing" />
+    <meta property="og:description" content="Autonomous AI agents that find memory corruption, authentication bypasses, and protocol vulnerabilities in WiFi firmware, drivers, and protocol implementations." />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.supernetworks.org/security-labs.html" />
+    <meta property="twitter:title" content="Supernetworks Security Labs — Agentic WiFi Security Testing" />
+    <meta property="twitter:description" content="Autonomous AI agents that find memory corruption, authentication bypasses, and protocol vulnerabilities in WiFi firmware, drivers, and protocol implementations." />
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.supernetworks.org/security-labs.html" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <title>Supernetworks Security Labs — Agentic WiFi Security Testing</title>
+
+    <!-- PostHog -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split('.')
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                })
+            }
+            ;((p = t.createElement('script')).type = 'text/javascript'),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace('.i.posthog.com', '-assets.i.posthog.com') +
+                '/static/array.js'),
+              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r)
+            var u = e
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = 'posthog'
+                  return ('posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e)
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + '.people (stub)'
+                },
+                o = 'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId'.split(' '),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n])
+            e._i.push([i, s, a])
+          }),
+          (e.__SV = 1))
+      })(document, window.posthog || [])
+      posthog.init('phc_wHrv9J5yEKPecDYT9ligBWKlIi2LBDL7I4heu69ayOT', {
+        api_host: 'https://us.i.posthog.com'
+      })
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16781748800"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() { dataLayer.push(arguments) }
+      gtag('js', new Date())
+      gtag('config', 'AW-16781748800')
+    </script>
+    <script>
+      function gtag_report_conversion(url, id = '0CIsCKeomoQaEMDUlMI-') {
+        var callback = function () {
+          if (typeof url != 'undefined') { window.location = url }
+        }
+        let send_to = `AW-16781748800/${id}`
+        gtag('event', 'conversion', { send_to, event_callback: callback })
+        return false
+      }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-900 antialiased">
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <div class="max-w-6xl mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="text-xl font-bold tracking-tight text-slate-900">SPR</span>
+            <span class="text-sm text-gray-400 font-normal hidden sm:inline">by Supernetworks</span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-6 text-sm">
+            <a href="/#how-it-works" class="text-gray-500 hover:text-slate-900 transition-colors">How It Works</a>
+            <a href="security-labs.html" class="text-slate-900 font-semibold">Security Labs</a>
+            <a href="/#pricing" class="text-gray-500 hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-500 hover:text-slate-900 transition-colors">Docs</a>
+            <a href="https://www.supernetworks.org/pages/blog" class="text-gray-500 hover:text-slate-900 transition-colors">Blog</a>
+            <span class="w-px h-4 bg-gray-200"></span>
+            <a href="https://github.com/spr-networks/super/" class="text-gray-400 hover:text-slate-900 transition-colors" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://discord.gg/EUjTKJPPAX" class="text-gray-400 hover:text-slate-900 transition-colors" aria-label="Discord">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </a>
+            <a href="#intake" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+              Start an Engagement
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2 border-t border-gray-200 pt-4">
+          <div class="flex flex-col space-y-3 text-sm">
+            <a href="/#how-it-works" class="text-gray-600 hover:text-slate-900 transition-colors">How It Works</a>
+            <a href="security-labs.html" class="text-slate-900 font-semibold">Security Labs</a>
+            <a href="/#pricing" class="text-gray-600 hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-600 hover:text-slate-900 transition-colors">Docs</a>
+            <a href="https://www.supernetworks.org/pages/blog" class="text-gray-600 hover:text-slate-900 transition-colors">Blog</a>
+            <a href="#intake" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2.5 rounded-lg text-center hover:bg-slate-800 transition-colors">Start an Engagement</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+      document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.getElementById('mobile-menu').classList.add('hidden');
+        });
+      });
+    </script>
+
+    <!-- ==================== 1. HERO ==================== -->
+    <section class="bg-white pt-28 pb-16 md:pt-36 md:pb-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <p class="text-xs font-semibold text-red-500 uppercase tracking-widest mb-4">Supernetworks Security Labs</p>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+          Agentic WiFi Security Testing
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl">
+          AI-assisted security testing with real over-the-air verification. We find memory corruption, authentication bypasses, and protocol vulnerabilities in WiFi stacks. We verify every finding is a true positive.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="#intake" class="inline-flex items-center justify-center font-semibold bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors text-sm">
+            Start an Engagement
+          </a>
+          <a href="https://www.supernetworks.org/pages/blog" class="inline-flex items-center justify-center font-semibold text-slate-900 border border-gray-300 px-6 py-3 rounded-lg hover:border-slate-900 transition-colors text-sm">
+            View Published Research
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. WHY US ==================== -->
+    <section class="bg-gray-50 py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Over 20 billion WiFi devices ship with security flaws ranging from DoS to RCE</h2>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">True positive focused</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Every finding we report is verified with real over-the-air testing against live hardware. No theoretical bugs, no static analysis noise.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Agentic testing at scale</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              The WiFi testing matrix &mdash; frame types, authentication states, cipher suites, firmware versions &mdash; is too large to cover manually. Agents let us work through it systematically.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900">Real OTA verification</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              We test against real WiFi hardware over the air. Findings are reproducible on production firmware running on production chipsets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. HOW WE WORK ==================== -->
+    <section class="bg-white py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <p class="text-xs font-semibold text-red-500 uppercase tracking-widest mb-4">How We Work</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-slate-900">Agentic testing, automated verification</h2>
+        <p class="mt-4 text-gray-500 max-w-2xl leading-relaxed">
+          Our AI agents explore WiFi attack surfaces at scale. Our researchers verify every finding over the air on real hardware. You get confirmed, reproducible vulnerabilities.
+        </p>
+
+        <div class="mt-14 grid md:grid-cols-2 gap-x-12 gap-y-10">
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-lg">Agents probe the attack surface</h3>
+              <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                AI agents generate bug hypotheses based on a vulnerability corpus and black-box analysis (or source analysis when available), then guide testing across firmware, kernel, and userland layers.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-lg">Real over-the-air verification</h3>
+              <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                Every candidate finding is verified against real WiFi hardware over the air. We test on production firmware running on production chipsets.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-lg">True positives only</h3>
+              <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                We deliver confirmed vulnerabilities with reproduction steps and PoC code. Every report is actionable.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-lg">Scales with your release cycle</h3>
+              <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                Agentic testing means we can re-run against new firmware revisions without starting from scratch. Ongoing engagements catch regressions as they ship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. WHAT WE TEST ==================== -->
+    <section class="bg-gray-50 py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Full-stack WiFi security assessment</h2>
+        <p class="mt-4 text-gray-500 max-w-2xl leading-relaxed">
+          From cryptographic protocol design to raw firmware binary analysis&nbsp;&mdash; we cover every layer of the WiFi stack.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide mb-3">Crypto</div>
+            <h3 class="font-semibold text-slate-900">Cryptographic Design Review</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Protocol-level analysis of key derivation, session management, and authentication flows. Covers WPA2/WPA3, SAE, OWE, RADIUS, enterprise WiFi (802.1X), and proprietary extensions.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide mb-3">Memory Safety</div>
+            <h3 class="font-semibold text-slate-900">Memory Corruption Analysis</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              UAF, heap overflow, stack overflow, type confusion in firmware, kernel drivers, and userland WiFi daemons. Static and dynamic analysis with agentic fuzzing.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide mb-3">Firmware</div>
+            <h3 class="font-semibold text-slate-900">Driver &amp; Firmware Security</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Binary analysis of closed-source WiFi chipset firmware. Register-level inspection, DMA attack surfaces, firmware update integrity.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide mb-3">Black-box</div>
+            <h3 class="font-semibold text-slate-900">Black-box WiFi Stack Auditing</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Agentic testing against live implementations. Agents generate bug hypotheses, guide test execution, and flag anomalous behavior across the WiFi stack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. PUBLISHED RESEARCH ==================== -->
+    <section class="bg-white py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our track record</h2>
+        <p class="mt-4 text-gray-500 max-w-2xl leading-relaxed">
+          The team actively discovers and publishes WiFi and kernel vulnerabilities.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <a href="https://git.w1.fi/cgit/hostap/commit/?id=2a98e6b981fb3f81b3ce3aa5f3941e509f73c454" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow group">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide">Legacy Hostapd RCE Vulnerability</div>
+            <h3 class="mt-2 font-semibold text-slate-900 group-hover:underline">Heap Smash in WNM-Sleep Mode Response with TFS</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Pre authentication heap corruption in hostapd's WNM-Sleep Mode handling with TFS (Traffic Filtering Service) response processing.
+            </p>
+          </a>
+
+          <a href="https://www.supernetworks.org/pages/blog/beacon-double-free-inet-wireless-daemon-CVE-2024-28084" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow group">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide">CVE-2024-28084</div>
+            <h3 class="mt-2 font-semibold text-slate-900 group-hover:underline">IWD Beacon Double Free</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Memory corruption in Intel's Wireless Daemon via malformed WiFi beacon frames. Exploitable for ASLR bypass and potential code execution on Linux wireless stacks.
+            </p>
+          </a>
+
+          <div class="block bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide">CVE-2026-TBD</div>
+            <h3 class="mt-2 font-semibold text-slate-900">Pre authentication Memory Corruption in Major Cellphone Vendor WiFi</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Disclosure pending. Details will be published after vendor patch.
+            </p>
+          </div>
+
+          <a href="https://www.supernetworks.org/pages/blog/isoon-wifi-exploitation-2024" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow group">
+            <div class="text-xs font-mono text-gray-400 uppercase tracking-wide">Threat Intelligence</div>
+            <h3 class="mt-2 font-semibold text-slate-900 group-hover:underline">I-Soon WiFi Exploitation Analysis</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Analysis of leaked Chinese state-sponsored WiFi implant capabilities, hardware-based attack tools, and the defenses that actually stop them.
+            </p>
+          </a>
+        </div>
+
+        <div class="mt-10">
+          <a href="https://www.supernetworks.org/pages/blog" class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Read all research &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. ENGAGEMENT MODELS ==================== -->
+    <section class="bg-gray-50 py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Three ways to work with us</h2>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <!-- Self-service -->
+          <div class="bg-white border border-gray-200 rounded-xl p-8">
+            <h3 class="font-semibold text-slate-900 text-lg">Buy the hardware, run your own testing</h3>
+            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+              For teams with in-house security researchers. We ship you the hardware and basic packet injection tooling with approval. Your team runs the testing.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-gray-500">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                SPR router hardware with monitor mode capable radios
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Basic packet injection code included
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                DIY testing
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="compute-board.html" class="inline-flex items-center justify-center font-semibold text-slate-900 border border-gray-300 px-5 py-2.5 rounded-lg hover:border-slate-900 transition-colors text-sm">
+                View Hardware &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Full engagement -->
+          <div class="bg-slate-50 border-2 border-slate-900 rounded-xl p-8">
+            <div class="flex items-center gap-3 mb-1">
+              <h3 class="font-semibold text-slate-900 text-lg">Hire Supernetworks Security Labs</h3>
+            </div>
+            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+              Full-scope engagement&nbsp;&mdash; crypto review + memory safety + agentic black-box testing. Detailed vulnerability report, exploit PoCs, and remediation guidance.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-gray-500">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Cryptographic protocol review
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Memory corruption &amp; binary analysis
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Agentic black-box WiFi testing
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-slate-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Exploit PoCs + remediation report
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="#intake" class="inline-flex items-center justify-center font-semibold bg-slate-900 text-white px-5 py-2.5 rounded-lg hover:bg-slate-800 transition-colors text-sm">
+                Start an Engagement &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Partner -->
+          <div class="bg-white border border-gray-200 rounded-xl p-8">
+            <h3 class="font-semibold text-slate-900 text-lg">Partner your AI security lab with us</h3>
+            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+              Combine your intelligence from your lab with our wireless capabilities. We provide the wireless expertise and hardware lab to help you get there.
+            </p>
+            <div class="mt-6">
+              <a href="#intake" class="inline-flex items-center justify-center font-semibold text-slate-900 border border-gray-300 px-5 py-2.5 rounded-lg hover:border-slate-900 transition-colors text-sm">
+                Discuss a Partnership &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. INTAKE FORM ==================== -->
+    <section id="intake" class="bg-white py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Start an engagement</h2>
+        <p class="mt-4 text-gray-500 max-w-2xl leading-relaxed">
+          Tell us about your product and what you need assessed.
+        </p>
+
+        <div class="mt-12 max-w-2xl mx-auto border border-gray-200 rounded-xl p-8">
+          <form id="intake-form">
+            <!-- Company Name -->
+            <div class="mb-6">
+              <label for="company" class="block text-sm font-medium text-slate-700 mb-1.5">Company Name</label>
+              <input type="text" id="company" name="Company" required
+                class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-shadow" />
+            </div>
+
+            <!-- Contact Name -->
+            <div class="mb-6">
+              <label for="contact" class="block text-sm font-medium text-slate-700 mb-1.5">Contact Name</label>
+              <input type="text" id="contact" name="Name" required
+                class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-shadow" />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-6">
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
+              <input type="email" id="email" name="Email" required
+                class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-shadow" />
+            </div>
+
+            <!-- Assessment Type -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">Assessment Type</label>
+              <div class="space-y-2">
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Cryptographic Design Review" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Cryptographic Design Review</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Firmware" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Firmware</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Kernel/Driver" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Kernel/Driver</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Userland" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Userland</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="802.1X Enterprise Features" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">802.1X Enterprise Features</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Station-based" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Station (client) based</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Access Point-based" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Access Point based</span>
+                </label>
+                <label class="flex items-start gap-2.5 cursor-pointer">
+                  <input type="checkbox" name="AssessmentType" value="Whitebox testing" class="mt-0.5 rounded border-gray-300 text-slate-900 focus:ring-slate-900" />
+                  <span class="text-sm text-gray-600">Whitebox testing (source code available)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Target Description -->
+            <div class="mb-6">
+              <label for="target" class="block text-sm font-medium text-slate-700 mb-1.5">Target Description</label>
+              <textarea id="target" name="Target" rows="4"
+                placeholder="Describe your target: chipset, firmware version, driver, OS, WiFi standards supported..."
+                class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-shadow resize-vertical"></textarea>
+            </div>
+
+            <!-- Timeline -->
+            <div class="mb-6">
+              <label for="timeline" class="block text-sm font-medium text-slate-700 mb-1.5">Timeline</label>
+              <select id="timeline" name="Timeline"
+                class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-shadow bg-white">
+                <option value="">Select a timeline</option>
+                <option value="ASAP">ASAP</option>
+                <option value="3-6 months">3-6 months</option>
+                <option value="Ongoing/retainer">Ongoing/retainer</option>
+              </select>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="mb-6">
+              <label for="notes" class="block text-sm font-medium text-slate-700 mb-1.5">Additional Notes</label>
+              <textarea id="notes" name="Notes" rows="3"
+                class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-shadow resize-vertical"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit"
+              class="w-full bg-slate-900 text-white font-semibold px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors text-sm">
+              Submit Inquiry
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div id="submit_message" class="hidden mt-6 text-center">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+              <svg class="w-8 h-8 text-green-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <h3 class="font-semibold text-slate-900">Inquiry Submitted</h3>
+              <p class="mt-1 text-sm text-gray-500">Thank you. We'll review your submission and be in touch shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      form_submit = function(form, e) {
+        e.preventDefault();
+
+        let scriptURL = "https://script.google.com/macros/s/AKfycbwAyOnbLn2l4YEGd2UxMS1cxnh3wR2I3mpfuWdVMLeqGH3MGQgGYV6rRTxKluQa98BPxw/exec";
+        var fd = new FormData(form);
+        var assessments = fd.getAll('AssessmentType').join(', ');
+        fd.delete('AssessmentType');
+        fd.append('AssessmentType', assessments);
+        var data = new URLSearchParams(fd);
+        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: data }
+      ).then(response => {
+            const submitMessage = document.getElementById("submit_message");
+            submitMessage.classList.remove("hidden");
+            form.classList.add("hidden");
+          })
+          .catch(error => console.error('Error!', error.message))
+      }
+
+      window.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("intake-form");
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const email = this.elements.Email;
+          const name = this.elements.Name;
+          if (email.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+              && name.value && name.value.trim() !== "") {
+            form_submit(this, event);
+          }
+        });
+      })
+    </script>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-gray-200 text-gray-500 py-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <!-- Brand -->
+          <div class="col-span-2 md:col-span-1">
+            <span class="text-lg font-bold text-slate-900">SPR</span>
+            <p class="mt-2 text-gray-400 text-sm">Secure Programmable Router<br />by Supernetworks</p>
+          </div>
+
+          <!-- Product -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Product</h4>
+            <ul class="space-y-2.5">
+              <li><a href="compute-board.html" class="hover:text-slate-900 transition-colors">Hardware</a></li>
+              <li><a href="plus.html" class="hover:text-slate-900 transition-colors">PLUS</a></li>
+              <li><a href="features.html" class="hover:text-slate-900 transition-colors">Features</a></li>
+              <li><a href="https://www.supernetworks.org/pages/docs/intro" class="hover:text-slate-900 transition-colors">Documentation</a></li>
+              <li><a href="https://www.supernetworks.org/pages/api/0" class="hover:text-slate-900 transition-colors">API Reference</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Resources</h4>
+            <ul class="space-y-2.5">
+              <li><a href="https://www.supernetworks.org/pages/blog" class="hover:text-slate-900 transition-colors">Blog</a></li>
+              <li><a href="https://github.com/spr-networks/super/" class="hover:text-slate-900 transition-colors">GitHub</a></li>
+              <li><a href="https://discord.gg/EUjTKJPPAX" class="hover:text-slate-900 transition-colors">Discord</a></li>
+              <li><a href="https://demo.supernetworks.org" class="hover:text-slate-900 transition-colors">Live Demo</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Company</h4>
+            <ul class="space-y-2.5">
+              <li><a href="aboutus.html" class="hover:text-slate-900 transition-colors">About</a></li>
+              <li><a href="https://www.supernetworks.org/pages/docs/contact" class="hover:text-slate-900 transition-colors">Contact</a></li>
+              <li><a href="mailto:spr-security@supernetworks.org" class="hover:text-slate-900 transition-colors">Security</a></li>
+              <li><a href="privacy-policy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html" class="hover:text-slate-900 transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-100 text-xs text-gray-400">
+          &copy; 2026 Supernetworks Inc.
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

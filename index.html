@@ -164,7 +164,7 @@
           <!-- Desktop Nav -->
           <div class="hidden md:flex items-center space-x-6 text-sm">
             <a href="#how-it-works" class="text-gray-500 hover:text-slate-900 transition-colors">How It Works</a>
-            <a href="#security" class="text-gray-500 hover:text-slate-900 transition-colors">Security Research</a>
+            <a href="#security" class="text-gray-500 hover:text-slate-900 transition-colors">Security Labs</a>
             <a href="#pricing" class="text-gray-500 hover:text-slate-900 transition-colors">Pricing</a>
             <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-500 hover:text-slate-900 transition-colors">Docs</a>
             <a href="https://www.supernetworks.org/pages/blog" class="text-gray-500 hover:text-slate-900 transition-colors">Blog</a>
@@ -192,7 +192,7 @@
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2 border-t border-gray-200 pt-4">
           <div class="flex flex-col space-y-3 text-sm">
             <a href="#how-it-works" class="text-gray-600 hover:text-slate-900 transition-colors">How It Works</a>
-            <a href="#security" class="text-gray-600 hover:text-slate-900 transition-colors">Security Research</a>
+            <a href="#security" class="text-gray-600 hover:text-slate-900 transition-colors">Security Labs</a>
             <a href="#pricing" class="text-gray-600 hover:text-slate-900 transition-colors">Pricing</a>
             <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-600 hover:text-slate-900 transition-colors">Docs</a>
             <a href="https://www.supernetworks.org/pages/blog" class="text-gray-600 hover:text-slate-900 transition-colors">Blog</a>
@@ -388,7 +388,7 @@
                 No vendor lock-in, no cloud dependency, no per-device licensing fees
               </li>
             </ul>
-            <a href="mailto:outreach@supernetworks.org" class="inline-flex items-center mt-6 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
+            <a href="enterprise-contact.html" class="inline-flex items-center mt-6 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
               Talk to Us About Your Deployment
               <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
@@ -563,10 +563,19 @@
     <!-- ==================== 6. SECURITY CREDIBILITY ==================== -->
     <section id="security" class="py-16 md:py-24 bg-gray-50">
       <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Built by the people who find the vulnerabilities</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900"><a href="security-labs.html" class="hover:underline">Built by the people who find the vulnerabilities</a></h2>
         <p class="mt-4 text-gray-500 max-w-2xl leading-relaxed">
           The team actively discovers and publishes WiFi and kernel vulnerabilities. When we say a defense works, it's because we've battle-tested it.
         </p>
+
+        <div class="mt-6 flex flex-wrap gap-6 items-center">
+          <a href="security-labs.html" class="inline-flex items-center text-sm font-semibold bg-slate-900 text-white px-5 py-2.5 rounded-lg hover:bg-slate-800 transition-colors">
+            Supernetworks Security Labs &rarr;
+          </a>
+          <a href="https://www.supernetworks.org/pages/blog" class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Read all research &rarr;
+          </a>
+        </div>
 
         <div class="mt-12 grid md:grid-cols-2 gap-6">
           <!-- Published Research Cards -->
@@ -603,11 +612,6 @@
           </a>
         </div>
 
-        <div class="mt-10">
-          <a href="https://www.supernetworks.org/pages/blog" class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
-            Read all research &rarr;
-          </a>
-        </div>
       </div>
     </section>
 
@@ -985,8 +989,9 @@ docker compose -f docker-compose-virt.yml up --pull always -d</code></pre>
             <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Company</h4>
             <ul class="space-y-2.5">
               <li><a href="aboutus.html" class="hover:text-slate-900 transition-colors">About</a></li>
+              <li><a href="security-labs.html" class="hover:text-slate-900 transition-colors">Security Labs</a></li>
+              <li><a href="enterprise-contact.html" class="hover:text-slate-900 transition-colors">Enterprise</a></li>
               <li><a href="https://www.supernetworks.org/pages/docs/contact" class="hover:text-slate-900 transition-colors">Contact</a></li>
-              <li><a href="mailto:spr-security@supernetworks.org" class="hover:text-slate-900 transition-colors">Security</a></li>
               <li><a href="privacy-policy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
               <li><a href="terms-of-service.html" class="hover:text-slate-900 transition-colors">Terms of Service</a></li>
             </ul>
