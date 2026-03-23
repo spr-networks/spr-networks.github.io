@@ -56,238 +56,36 @@
     </script>
   </head>
 
-  <body onload="" class="bg-gray-900 text-white">
-    <header class="gradient-bg text-white py-4 fixed top-0 left-0 right-0 z-50">
+  <body onload="" class="bg-white text-gray-900 antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <div class="max-w-6xl mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="text-xl font-bold tracking-tight text-slate-900">SPR</span>
+            <span class="text-sm text-gray-400 font-normal hidden sm:inline">by Supernetworks</span>
+          </a>
 
-      <div class="container mx-auto px-4">
-        <div
-          class="flex flex-col md:flex-row md:justify-between md:items-center"
-        >
-          <div class="flex justify-between items-center">
-            <a href="/" class="text-lg font-semibold tracking-tight">
-              <span class="text-2xl font-bold gradient-text">SPR</span> by
-              Supernetworks
+          <div class="hidden md:flex items-center space-x-6 text-sm">
+            <a href="/" class="text-gray-500 hover:text-slate-900 transition-colors">Home</a>
+            <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-500 hover:text-slate-900 transition-colors">Docs</a>
+            <a href="https://www.supernetworks.org/pages/blog" class="text-gray-500 hover:text-slate-900 transition-colors">Blog</a>
+            <a href="https://github.com/spr-networks/super/" class="text-gray-400 hover:text-slate-900 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
-
-            <div class="fixed top-0 right-16 md:right-10 py-4">
-              <a
-                href="/#products"
-                class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <div class="flex space-x-4 md:hidden">
-              <button
-                id="trigger-mobile-menu"
-                class="text-white hover:text-sky-400 hover:underline transition duration-300"
-              >
-                <img
-                  width="24"
-                  height="24"
-                  src="/assets/img/mobilemenus.svg"
-                  alt="Menu"
-                />
-              </button>
-            </div>
           </div>
-          <nav
-            class="hidden md:flex md:items-center md:space-x-8"
-            id="mobile-menu"
-          >
-            <ul
-              class="flex flex-col md:flex-row mt-4 space-y-4 md:mt-0 md:space-y-0 md:space-x-8 text-sm font-normal"
-            >
-              <li>
-                <a
-                  href="/#products"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Products</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="/#how-to-use"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Solutions</a
-                >
-              </li>
-              <li>
-                <!--a
-                  href="features.html"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Features</a
-              -->
-
-                <div class="">
-                  <div class="dropdown inline-block relative">
-                    <a
-                      href="/features.html"
-                      class="inline-flex items-center hover:text-sky-400 transition duration-300 nav-item"
-                    >
-                      <span class="mr-1">Features</span>
-                      <svg
-                        class="hidden md:flex fill-current h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                        />
-                      </svg>
-                    </a>
-                    <ul
-                      class="bg-gray-800 flex space-y-4 dropdown-menu absolute hidden text-neutral-200 p-8 w-48 -ml-8"
-                    >
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/dns"
-                          >Ad Block</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/firewall"
-                          >Firewall &amp; Routing</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/alerts"
-                          >Alerts</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="/#vpn"
-                          >VPN</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/logs"
-                          >Traffic Monitoring</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/plugins"
-                          >Plugins</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  href="/plus.html"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >PLUS</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="https://www.supernetworks.org/pages/docs/faq"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >FAQ</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.supernetworks.org/pages/blog"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Blog</a
-                >
-              </li>
-              <li class="md:ps-8">
-                <a
-                  class="hover:underline flex justify-start link-conversion"
-                  data-id="0CIsCKeomoQaEMDUlMI-"
-                  href="https://github.com/spr-networks/super/"
-                >
-                  <div
-                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                    style="
-                      background-image: url('/assets/img/github.svg');
-                      filter: invert(100%) brightness(200%);
-                    "
-                  ></div>
-                </a>
-              </li>
-              <!--li>
-                <a
-                  class="hover:underline flex justify-start"
-                  href="https://twitter.com/spr_networks"
-                >
-                  <div
-                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                    style="
-                      background-image: url('/assets/img/twitter.svg');
-                      filter: invert(100%) brightness(200%);
-                    "
-                  ></div>
-                </a>
-              </li-->
-              <li>
-                <a
-                  class="hover:underline flex justify-start"
-                  href="https://discord.gg/EUjTKJPPAX"
-                >
-                  <div
-                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                    style="
-                      background-image: url('/assets/img/discord.svg');
-                      filter: invert(100%) brightness(200%);
-                    "
-                  ></div>
-                </a>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <div class="static overflow-hidden h-full">
-      <div
-        class="opacity-80 bg-[url(assets/img/bg-ambient-1.png)] bg-cover h-full w-full fixed right-0 bottom-0 bg-opacity-25"
-        style="z-index: -1"
-      ></div>
-    </div>
-
-    <div class="relative pt-20 md:pt-32">
-      <!--div class="p-6 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center space-x-4 space-y-6 mx-2 my-8"-->
+    <div class="relative pt-24 md:pt-32">
       <div
         class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
       >
         <h2
-          class="mb-4 text-4xl font-medium tracking-tight text-slate-900 dark:text-slate-200 lg:text-5xl"
+          class="mb-4 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl"
         >
-          WiFi 6 PoE+ Router
-          <br/>Shipping Today
+          WiFi 6 &amp; 7 PoE+ Routers
+          <br/><span class="text-gray-400 text-2xl font-normal">Shipping Today</span>
         </h2>
 
         <div class="container mx-auto px-4 py-8">
@@ -307,18 +105,18 @@
         class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
       >
           <div
-            class="max-w-4xl p-8 rounded-lg border border-neutral-900 bg-[rgba(15,15,25,0.65)] text-gray-300 sm:text-lg md:text-md"
+            class="max-w-4xl p-8 rounded-xl border border-gray-200 bg-white text-gray-600 sm:text-lg md:text-md"
           >
             <div class="grid md:grid-cols-2 gap-8 text-left">
               <div>
-                <h3 class="font-bold text-xl mb-4 text-white">Hardware Foundation</h3>
+                <h3 class="font-bold text-xl mb-4 text-slate-900">Hardware Foundation</h3>
                 <ul class="list-disc list-inside space-y-2">
                   <li>Raspberry PI CM5 Carrier Board</li>
                   <li>Ships with CM5104032 (4GB RAM, 32GB eMMC, WiFi)</li>
                   <li>PCIe Switch supporting WiFi & 2.5Gbps Ethernet</li>
                 </ul>
 
-                <h3 class="font-bold text-xl mt-6 mb-4 text-white">Connectivity</h3>
+                <h3 class="font-bold text-xl mt-6 mb-4 text-slate-900">Connectivity</h3>
                 <ul class="list-disc list-inside space-y-2">
                   <li>MT7916 3x3 802.11AX WiFi 6</li>
                   <li>CM5 Internal WiFi & Bluetooth</li>
@@ -330,13 +128,13 @@
               </div>
 
               <div>
-                <h3 class="font-bold text-xl mb-4 text-white">Power & I/O</h3>
+                <h3 class="font-bold text-xl mb-4 text-slate-900">Power &amp; I/O</h3>
                 <ul class="list-disc list-inside space-y-2">
                   <li>PoE+ (802.3at) capable on 2.5 Gbps port</li>
                   <li>USB PD Power</li>
                 </ul>
 
-                <h3 class="font-bold text-xl mt-6 mb-4 text-white">Additional Features</h3>
+                <h3 class="font-bold text-xl mt-6 mb-4 text-slate-900">Additional Features</h3>
                 <ul class="list-disc list-inside space-y-2">
                   <li>Temperature Resistant, PA2200 Nylon Enclosure</li>
                   <li>CM5 Active Cooler included</li>
@@ -347,7 +145,7 @@
             </div>
 
             <div class="text-center mt-8">
-              <p class="text-lg text-gray-700 dark:text-gray-300 font-medium">
+              <p class="text-lg text-gray-500 font-medium">
                 • Router hardware purchase includes PLUS code
               </p>
             </div>
@@ -356,65 +154,21 @@
     </div>
 
     <!-- Inside The Carrier Board Section -->
-    <section class="py-16 bg-gray-800">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-slate-200">
-          <a href="/assets/img/cm5-carrier.png" target="_blank" class="hover:underline">Inside The Carrier Board</a>
-        </h2>
-        <div class="max-w-4xl mx-auto">
-          <a href="/assets/img/cm5-carrier.png" target="_blank">
-            <div class="rounded-lg overflow-hidden" style="background-color: #E1A840;">
-              <img
-                src="/assets/img/cm5-carrier.png"
-                alt="CM5 Carrier Board Schematic"
-                class="w-full h-auto hover:opacity-90 transition-opacity"
-              />
-            </div>
-          </a>
-        </div>
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Inside The Carrier Board</h2>
+        <a href="/assets/img/cm5-carrier.png" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+          View Carrier Board Schematic &rarr;
+        </a>
       </div>
     </section>
 
-    <!-- Enclosures Section -->
-    <section class="py-16 bg-gray-900">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-slate-200">
-          Enclosures
-        </h2>
-        <div class="max-w-4xl mx-auto">
-          <div class="rounded-lg overflow-hidden mb-8" style="background-color: #9CB8A4;">
-            <img
-              src="/assets/img/cm5-topper.png"
-              alt="CM5 Enclosure"
-              class="w-full h-auto"
-            />
-          </div>
-          <div class="text-center space-y-4">
-            <p class="text-lg text-gray-700 dark:text-gray-300">
-              Custom-Made SLS Prints with PA2200 Nylon
-            </p>
-            <p class="text-lg text-gray-700 dark:text-gray-300">
-              176°C melting temperature
-            </p>
-            <p class="text-lg text-gray-700 dark:text-gray-300">
-              Brass Heat-Set Inserts
-            </p>
-            <p class="text-lg text-gray-700 dark:text-gray-300">
-              Custom lids available:
-              <a href="mailto:customlid@supernetworks.org" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
-                customlid@supernetworks.org
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- More Products Button Above Pricing -->
     <div class="py-12 text-center">
       <a
         href="order.html"
-        class="inline bg-white text-black text-sm uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+        class="inline-flex items-center text-sm font-semibold bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors"
       >
         More Products
       </a>
@@ -429,7 +183,7 @@ publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfc
     <div class="py-12 text-center">
       <a
         href="order.html"
-        class="inline bg-white text-black text-sm uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
+        class="inline-flex items-center text-sm font-semibold bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors"
       >
         More Products
       </a>
@@ -442,11 +196,11 @@ publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfc
         class="mx-auto flex flex-col items-center space-x-4 space-y-8 mx-2 my-8 text-center"
       >
         <h2
-        class="mb-4 font-medium tracking-tight text-slate-900 dark:text-slate-200 text-3xl md:text-4xl"
+        class="mb-4 font-medium tracking-tight text-slate-900 text-slate-900 text-3xl md:text-4xl"
         >
         </h2>
         <!--p
-          class="max-w-2xl text-gray-700 dark:text-slate-300 sm:text-lg md:text-md"
+          class="max-w-2xl text-gray-700 text-slate-600 sm:text-lg md:text-md"
         >
           Ready to try SPR? You can run the software on our hardware.
         </p-->
@@ -456,7 +210,7 @@ publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfc
     <footer
       class="w-full p-4 md:flex md:items-center md:justify-between md:p-6 md:py-8"
     >
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+      <span class="text-sm text-gray-500 sm:text-center text-gray-400"
         >© 2023-2026
         <a href="https://www.supernetworks.org" class="hover:underline"
           >Supernetworks, Inc.</a
@@ -464,7 +218,7 @@ publishable-key="pk_live_51LjxwyExHB2JfQTK0iFUVC7cIEG75VDi9ungt6Yfs6u6vpT9BGGAfc
         All Rights Reserved.
       </span>
       <ul
-        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 space-x-8"
+        class="flex flex-wrap items-center mt-3 text-sm text-gray-500 text-gray-400 sm:mt-0 space-x-8"
       >
         <li>
           <a

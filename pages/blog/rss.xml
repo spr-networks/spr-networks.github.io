@@ -76,8 +76,7 @@
 <li><strong>Upgrade firmware</strong> and check your vendor for AirSnitch-related patches</li>
 <li><strong>Use <code>WPA2</code>/<code>WPA3</code>-Enterprise with strong <code>RADIUS</code> secrets</strong> and encrypted <code>RADIUS</code> transport to limit credential theft</li>
 </ol>
-<p>What makes this paper stand out is that the researchers didn't stop at showing weak, partial attack successes. They crafted full bidirectional MitM attacks under scenarios previously thought unexploitable. Speculatively, they may have even solved the mystery of the Hole 196 vulnerability presented at Black Hat in 2010, which demonstrated GTK abuse but was notoriously difficult to reproduce into a practical attack. Systematizing these techniques into a structured, reproducible attack methodology is an impressive feat, and the demonstrated impact was devastating enough to motivate Apple and the <code>wpa_supplicant</code> project to ship fixes.</p>
-<p>Client isolation was never standardized, and now we have a comprehensive paper proving it was never reliable either.</p>]]></content:encoded>
+<p>The researchers crafted full bidirectional MitM attacks under scenarios previously thought unexploitable. Speculatively, they may have even solved the mystery of the Hole 196 vulnerability presented at Black Hat in 2010, which demonstrated GTK abuse but was notoriously difficult to reproduce into a practical attack. Systematizing these techniques into a structured, reproducible attack methodology is an impressive feat, and the demonstrated impact was devastating enough to motivate Apple and the <code>wpa_supplicant</code> project to ship fixes.</p>]]></content:encoded>
             <category>wifi</category>
             <category>security</category>
             <category>isolation</category>
