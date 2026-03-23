@@ -6,63 +6,38 @@
 
     <meta
       name="description"
-      content="Upgrade your home network with SPR's secure WiFi routers. Enjoy lightning-fast speeds, true device isolation, and built-in VPN. Perfect for smart homes, home labs, and privacy-conscious users."
+      content="SPR gives every WiFi device its own isolated network automatically. Per-device VLANs, unique passwords, and default-deny firewall policies. Open source, self-hosted, zero cloud dependencies."
     />
     <meta
       name="keywords"
-      content="secure WiFi, home network security, fast WiFi router, IoT security, network isolation, privacy-focused router, WPA3"
+      content="secure WiFi router, per-device VLAN isolation, WPA3, network segmentation, open source router, self-hosted, microsegmentation, WiFi security"
     />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.supernetworks.org/" />
-    <meta
-      property="og:title"
-      content="SPR Networks: A Secure Network Doesn't Have to Be Rocket Science"
-    />
-    <meta
-      property="og:description"
-      content="Experience lightning-fast WiFi speeds with best-in-class security. One password per device, true device isolation, and DNS security. Self-hosted and privacy-preserving."
-    />
-    <meta
-      property="og:image"
-      content="https://www.supernetworks.org/images/cm5-router.png"
-    />
+    <meta property="og:title" content="SPR — Every device gets its own network" />
+    <meta property="og:description" content="Open-source router platform with per-device VLAN isolation, unique WiFi passwords, and default-deny firewall policies. No cloud. No telemetry." />
+    <meta property="og:image" content="https://www.supernetworks.org/assets/img/cm5-router.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.supernetworks.org/" />
-    <meta
-      property="twitter:title"
-      content="SPR Networks: Secure, Fast, and Feature-Rich WiFi Routers"
-    />
-    <meta
-      property="twitter:description"
-      content="Upgrade your network with SPR. Lightning-fast speeds, one password per device, true device isolation, and built-in VPN. Ideal for smart homes and privacy-conscious users."
-    />
-    <meta
-      property="twitter:image"
-      content="https://www.supernetworks.org/images/spr-features.jpg"
-    />
+    <meta property="twitter:title" content="SPR — Every device gets its own network" />
+    <meta property="twitter:description" content="Open-source router platform with per-device VLAN isolation, unique WiFi passwords, and default-deny firewall policies." />
+    <meta property="twitter:image" content="https://www.supernetworks.org/assets/img/cm5-router.png" />
 
-    <!-- Additional SEO Tags -->
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.supernetworks.org/" />
 
-    <!--link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Secure Programmable WiFi Router | SPR by Supernetworks</title>
+    <title>SPR by Supernetworks — Every device gets its own network</title>
+
+    <!-- PostHog -->
     <script>
       !(function (t, e) {
         var o, n, p, r
@@ -82,27 +57,19 @@
               (p.src =
                 s.api_host.replace('.i.posthog.com', '-assets.i.posthog.com') +
                 '/static/array.js'),
-              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(
-                p,
-                r
-              )
+              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r)
             var u = e
             for (
               void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
                 u.people = u.people || [],
                 u.toString = function (t) {
                   var e = 'posthog'
-                  return (
-                    'posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e
-                  )
+                  return ('posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e)
                 },
                 u.people.toString = function () {
                   return u.toString(1) + '.people (stub)'
                 },
-                o =
-                  'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId'.split(
-                    ' '
-                  ),
+                o = 'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId'.split(' '),
                 n = 0;
               n < o.length;
               n++
@@ -116,2783 +83,885 @@
         api_host: 'https://us.i.posthog.com'
       })
     </script>
+
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16781748800"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16781748800"></script>
     <script>
       window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
+      function gtag() { dataLayer.push(arguments) }
       gtag('js', new Date())
-
       gtag('config', 'AW-16781748800')
     </script>
     <script>
       function gtag_report_conversion(url, id = '0CIsCKeomoQaEMDUlMI-') {
         var callback = function () {
-          if (typeof url != 'undefined') {
-            window.location = url
-          }
+          if (typeof url != 'undefined') { window.location = url }
         }
         let send_to = `AW-16781748800/${id}`
-        gtag('event', 'conversion', {
-          send_to,
-          event_callback: callback
-        })
+        gtag('event', 'conversion', { send_to, event_callback: callback })
         return false
       }
     </script>
 
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .gradient-bg {
-        background: linear-gradient(135deg, #1a202c, #2d3748);
-      }
-      .gradient-text {
-        background: -webkit-linear-gradient(45deg, #4fd1c5, #6ee7b7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .glow {
-        box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
-      }
-      .grid-bg {
-        background-image: linear-gradient(
-            135deg,
-            rgba(26, 32, 44, 0.8),
-            rgba(45, 55, 72, 0.8)
-          ),
-          url('grid-bg.svg');
-        background-size: cover;
-        background-position: center;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .hover-scale {
-        transition: transform 0.3s;
-      }
-      .hover-scale:hover {
-        transform: scale(1.05);
-      }
-      .nav-item {
-        position: relative;
-      }
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
-      .nav-item:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(45deg, #4fd1c5, #6ee7b7);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
+      /* Mobile comparison cards */
+      @media (max-width: 767px) {
+        .comparison-table { display: none; }
+        .comparison-cards { display: block; }
       }
-
-      .nav-item:hover:after {
-        transform: scaleX(1);
-      }
-
-      #planets-cloud {
-        display: none;
-      }
-      @media (min-width: 1025px) {
-        #plus > .container > div {
-          background: radial-gradient(
-            circle at -5% 50%,
-            rgb(27, 34, 49) 12%,
-
-            rgb(67, 74, 89) 12%,
-            rgb(67, 74, 89) 28%,
-
-            rgb(17, 24, 39) 28%,
-            rgb(17, 24, 39) 100%
-          );
-        }
-
-        #planets-cloud {
-          display: flex;
-        }
+      @media (min-width: 768px) {
+        .comparison-table { display: block; }
+        .comparison-cards { display: none; }
       }
     </style>
   </head>
-  <body class="bg-gray-900 text-white">
-    <header class="gradient-bg text-white py-4 fixed top-0 left-0 right-0 z-50">
 
-      <div class="container mx-auto px-4">
-        <div
-          class="flex flex-col md:flex-row md:justify-between md:items-center"
-        >
-          <div class="flex justify-between items-center">
-            <a href="#" class="text-lg font-semibold tracking-tight">
-              <span class="text-2xl font-bold gradient-text">SPR</span> by
-              Supernetworks
+  <body class="bg-white text-gray-900 antialiased">
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <div class="max-w-6xl mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="text-xl font-bold tracking-tight text-slate-900">SPR</span>
+            <span class="text-sm text-gray-400 font-normal hidden sm:inline">by Supernetworks</span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-6 text-sm">
+            <a href="#how-it-works" class="text-gray-500 hover:text-slate-900 transition-colors">How It Works</a>
+            <a href="#security" class="text-gray-500 hover:text-slate-900 transition-colors">Security Research</a>
+            <a href="#pricing" class="text-gray-500 hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-500 hover:text-slate-900 transition-colors">Docs</a>
+            <a href="https://www.supernetworks.org/pages/blog" class="text-gray-500 hover:text-slate-900 transition-colors">Blog</a>
+            <span class="w-px h-4 bg-gray-200"></span>
+            <a href="https://github.com/spr-networks/super/" class="text-gray-400 hover:text-slate-900 transition-colors" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
-
-            <div class="fixed top-0 right-16 md:right-10 py-4">
-              <a
-                href="#products"
-                class="block p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <div class="flex space-x-4 md:hidden">
-              <button
-                id="trigger-mobile-menu"
-                class="text-white hover:text-sky-400 hover:underline transition duration-300"
-              >
-                <img
-                  width="24"
-                  height="24"
-                  src="/assets/img/mobilemenus.svg"
-                  alt="Menu"
-                />
-              </button>
-            </div>
+            <a href="https://discord.gg/EUjTKJPPAX" class="text-gray-400 hover:text-slate-900 transition-colors" aria-label="Discord">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </a>
+            <a href="compute-board.html" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+              Order Router &mdash; $399
+            </a>
           </div>
-          <nav
-            class="hidden md:flex md:items-center md:space-x-8"
-            id="mobile-menu"
-          >
-            <ul
-              class="flex flex-col md:flex-row mt-4 space-y-4 md:mt-0 md:space-y-0 md:space-x-8 text-sm font-normal"
-            >
-              <li>
-                <a
-                  href="#products"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Products</a
-                >
-              </li>
 
-              <li>
-                <a
-                  href="#how-to-use"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Solutions</a
-                >
-              </li>
-              <li>
-                <!--a
-                  href="features.html"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Features</a
-              -->
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
 
-                <div class="">
-                  <div class="dropdown inline-block relative">
-                    <a
-                      href="features.html"
-                      class="inline-flex items-center hover:text-sky-400 transition duration-300 nav-item"
-                    >
-                      <span class="mr-1">Features</span>
-                      <svg
-                        class="hidden md:flex fill-current h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                        />
-                      </svg>
-                    </a>
-                    <ul
-                      class="bg-gray-800 flex space-y-4 dropdown-menu absolute hidden text-neutral-200 p-8 w-48 -ml-8"
-                    >
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/dns"
-                          >Ad Block</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/firewall"
-                          >Firewall &amp; Routing</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/alerts"
-                          >Alerts</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="#vpn"
-                          >VPN</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="block whitespace-no-wrap hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/logs"
-                          >Traffic Monitoring</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="hover:text-sky-400"
-                          href="https://www.supernetworks.org/pages/docs/guides/plugins"
-                          >Plugins</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  href="plus.html"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >PLUS</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="https://www.supernetworks.org/pages/docs/faq"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >FAQ</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.supernetworks.org/pages/blog"
-                  class="hover:text-sky-400 transition duration-300 nav-item"
-                  >Blog</a
-                >
-              </li>
-              <li class="md:ps-8">
-                <a
-                  class="hover:underline flex justify-start link-conversion"
-                  data-id="0CIsCKeomoQaEMDUlMI-"
-                  href="https://github.com/spr-networks/super/"
-                >
-                  <div
-                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                    style="
-                      background-image: url('/assets/img/github.svg');
-                      filter: invert(100%) brightness(200%);
-                    "
-                  ></div>
-                </a>
-              </li>
-              <!--li>
-                <a
-                  class="hover:underline flex justify-start"
-                  href="https://twitter.com/spr_networks"
-                >
-                  <div
-                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                    style="
-                      background-image: url('/assets/img/twitter.svg');
-                      filter: invert(100%) brightness(200%);
-                    "
-                  ></div>
-                </a>
-              </li-->
-              <li>
-                <a
-                  class="hover:underline flex justify-start"
-                  href="https://discord.gg/EUjTKJPPAX"
-                >
-                  <div
-                    class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                    style="
-                      background-image: url('/assets/img/discord.svg');
-                      filter: invert(100%) brightness(200%);
-                    "
-                  ></div>
-                </a>
-              </li>
-            </ul>
-          </nav>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2 border-t border-gray-200 pt-4">
+          <div class="flex flex-col space-y-3 text-sm">
+            <a href="#how-it-works" class="text-gray-600 hover:text-slate-900 transition-colors">How It Works</a>
+            <a href="#security" class="text-gray-600 hover:text-slate-900 transition-colors">Security Research</a>
+            <a href="#pricing" class="text-gray-600 hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="https://www.supernetworks.org/pages/docs/intro" class="text-gray-600 hover:text-slate-900 transition-colors">Docs</a>
+            <a href="https://www.supernetworks.org/pages/blog" class="text-gray-600 hover:text-slate-900 transition-colors">Blog</a>
+            <a href="compute-board.html" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2.5 rounded-lg text-center hover:bg-slate-800 transition-colors">Order Router &mdash; $399</a>
+          </div>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <div class="static overflow-hidden h-full">
-      <div
-        class="opacity-80 bg-[url(assets/img/bg-ambient-1.png)] bg-cover h-full w-full fixed right-0 bottom-0 bg-opacity-25"
-        style="z-index: -1"
-      ></div>
-    </div>
+    <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+      document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.getElementById('mobile-menu').classList.add('hidden');
+        });
+      });
+    </script>
 
-    <header class="zz-bg-gradient-to-b from-neutral-950 to-slate-900">
+    <!-- ==================== 1. HERO ==================== -->
+    <section class="bg-white pt-28 pb-16 md:pt-36 md:pb-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+          Every device gets its own<br class="hidden sm:block" /> isolated network. Automatically.
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl">
+          SPR places each WiFi device into its own VLAN with a unique password and a default-deny firewall policy. Devices are isolated from each other by default. You define connectivity through simple policies&nbsp;&mdash; not IP addresses and VLAN tags. Everything you don't explicitly permit is blocked.
+        </p>
 
-
-      <section class="container mx-auto px-4 pt-20 md:pb-16">
-        <!-- New Product Announcement Banner -->
-        <div id="new-product-banner" class="sticky top-14 md:fixed md:top-auto w-full md:w-1/3 lg:w-1/4 max-w-md md:bottom-4 md:right-4 z-40 overflow-hidden rounded-lg shadow-lg border-b-2 md:border-2 border-cyan-400 bg-gradient-to-r from-indigo-600 to-purple-600">
-          <div class="p-3 md:p-6">
-            <!-- Desktop & Mobile Layout -->
-            <div class="flex flex-col">
-              <!-- Image Container -->
-              <div class="relative mx-auto mb-2">
-                <!--div id="ping-animation" class="absolute inset-0 bg-cyan-400 rounded-lg animate-ping opacity-30"></div-->
-                <img src="/assets/img/compute-hardware.jpg" alt="New Compute Board" class="relative z-10 h-32 max-w-xs mx-auto rounded-lg object-cover border-2 border-cyan-300">
-              </div>
-
-              <!-- Text Content -->
-              <div class="text-center mb-2">
-                <p class="text-sm md:text-xl font-bold text-white">SPR WiFi Router</p>
-                <p class="text-xs md:text-lg text-cyan-200 font-medium">Available Now</p>
-              </div>
-
-              <!-- CTA Button -->
-              <a href="compute-board.html" class="w-full text-center text-xs md:text-base font-bold px-3 py-2 md:py-3 bg-cyan-500 text-white rounded-full hover:bg-cyan-400 transition-colors">
-                Order
-                <svg class="ml-1 w-3 h-3 md:w-4 md:h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-
-              <!-- Close Button -->
-              <button id="close-banner" class="absolute top-1 right-1 text-white hover:text-cyan-300 transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Simplified banner dismissal script -->
-        <script>
-          // Check if user has dismissed the banner
-          if (localStorage.getItem('bannerDismissed') === 'true') {
-            document.getElementById('new-product-banner').classList.add('hidden');
-          }
-
-          // Add event listener to close button
-          document.getElementById('close-banner').addEventListener('click', function() {
-            document.getElementById('new-product-banner').classList.add('hidden');
-            localStorage.setItem('bannerDismissed', 'true');
-          });
-        </script>
-
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const pingElement = document.getElementById('ping-animation');
-            let pingCount = 0;
-
-            // Function to detect animation iteration
-            function handleAnimationIteration() {
-              pingCount++;
-
-              // After 2 iterations, remove the element completely
-              if (pingCount >= 2) {
-                pingElement.remove(); // Completely remove the element from DOM
-                pingElement.removeEventListener('animationiteration', handleAnimationIteration);
-              }
-            }
-
-            // Listen for animation iterations
-            pingElement.addEventListener('animationiteration', handleAnimationIteration);
-          });
-        </script>
-
-        <div
-          class="flex flex-col md:flex-row items-center justify-between text-center"
-        >
-          <div class="mb-8 md:mb-0 space-y-12">
-            <h1
-              class="text-4xl md:text-6xl font-medium tracking-tight md:px-16"
-            >
-              A Secure Network Does Not Have To Be 🚀🧑‍🔬
-              <span class="gradient-text">Rocket Science</span>
-            </h1>
-            <!--p class="text-2xl font-light">
-              Supernetworks makes Fast, Secure, &amp; Feature-Packed routers
-            </p-->
-
-            <div
-              class="flex flex-col md:flex-row gap-4 items-center justify-center antialiased"
-              role="group"
-            >
-              <!--a
-                id="btn-download"
-                href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz"
-                class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >Download SPR PI Image
-              </a>
-
-              <a
-                id="btn-get-started"
-                href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b#install-the-spr-pi-4-image"
-                class="hidden bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >Install Guide
-              </a-->
-
-              <a
-                href="#products"
-                class="bg-gradient-to-b from-cyan-500 to-cyan-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-              >
-                Products
-              </a>
-
-              <a
-                href="#get-started"
-                class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >Get Started
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </header>
-
-    <header
-      class="flex flex-col pt-24 md:pt-0 md:flex-row bg-gradient-to-b from-transparent to-slate-950/60 from-40% to-40% h-auto md:h-[360px] border-b border-slate-900"
-      _style="
-        background: #59c173;
-        background: -webkit-linear-gradient(
-          to right,
-          #5d26c1,
-          #a17fe0,
-          #59c173
-        );
-        background: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
-      "
-    >
-      <div class="flex flex-col md:flex-row md:gap-12 md:w-3/4 md:mx-auto pb-16">
-        <div class="items-center justify-center md:pt-24 md:flex-1">
-          <a href="compute-board.html" class="block">
-            <img
-              src="/assets/img/cm5-router.png"
-              alt="CM5 Router"
-              class="w-full max-w-[400px] mx-auto hover:scale-105 transition-transform duration-300"
-              style="transform: rotate(-2deg)"
-            />
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="compute-board.html" class="inline-flex items-center justify-center font-semibold bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors text-sm">
+            Order Router &mdash; $399
+          </a>
+          <a href="https://github.com/spr-networks/super" class="inline-flex items-center justify-center font-semibold text-slate-900 border border-gray-300 px-6 py-3 rounded-lg hover:border-slate-900 transition-colors text-sm">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a href="https://apps.apple.com/us/app/secure-programmable-router/id6443709201" class="inline-flex items-center justify-center">
+            <img src="/assets/img/appdownload.png" alt="Download on the App Store" class="h-[46px]" />
           </a>
         </div>
-        <div
-          class="md:flex-1 flex-col text-white antialiased md:pt-24 flex gap-2 items-center md:items-center text-center"
-        >
-          <h3 class="text-4xl font-bold font-sans">WiFi 6 PoE+ Router (CM5)</h3>
-          <p class="text-xl">Fast, secure dual-band wifi with PoE+ power</p>
-          <p class="text-sm mt-2 text-gray-200">• Router hardware purchase includes PLUS code</p>
-          <div class="mt-8">
-            <a
-              href="compute-board.html"
-              class="inline bg-white text-black text-md uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-            >
-              Shop Now
-            </a>
-          </div>
+
+        <!-- Proof bar -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+          <span>Open Source &mdash; 500+ Stargazers</span>
+          <span class="text-gray-300">&middot;</span>
+          <span>Zero Cloud Dependencies (Self-Hosted)</span>
+          <span class="text-gray-300">&middot;</span>
+          <span>Zero Trust Networking</span>
         </div>
-      </div>
-    </header>
 
-    <!--div class="overflow-hidden">
-      <div
-        class="h-16 bg-slate-950 -mx-16"
-        style="
-          border-top-left-radius: 50% 100%;
-          border-top-right-radius: 50% 100%;
-        "
-      ></div>
-    </div-->
-
-    <main>
-
-      <section class="antialiased">
-        <div class="bg-gradient-to-b from-slate-900 to-slate-950">
-          <div class="container mx-auto">
-            <div class="space-y-4 text-center md:w-3/5 p-8 text-center mx-auto">
-              <h2 class="text-4xl md:text-4xl font-bold">
-                Self-Hosted, Privacy Preserving, and Feature Rich
-              </h2>
-              <p class="text-lg font-extralight">
-                Unlike other products that rely on the cloud for advanced
-                features,<br />
-                we bring them all to you,
-                <span class="border-b">on-device</span>
-              </p>
-              <!--p class="text-lg font-extralight">
-                Unlock even more features like Scheduled Firewall
-                Policies, Domain-Name Based Firewall Rules, &amp; Mesh with
-                <a
-                  href="https://www.supernetworks.org/plus.html"
-                  class="text-sky-400 hover:text-sky-300 transition duration-300"
-                  >PLUS</a
-                >
-                subscription
-              </p-->
-            </div>
-
-            <!--
-              1: block, firewall, alert - protect your network/family
-              2: vpn, stats, plugins - other cool features
-                - could maybe skip this section since its mentioned further down
-            -->
-
-            <div class="md:space-y-8 md:pb-8">
-              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(244, 145, 194, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Block anything</h3>
-                  <p class="w-1/2 font-light">
-                    Block ads and trackers at the network level for all your
-                    devices
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <!--svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    class="w-full text-rose-300"
-                    viewbox="0 0 80 80"
-                  >
-                    <g fill="currentColor">
-                      <path
-                        d="M80 40.08c0-8.978-3.04-17.635-8.64-24.689h0l-.32-.321c-.16-.16-.16-.321-.32-.481l-2.56-2.726h0C60.64 4.168 50.72 0 40 0h-.16 0-.16C29.12.16 19.36 4.168 11.84 11.703h0l-2.72 2.886c-.16.16-.16.321-.32.481l-.32.16h0C3.04 22.285 0 31.102 0 40.08s3.04 17.635 8.64 24.689h0l.32.321c.16.16.16.321.32.481l2.56 2.725h0C19.36 75.832 29.12 80 39.68 80h.16 0H40c10.56 0 20.64-4.168 28.16-11.703h0l2.56-2.886c.16-.16.16-.321.32-.481l.32-.321h0C76.96 57.876 80 49.058 80 40.08zM63.84 13.948c-.16 0-.32.16-.48.16-.32.16-.64.321-.8.321-.64.321-1.44.481-2.24.802-.16 0-.32.16-.48.16-.96.321-1.76.481-2.72.802h0c-.16 0-.48.16-.64.16-1.44-3.848-3.2-7.214-5.28-9.78 4.64 1.443 8.96 4.008 12.64 7.375zM39.68 4.649h0c4.48 0 8.96 4.649 12.16 12.665-3.68.641-7.68.962-11.84.962s-8.32-.32-12.16-.962C30.88 9.459 35.36 4.81 39.68 4.649zM28.32 6.734c-1.92 2.565-3.68 5.772-5.12 9.619h-.32 0c-.96-.321-1.92-.481-2.72-.802-.16 0-.32-.16-.48-.16-.64-.321-1.44-.641-2.08-.962-.32-.16-.48-.16-.8-.321-.16-.16-.32-.16-.64-.321 3.68-3.046 7.68-5.611 12.16-7.054zM16.16 66.212c.16 0 .32-.16.48-.16.32-.16.48-.16.8-.321.64-.321 1.44-.481 2.24-.802.16 0 .32-.16.48-.16.96-.32 1.76-.481 2.72-.802h0 .32c1.44 3.688 3.2 7.054 5.12 9.619-4.48-1.603-8.64-4.168-12.16-7.375zm23.68 9.299h0c-4.48-.16-8.96-4.649-12-12.505 3.84-.641 8-.962 12.16-.962s8 .321 11.84.962c-3.04 7.856-7.68 12.505-12 12.505zm11.36-1.924c2.08-2.565 3.84-5.932 5.28-9.78.16 0 .48.16.64.16h0c.96.321 1.92.481 2.72.802.16 0 .32.16.48.16.8.321 1.44.481 2.24.802.32.16.48.16.8.321.16 0 .32.16.64.32-3.84 3.207-8.16 5.772-12.8 7.215zm16.16-11.062h0c-.48 0-.8-.16-1.28-.321s-1.12-.481-1.6-.641c-.16 0-.32-.16-.48-.16-1.92-.802-4-1.282-6.08-1.924.48-1.924.96-3.848 1.28-5.772h-4.8c-.32 1.764-.64 3.367-1.12 4.81-4.16-.802-8.64-1.122-13.28-1.122-4.8 0-9.28.481-13.6 1.283-.48-1.603-.8-3.206-1.12-4.97h-4.8c.32 2.084.8 4.008 1.28 5.932-1.92.481-3.84 1.122-5.6 1.763-.16.16-.48.16-.64.321-.48.16-1.12.481-1.6.641-.32 0-.8.16-1.12.321h0C8 56.914 5.28 49.7 4.8 42.325h4v-4.649h-4c.48-7.375 3.2-14.429 7.84-20.04l.16-.16c.32.16.8.321 1.12.481.64.32 1.12.481 1.76.802.16 0 .32.16.48.16 1.76.641 3.68 1.283 5.76 1.764-.48 1.764-.8 3.527-1.12 5.291h4.8l.96-4.329c4.32.802 8.96 1.282 13.6 1.282s9.12-.481 13.28-1.122c.32 1.283.64 2.725.96 4.329h4.8c-.32-1.763-.64-3.527-1.12-5.291 2.08-.481 4-1.122 5.92-1.924.16 0 .48-.16.64-.16.64-.16 1.12-.481 1.76-.641.32-.16.8-.321 1.12-.481h0c4.64 5.772 7.52 12.826 8 20.2h-4.8v4.649h4.8c-.8 7.214-3.52 14.429-8.16 20.04zM29.92 39.759c0 1.924-.32 3.527-.8 4.81s-1.28 2.405-2.08 3.367c-.96.802-2.08 1.443-3.36 1.924-1.28.321-2.88.641-4.8.641h-4.96c-.32 0-.64-.16-.96-.321s-.16-.641-.16-1.122V30.941c0-.481.16-.802.32-.962s.48-.321.96-.321h5.28c1.92 0 3.36.16 4.64.641s2.4 1.122 3.2 1.924 1.6 1.924 2.08 3.206c.32 1.282.64 2.725.64 4.329zm-4.32.16c0-.962-.16-1.924-.32-2.725s-.64-1.603-1.12-2.245-1.12-1.122-1.92-1.443-1.76-.481-3.2-.481h-2.08v14.108h2.24c1.12 0 2.08-.16 2.88-.481s1.44-.802 1.92-1.283c.48-.641.96-1.282 1.12-2.244.32-.962.48-2.084.48-3.206zm24.8 8.978c0 .321 0 .481-.16.641s-.16.321-.32.481-.32.16-.48.32c-.16 0-.32.16-.64.16h-1.76c-.32 0-.64 0-.96-.16-.32 0-.48-.16-.8-.481-.16-.16-.48-.481-.64-.802s-.48-.802-.64-1.283l-5.12-9.619c-.32-.641-.64-1.122-.96-1.924-.32-.641-.64-1.283-.8-1.924h0c0 .802 0 1.603.16 2.244v2.405 10.902c0 .16 0 .16-.16.321 0 .16-.16.16-.32.16s-.32.16-.64.16h-.96-.96c-.32 0-.48 0-.64-.16-.16 0-.16-.16-.32-.16v-.321V31.26c0-.481.16-.802.48-1.122s.64-.321 1.12-.321h2.24c.48 0 .8 0 .96.16.32 0 .48.16.8.321.16.16.48.321.64.641a9.18 9.18 0 0 0 .64 1.122l4 7.535c.16.481.48.962.64 1.282.16.481.48.962.64 1.283.16.481.48.802.64 1.283s.32.802.64 1.283h0v-2.405-2.245V30.3c0-.16 0-.16.16-.321 0-.16.16-.16.32-.16s.32-.16.64-.16h.96.96c.32 0 .48 0 .64.16.16 0 .16.16.32.16v.321 18.597h-.32z"
-                      />
-                      <path
-                        d="M67.2 44.248c0 1.122-.16 2.084-.64 2.886s-.96 1.443-1.6 2.084c-.64.481-1.44.962-2.4 1.282s-1.92.481-3.04.481c-.64 0-1.44 0-1.92-.16L56 50.34c-.48-.16-.8-.32-1.12-.481s-.48-.321-.64-.481-.16-.321-.32-.641c0-.32-.16-.641-.16-1.122v-.802c0-.16 0-.481.16-.481 0-.16.16-.16.16-.321 0 0 .16-.16.32-.16s.32.16.64.321.64.321 1.12.641c.48.16.96.481 1.6.641s1.28.321 2.08.321c.48 0 .96 0 1.44-.16s.8-.321.96-.481c.32-.16.48-.481.64-.802s.16-.641.16-1.122-.16-.802-.32-1.283l-.96-.962c-.48-.321-.8-.481-1.44-.802-.48-.16-1.12-.481-1.6-.802s-1.12-.481-1.6-.802-.96-.641-1.44-1.122-.8-.962-.96-1.603c-.32-.641-.32-1.283-.32-2.245s.16-1.924.48-2.565c.32-.802.8-1.443 1.44-1.924s1.28-.802 2.24-1.122c.8-.321 1.76-.321 2.72-.321.48 0 .96 0 1.44.16.48 0 .96.16 1.44.321s.8.321 1.12.481.48.32.64.32c.16.16.16.16.16.321 0 0 0 .16.16.321v.481.641.802.481c0 .16-.16.16-.16.321 0 0-.16.16-.32.16s-.32 0-.48-.16l-.96-.481c-.32-.16-.8-.321-1.28-.481s-.96-.16-1.6-.16c-.48 0-.8 0-1.12.16s-.64.321-.8.481-.32.481-.48.641c-.16.321-.16.641-.16.802 0 .481.16.802.32 1.122l.96.962c.48.321.96.481 1.44.802.48.16 1.12.481 1.6.802s1.12.481 1.6.802.96.641 1.44 1.122.8.962.96 1.603c-.16.16 0 .802 0 1.764z"
-                      />
-                    </g>
-                  </svg-->
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-rose-300"
-                    >
-                      <path
-                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(114, 213, 179, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Firewall &amp; Routing</h3>
-                  <p class="w-1/2 font-light">
-                    Control your network with sophisticated firewall rules and
-                    routing options
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-green-200"
-                    >
-                      <path
-                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(252, 211, 77, 0.5) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Customizable Alerts</h3>
-                  <p class="w-1/2 font-light">
-                    Stay informed about important network events with a
-                    customizable alert system
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-amber-200"
-                    >
-                      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 md:gap-y-6">
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(138, 179, 250, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Built-in VPN</h3>
-                  <p class="w-1/2 font-light">
-                    Secure your connections with native WireGuard VPN support
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-full text-sky-200"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M7 3.34V5a3 3 0 0 0 3 3" />
-                      <path
-                        d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"
-                      />
-                      <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-                      <path d="M12 2a10 10 0 1 0 9.54 13" />
-                      <path d="M20 6V4a2 2 0 1 0-4 0v2" />
-                      <rect width="8" height="5" x="14" y="6" rx="1" />
-                    </svg>
-                    <!--svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-full text-sky-200"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="4.5" r="2.5" />
-                    <path d="m10.2 6.3-3.9 3.9" />
-                    <circle cx="4.5" cy="12" r="2.5" />
-                    <path d="M7 12h10" />
-                    <circle cx="19.5" cy="12" r="2.5" />
-                    <path d="m13.8 17.7 3.9-3.9" />
-                    <circle cx="12" cy="19.5" r="2.5" />
-                  </svg-->
-                  </div>
-                </div>
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(156, 98, 190, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Traffic Monitoring</h3>
-                  <p class="w-1/2 font-light">
-                    Gain insights into your network usage with real-time
-                    monitoring and statistics
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-violet-200"
-                    >
-                      <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-                      <path d="M22 12A10 10 0 0 0 12 2v10z" />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="relative p-8 md:rounded-lg text-zinc-100"
-                  style="
-                    background: linear-gradient(
-                      295deg,
-                      rgba(153, 246, 228, 0.3) 160px,
-                      rgba(31, 41, 55, 1) 20%
-                    );
-                  "
-                >
-                  <h3 class="text-2xl font-bold">Plugins</h3>
-                  <p class="w-1/2 font-light">
-                    Expand SPR's capabilities with plugins for Tailscale,
-                    Wireshark, and more
-                  </p>
-                  <div class="absolute bottom-8 right-8 w-16">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="w-full text-teal-200"
-                    >
-                      <path
-                        d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <section
-        class="py-24 pb-16 bg-gradient-to-b from-slate-950/80 to-slate-900/80 antialiased"
-      >
-        <div class="container mx-auto space-y-16 md:w-2/3">
-          <h2
-            class="text-center text-3xl md:text-4xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent"
-          >
-            Why Put Up With Weak Security?
-          </h2>
-
-          <div class="flex flex-col-reverse md:flex-row items-start">
-            <div class="grid md:grid-cols-2 gap-8 px-8 md:px-0 text-zinc-100">
-              <div>
-                <h3 class="text-lg font-semibold text-yellow-500">
-                  WiFi Password Sharing Is Risky
-                </h3>
-                <p class="text-md">
-                  The wifi password could be stolen from old devices when
-                  they're thrown away or sold. It is tedious and time consuming
-                  to redo the setup on all your devices. Malicious or breached
-                  devices can also snoop or intercept traffic.
-                  <!--Who has time to redo all of their existing wifi passwords?-->
-                </p>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-yellow-500">
-                  Insecure IoT Devices Cause Breaches
-                </h3>
-                <p class="">
-                  Many IoT devices are insecure, rarely updated with security
-                  fixes, and may not respect your home privacy when they connect
-                  to the cloud.
-                </p>
-              </div>
-              <!--div class="row-span-2 text-center content-center">
-                <div class="drop-shadow">
-                  <img
-                    src="/assets/img/bgs/bg.png"
-                    alt="Home Network Security Risks"
-                    class="rounded-t-xl shadow-lg opacity-80 hover:opacity-100 inline-block"
-                  />
-                  <p class="rounded-b-xl text-sm bg-gray-900 text-gray-300 p-2">
-                    Homes are more connected than ever
-                  </p>
-                </div>
-              </div-->
-              <div>
-                <h3 class="text-lg font-semibold text-yellow-500">
-                  Limited Network Isolation Compounds Risk
-                </h3>
-                <p class="">
-                  Why should your vacuum be able talk to your doorbell?
-                  Inadequate network isolation makes breaches worse
-                </p>
-              </div>
-              <!--div>
-                  <h3 class="text-lg font-semibold text-yellow-500">
-                    🧀 Other Routers Come With Security Holes
-                  </h3>
-                  <p class="">
-                    Cheap routers and even enterprise routers have legacy code
-                    and poor software security practices. Attackers have been
-                    targetting home routers as entrypoints for cyber attacks
-                    leading to
-                    <a
-                      href="https://www.cisa.gov/news-events/alerts/2024/01/31/cisa-and-fbi-release-secure-design-alert-urging-manufacturers-eliminate-defects-soho-routers"
-                      class="underline"
-                      >CISA and the FBI calling on manufacturers to improve
-                      security</a
-                    >
-                  </p>
-                </div-->
-              <div>
-                <h3 class="text-lg font-semibold text-yellow-500">
-                  Your Network Leaks Data To Cloud Companies
-                </h3>
-                <p class="">
-                  Keep your home network private. Block constant data collection
-                  from IOT devices, websites, and mobile phones.
-                </p>
-              </div>
-            </div>
-            <!-- /gap -->
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="demo"
-        class="container px-2 md:px-0 py-16 mx-auto antialiased text-neutral-100"
-      >
-        <h2
-          class="text-4xl text-center text-neutral-50 font-bold drop-shadow-md mb-6 md:mb-8"
-        >
-          Build Your Network With SPR
-        </h2>
-
-        <div class="p-4 z-index-1000 mx-auto max-w-full md:max-w-5xl">
-          <div
-            class="border-neutral-800 border bg-gray-950 dark:bg-black py-3 px-3 md:px-5 md:py-5 rounded-t-3xl rounded-b-3xl cursor-pointer shadow-xl shadow-black/30"
-            onclick="location.href='https://demo.supernetworks.org/'"
-          >
-            <div class="rounded-t-2xl rounded-b-2xl">
-              <img
-                id="demo-image"
-                class="w-full"
-                src="/assets/img/screenshot-light-1.webp"
-                alt="Demo of Router User Interface"
-              />
-            </div>
-            <div>
-              <a
-                class="block pt-4 text-center text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors duration-300 underline hover:no-underline"
-                href="https://demo.supernetworks.org/"
-                target="_blank"
-                >Try the UI demo &rarr;</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="features"
-        class="container px-8 md:px-0 mx-auto antialiased text-neutral-100"
-      >
-        <div
-          class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center"
-        >
-          <div class="mb-8">
-            <h2
-              class="text-4xl md:text-5xl font-bold text-neutral-50 mb-6 md:mb-8"
-            >
-              Lightning-Fast WiFi Speeds
-            </h2>
-            <!--p class="text-xl font-light mb-6 md:mb-8">
-              Experience true WiFi 6 speeds with SPR
-            </p-->
-            <ul class="mb-8 text-lg">
-              <li class="mb-2 flex items-center">
-                ⚡ 160MHz channels see real speeds above 1000 Mbps
-              </li>
-              <li class="mb-2 flex items-center">
-                ⚡ 80MHz channels see real speeds above 700 Mbps
-              </li>
-            </ul>
-            <ul class="text-lg font-light">
-              <li>Hardware that sustains heavy I/O workloads</li>
-              <li>
-                Load balancing ensures your network can handle heavy traffic
-                while supporting a fully featured firewall
-              </li>
-            </ul>
-          </div>
-          <div class="w-full flex flex-col md:flex-row">
-            <div class="w-full overflow-hidden">
-              <div class="flex h-[450px] relative" id="speedtest-phones">
-                <img
-                  src="/assets/img/speedtest-iphone-15160mhz.webp"
-                  alt="SpeedTest"
-                  title="160 MHz 2 Spatial Streams 4 Meter Distance, iPhone 15"
-                  class="mx-auto md:absolute md:right-32 h-[600px] hover-scale z-5 hover:z-20"
-                  alt="wifi pod speedtest 160 mhz channel 2 spatial streams 4 meter distance, iphone 15"
-                />
-                <img
-                  src="/assets/img/speedtest-iphone-pi5hat.webp"
-                  alt="SpeedTest"
-                  title="80 MHz 2 Spatial Streams 4 Meter Distance, iPhone 15"
-                  class="hidden md:block absolute left-4 top-16 h-[500px] hover-scale z-10"
-                  alt="wifi pod speedtest 80 mhz channel 2 spatial streams 4 meter distance, iphone 15"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--div class="bg-black h-4"></div-->
-
-      <section class="antialiased">
-        <div class="bg-gradient-to-b from-zinc-950 to-slate-900 p-4 md:p-16">
-          <div class="container mx-auto">
-            <div class="text-center mb-6 md:mb-12">
-              <h2 class="text-4xl font-bold text-neutral-100 mb-4 md:mb-8">
-                A Secure Network By Default
-              </h2>
-              <h3
-                class="text-sm font-light bg-slate-800 text-neutral-200 p-2 px-4 inline shadow shadow-slate-950/50 rounded-lg"
-              >
-                With the Best WiFi Security
-              </h3>
-            </div>
-
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 md:gap-y-6"
-            >
-              <div
-                class="rounded-3xl p-px bg-gradient-to-b md:from-gray-600 md:to-gray-900 hover:to-gray-700"
-              >
-                <div
-                  class="md:h-[150px] bg-gray-800 p-8 rounded-[calc(1.5rem-1px)]"
-                >
-                  <div class="flex gap-4 items-center">
-                    <div class="w-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-full text-cyan-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <circle cx="12" cy="16" r="1" />
-                        <rect x="3" y="10" width="18" height="12" rx="2" />
-                        <path d="M7 10V7a5 5 0 0 1 10 0v3" />
-                      </svg>
-                    </div>
-                    <div class="flex-1">
-                      <h3 class="text-lg font-semibold text-gray-200">
-                        One Password Per Device
-                      </h3>
-                      <span class="text-sm tracking-wide text-gray-300"
-                        >WPA3, WPA2 supported. Unlimited devices. Users can sync
-                        passwords for iCloud Keychain password sharing.</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="rounded-3xl p-px bg-gradient-to-b md:from-gray-600 md:to-gray-900 hover:to-gray-700"
-              >
-                <div
-                  class="md:h-[150px] bg-gray-800 p-8 rounded-[calc(1.5rem-1px)]"
-                >
-                  <div class="flex gap-4 items-center">
-                    <div class="w-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-full text-cyan-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path
-                          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                        />
-                        <path d="m9 12 2 2 4-4" />
-                      </svg>
-                    </div>
-                    <div class="flex-1">
-                      <h3 class="text-lg font-semibold text-gray-200">
-                        True Device Isolation
-                      </h3>
-                      <span class="text-sm tracking-wide text-gray-300"
-                        >Each device is on its own VLAN and subnetwork. Manage
-                        your network with intuitive policies and groups.</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="rounded-3xl p-px bg-gradient-to-b md:from-gray-600 md:to-gray-900 hover:to-gray-700"
-              >
-                <div
-                  class="md:h-[150px] bg-gray-800 p-8 rounded-[calc(1.5rem-1px)]"
-                >
-                  <div class="flex gap-4 items-center">
-                    <div class="w-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-full text-cyan-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path
-                          d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
-                        />
-                        <path
-                          d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
-                        />
-                      </svg>
-                    </div>
-                    <div class="flex-1">
-                      <h3 class="text-lg font-semibold text-gray-200">
-                        Secure Code
-                      </h3>
-                      <span class="text-sm tracking-wide text-gray-300"
-                        >Secure, open-source software built from the ground up
-                        using Golang and React.</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="rounded-3xl p-px bg-gradient-to-b md:from-gray-600 md:to-gray-900 hover:to-gray-700"
-              >
-                <div
-                  class="md:h-[150px] bg-gray-800 p-8 rounded-[calc(1.5rem-1px)]"
-                >
-                  <div class="flex gap-4 items-center">
-                    <div class="w-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-full text-cyan-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path
-                          d="M15.686 15A14.5 14.5 0 0 1 12 22a14.5 14.5 0 0 1 0-20 10 10 0 1 0 9.542 13"
-                        />
-                        <path d="M2 12h8.5" />
-                        <path d="M20 6V4a2 2 0 1 0-4 0v2" />
-                        <rect width="8" height="5" x="14" y="6" rx="1" />
-                      </svg>
-                    </div>
-                    <div class="flex-1">
-                      <h3 class="text-lg font-semibold text-gray-200">
-                        DNS Security
-                      </h3>
-                      <span class="text-sm tracking-wide text-gray-300"
-                        >DNS over HTTPS by default, DNS Rebinding Protection,
-                        DNS Logs, and support for Malware Blocklists.</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--section class="antialiased bg-slate-950 pb-16 px-52">
-        <div class="container mx-auto grid grid-cols-3 gap-8">
-          <div
-            class="col-span-2 md:border border-slate-800 rounded-3xl p-8 space-y-4"
-          >
-            <h3 class="text-2xl font-medium">Customizable Alerts</h3>
-            <div class="flex">
-              <p>
-                Configure alerts on Primitives to notify you when specific
-                events occur.
-              </p>
-            </div>
-            <div class="space-y-2">
-              <div class="flex space-x-2 items-center">
-                <div
-                  class="inline-block bg-slate-950 p-1 rounded-lg border border-slate-600"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 text-zinc-300"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M12 20h.01" />
-                    <path d="M2 8.82a15 15 0 0 1 20 0" />
-                    <path d="M5 12.859a10 10 0 0 1 14 0" />
-                    <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-sm">Any device connects to wifi</p>
-                </div>
-              </div>
-              <div class="flex space-x-2 items-center">
-                <div
-                  class="inline-block bg-slate-950 p-1 rounded-lg border border-slate-600"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 text-zinc-300"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-sm">
-                    Device in group
-                    <span class="border border-zinc-500 p-1 rounded-lg"
-                      >guest</span
-                    >
-                    connect to domain matching
-                    <span class="border border-zinc-500 p-1 rounded-lg"
-                      >supernetworks.org</span
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="relative text-zinc-100 p-4"
-              style="background: rgba(153, 246, 228, 0.3)"
-            >
-              <div class="flex items-center space-x-4">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-8 text-green-600"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="m9 12 2 2 4-4" />
-                  </svg>
-                </div>
-
-                <div class="flex-1">
-                  <h3 class="font-bold">Success</h3>
-                  <p>Authentication success for laptop</p>
-                </div>
-              </div>
-              <div class="absolute top-0 right-0 m-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 text-zinc-400 opacity-50"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="md:border border-slate-800 rounded-3xl p-8 space-y-4">
-            <h3 class="text-2xl font-medium">Usage Logs</h3>
-            <p>Get full visibility into how your Primitives are being used.</p>
-            <div class="w-1/2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-full text-zinc-200"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect width="20" height="8" x="2" y="14" rx="2" />
-                <path d="M6.01 18H6" />
-                <path d="M10.01 18H10" />
-                <path d="M15 10v4" />
-                <path d="M17.84 7.17a4 4 0 0 0-5.66 0" />
-                <path d="M20.66 4.34a8 8 0 0 0-11.31 0" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section-->
-
-      <section id="products" class="antialiased bg-slate-950">
-        <div
-          class="container pt-8 mx-auto bg-gradient-to-b from-gray-900 to-slate-950 md:rounded-3xl"
-        >
-          <div class="my-8 space-y-8">
-            <h2 class="text-4xl text-center font-bold">Product Store</h2>
-            <div>
-              <p class="px-4 md:px-0 text-center text-lg font-extralight">
-                Ready to try SPR? Order a Wifi Kit today. Visit
-                <a
-                  href="order.html"
-                  class="text-sky-400 hover:text-sky-300 transition duration-300"
-                  >the store</a
-                >
-                for more product options
-              </p>
-
-              <div class="py-12 text-center">
-                <!--a
-                  href="/order.html"
-                  class="bg-gradient-to-b from-blue-500 to-blue-700 text-neutral-100 text-md font-normal py-2 px-4 rounded-3xl hover:opacity-90 transition duration-300"
-                >
-                  More Products
-                </a-->
-
-                <a
-                  href="order.html"
-                  class="inline bg-white text-black text-sm uppercase font-bold py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                >
-                  More Products
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1">
-            <div
-              class="md:col-span-2 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300"
-            >
-              <div
-                class="flex flex-col md:flex-row items-center space-x-8"
-                onclick="location.href='/compute-board.html'"
-              >
-                <div class="flex-1 flex-row space-y-8 text-center p-8">
-                  <img
-                    src="/assets/img/cm5-router.png"
-                    alt="CM5 Router"
-                    class="rounded-lg md:w-full mx-auto"
-                    style="transform: rotate(3deg)"
-                  />
-                </div>
-                <div class="flex-1 p-4 space-y-8">
-                  <div class="space-y-2">
-                    <h3 class="text-2xl font-semibold">WiFi 6 PoE+ Router (CM5)</h3>
-
-                    <div class="flex space-x-2">
-                      <h4
-                        class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
-                      >
-                        home wifi
-                      </h4>
-                    </div>
-                  </div>
-
-                  <p>
-                    Fast, secure dual band wifi for all your devices. Operates
-                    2.4Ghz and 5Ghz/6Ghz bands simultaneously. Runs on a fast
-                    2.4GHz quad-core CPU. Supports wired clients with a USB
-                    Ethernet Adapter for Downlink to a switch.
-                  </p>
-
-                  <!--hr class="border-zinc-700" /-->
-                  <h5 class="text-lg font-semibold">US$399.99</h5>
-
-                  <button
-                    _class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                    class="bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                  >
-                    Order now
-                  </button>
-
-                  <!--div class="space-y-4">
-                    <h3 class="font-light uppercase">This kit includes</h3>
-                    <ul class="list-disc text-sm ms-4">
-                      <li>Pod Enclosure</li>
-                      <li>PI5 Active Cooler</li>
-                      <li>SPR PI5 WiFi HAT & FPC Cable</li>
-                      <li>Mini PCIe 3x3 DBDC mt7915e WiFi Card</li>
-                      <li>Laird Antennas</li>
-                      <li>64GB USB SSD</li>
-                      <li>
-                        4GB Raspberry PI5 with standard peripherals (2x USB3, 2x
-                        USB2, 1Gbps Ethernet)
-                      </li>
-                    </ul>
-                  </div-->
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1">
-              <div
-                class="md:col-span-2 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300"
-              >
-                <div
-                  class="flex flex-col md:flex-row items-center space-x-8"
-                  onclick="location.href='https://buy.stripe.com/aEU5kU9S83TU8jCaEJ'"
-                >
-                  <div class="flex-1 space-y-8 text-center p-8">
-                    <img
-                      src="/assets/img/clearfog.webp"
-                      alt="ClearFog Router Kit"
-                      class="w-full"
-                    />
-                  </div>
-
-                  <div class="flex-1 p-4 space-y-8">
-                    <div class="space-y-2">
-                      <h3 class="text-2xl font-semibold">
-                        ClearFog Router Kit
-                      </h3>
-
-                      <div class="flex space-x-2">
-                        <h4
-                          class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
-                        >
-                          pro user
-                        </h4>
-                        <h4
-                          class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
-                        >
-                          wired
-                        </h4>
-                      </div>
-                    </div>
-
-                    <p>
-                      Clearfog Pro SBC Router, WiFi Card, Built In Ethernet
-                      Switch, Ethernet Uplink, and 10gbps SFP+ Port, 3 External
-                      Antennas
-                    </p>
-
-                    <!--hr class="border-zinc-700" /-->
-                    <h5 class="text-lg font-semibold">US$699.99</h5>
-                    <button
-                      _class="bg-gradient-to-b from-sky-700 to-sky-800 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                      class="bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                    >
-                      Order now
-                    </button>
-                    <!--div class="space-y-4">
-                    <h3 class="font-light uppercase">This kit includes</h3>
-                    <ul class="list-disc text-sm ms-4">
-                      <li>Steel enclosure</li>
-                      <li>CN9130 Pro board, 4GB RAM 8GB eMMC</li>
-                      <li>
-                        3x3 DBDC WiFi 6 card with 2.4ghz and 5ghz/6ghz band
-                        support
-                      </li>
-                      <li>10gbps SFP+ port</li>
-
-                      <li>5x 1Gbps switch</li>
-                      <li>1 Gbps Ethernet port</li>
-                      <li>3 External Antennas</li>
-                    </ul>
-                  </div-->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--div
-              class="md:col-span-2 md:p-8 cursor-pointer space-y-8 hover:bg-gray-900 transition duration-300 rounded-b-3xl"
-            >
-              <div
-                class="flex flex-col md:flex-row items-center space-x-8"
-                onclick="location.href='order.html'"
-              >
-                <div class="flex-1 space-y-8 text-center p-8">
-                  <img
-                    src="/assets/img/spr-fold-sm.jpg"
-                    alt="PI4 Router Kit"
-                    class="rounded-lg shadow-md md:w-3/4 mx-auto"
-                  />
-                </div>
-                <div class="flex-1 p-4 space-y-8">
-                  <div class="space-y-2">
-                    <h3 class="text-2xl font-semibold">SPR Sprout</h3>
-
-                    <div class="flex space-x-2">
-                      <h4
-                        class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
-                      >
-                        travel
-                      </h4>
-                      <h4
-                        class="text-xs font-light bg-slate-800 text-neutral-200 p-1 px-2 inline rounded-lg"
-                      >
-                        development
-                      </h4>
-                    </div>
-                  </div>
-
-                  <p>
-                    SPR Starter Kit for development with SPR. USB Adapter
-                    supports one WiFi 6 band. Makes a great travel router with
-                    the built-in wifi uplink feature.
-                  </p>
-
-                  <button
-                    class="bg-gradient-to-b from-green-500 to-green-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-                  >
-                    Order now
-                  </button>
-                </div>
-              </div>
-            </div-->
-
-            <!--div class="grid md:grid-cols-2" onclick="location.href='order.html'">
-            <div
-              class="col-span-1 p-6 md:p-8 cursor-pointer text-center space-y-6 hover:bg-gray-900 transition duration-300"
-            >
-              <div class="flex justify-center">
-                <img
-                  src="/assets/img/spr-fold-sm.jpg"
-                  alt="PI4 Router Kit"
-                  class="h-40 rounded-md"
-                />
-              </div>
-
-              <div class="flex items-center justify-center space-x-2">
-                <h3 class="text-2xl font-semibold">WiFi Sprout</h3>
-                <h5 class="text-2xl opacity-40 font-normal">US$279.99</h5>
-              </div>
-
-              <p>
-                SPR Starter Kit for development with SPR. USB Adapter supports
-                one WiFi 6 band. Makes a great travel router with the built-in
-                wifi uplink feature.
-              </p>
-
-              <hr class="border-zinc-700" />
-              <div class="space-y-2">
-                <h3 class="font-light uppercase">This kit includes</h3>
-                <p class="text-sm">
-                  8GB Raspberry Pi 4, Netgear A8000 WiFi 6-e Single Band USB
-                  Adapter, <br />64GB USB SSD, Power Adapter, Custom
-                  Enclosure<br /><br />
-                </p>
-              </div>
-
-              <button
-                class="bg-gradient-to-b from-sky-700 to-sky-800 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-              >
-                Order now
-              </button>
-            </div>
-
-            <div
-              class="col-span-1 p-6 md:p-8 cursor-pointer text-center space-y-6 hover:bg-gray-900 transition duration-300"
-            >
-              <div class="flex justify-center">
-                <img
-                  src="/assets/img/cm4board.png"
-                  alt="CM4 Capsule"
-                  class="h-40 rounded-md"
-                />
-              </div>
-
-              <div class="flex items-center justify-center space-x-2">
-                <h3 class="text-2xl font-semibold">WiFi Capsule</h3>
-                <h5 class="text-2xl opacity-40 font-normal">US$349.99</h5>
-              </div>
-
-              <p>
-                Fast, secure dual-band dual-channel wifi for all your devices.
-                Operates 2.4Ghz and 5Ghz/6Ghz bands simultaneously. Does not
-                support wired clients.
-              </p>
-
-
-
-              <button
-                class="bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-              >
-                Preorder now
-              </button>
-            </div-->
-          </div>
-          <!-- New "More Products" section -->
-          <!--div class="py-12 text-center">
-            <a
-              href="/order.html"
-              class="bg-gradient-to-b from-blue-500 to-blue-700 text-neutral-100 text-lg font-normal py-4 px-8 rounded-3xl hover:opacity-90 transition duration-300"
-            >
-              More Products
-            </a>
-          </div-->
-        </div>
-      </section>
-
-      <!--section id="plus" class="antialiased bg-slate-950">
-        <div class="container mx-auto">
-          <div
-            class="md:rounded-3xl p-8 md:p-16 shadow shadow-slate-950/20 cursor-pointer"
-            onclick="location.href='https://www.supernetworks.org/plus.html'"
-          >
-            <div class="text-center space-y-8 text-neutral-200">
-              <h2 class="text-4xl font-semibold drop-shadow-lg">
-                Support SPR with PLUS
-              </h2>
-              <p class="text-lg drop-shadow-md font-light">
-                SPR is free for personal use, PLUS offers extended features &
-                lets you back the development of SPR. Use it to unlock advanced
-                firewall and networking features with our
-                <a
-                  href="https://www.supernetworks.org/plus.html"
-                  class="text-sky-400 hover:text-sky-300 transition duration-300"
-                  >PLUS</a
-                >
-                subscription:
-              </p>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left font-light"
-              >
-                <div class="space-y-2">
-                  <div class="flex space-x-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      class="mt-1 h-5 w-5 text-slate-100"
-                      viewbox="0 0 80 80"
-                    >
-                      <g fill="currentColor">
-                        <path
-                          d="M80 40.08c0-8.978-3.04-17.635-8.64-24.689h0l-.32-.321c-.16-.16-.16-.321-.32-.481l-2.56-2.726h0C60.64 4.168 50.72 0 40 0h-.16 0-.16C29.12.16 19.36 4.168 11.84 11.703h0l-2.72 2.886c-.16.16-.16.321-.32.481l-.32.16h0C3.04 22.285 0 31.102 0 40.08s3.04 17.635 8.64 24.689h0l.32.321c.16.16.16.321.32.481l2.56 2.725h0C19.36 75.832 29.12 80 39.68 80h.16 0H40c10.56 0 20.64-4.168 28.16-11.703h0l2.56-2.886c.16-.16.16-.321.32-.481l.32-.321h0C76.96 57.876 80 49.058 80 40.08zM63.84 13.948c-.16 0-.32.16-.48.16-.32.16-.64.321-.8.321-.64.321-1.44.481-2.24.802-.16 0-.32.16-.48.16-.96.321-1.76.481-2.72.802h0c-.16 0-.48.16-.64.16-1.44-3.848-3.2-7.214-5.28-9.78 4.64 1.443 8.96 4.008 12.64 7.375zM39.68 4.649h0c4.48 0 8.96 4.649 12.16 12.665-3.68.641-7.68.962-11.84.962s-8.32-.32-12.16-.962C30.88 9.459 35.36 4.81 39.68 4.649zM28.32 6.734c-1.92 2.565-3.68 5.772-5.12 9.619h-.32 0c-.96-.321-1.92-.481-2.72-.802-.16 0-.32-.16-.48-.16-.64-.321-1.44-.641-2.08-.962-.32-.16-.48-.16-.8-.321-.16-.16-.32-.16-.64-.321 3.68-3.046 7.68-5.611 12.16-7.054zM16.16 66.212c.16 0 .32-.16.48-.16.32-.16.48-.16.8-.321.64-.321 1.44-.481 2.24-.802.16 0 .32-.16.48-.16.96-.32 1.76-.481 2.72-.802h0 .32c1.44 3.688 3.2 7.054 5.12 9.619-4.48-1.603-8.64-4.168-12.16-7.375zm23.68 9.299h0c-4.48-.16-8.96-4.649-12-12.505 3.84-.641 8-.962 12.16-.962s8 .321 11.84.962c-3.04 7.856-7.68 12.505-12 12.505zm11.36-1.924c2.08-2.565 3.84-5.932 5.28-9.78.16 0 .48.16.64.16h0c.96.321 1.92.481 2.72.802.16 0 .32.16.48.16.8.321 1.44.481 2.24.802.32.16.48.16.8.321.16 0 .32.16.64.32-3.84 3.207-8.16 5.772-12.8 7.215zm16.16-11.062h0c-.48 0-.8-.16-1.28-.321s-1.12-.481-1.6-.641c-.16 0-.32-.16-.48-.16-1.92-.802-4-1.282-6.08-1.924.48-1.924.96-3.848 1.28-5.772h-4.8c-.32 1.764-.64 3.367-1.12 4.81-4.16-.802-8.64-1.122-13.28-1.122-4.8 0-9.28.481-13.6 1.283-.48-1.603-.8-3.206-1.12-4.97h-4.8c.32 2.084.8 4.008 1.28 5.932-1.92.481-3.84 1.122-5.6 1.763-.16.16-.48.16-.64.321-.48.16-1.12.481-1.6.641-.32 0-.8.16-1.12.321h0C8 56.914 5.28 49.7 4.8 42.325h4v-4.649h-4c.48-7.375 3.2-14.429 7.84-20.04l.16-.16c.32.16.8.321 1.12.481.64.32 1.12.481 1.76.802.16 0 .32.16.48.16 1.76.641 3.68 1.283 5.76 1.764-.48 1.764-.8 3.527-1.12 5.291h4.8l.96-4.329c4.32.802 8.96 1.282 13.6 1.282s9.12-.481 13.28-1.122c.32 1.283.64 2.725.96 4.329h4.8c-.32-1.763-.64-3.527-1.12-5.291 2.08-.481 4-1.122 5.92-1.924.16 0 .48-.16.64-.16.64-.16 1.12-.481 1.76-.641.32-.16.8-.321 1.12-.481h0c4.64 5.772 7.52 12.826 8 20.2h-4.8v4.649h4.8c-.8 7.214-3.52 14.429-8.16 20.04zM29.92 39.759c0 1.924-.32 3.527-.8 4.81s-1.28 2.405-2.08 3.367c-.96.802-2.08 1.443-3.36 1.924-1.28.321-2.88.641-4.8.641h-4.96c-.32 0-.64-.16-.96-.321s-.16-.641-.16-1.122V30.941c0-.481.16-.802.32-.962s.48-.321.96-.321h5.28c1.92 0 3.36.16 4.64.641s2.4 1.122 3.2 1.924 1.6 1.924 2.08 3.206c.32 1.282.64 2.725.64 4.329zm-4.32.16c0-.962-.16-1.924-.32-2.725s-.64-1.603-1.12-2.245-1.12-1.122-1.92-1.443-1.76-.481-3.2-.481h-2.08v14.108h2.24c1.12 0 2.08-.16 2.88-.481s1.44-.802 1.92-1.283c.48-.641.96-1.282 1.12-2.244.32-.962.48-2.084.48-3.206zm24.8 8.978c0 .321 0 .481-.16.641s-.16.321-.32.481-.32.16-.48.32c-.16 0-.32.16-.64.16h-1.76c-.32 0-.64 0-.96-.16-.32 0-.48-.16-.8-.481-.16-.16-.48-.481-.64-.802s-.48-.802-.64-1.283l-5.12-9.619c-.32-.641-.64-1.122-.96-1.924-.32-.641-.64-1.283-.8-1.924h0c0 .802 0 1.603.16 2.244v2.405 10.902c0 .16 0 .16-.16.321 0 .16-.16.16-.32.16s-.32.16-.64.16h-.96-.96c-.32 0-.48 0-.64-.16-.16 0-.16-.16-.32-.16v-.321V31.26c0-.481.16-.802.48-1.122s.64-.321 1.12-.321h2.24c.48 0 .8 0 .96.16.32 0 .48.16.8.321.16.16.48.321.64.641a9.18 9.18 0 0 0 .64 1.122l4 7.535c.16.481.48.962.64 1.282.16.481.48.962.64 1.283.16.481.48.802.64 1.283s.32.802.64 1.283h0v-2.405-2.245V30.3c0-.16 0-.16.16-.321 0-.16.16-.16.32-.16s.32-.16.64-.16h.96.96c.32 0 .48 0 .64.16.16 0 .16.16.32.16v.321 18.597h-.32z"
-                        />
-                        <path
-                          d="M67.2 44.248c0 1.122-.16 2.084-.64 2.886s-.96 1.443-1.6 2.084c-.64.481-1.44.962-2.4 1.282s-1.92.481-3.04.481c-.64 0-1.44 0-1.92-.16L56 50.34c-.48-.16-.8-.32-1.12-.481s-.48-.321-.64-.481-.16-.321-.32-.641c0-.32-.16-.641-.16-1.122v-.802c0-.16 0-.481.16-.481 0-.16.16-.16.16-.321 0 0 .16-.16.32-.16s.32.16.64.321.64.321 1.12.641c.48.16.96.481 1.6.641s1.28.321 2.08.321c.48 0 .96 0 1.44-.16s.8-.321.96-.481c.32-.16.48-.481.64-.802s.16-.641.16-1.122-.16-.802-.32-1.283l-.96-.962c-.48-.321-.8-.481-1.44-.802-.48-.16-1.12-.481-1.6-.802s-1.12-.481-1.6-.802-.96-.641-1.44-1.122-.8-.962-.96-1.603c-.32-.641-.32-1.283-.32-2.245s.16-1.924.48-2.565c.32-.802.8-1.443 1.44-1.924s1.28-.802 2.24-1.122c.8-.321 1.76-.321 2.72-.321.48 0 .96 0 1.44.16.48 0 .96.16 1.44.321s.8.321 1.12.481.48.32.64.32c.16.16.16.16.16.321 0 0 0 .16.16.321v.481.641.802.481c0 .16-.16.16-.16.321 0 0-.16.16-.32.16s-.32 0-.48-.16l-.96-.481c-.32-.16-.8-.321-1.28-.481s-.96-.16-1.6-.16c-.48 0-.8 0-1.12.16s-.64.321-.8.481-.32.481-.48.641c-.16.321-.16.641-.16.802 0 .481.16.802.32 1.122l.96.962c.48.321.96.481 1.44.802.48.16 1.12.481 1.6.802s1.12.481 1.6.802.96.641 1.44 1.122.8.962.96 1.603c-.16.16 0 .802 0 1.764z"
-                        />
-                      </g>
-                    </svg>
-                    <h3 class="text-lg font-bold">
-                      Domain-Name Based Firewall Rules
-                    </h3>
-                  </div>
-                  <p class="text-md">
-                    Create sophisticated firewall rules based on domain names
-                    for granular control.
-                  </p>
-                </div>
-
-                <div class="space-y-2">
-                  <div class="flex space-x-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="mt-1 h-5 w-5 text-slate-100"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <h3 class="text-lg font-bold">
-                      Scheduled Firewall Policies
-                    </h3>
-                  </div>
-                  <p class="text-md">
-                    Automatically apply firewall rules and policies on a
-                    schedule for effortless management.
-                  </p>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex space-x-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="mt-1 h-5 w-5 text-slate-100"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                    <h3 class="text-lg font-bold">Mesh Support</h3>
-                  </div>
-                  <p class="text-md">
-                    Extend your network coverage with seamless support for SPR
-                    Mesh devices.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section-->
-
-      <a id="how-to-use"></a>
-      <!-- howto use cases -->
-      <section class="zz-bg-[#020619]">
-        <div
-          class="rounded-3xl-skip zz-bg-gradient-to-b from-transparent via-gray-900 to-gray-900 shadow shadow-slate-900/50"
-        >
-          <div
-            class="h-[300px] bg-auto bg-no-repeat bg-[url(/assets/img/bg-grids.png)] opacity-40"
-          ></div>
-
-          <div class="z-50 -mt-[285px] antialiased pt-12">
-            <div class="text-center">
-              <h2 class="text-4xl font-semibold mb-8 md:mb-12 drop-shadow-lg">
-                Use Cases
-              </h2>
-            </div>
-
-            <div class="md:grid md:grid-cols-2 gap-8 container mx-auto">
-              <div
-                class="p-8 rounded-lg border border-neutral-900 bg-[rgba(15,15,25,0.65)]"
-              >
-                <h3 class="text-2xl font-semibold mb-4">Home Router</h3>
-                <ul class="text-md text-gray-300 space-y-4">
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Run WiFi with peace of mind, knowing devices are securely
-                      firewalled</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>DNS Based Ad & Malware Blocklists</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Access your network remotely over the Wireguard VPN</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Isolate your work equipment from your personal
-                      devices</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Mesh support for
-                      <a
-                        href="https://www.supernetworks.org/plus.html"
-                        class="text-sky-400 hover:underline hover:text-sky-300 transition duration-300"
-                        >PLUS</a
-                      >
-                      users</span
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <div
-                class="p-8 rounded-lg border border-neutral-900 bg-[rgba(15,15,25,0.65)]"
-              >
-                <h3 class="text-2xl font-semibold mb-4">Home Lab</h3>
-                <ul class="text-md text-gray-300 space-y-4">
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>Deploy Docker projects alongside your router</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Built-in container firewall support so that new
-                      containers don't have default access to all of your
-                      devices</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Connect your router to cloud VPNs and other
-                      infrastructure</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>Upgradable, extendable hardware</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div
-                class="p-8 rounded-lg border border-neutral-900 bg-[rgba(15,15,25,0.85)]"
-              >
-                <h3 class="text-2xl font-semibold mb-4">
-                  Run as a Self Hosted Cloud VPN
-                </h3>
-                <ul class="text-md text-gray-300 space-y-4">
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >VPN for your mobile devices while you're on the go</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>DNS Based Ad & Malware Blocklists</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Split-tunnel site VPN support for
-                      <a
-                        href="https://www.supernetworks.org/plus.html"
-                        class="text-sky-400 hover:underline hover:text-sky-300 transition duration-300"
-                        >PLUS</a
-                      >
-                      users</span
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <div
-                class="p-8 rounded-lg border border-neutral-900 bg-[rgba(15,15,25,0.85)]"
-              >
-                <h3 class="text-2xl font-semibold mb-4">
-                  Software Security Testing
-                </h3>
-                <ul class="text-md text-gray-300 space-y-4">
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span
-                      >Redirect device traffic when devices join the SPR
-                      network</span
-                    >
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>View DNS Logs and override domain traffic</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>DNAT to transparently redirect IP traffic</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mt-1 me-3 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>
-                      Plugins with support for Wireshark, Proxies like
-                      MITMProxy, and other security testing tools
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <a id="vpn"></a>
-      <section class="antialiased md:mt-8">
-        <div class="container mx-auto">
-          <div
-            class="relative bg-slate-950 md:border border-slate-800 md:rounded-3xl md:overflow-hidden md:h-[400px] p-16"
-          >
-            <div class="md:w-2/3 space-y-8">
-              <h4 class="text-3xl font-semibold">
-                Secure VPN in the cloud with SPR
-              </h4>
-              <p>
-                Run a self-hosted VPN, DNS & other services to filter & redirect
-                traffic,<br />
-                block ads, and more.
-              </p>
-
-              <p>
-                Read the setup guide to get started using your cloud provider,
-                or if you host it yourself
-              </p>
-
-              <div class="pt-8 space-y-4 md:space-x-4">
-                <a
-                  href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr"
-                  class="block md:inline bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300 link-conversion"
-                  data-id="rGagCOuy_YYaEMDUlMI-"
-                >
-                  Get Started with Virtual SPR
-                </a>
-                <a
-                  href="https://aws.amazon.com/marketplace/pp/prodview-btrmy3vaqxmqk"
-                  class="block md:inline border-2 border-yellow-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300 link-conversion"
-                  data-id="296vCOmz_YYaEMDUlMI-"
-                >
-                  AWS Marketplace
-                </a>
-                <a
-                  href="https://marketplace.digitalocean.com/apps/spr"
-                  class="block md:inline border-2 border-sky-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300 link-conversion"
-                  data-id="sc9KCO6y_YYaEMDUlMI-"
-                >
-                  DigitalOcean Marketplace
-                </a>
-              </div>
-            </div>
-
-            <div id="planets-cloud">
-              <div
-                class="absolute top-24 -right-32 w-[640px] h-[640px] border border-slate-600 rounded-full bg-[rgba(255,255,255,0.024)]"
-              >
-                <!-- aws -->
-                <div
-                  class="z-100 absolute top-0 left-32 ml-4 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
-                  style="
-                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
-                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
-                  "
-                >
-                  <svg
-                    class="w-8 h-8 mx-auto"
-                    style="fill: #fff"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>Amazon AWS</title>
-                    <path
-                      d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="absolute top-24 -right-32 w-[480px] h-[480px] border border-slate-600 rounded-full m-[80px] bg-[rgba(255,255,255,0.027)]"
-              >
-                <!-- azure -->
-                <div
-                  class="z-100 absolute top-0 left-52 -mt-8 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
-                  style="
-                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
-                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
-                  "
-                >
-                  <svg
-                    class="w-8 h-8 mx-auto"
-                    style="fill: #fff"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>Microsoft Azure</title>
-                    <path
-                      d="M22.379 23.343a1.62 1.62 0 0 0 1.536-2.14v.002L17.35 1.76A1.62 1.62 0 0 0 15.816.657H8.184A1.62 1.62 0 0 0 6.65 1.76L.086 21.204a1.62 1.62 0 0 0 1.536 2.139h4.741a1.62 1.62 0 0 0 1.535-1.103l.977-2.892 4.947 3.675c.28.208.618.32.966.32m-3.084-12.531 3.624 10.739a.54.54 0 0 1-.51.713v-.001h-.03a.54.54 0 0 1-.322-.106l-9.287-6.9h4.853m6.313 7.006c.116-.326.13-.694.007-1.058L9.79 1.76a1.722 1.722 0 0 0-.007-.02h6.034a.54.54 0 0 1 .512.366l6.562 19.445a.54.54 0 0 1-.338.684"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="absolute top-24 -right-32 w-[320px] h-[320px] border border-slate-600 rounded-full m-[160px] bg-[rgba(255,255,255,0.03)]"
-              >
-                <!-- docean -->
-                <div
-                  class="z-100 absolute top-8 right-0 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 shadow-inset w-16 h-16 content-center rounded-full"
-                  style="
-                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                      0 0 0 1px hsla(0, 0%, 100%, 0.1),
-                      inset 0 0.5px 0 hsla(0, 0%, 100%, 0.5);
-                  "
-                >
-                  <svg
-                    class="w-8 h-8 mx-auto"
-                    style="fill: #fff"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>DigitalOcean</title>
-                    <path
-                      d="M12.04 0C5.408-.02.005 5.37.005 11.992h4.638c0-4.923 4.882-8.731 10.064-6.855a6.95 6.95 0 014.147 4.148c1.889 5.177-1.924 10.055-6.84 10.064v-4.61H7.391v4.623h4.61V24c7.86 0 13.967-7.588 11.397-15.83-1.115-3.59-3.985-6.446-7.575-7.575A12.8 12.8 0 0012.039 0zM7.39 19.362H3.828v3.564H7.39zm-3.563 0v-2.978H.85v2.978z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="container mx-auto">
-        <!-- #code api example -->
-
-        <div
-          class="p-8 md:px-0 md:py-16 flex flex-col space-y-16 text-neutral-50 antialiased"
-        >
-          <div class="md:w-7/8 md:mx-auto flex flex-col md:flex-row gap-x-8">
-            <div class="md:w-5/12 flex flex-col gap-y-8 justify-center">
-              <h4 class="text-3xl md:text-4xl font-semibold mb-4">
-                Customizable and programmable
-              </h4>
-              <p>
-                Go beyond the GUI. All functions and features of SPR are
-                accessible via an
-                <a
-                  href="https://www.supernetworks.org/pages/api/0#"
-                  class="underline"
-                  >API</a
-                >, allowing power users to not only programmatically define how
-                the network connects, but pull detailed information about
-                devices on the network.
-              </p>
-              <p>
-                Tools for hackers, penetration testers, and other explorers. SPR
-                makes controlling and monitoring data flows on the network
-                easier — making research into the functionality of devices and
-                software on your network less cumbersome.
-              </p>
-              <div class="flex flex-row space-x-4 text-sm">
-                <a
-                  href="https://github.com/spr-networks/curated-super-plugins"
-                  target="_blank"
-                  class="underline"
-                  >Available Plugins</a
-                >
-                <a
-                  href="https://www.supernetworks.org/pages/docs/guides/development/extension-dev"
-                  target="_blank"
-                  class="underline"
-                  >Plugin development guide</a
-                >
-                <a
-                  href="https://www.supernetworks.org/pages/docs/services/sprbus"
-                  target="_blank"
-                  class="underline"
-                  >SPRbus</a
-                >
-              </div>
-            </div>
-            <div class="md:w-7/12 mt-4 md:mt-0 flex items-center">
-              <div
-                class="border-neutral-900 border bg-gray-950 dark:bg-black py-3 px-3 md:p-4 rounded-t-3xl rounded-b-3xl cursor-pointer drop-shadow-md"
-              >
-                <div
-                  class="overflow-hidden md:py-0 rounded-t-2xl rounded-b-2xl"
-                >
-                  <img
-                    alt="SPR Bus Command Line Client Demo"
-                    src="/assets/img/sprbus-cli.gif"
-                  />
-                </div>
-              </div>
-              <!--img src="/assets/img/api-preview.png" width="100%" alt="" /-->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <a name="get-started"></a>
-
-      <section class="bg-slate-950 text-neutral-300 antialiased py-8">
-        <div class="container mx-auto p-8 md:px-0">
-          <div class="flex flex-col md:flex-row justify-between">
-            <div class="md:w-5/12 flex flex-col gap-y-8">
-              <h4 class="text-3xl font-semibold text-neutral-200">
-                Get started with SPR
-              </h4>
-
-              <div class="space-y-8">
-                <p>
-                  <a href="#products" class="underline">We offer hardware</a>
-                  for running SPR and it can run on a wide variety of Linux
-                  systems that support Docker. Raspberry PI4/5 and Compute
-                  Modules are widely tested.
-                </p>
-
-                <p>
-                  Check out
-                  <a
-                    class="underline"
-                    href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr"
-                    >the setup guide</a
-                  >. SPR is open source and can run in Docker containers as a
-                  cloud-only VPN or as a WiFi router.
-                </p>
-
-                <p>
-                  Prebuilt containers are available for ARM64 and AMD64, OS
-                  Images are available for
-                  <a
-                    class="underline"
-                    href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
-                    >Raspberry Pi</a
-                  >
-                  and
-                  <a
-                    class="underline"
-                    href="https://github.com/spr-networks/super/releases"
-                    >ClearFog</a
-                  >.
-                </p>
-
-                <div class="md:flex space-y-2 md:space-x-2 md:space-y-0">
-                  <a
-                    class="bg-slate-700 text-neutral-50 text-sm font-normal py-2.5 px-4 rounded hover:opacity-90 transition duration-300 flex items-center space-x-2 whitespace-nowrap"
-                    href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr"
-                  >
-                    Setup Guide
-                  </a>
-
-                  <a
-                    class="bg-slate-700 text-neutral-50 text-sm font-normal py-2.5 px-4 rounded hover:opacity-90 transition duration-300 flex items-center space-x-2"
-                    href="https://github.com/spr-networks/super/"
-                  >
-                    <div
-                      class="h-[20px] w-5 bg-no-repeat bg-contain bg-left"
-                      style="
-                        background-image: url('/assets/img/github.svg');
-                        filter: invert(100%) brightness(200%);
-                        background-size: auto;
-                      "
-                    ></div>
-                    <div class="whitespace-nowrap">Containers &amp; Code</div>
-                  </a>
-                  <a
-                    class="bg-slate-700 text-neutral-50 text-sm font-normal py-2.5 px-4 rounded hover:opacity-90 transition duration-300 flex items-center space-x-2"
-                    href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-download"
-                    >
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" x2="12" y1="15" y2="3" />
-                    </svg>
-
-                    <div class="whitespace-nowrap">Image for Raspberry PI</div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="md:w-6/12 space-y-8 pt-16">
-              <div class="tab-pane">
-                <ul
-                  class="tab-nav flex md:flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-800"
-                >
-                  <li class="me-2">
-                    <a
-                      href="#"
-                      aria-current="page"
-                      data-target="#get-started-host"
-                      class="inline-block p-4 text-slate-200 bg-gray-800 rounded-t-lg active"
-                      >Host Router in Docker</a
-                    >
-                  </li>
-                  <li class="me-2">
-                    <a
-                      href="#"
-                      data-target="#get-started-vpn"
-                      class="inline-block p-4 text-slate-200 rounded-t-lg"
-                      >VPN Only</a
-                    >
-                  </li>
-                </ul>
-
-                <div class="tab-content py-4">
-                  <div class="space-y-4" id="get-started-host">
-                    <div class="flex space-x-4 items-center justify-between">
-                      <h4 class="text-lg font-semibold">
-                        Run as a Host Router &amp; Firewall with Docker
-                      </h4>
-
-                      <a
-                        class="copy text-xs text-neutral-400"
-                        data-target="#setup-git-pull"
-                        href="#"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-copy"
-                        >
-                          <rect
-                            width="14"
-                            height="14"
-                            x="8"
-                            y="8"
-                            rx="2"
-                            ry="2"
-                          />
-                          <path
-                            d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-
-                    <pre
-                      id="setup-git-pull"
-                      class="bg-gray-800 text-white p-4 rounded-md font-mono text-sm w-full overflow-x-scroll"
-                    >
-git clone https://github.com/spr-networks/super
-cd super
-bash base/setup.sh
-docker compose up --pull always -d</pre
-                    >
-                    <p class="text-sm text-neutral-300">
-                      This will manage the system network, firewall, and
-                      interfaces. Note: this replaces network manager, see the
-                      <a
-                        class="underline"
-                        href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr"
-                        >setup guide</a
-                      >
-                      for details
-                    </p>
-                  </div>
-
-                  <div class="space-y-4 hidden" id="get-started-vpn">
-                    <div class="flex space-x-4 items-center justify-between">
-                      <h4 class="text-lg font-semibold">
-                        VPN Only Quick Setup
-                      </h4>
-
-                      <a
-                        class="copy text-xs text-neutral-400"
-                        data-target="#setup-vpn-cmd"
-                        href="#"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-copy"
-                        >
-                          <rect
-                            width="14"
-                            height="14"
-                            x="8"
-                            y="8"
-                            rx="2"
-                            ry="2"
-                          />
-                          <path
-                            d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-
-                    <pre
-                      id="setup-vpn-cmd"
-                      class="bg-gray-800 text-white p-4 rounded-md font-mono text-sm w-full overflow-x-scroll"
-                    >
-sudo bash -c "$(curl -fsSL https://raw.github.com/spr-networks/super/master/virtual_install.sh)"</pre
-                    >
-
-                    <p class="text-sm text-neutral-300">
-                      The script installs and &amp; starts SPR VPN in a virtual
-                      network. See the
-                      <a
-                        class="underline"
-                        href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr"
-                        >virtual setup guide</a
-                      >
-                      for more info
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--a
-      class="bg-stone-950/80 text-slate-300 block border-t border-slate-800 px-2 py-3 text-sm text-center antialiased hover:underline"
-      target="_blank"
-      href="https://github.com/spr-networks/super/"
-    >
-      If you like SPR, give it a <span class="text-yellow-300">★</span> on
-      GitHub! &rarr;
-    </a-->
-
-      <section
-        class="antialiased text-center items-center py-24 border-t border-slate-800"
-      >
-        <div class="space-y-8 mb-16">
-          <h2 class="text-5xl text-neutral-100 font-light drop-shadow-lg">
-            Upgrade Your Network Today
-          </h2>
-        </div>
-        <!--div class="mb-8 md:mb-12 flex justify-center">
+        <!-- Dashboard screenshot -->
+        <div class="mt-14 rounded-xl overflow-hidden border border-gray-200 shadow-xl">
           <img
-            src="/assets/img/logo-transparent.png"
-            alt="Supernetworks Logo"
-            class="h-64"
+            src="/assets/img/screenshot-light-1.png"
+            alt="SPR Dashboard — device management, firewall rules, and traffic monitoring"
+            class="w-full"
+            loading="lazy"
           />
-        </div-->
-
-        <div
-          class="flex flex-col md:flex-row space-y-8 md:space-x-4 md:space-y-0 justify-center items-center"
-        >
-          <a
-            href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b"
-            class="inline bg-gradient-to-b from-violet-500 to-violet-700 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300"
-            >Get Started</a
-          >
-
-          <a
-            href="https://sendfox.com/supernetworks"
-            data-id="WOilCIi5qoQaEMDUlMI-"
-            class="inline-block space-x-2 box-border border-2 border-violet-600 text-neutral-100 text-sm font-normal py-3 px-6 rounded-3xl hover:opacity-90 transition duration-300 link-conversion"
-          >
-            <div class="flex space-x-2 items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-rss"
-              >
-                <path d="M4 11a9 9 0 0 1 9 9" />
-                <path d="M4 4a16 16 0 0 1 16 16" />
-                <circle cx="5" cy="19" r="1" />
-              </svg>
-
-              <span>Stay in the loop</span>
-            </div>
-          </a>
-
-          <a
-            class="block md:inline link-conversion"
-            data-id="5Zo9COnJqoQaEMDUlMI-"
-            href="https://apps.apple.com/us/app/secure-programmable-router/id6443709201"
-          >
-            <img
-              class="inline w-32 hover:opacity-90"
-              src="/assets/img/appdownload.png"
-              alt="app download"
-            />
-          </a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer
-      _class="bg-gradient-to-b from-gray-900 via-slate-900 to-gray-950 py-16 antialiased text-sm"
-      class="bg-gray-950 py-8 antialiased text-sm border-t border-slate-800"
-    >
-      <div class="container mx-auto">
-        <div
-          class="flex flex-col space-y-4 md:flex-row md:space-y-0 justify-between items-center"
-        >
-          <p class="text-zinc-300">
-            &copy; 2025 Supernetworks, Inc. All rights reserved.
-          </p>
-
-          <ul class="flex flex-row space-x-4 font-light pt-0">
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/blog"
-                class="hover:text-sky-400 hover:underline transition duration-300"
-                >Blog</a
-              >
+    <!-- ==================== WHAT'S IN THE BOX ==================== -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="max-w-lg">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What's in the box</h2>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              SPR WiFi 7 PoE+ Router (CM5-based)
             </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/docs/contact"
-                class="hover:text-sky-400 hover:underline transition duration-300"
-                >Support</a
-              >
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              SPR pre-installed and configured
             </li>
-            <li>
-              <a
-                href="https://www.supernetworks.org/pages/docs/contact"
-                class="hover:text-sky-400 hover:underline transition duration-300"
-                >Contact</a
-              >
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              SPR PLUS license included
             </li>
-            <li class="hidden md:block">
-              <a
-                href="https://www.supernetworks.org/privacy-policy.html"
-                class="hover:text-sky-400 hover:underline"
-                >Privacy Policy</a
-              >
-            </li>
-            <li class="hidden md:block">
-              <a
-                href="https://www.supernetworks.org/terms-of-service.html"
-                class="hover:text-sky-400 hover:underline"
-                >Terms of Service</a
-              >
-            </li>
-            <li class="hidden md:block">
-              <a
-                href="https://www.supernetworks.org/pages/docs/faq"
-                class="hover:text-sky-400 hover:underline"
-                >FAQ</a
-              >
-            </li>
-
-            <li class="md:ps-8">
-              <a
-                class="hover:underline flex justify-start"
-                href="https://github.com/spr-networks/super/"
-              >
-                <div
-                  class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                  style="
-                    background-image: url('/assets/img/github.svg');
-                    filter: invert(100%) brightness(200%);
-                  "
-                ></div>
-              </a>
-            </li>
-            <li>
-              <a
-                class="hover:underline flex justify-start"
-                href="https://twitter.com/spr_networks"
-              >
-                <div
-                  class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                  style="
-                    background-image: url('/assets/img/twitter.svg');
-                    filter: invert(100%) brightness(200%);
-                  "
-                ></div>
-                <div class="inline-flex align-self-center hidden">
-                  spr_networks
-                </div>
-              </a>
-            </li>
-            <li>
-              <a
-                class="hover:underline flex justify-start"
-                href="https://discord.gg/EUjTKJPPAX"
-              >
-                <div
-                  class="inline-flex w-5 h-5 bg-no-repeat bg-contain bg-left pl-6"
-                  style="
-                    background-image: url('/assets/img/discord.svg');
-                    filter: invert(100%) brightness(200%);
-                  "
-                ></div>
-                <div class="inline-flex align-self-center hidden">Discord</div>
-              </a>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              PoE+ powered &mdash; single ethernet cable to your PoE switch or injector
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg text-sm text-slate-600">
+            <strong>What you'll need:</strong> An internet connection, an ethernet cable to your modem or upstream network, and a PoE+ switch or PoE injector if your switch doesn't support PoE.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. OBJECTION HANDLING ==================== -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What you're probably wondering</h2>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-8">
+          <!-- Q1 -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-slate-900 text-lg">"Is this just another OpenWRT fork?"</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              No. SPR is built from scratch on Docker containers with nftables, CoreDNS, CoreDHCP, and hostapd. Every device gets its own VLAN and /30 subnet with a unique passphrase.
+            </p>
+          </div>
+
+          <!-- Q2 -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-slate-900 text-lg">"Will it work with my devices?"</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              Yes. SPR supports WPA2 and WPA3 simultaneously. IoT devices that only support WPA2 work fine alongside WPA3 devices. &#xF8FF; iCloud Keychain WiFi password sharing is supported.
+            </p>
+          </div>
+
+          <!-- Q3 -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-slate-900 text-lg">"Can I try it before buying?"</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              Yes. SPR is free and open source. Run it on a Raspberry Pi you already own, or deploy it as a VPN-only instance in Docker on any Linux box. There's a <a href="https://demo.supernetworks.org" class="text-blue-600 hover:underline">live UI demo</a> you can try right now.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. AUDIENCE PATH SPLIT ==================== -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Home & Home Lab -->
+          <div class="bg-white border border-gray-200 rounded-xl p-8">
+            <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide">For Home &amp; Home Lab</div>
+            <h3 class="mt-3 text-xl font-bold text-slate-900">Network sovereignty, out of the box.</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              Stop your IoT devices from phoning home to servers you don't control. SPR keeps every device isolated and gives you full visibility into what's happening on your network.
+            </p>
+            <ul class="mt-5 space-y-3 text-sm text-slate-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Block ads and trackers network-wide &mdash; no per-device apps needed
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Built-in WireGuard VPN &mdash; access your network from anywhere
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Docker plugin ecosystem &mdash; Tailscale, Wireshark, MITMProxy, and more
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Zero telemetry, zero cloud accounts &mdash; your data stays on your hardware
+              </li>
+            </ul>
+            <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr" class="inline-flex items-center mt-6 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+              Get Started &mdash; Free
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Teams & Enterprise -->
+          <div class="bg-white border border-gray-200 rounded-xl p-8">
+            <div class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">For Teams &amp; Enterprise</div>
+            <h3 class="mt-3 text-xl font-bold text-slate-900">High-assurance zero trust networking</h3>
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              SPR enforces per-device microsegmentation with policy-driven connectivity across multi-AP deployments. Programmable API for fleet management and integration with your existing security stack.
+            </p>
+            <ul class="mt-5 space-y-3 text-sm text-slate-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Per-device policy enforcement &mdash; firewall rules, DNS filters, and group permissions per device
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Mesh networking with wired backhaul for multi-AP sites
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                REST API for fleet management, monitoring, and integration with existing tools
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-emerald-500 mt-0.5 mr-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                No vendor lock-in, no cloud dependency, no per-device licensing fees
+              </li>
+            </ul>
+            <a href="contact-sales.html" class="inline-flex items-center mt-6 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
+              Talk to Us About Your Deployment
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. HOW IT WORKS ==================== -->
+    <section id="how-it-works" class="py-16 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">How it works</h2>
+        <p class="mt-3 text-slate-500 max-w-xl">Three steps to a microsegmented network. No networking degree required.</p>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-10">
+          <!-- Step 1 -->
+          <div>
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-sm">1</div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Connect</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Plug in the SPR router. Each device that joins WiFi gets a unique password and its own isolated VLAN automatically. Think in policy rather than VLAN tags, RADIUS, and subnets.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div>
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-sm">2</div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Control</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Set per-device firewall policies, DNS rules, and group permissions from the web dashboard. Block ads, restrict IoT devices, allow only what you choose. Schedule rules or set them by domain name.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div>
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-sm">3</div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Monitor</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Real-time DNS logs, traffic analysis, and authentication monitoring. See exactly what every device is doing. Get alerts when something looks wrong.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dashboard screenshots -->
+        <div class="mt-14 grid md:grid-cols-3 gap-4">
+          <div class="rounded-lg overflow-hidden border border-gray-200">
+            <img src="/assets/img/guides-device-connect.png" alt="Device onboarding with QR code and unique password" class="w-full" loading="lazy" />
+          </div>
+          <div class="rounded-lg overflow-hidden border border-gray-200">
+            <img src="/assets/img/guides-firewall-index.png" alt="Firewall policy categories — endpoints, port forwarding, traffic blocks" class="w-full" loading="lazy" />
+          </div>
+          <div class="rounded-lg overflow-hidden border border-gray-200">
+            <img src="/assets/img/guides-events-list.png" alt="Event log with timestamped network activity" class="w-full" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <a href="https://demo.supernetworks.org" class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Try the live demo &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4.5 PROVEN DEFENSES ==================== -->
+    <section class="py-16 md:py-24 bg-white border-t border-gray-100">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Proven against real attacks</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl">
+          SPR's architecture proactively eliminated these vulnerability classes before knowledge of them became widespread.
+        </p>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <!-- AirSnitch -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-xs font-mono text-green-600 uppercase tracking-wide font-medium">Protected</span>
+            </div>
+            <h3 class="font-semibold text-slate-900">AirSnitch</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              A breakthrough NDSS 2026 paper demonstrated four attack vectors that break WiFi client isolation on every major router vendor: shared GTK abuse, gateway bouncing, port stealing via MAC spoofing, and broadcast reflection. SPR defends against all four through per-device VLANs, per-device GTKs, unique passwords, and coordinated L2/L3 firewall policy &mdash; shipped as defaults since 2022.
+            </p>
+            <a href="https://www.supernetworks.org/pages/blog/airsnitch-breaking-wifi-client-isolation" class="mt-3 inline-block text-xs text-blue-600 hover:underline">Read the full analysis &rarr;</a>
+          </div>
+
+          <!-- MACStealer -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-xs font-mono text-green-600 uppercase tracking-wide font-medium">Protected</span>
+            </div>
+            <h3 class="font-semibold text-slate-900">MACStealer</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              The MACStealer attack exploits how WiFi clients trust their access point's MAC-layer forwarding to steal frames from other clients on the same network. SPR's per-device VLAN architecture eliminates this entirely &mdash; there are no other clients on the same network to steal from.
+            </p>
+            <a href="https://www.supernetworks.org/pages/blog/macstealer-defense" class="mt-3 inline-block text-xs text-blue-600 hover:underline">Read the full analysis &rarr;</a>
+          </div>
+
+          <!-- Conntrack Spoofing -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-xs font-mono text-green-600 uppercase tracking-wide font-medium">Protected</span>
+            </div>
+            <h3 class="font-semibold text-slate-900">Conntrack Spoofing</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Anvil Secure published research showing how spoofed IP packets exploit Linux conntrack state to bypass firewall rules on multihomed routers. SPR's interface-matched firewall architecture blocked the highest severity conntrack spoofing attacks out of the box.
+            </p>
+            <a href="https://www.supernetworks.org/pages/blog/spr-conntrack-hardening" class="mt-3 inline-block text-xs text-blue-600 hover:underline">Read the full analysis &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. PERFORMANCE ==================== -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Per-device isolation doesn't mean slow</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              The most common concern with per-device VLANs: "won't that kill my throughput?" No. SPR handles inter-device routing at wire speed.
+            </p>
+            <div class="mt-6 space-y-3">
+              <div class="flex items-center text-sm">
+                <span class="font-mono font-medium text-slate-900 w-36">160 MHz channels</span>
+                <span class="text-slate-500">&gt; 1,000 Mbps real-world</span>
+              </div>
+              <div class="flex items-center text-sm">
+                <span class="font-mono font-medium text-slate-900 w-36">80 MHz channels</span>
+                <span class="text-slate-500">&gt; 700 Mbps real-world</span>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-slate-500">
+              iPhone 15 speedtest on SPR WiFi 6 router (160 MHz, 5 GHz band).
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="/assets/img/speedtest-iphone-15160mhz.png"
+              alt="iPhone 15 speedtest showing over 1000 Mbps on SPR"
+              class="w-56 md:w-64 rounded-2xl shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. SECURITY CREDIBILITY ==================== -->
+    <section id="security" class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Built by the people who find the vulnerabilities</h2>
+        <p class="mt-4 text-gray-500 max-w-2xl leading-relaxed">
+          The team actively discovers and publishes WiFi and kernel vulnerabilities. When we say a defense works, it's because we've battle-tested it.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <!-- Published Research Cards -->
+          <a href="https://www.supernetworks.org/pages/blog/macos-smb-flaws" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide">CVE-2025-24269</div>
+            <h3 class="mt-2 font-semibold text-slate-900">macOS Sequoia SMB Kernel Vulnerabilities</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Remote kernel code execution via SMB URL attacks in macOS. Multiple vulnerabilities in Apple's SMBClient kernel extension disclosed to Apple and published.
+            </p>
+          </a>
+
+          <a href="https://www.supernetworks.org/pages/blog/beacon-double-free-inet-wireless-daemon-CVE-2024-28084" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div class="text-xs font-mono text-red-500 uppercase tracking-wide">CVE-2024-28084</div>
+            <h3 class="mt-2 font-semibold text-slate-900">IWD Beacon Double Free</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Memory corruption in Intel's Wireless Daemon via malformed WiFi beacon frames. Exploitable for ASLR bypass and potential code execution on Linux wireless stacks.
+            </p>
+          </a>
+
+          <a href="https://www.supernetworks.org/pages/blog/spr-conntrack-hardening" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div class="text-xs font-mono text-gray-400 uppercase tracking-wide">Firewall Research</div>
+            <h3 class="mt-2 font-semibold text-slate-900">Conntrack Spoofing &amp; Firewall Hardening</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Analysis of conntrack-based spoofing attacks on multihomed Linux devices and the mitigations SPR implements to prevent them.
+            </p>
+          </a>
+
+          <a href="https://www.supernetworks.org/pages/blog/isoon-wifi-exploitation-2024" class="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div class="text-xs font-mono text-gray-400 uppercase tracking-wide">Threat Intelligence</div>
+            <h3 class="mt-2 font-semibold text-slate-900">I-Soon WiFi Exploitation Analysis</h3>
+            <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+              Analysis of leaked Chinese state-sponsored WiFi implant capabilities, hardware-based attack tools, and the defenses that actually stop them.
+            </p>
+          </a>
+        </div>
+
+        <div class="mt-10">
+          <a href="https://www.supernetworks.org/pages/blog" class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Read all research &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6.5 PROGRAMMABLE ==================== -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Customizable and programmable</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              Go beyond the GUI. All functions and features of SPR are accessible via an <a href="https://www.supernetworks.org/pages/api/0#" class="text-blue-600 hover:underline font-semibold">API</a>, allowing power users to not only programmatically define how the network connects, but pull detailed information about devices on the network.
+            </p>
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              Tools for hackers, penetration testers, and other explorers. SPR makes controlling and monitoring data flows on the network easier &mdash; making research into the functionality of devices and software on your network less cumbersome.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+              <a href="https://github.com/spr-networks/curated-super-plugins" class="text-blue-600 hover:underline font-medium">Available Plugins</a>
+              <a href="https://www.supernetworks.org/pages/docs/guides/development/extension-dev" class="text-blue-600 hover:underline font-medium">Plugin Development Guide</a>
+              <a href="https://www.supernetworks.org/pages/docs/services/sprbus" class="text-blue-600 hover:underline font-medium">SPRbus</a>
+            </div>
+          </div>
+          <div>
+            <div class="border border-gray-200 bg-slate-950 rounded-2xl p-3 md:p-4 shadow-lg">
+              <div class="overflow-hidden rounded-xl">
+                <img src="/assets/img/sprbus-cli.gif" alt="SPRbus CLI — programmatic network control" class="w-full" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. FEATURE COMPARISON TABLE ==================== -->
+    <section id="comparison" class="py-16 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">How SPR compares</h2>
+
+        <!-- Desktop table -->
+        <div class="comparison-table mt-10 overflow-hidden rounded-xl border border-gray-200">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left py-4 px-5 font-medium text-slate-500 w-2/5">Feature</th>
+                <th class="text-center py-4 px-5 font-bold text-slate-900">SPR</th>
+                <th class="text-center py-4 px-5 font-medium text-slate-500">Consumer Routers</th>
+                <th class="text-center py-4 px-5 font-medium text-slate-500">Enterprise APs</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Per-device WiFi passwords</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Automatic per-device isolation</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Ad &amp; tracker blocking</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Built-in WireGuard VPN</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Per-device DNS &amp; parental controls</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Custom alerts &amp; push notifications</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+                <td class="py-3.5 px-5 text-center text-green-600">&check;</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Open source</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Self-hosted / no cloud dependency</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Programmable REST API</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-amber-500 text-xs font-medium">Limited</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-5 text-slate-700">Docker plugin ecosystem</td>
+                <td class="py-3.5 px-5 text-center text-green-600 font-bold">&check;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+                <td class="py-3.5 px-5 text-center text-red-400">&cross;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile comparison cards -->
+        <div class="comparison-cards mt-10 space-y-4">
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-semibold text-slate-900 mb-4">SPR vs Consumer Routers</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between"><span class="text-slate-600">Per-device WiFi passwords</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-amber-500">Limited</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Auto per-device isolation</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Ad &amp; tracker blocking</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Built-in WireGuard VPN</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Per-device DNS controls</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Open source</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Docker plugins</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+            </div>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-semibold text-slate-900 mb-4">SPR vs Enterprise APs</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between"><span class="text-slate-600">Auto per-device isolation</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-amber-500">Limited</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Ad &amp; tracker blocking</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Per-device DNS controls</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-amber-500">Limited</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">No cloud dependency</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Open source</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Docker plugins</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
+              <div class="flex justify-between"><span class="text-slate-600">Price</span><span class="font-semibold"><span class="text-green-600">$399</span> &nbsp; <span class="text-red-400">$1,500+</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. PRODUCT + PRICING ==================== -->
+    <section id="pricing" class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+
+        <!-- Hardware -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="flex justify-center order-2 md:order-1">
+            <img
+              src="/assets/img/cm5-router.png"
+              alt="SPR WiFi 7 PoE+ Router (CM5)"
+              class="w-full max-w-sm"
+              loading="lazy"
+            />
+          </div>
+          <div class="order-1 md:order-2">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">SPR WiFi 7 PoE+ Router</h2>
+            <p class="mt-2 text-4xl font-bold text-slate-900">$399</p>
+            <p class="mt-1 text-sm text-slate-500">Enterprise-grade isolation at a fraction of the cost of traditional enterprise APs.</p>
+
+            <ul class="mt-6 space-y-2.5 text-sm text-slate-700">
+              <li class="flex items-start">
+                <span class="text-slate-400 mr-2.5 mt-0.5">&#8226;</span>
+                Dual-band WiFi 7 (802.11be) &mdash; 2.4 GHz + 5 GHz
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-400 mr-2.5 mt-0.5">&#8226;</span>
+                PoE+ power delivery &mdash; single ethernet cable for power and data
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-400 mr-2.5 mt-0.5">&#8226;</span>
+                Raspberry Pi Compute Module 5
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-400 mr-2.5 mt-0.5">&#8226;</span>
+                2.5 Gbps Ethernet
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-400 mr-2.5 mt-0.5">&#8226;</span>
+                <strong>SPR PLUS license included</strong> &mdash; scheduled firewall policies, domain-based rules, mesh networking, priority support
+              </li>
+            </ul>
+
+            <a href="compute-board.html" class="inline-flex items-center mt-8 font-semibold bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition-colors text-sm">
+              Order Now
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-200 my-16"></div>
+
+        <!-- Get Started -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">Get started with SPR</h3>
+
+          <div class="mt-6 grid md:grid-cols-2 gap-10">
+            <!-- Left: info -->
+            <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+              <p>
+                <a href="compute-board.html" class="text-blue-600 hover:underline font-medium">We offer hardware</a> for running SPR and it can run on a wide variety of Linux systems that support Docker. Raspberry Pi4/5 and Compute Modules are widely tested.
+              </p>
+              <p>
+                Check out <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr" class="text-blue-600 hover:underline font-medium">the setup guide</a>. SPR is open source and can run in Docker containers as a cloud-only VPN or as a WiFi router.
+              </p>
+              <p>
+                Prebuilt containers are available for ARM64 and AMD64, OS Images are available for <a href="https://www.supernetworks.org/pages/docs/setup_guides/pi4b" class="text-blue-600 hover:underline font-medium">Raspberry Pi</a> and <a href="https://www.supernetworks.org/pages/articles/hardware/clearfog" class="text-blue-600 hover:underline font-medium">ClearFog</a>.
+              </p>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr" class="inline-flex items-center text-sm font-medium bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Setup Guide</a>
+                <a href="https://github.com/spr-networks/super" class="inline-flex items-center text-sm font-medium border border-gray-300 text-slate-700 px-4 py-2 rounded-lg hover:border-slate-900 transition-colors">
+                  <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  Containers &amp; Code
+                </a>
+                <a href="https://github.com/spr-networks/super/releases/latest/download/spr.img.xz" class="inline-flex items-center text-sm font-medium border border-gray-300 text-slate-700 px-4 py-2 rounded-lg hover:border-slate-900 transition-colors">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  Image for Raspberry Pi
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: code tabs -->
+            <div>
+              <div class="flex border-b border-gray-200 mb-0">
+                <button id="tab-router" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-slate-900 text-slate-900" onclick="showTab('router')">Host Router in Docker</button>
+                <button id="tab-vpn" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-400 hover:text-slate-600" onclick="showTab('vpn')">VPN Only</button>
+              </div>
+
+              <!-- Router tab -->
+              <div id="panel-router" class="tab-panel">
+                <div class="bg-slate-900 rounded-b-xl p-5 overflow-x-auto relative">
+                  <button onclick="copyCode('router')" class="absolute top-3 right-3 text-slate-500 hover:text-slate-300 transition-colors" title="Copy">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  </button>
+                  <div class="text-sm font-semibold text-slate-300 mb-3">Run as a Host Router &amp; Firewall with Docker</div>
+                  <pre id="code-router" class="text-sm font-mono text-slate-300 leading-relaxed"><code>git clone https://github.com/spr-networks/super
+cd super
+bash base/setup.sh
+docker compose up --pull always -d</code></pre>
+                </div>
+                <p class="mt-3 text-xs text-gray-500">This will manage the system network, firewall, and interfaces. Note: this replaces network manager, see the <a href="https://www.supernetworks.org/pages/docs/setup_guides/setup_run_spr" class="text-blue-600 hover:underline">setup guide</a> for details.</p>
+              </div>
+
+              <!-- VPN tab -->
+              <div id="panel-vpn" class="tab-panel hidden">
+                <div class="bg-slate-900 rounded-b-xl p-5 overflow-x-auto relative">
+                  <button onclick="copyCode('vpn')" class="absolute top-3 right-3 text-slate-500 hover:text-slate-300 transition-colors" title="Copy">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  </button>
+                  <div class="text-sm font-semibold text-slate-300 mb-3">Run as a VPN-Only Service with Docker</div>
+                  <pre id="code-vpn" class="text-sm font-mono text-slate-300 leading-relaxed"><code>git clone https://github.com/spr-networks/super
+cd super
+cp configs/base/config.sh.vpn configs/base/config.sh
+docker compose -f docker-compose-virt.yml up --pull always -d</code></pre>
+                </div>
+                <p class="mt-3 text-xs text-gray-500">Runs SPR as a cloud VPN endpoint without managing physical interfaces. See the <a href="https://www.supernetworks.org/pages/docs/setup_guides/virtual_spr" class="text-blue-600 hover:underline">virtual SPR guide</a> for details.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-6 text-sm text-slate-500">
+            Also available on <strong>AWS Marketplace</strong> and <strong>DigitalOcean Marketplace</strong>.
+          </p>
+        </div>
+
+        <script>
+          function showTab(tab) {
+            document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.add('hidden'); });
+            document.querySelectorAll('.tab-btn').forEach(function(b) {
+              b.classList.remove('border-slate-900', 'text-slate-900');
+              b.classList.add('border-transparent', 'text-gray-400');
+            });
+            document.getElementById('panel-' + tab).classList.remove('hidden');
+            var btn = document.getElementById('tab-' + tab);
+            btn.classList.remove('border-transparent', 'text-gray-400');
+            btn.classList.add('border-slate-900', 'text-slate-900');
+          }
+          function copyCode(tab) {
+            var code = document.getElementById('code-' + tab).textContent;
+            navigator.clipboard.writeText(code);
+          }
+        </script>
+      </div>
+    </section>
+
+
+    <!-- ==================== 10. COMMUNITY ==================== -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">You're not alone</h2>
+        <p class="mt-3 text-slate-500 max-w-xl">
+          Active open-source community, detailed documentation, and direct access to the team that builds SPR.
+        </p>
+
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <a href="https://github.com/spr-networks/super/" class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-colors">
+            <svg class="w-6 h-6 text-slate-700 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <div>
+              <div class="font-semibold text-sm text-slate-900">GitHub</div>
+              <div class="text-xs text-slate-500">500+ stargazers</div>
+            </div>
+          </a>
+
+          <a href="https://discord.gg/EUjTKJPPAX" class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-colors">
+            <svg class="w-6 h-6 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            <div>
+              <div class="font-semibold text-sm text-slate-900">Discord</div>
+              <div class="text-xs text-slate-500">Active community</div>
+            </div>
+          </a>
+
+          <a href="https://www.supernetworks.org/pages/docs/intro" class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-colors">
+            <svg class="w-6 h-6 text-slate-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            <div>
+              <div class="font-semibold text-sm text-slate-900">Documentation</div>
+              <div class="text-xs text-slate-500">Guides &amp; API reference</div>
+            </div>
+          </a>
+
+          <a href="https://demo.supernetworks.org" class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-colors">
+            <svg class="w-6 h-6 text-slate-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            <div>
+              <div class="font-semibold text-sm text-slate-900">Live Demo</div>
+              <div class="text-xs text-slate-500">Try the UI</div>
+            </div>
+          </a>
+
+          <a href="https://www.supernetworks.org/pages/api/0" class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-colors">
+            <svg class="w-6 h-6 text-slate-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <div>
+              <div class="font-semibold text-sm text-slate-900">API Reference</div>
+              <div class="text-xs text-slate-500">OpenAPI docs</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. FOOTER ==================== -->
+    <footer class="bg-white border-t border-gray-200 text-gray-500 py-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <!-- Brand -->
+          <div class="col-span-2 md:col-span-1">
+            <span class="text-lg font-bold text-slate-900">SPR</span>
+            <p class="mt-2 text-gray-400 text-sm">Secure Programmable Router<br />by Supernetworks</p>
+          </div>
+
+          <!-- Product -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Product</h4>
+            <ul class="space-y-2.5">
+              <li><a href="compute-board.html" class="hover:text-slate-900 transition-colors">Hardware</a></li>
+              <li><a href="plus.html" class="hover:text-slate-900 transition-colors">PLUS</a></li>
+              <li><a href="features.html" class="hover:text-slate-900 transition-colors">Features</a></li>
+              <li><a href="https://www.supernetworks.org/pages/docs/intro" class="hover:text-slate-900 transition-colors">Documentation</a></li>
+              <li><a href="https://www.supernetworks.org/pages/api/0" class="hover:text-slate-900 transition-colors">API Reference</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Resources</h4>
+            <ul class="space-y-2.5">
+              <li><a href="https://www.supernetworks.org/pages/blog" class="hover:text-slate-900 transition-colors">Blog</a></li>
+              <li><a href="https://github.com/spr-networks/super/" class="hover:text-slate-900 transition-colors">GitHub</a></li>
+              <li><a href="https://discord.gg/EUjTKJPPAX" class="hover:text-slate-900 transition-colors">Discord</a></li>
+              <li><a href="https://demo.supernetworks.org" class="hover:text-slate-900 transition-colors">Live Demo</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Company</h4>
+            <ul class="space-y-2.5">
+              <li><a href="aboutus.html" class="hover:text-slate-900 transition-colors">About</a></li>
+              <li><a href="https://www.supernetworks.org/pages/docs/contact" class="hover:text-slate-900 transition-colors">Contact</a></li>
+              <li><a href="mailto:spr-security@supernetworks.org" class="hover:text-slate-900 transition-colors">Security</a></li>
+              <li><a href="privacy-policy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html" class="hover:text-slate-900 transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-100 text-xs text-gray-400">
+          &copy; 2026 Supernetworks Inc.
         </div>
       </div>
     </footer>
+
   </body>
-
-  <script>
-    //get started button show when download start
-    document
-      .getElementById('btn-download')
-      ?.addEventListener('click', function () {
-        document.getElementById('btn-get-started').classList.remove('hidden')
-      })
-
-    let el = document.getElementById('trigger-mobile-menu')
-    let menu = document.getElementById('mobile-menu')
-    el.addEventListener('click', function () {
-      menu.classList.toggle('hidden')
-    })
-    document.addEventListener('click', function (event) {
-      const target = event.target
-      if (!menu.contains(target) && !el.contains(target)) {
-        menu.classList.add('hidden')
-      }
-    })
-
-    window.addEventListener('scroll', (e) => {
-      let offset = window.pageYOffset
-      let x = document
-        .querySelector('#planets-cloud')
-        .closest('section').offsetTop
-
-      document.querySelectorAll('#planets-cloud > div').forEach((el) => {
-        let d = (offset - x) / 50
-        el.style.transform = `rotate(${d}deg)`
-      })
-
-      //phones move y scroll
-      document.querySelectorAll('#speedtest-phones > img').forEach((el) => {
-        let starty = document.querySelector('#speedtest-phones').offsetTop - 100
-        if (window.pageYOffset < starty || window.pageYOffset > starty + 150) {
-          return
-        }
-
-        let y = window.pageYOffset - starty
-        let o = `${y}px`
-        el.style.transform = `translateY(${o})`
-      })
-    })
-
-    //carousel images in demo
-    let n = 1,
-      nImages = 4,
-      startOffset = document.querySelector('#demo').offsetTop - 80
-    setInterval(() => {
-      n = 1 + (n++ % nImages)
-      //always first image when scroll
-      if (window.pageYOffset < startOffset) {
-        n = 1
-      }
-
-      let src = `/assets/img/screenshot-light-${n}.webp`
-      document.getElementById('demo-image').setAttribute('src', src)
-    }, 3500)
-
-    //copy cmds to clipboard
-    document.querySelectorAll('.copy').forEach((el) => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault()
-
-        let sel = el.getAttribute('data-target')
-        let elSel = document.querySelector(sel)
-        let val = elSel?.innerText.replace(/\n/g, ' && ')
-        navigator.clipboard.writeText(val)
-        el.innerText = 'Copied to clipboard'
-
-        return false
-      })
-    })
-
-    //tabs for get started
-    document.querySelectorAll('.tab-pane').forEach((el) => {
-      el.querySelectorAll('.tab-nav > li > a').forEach((elNav) => {
-        elNav.addEventListener('click', (e) => {
-          e.preventDefault()
-          let id = elNav.getAttribute('data-target')
-
-          el.querySelectorAll('.tab-nav > li > a').forEach((nav) => {
-            nav.classList.remove('bg-gray-800')
-          })
-          elNav.classList.add('bg-gray-800')
-
-          el.querySelectorAll('.tab-content > div').forEach((pane) => {
-            pane.classList.add('hidden')
-          })
-          el.querySelector(id).classList.remove('hidden')
-          return false
-        })
-      })
-    })
-
-    document.querySelectorAll('.link-conversion').forEach((el) => {
-      el.addEventListener('click', (e) => {
-        let href = el.getAttribute('href')
-        let id = el.getAttribute('data-id')
-        gtag_report_conversion(href, id)
-      })
-    })
-  </script>
-
-  <style>
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-  </style>
 </html>
