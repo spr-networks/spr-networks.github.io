@@ -139,6 +139,36 @@
       }
 
       /* Mobile comparison cards */
+      .comparison-card {
+        display: grid;
+        width: min(100%, 30rem);
+        margin-right: auto;
+        grid-template-columns: fit-content(18rem) max-content max-content;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: 0.875rem;
+      }
+      .comparison-card-head {
+        border-bottom: 1px solid rgb(243 244 246);
+        padding-bottom: 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .comparison-card-body {
+        border-bottom: 1px solid rgb(243 244 246);
+        padding-block: 0.625rem;
+      }
+      .comparison-card-feature {
+        min-width: 0;
+      }
+      .comparison-card-value {
+        white-space: nowrap;
+        text-align: right;
+      }
+      .comparison-card > :nth-last-child(-n + 3).comparison-card-body {
+        border-bottom: 0;
+      }
       @media (max-width: 767px) {
         .comparison-table { display: none; }
         .comparison-cards { display: block; }
@@ -261,33 +291,38 @@
     <section class="py-16 md:py-24 bg-gray-50">
       <div class="max-w-5xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What's in the box</h2>
-          <ul class="mt-6 space-y-3 text-slate-700">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              SPR WiFi 7 Router (CM5-based)
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              SPR pre-installed and configured
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              SPR PLUS license included
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              PoE compatible
-            </li>
-          </ul>
-          <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg text-sm text-slate-600">
-            <strong>What you'll need:</strong> A client device (phone or laptop) to connect over WiFi for setup.
+          <div class="flex justify-center md:order-2">
+            <img
+              src="/assets/img/cm5-router.png"
+              alt="SPR WiFi 7 Router"
+              class="w-52 sm:w-60 md:w-72"
+              loading="lazy"
+            />
           </div>
-        </div>
-        <div class="hidden md:flex justify-center">
-          <img src="/assets/img/cm5-router.png" alt="SPR WiFi 7 Router" class="w-72" loading="lazy" />
-        </div>
+          <div class="md:order-1">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What's in the box</h2>
+            <ul class="mt-6 space-y-3 text-slate-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                SPR WiFi 7 Router (CM5-based)
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                SPR pre-installed and configured
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                SPR PLUS license included
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                PoE compatible
+              </li>
+            </ul>
+            <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg text-sm text-slate-600">
+              <strong>What you'll need:</strong> A client device (phone or laptop) to connect over WiFi for setup.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -729,26 +764,74 @@
         <div class="comparison-cards mt-10 space-y-4">
           <div class="border border-gray-200 rounded-xl p-5">
             <h3 class="font-semibold text-slate-900 mb-4">SPR vs Consumer Routers</h3>
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between"><span class="text-slate-600">Per-device WiFi passwords</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-amber-500">Limited</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Auto per-device isolation</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Ad &amp; tracker blocking</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Built-in WireGuard VPN</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Per-device DNS controls</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Open source</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Docker plugins</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Consumer &cross;</span></span></div>
+            <div class="comparison-card mt-4 text-sm">
+              <div class="comparison-card-feature comparison-card-head text-slate-400 font-medium">Feature</div>
+              <div class="comparison-card-value comparison-card-head text-slate-400 font-medium">SPR</div>
+              <div class="comparison-card-value comparison-card-head text-slate-400 font-medium">Consumer</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Per-device WiFi passwords</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body font-medium text-amber-500">Limited</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Auto per-device isolation</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Ad &amp; tracker blocking</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Built-in WireGuard VPN</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Per-device DNS controls</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Open source</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Docker plugins</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
             </div>
           </div>
           <div class="border border-gray-200 rounded-xl p-5">
             <h3 class="font-semibold text-slate-900 mb-4">SPR vs Enterprise APs</h3>
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between"><span class="text-slate-600">Auto per-device isolation</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-amber-500">Limited</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Ad &amp; tracker blocking</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Per-device DNS controls</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-amber-500">Limited</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">No cloud dependency</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Open source</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Docker plugins</span><span class="font-semibold"><span class="text-green-600">SPR &check;</span> &nbsp; <span class="text-red-400">Enterprise &cross;</span></span></div>
-              <div class="flex justify-between"><span class="text-slate-600">Price</span><span class="font-semibold"><span class="text-green-600">$449</span> &nbsp; <span class="text-red-400">$1,500+</span></span></div>
+            <div class="comparison-card mt-4 text-sm">
+              <div class="comparison-card-feature comparison-card-head text-slate-400 font-medium">Feature</div>
+              <div class="comparison-card-value comparison-card-head text-slate-400 font-medium">SPR</div>
+              <div class="comparison-card-value comparison-card-head text-slate-400 font-medium">Enterprise</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Auto per-device isolation</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body font-medium text-amber-500">Limited</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Ad &amp; tracker blocking</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Per-device DNS controls</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body font-medium text-amber-500">Limited</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">No cloud dependency</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Open source</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Docker plugins</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">&check;</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">&cross;</div>
+
+              <div class="comparison-card-feature comparison-card-body text-slate-600">Price</div>
+              <div class="comparison-card-value comparison-card-body font-semibold text-green-600">$449</div>
+              <div class="comparison-card-value comparison-card-body text-red-400">$1,500+</div>
             </div>
           </div>
         </div>
@@ -836,7 +919,7 @@
             </div>
 
             <!-- Right: code tabs -->
-            <div>
+            <div class="min-w-0">
               <div class="flex border-b border-gray-200 mb-0">
                 <button id="tab-router" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-slate-900 text-slate-900" onclick="showTab('router')">Host Router in Docker</button>
                 <button id="tab-vpn" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-400 hover:text-slate-600" onclick="showTab('vpn')">VPN Only</button>
