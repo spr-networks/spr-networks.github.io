@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere and a live tracker for your IBM Quantum and IONQ jobs. Runs on iPhone and Apple Watch. Your API keys never leave the device."
+    />
+    <meta
+      name="keywords"
+      content="qubit, bloch sphere, quantum computing, iOS app, Apple Watch, IBM Quantum, IONQ, qiskit, qpy, sampler, quantum visualization"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Supernetworks" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://www.supernetworks.org/qubit.html" />
+    <meta property="og:title" content="Qubit Simulator &amp; Job Monitor — Quantum jobs and a Bloch sphere on iPhone + Apple Watch" />
+    <meta property="og:description" content="Interactive Bloch sphere visualization and a live tracker for your IBM Quantum and IONQ jobs. API keys never leave your device." />
+    <meta property="og:image" content="https://www.supernetworks.org/assets/img/qubitsim-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Qubit Simulator &amp; Job Monitor for iOS and watchOS" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.supernetworks.org/qubit.html" />
+    <meta property="twitter:title" content="Qubit Simulator &amp; Job Monitor — Quantum jobs and a Bloch sphere on iPhone + Apple Watch" />
+    <meta property="twitter:description" content="Interactive Bloch sphere visualization and a live tracker for your IBM Quantum and IONQ jobs." />
+    <meta property="twitter:image" content="https://www.supernetworks.org/assets/img/qubitsim-og.png" />
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.supernetworks.org/qubit.html" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <title>Qubit Simulator &amp; Job Monitor by Supernetworks — Quantum jobs, on iPhone and Apple Watch</title>
+
+    <!-- PostHog -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split('.')
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                })
+            }
+            ;((p = t.createElement('script')).type = 'text/javascript'),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace('.i.posthog.com', '-assets.i.posthog.com') +
+                '/static/array.js'),
+              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r)
+            var u = e
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = 'posthog'
+                  return ('posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e)
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + '.people (stub)'
+                },
+                o = 'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId'.split(' '),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n])
+            e._i.push([i, s, a])
+          }),
+          (e.__SV = 1))
+      })(document, window.posthog || [])
+      posthog.init('phc_wHrv9J5yEKPecDYT9ligBWKlIi2LBDL7I4heu69ayOT', {
+        api_host: 'https://us.i.posthog.com'
+      })
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-900 antialiased">
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <div class="max-w-6xl mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="text-lg sm:text-xl font-bold tracking-tight text-slate-900">Qubit Simulator</span>
+            <span class="text-sm text-gray-400 font-normal hidden md:inline">&amp; Job Monitor</span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-6 text-sm">
+            <a href="#features" class="text-gray-500 hover:text-slate-900 transition-colors">Features</a>
+            <a href="#how-it-works" class="text-gray-500 hover:text-slate-900 transition-colors">How It Works</a>
+            <a href="#pricing" class="text-gray-500 hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="/" class="text-gray-500 hover:text-slate-900 transition-colors">SPR</a>
+            <span class="w-px h-4 bg-gray-200"></span>
+            <a href="#download" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+              Download
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2 border-t border-gray-200 pt-4">
+          <div class="flex flex-col space-y-3 text-sm">
+            <a href="#features" class="text-gray-600 hover:text-slate-900 transition-colors">Features</a>
+            <a href="#how-it-works" class="text-gray-600 hover:text-slate-900 transition-colors">How It Works</a>
+            <a href="#pricing" class="text-gray-600 hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="/" class="text-gray-600 hover:text-slate-900 transition-colors">SPR</a>
+            <a href="#download" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2.5 rounded-lg text-center hover:bg-slate-800 transition-colors">Download</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+      document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.getElementById('mobile-menu').classList.add('hidden');
+        });
+      });
+    </script>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="bg-white pt-28 pb-16 md:pt-36 md:pb-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+          A pocket quantum lab<br class="hidden sm:block" /> for iPhone and Apple Watch.
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl">
+          Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a Bell-pair playground, and a live tracker for your IBM Quantum and IONQ jobs.
+        </p>
+
+        <div id="download" class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="https://apps.apple.com/us/app/qubitsphere" class="inline-flex items-center justify-center">
+            <img src="/assets/img/appdownload.png" alt="Download on the App Store" class="h-[46px]" />
+          </a>
+        </div>
+
+        <!-- Proof bar -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
+          <span>iPhone + Apple Watch</span>
+          <span class="text-gray-300">&middot;</span>
+          <span>API keys stay on device</span>
+        </div>
+
+        <!-- Hero video: autodemo recording — state → |+⟩, camera orbit, measure -->
+        <div class="mt-14 flex justify-center">
+          <video
+            src="/assets/img/qubitsim-preview.mp4"
+            poster="/assets/img/qubitsim-sphere.png"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            class="w-full max-w-sm rounded-[2.25rem] shadow-xl ring-1 ring-gray-200"
+          >
+            Your browser does not support embedded video. <a href="/assets/img/qubitsim-preview.mp4" class="underline">Download the video</a> instead.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section id="features" class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">What you can do</h2>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <!-- Single qubit -->
+          <div class="bg-white rounded-xl p-8 border border-gray-200">
+            <div class="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M3 12h18M12 3v18M5.6 5.6l12.8 12.8"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Single qubit</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Interactive 3D Bloch sphere with a color-mapped texture. Phase drives hue, amplitude drives brightness &mdash; every state has a distinct color. Drag to reshape and tap to measure into the |0&rang; or |1&rang; observable.
+            </p>
+          </div>
+
+          <!-- Entangled -->
+          <div class="bg-white rounded-xl p-8 border border-gray-200">
+            <div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Entangled pair</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Pick any Bell state &mdash; &Phi;+, &Phi;&minus;, &Psi;+, &Psi;&minus; &mdash; and watch two qubits correlate. The Apple Watch can live-host one half of the pair; drag on your phone, the watch updates instantly.
+            </p>
+          </div>
+
+          <!-- Jobs -->
+          <div class="bg-white rounded-xl p-8 border border-gray-200">
+            <div class="w-12 h-12 rounded-lg bg-cyan-50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 7a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2M4 7V5a2 2 0 012-2h12a2 2 0 012 2v2M9 12h6M9 16h6"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Jobs tracker</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Live status for every job you submit to IBM Quantum and IONQ. Rendered circuit diagrams, measurement histograms, runtime, shot count. Works on both iPhone and Apple Watch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREENSHOT GALLERY ==================== -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <img src="/assets/img/qubitsim-sphere.png"
+               alt="Single-qubit Bloch sphere"
+               class="w-full rounded-2xl ring-1 ring-gray-200"
+               loading="lazy" />
+          <img src="/assets/img/qubitsim-entangled.png"
+               alt="Entangled Bell pair"
+               class="w-full rounded-2xl ring-1 ring-gray-200"
+               loading="lazy" />
+          <img src="/assets/img/qubitsim-jobs.png"
+               alt="Jobs tracker list"
+               class="w-full rounded-2xl ring-1 ring-gray-200"
+               loading="lazy" />
+          <img src="/assets/img/qubitsim-job-detail.png"
+               alt="Job detail with circuit and measurement histogram"
+               class="w-full rounded-2xl ring-1 ring-gray-200"
+               loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section id="how-it-works" class="py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">On-device by design</h2>
+        <p class="mt-4 text-lg text-gray-500 max-w-2xl">
+          No backend, no telemetry, no cloud. Qubit Simulator &amp; Job Monitor talks only to the quantum providers you configure.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <div class="border-l-2 border-slate-900 pl-6">
+            <h3 class="text-lg font-semibold text-slate-900">Keys stay in the Keychain</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">
+              Your IBM Cloud and IONQ API keys are written directly to the iOS Keychain and read only by the app. Supernetworks never sees them.
+            </p>
+          </div>
+          <div class="border-l-2 border-slate-900 pl-6">
+            <h3 class="text-lg font-semibold text-slate-900">Full Qiskit, on your phone</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">
+              Decoding IBM's QPY binary circuit format needs the real Qiskit library. Qubit Simulator &amp; Job Monitor embeds CPython 3.13 and a pruned Qiskit runtime so circuit rendering happens locally.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRICING ==================== -->
+    <section id="pricing" class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Simple pricing</h2>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <!-- Free tier -->
+          <div class="bg-white rounded-xl p-8 border border-gray-200">
+            <h3 class="text-xl font-semibold text-slate-900">Free</h3>
+            <p class="mt-2 text-4xl font-bold text-slate-900">$0</p>
+            <p class="mt-1 text-sm text-gray-500">for everyone</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Single-qubit Bloch sphere with six cardinal-state presets
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Entangled-pair playground across iPhone + Apple Watch
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Z-basis measurement into the |0&rang; or |1&rang; observable
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Demo mode with sample jobs and circuits
+              </li>
+            </ul>
+          </div>
+
+          <!-- Jobs upgrade -->
+          <div class="bg-white rounded-xl p-8 border-2 border-slate-900 relative">
+            <span class="absolute top-0 right-6 -translate-y-1/2 bg-slate-900 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Upgrade</span>
+            <h3 class="text-xl font-semibold text-slate-900">Jobs Tracker</h3>
+            <p class="mt-2 text-4xl font-bold text-slate-900">$4.99</p>
+            <p class="mt-1 text-sm text-gray-500">one-time in-app purchase &mdash; unlocks iPhone + Apple Watch</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Live IBM Quantum and IONQ job list with status, backend, and runtime
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                On-device circuit rendering (OpenQASM for IONQ, QPY via embedded Qiskit for IBM)
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Measurement histograms with top-3 outcomes and tail summary
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Compact watch detail view with histograms and status
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Entitlement syncs automatically across your devices
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WHO IT'S FOR ==================== -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Built for</h2>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-8 text-slate-700">
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900">Developers</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">
+              You submitted a batch of jobs to IBM Quantum and want to check progress without opening a laptop. Watch them on your wrist.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900">Educators and students</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">
+              An interactive Bloch sphere for exploring phase, amplitude, and measurement. The color mapping lets students recognize states by sight.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="py-16 md:py-20 bg-slate-900 text-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Ship faster. Check jobs anywhere.</h2>
+        <p class="mt-4 text-gray-300 text-lg">Qubit Simulator &amp; Job Monitor is a one-time purchase, no subscription.</p>
+        <div class="mt-8 flex justify-center">
+          <a href="https://apps.apple.com/us/app/qubitsphere" class="inline-flex items-center justify-center">
+            <img src="/assets/img/appdownload.png" alt="Download on the App Store" class="h-[52px]" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-gray-200 text-gray-500 py-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <!-- Brand -->
+          <div class="col-span-2 md:col-span-1">
+            <span class="text-lg font-bold text-slate-900">Qubit Simulator &amp; Job Monitor</span>
+            <p class="mt-2 text-gray-400 text-sm">Pocket quantum lab<br />by Supernetworks</p>
+          </div>
+
+          <!-- Product -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Qubit Simulator &amp; Job Monitor</h4>
+            <ul class="space-y-2.5">
+              <li><a href="#features" class="hover:text-slate-900 transition-colors">Features</a></li>
+              <li><a href="#how-it-works" class="hover:text-slate-900 transition-colors">How It Works</a></li>
+              <li><a href="#pricing" class="hover:text-slate-900 transition-colors">Pricing</a></li>
+              <li><a href="https://apps.apple.com/us/app/qubitsphere" class="hover:text-slate-900 transition-colors">App Store</a></li>
+            </ul>
+          </div>
+
+          <!-- Other Supernetworks -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Supernetworks</h4>
+            <ul class="space-y-2.5">
+              <li><a href="/" class="hover:text-slate-900 transition-colors">SPR Router</a></li>
+              <li><a href="plus.html" class="hover:text-slate-900 transition-colors">SPR PLUS</a></li>
+              <li><a href="https://github.com/spr-networks/super/" class="hover:text-slate-900 transition-colors">GitHub</a></li>
+              <li><a href="https://www.supernetworks.org/pages/blog" class="hover:text-slate-900 transition-colors">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Company</h4>
+            <ul class="space-y-2.5">
+              <li><a href="aboutus.html" class="hover:text-slate-900 transition-colors">About</a></li>
+              <li><a href="https://www.supernetworks.org/pages/docs/contact" class="hover:text-slate-900 transition-colors">Contact</a></li>
+              <li><a href="privacy-policy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html" class="hover:text-slate-900 transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-100 text-xs text-gray-400">
+          &copy; 2026 Supernetworks Inc.
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
