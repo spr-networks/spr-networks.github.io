@@ -6,11 +6,11 @@
 
     <meta
       name="description"
-      content="Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere and a live tracker for your IBM Quantum and IONQ jobs. Runs on iPhone and Apple Watch. Your API keys never leave the device."
+      content="Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a gate playground with live Hamiltonian evolution, phone-to-phone qubit entanglement, and a live tracker for your IBM Quantum and IONQ jobs. iPhone and Apple Watch. Your API keys never leave the device."
     />
     <meta
       name="keywords"
-      content="qubit, bloch sphere, quantum computing, iOS app, Apple Watch, IBM Quantum, IONQ, qiskit, qpy, sampler, quantum visualization"
+      content="qubit, bloch sphere, quantum gates, hamiltonian, unitary evolution, entanglement, multipeer, quantum computing, iOS app, Apple Watch, IBM Quantum, IONQ, qiskit, qpy, sampler, quantum visualization"
     />
 
     <!-- Open Graph -->
@@ -18,8 +18,8 @@
     <meta property="og:site_name" content="Supernetworks" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://www.supernetworks.org/qubit.html" />
-    <meta property="og:title" content="Qubit Simulator &amp; Job Monitor — Quantum jobs and a Bloch sphere on iPhone + Apple Watch" />
-    <meta property="og:description" content="Interactive Bloch sphere visualization and a live tracker for your IBM Quantum and IONQ jobs. API keys never leave your device." />
+    <meta property="og:title" content="Qubit Simulator &amp; Job Monitor — Gates, entanglement, and IBM/IONQ jobs on iPhone + Apple Watch" />
+    <meta property="og:description" content="Interactive Bloch sphere, gate practice with live Hamiltonian evolution, phone-to-phone qubit entanglement, and a live tracker for IBM Quantum and IONQ jobs. API keys never leave your device." />
     <meta property="og:image" content="https://www.supernetworks.org/assets/img/qubitsim-og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -28,8 +28,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.supernetworks.org/qubit.html" />
-    <meta property="twitter:title" content="Qubit Simulator &amp; Job Monitor — Quantum jobs and a Bloch sphere on iPhone + Apple Watch" />
-    <meta property="twitter:description" content="Interactive Bloch sphere visualization and a live tracker for your IBM Quantum and IONQ jobs." />
+    <meta property="twitter:title" content="Qubit Simulator &amp; Job Monitor — Gates, entanglement, and IBM/IONQ jobs on iPhone + Apple Watch" />
+    <meta property="twitter:description" content="Interactive Bloch sphere, gate practice with live Hamiltonian evolution, phone-to-phone qubit entanglement, and a live tracker for IBM Quantum and IONQ jobs." />
     <meta property="twitter:image" content="https://www.supernetworks.org/assets/img/qubitsim-og.png" />
 
     <meta name="robots" content="index, follow" />
@@ -170,7 +170,7 @@
           A pocket quantum lab<br class="hidden sm:block" /> for iPhone and Apple Watch.
         </h1>
         <p class="mt-6 text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl">
-          Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a Bell-pair playground, and a live tracker for your IBM Quantum and IONQ jobs.
+          Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a gate playground with live Hamiltonian and unitary evolution, a Bell-pair playground that entangles qubits across two phones, and a live tracker for your IBM Quantum and IONQ jobs.
         </p>
 
         <div id="download" class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -209,7 +209,7 @@
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">What you can do</h2>
 
-        <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
           <!-- Single qubit -->
           <div class="bg-white rounded-xl p-8 border border-gray-200">
             <div class="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center mb-6">
@@ -221,14 +221,25 @@
             </p>
           </div>
 
-          <!-- Entangled -->
+          <!-- Gate practice -->
+          <div class="bg-white rounded-xl p-8 border border-gray-200">
+            <div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h4v4H4zM16 16h4v4h-4zM4 16h4v4H4zM16 4h4v4h-4zM8 6h8M8 18h8M6 8v8M18 8v8"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Gate playground</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Apply Pauli X / Y / Z, Hadamard, S, T, &radic;X and the two-qubit gates CNOT, CZ, SWAP, &radic;SWAP and watch the Bloch vector sweep along the physical rotation axis. Tap <strong>Evolve</strong> on any gate to scrub the unitary U(t) through its Hamiltonian time evolution.
+            </p>
+          </div>
+
+          <!-- Entangled (watch + phone-to-phone) -->
           <div class="bg-white rounded-xl p-8 border border-gray-200">
             <div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
               <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
             </div>
-            <h3 class="text-xl font-semibold text-slate-900">Entangled pair</h3>
+            <h3 class="text-xl font-semibold text-slate-900">Entangled pair &mdash; across two phones</h3>
             <p class="mt-3 text-slate-600 leading-relaxed">
-              Pick any Bell state &mdash; &Phi;+, &Phi;&minus;, &Psi;+, &Psi;&minus; &mdash; and watch two qubits correlate. The Apple Watch can live-host one half of the pair; drag on your phone, the watch updates instantly.
+              Pick any Bell state &mdash; &Phi;+, &Phi;&minus;, &Psi;+, &Psi;&minus; &mdash; and share the pair with a nearby iPhone or your Apple Watch. Drag qubit A on one device, the correlated qubit B updates instantly on the other over MultipeerConnectivity (Bluetooth + Wi-Fi, no internet required).
             </p>
           </div>
 
@@ -249,13 +260,21 @@
     <!-- ==================== SCREENSHOT GALLERY ==================== -->
     <section class="py-16 md:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           <img src="/assets/img/qubitsim-sphere.png"
                alt="Single-qubit Bloch sphere"
                class="w-full rounded-2xl ring-1 ring-gray-200"
                loading="lazy" />
+          <img src="/assets/img/qubitsim-gates.png"
+               alt="Gate playground with unitary evolution"
+               class="w-full rounded-2xl ring-1 ring-gray-200"
+               loading="lazy" />
           <img src="/assets/img/qubitsim-entangled.png"
-               alt="Entangled Bell pair"
+               alt="Entangled Bell pair on a single device"
+               class="w-full rounded-2xl ring-1 ring-gray-200"
+               loading="lazy" />
+          <img src="/assets/img/qubitsim-entangled-phones.png"
+               alt="Entangled pair across two iPhones via MultipeerConnectivity"
                class="w-full rounded-2xl ring-1 ring-gray-200"
                loading="lazy" />
           <img src="/assets/img/qubitsim-jobs.png"
@@ -278,7 +297,7 @@
           No backend, no telemetry, no cloud. Qubit Simulator &amp; Job Monitor talks only to the quantum providers you configure.
         </p>
 
-        <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
           <div class="border-l-2 border-slate-900 pl-6">
             <h3 class="text-lg font-semibold text-slate-900">Keys stay in the Keychain</h3>
             <p class="mt-2 text-slate-600 leading-relaxed">
@@ -289,6 +308,12 @@
             <h3 class="text-lg font-semibold text-slate-900">Full Qiskit, on your phone</h3>
             <p class="mt-2 text-slate-600 leading-relaxed">
               Decoding IBM's QPY binary circuit format needs the real Qiskit library. Qubit Simulator &amp; Job Monitor embeds CPython 3.13 and a pruned Qiskit runtime so circuit rendering happens locally.
+            </p>
+          </div>
+          <div class="border-l-2 border-slate-900 pl-6">
+            <h3 class="text-lg font-semibold text-slate-900">Peer-to-peer, no internet</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">
+              Entangling qubits across two phones uses Apple's MultipeerConnectivity (Bluetooth + peer-to-peer Wi-Fi). No server, no account, no relay &mdash; devices find each other on the local network and exchange state directly.
             </p>
           </div>
         </div>
@@ -313,7 +338,15 @@
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Entangled-pair playground across iPhone + Apple Watch
+                Gate playground: I, X, Y, Z, H, S, T, &radic;X, CNOT, CZ, SWAP, &radic;SWAP with animated Bloch rotations
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Live U(t) time-evolution scrubber for every gate
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Bell-state entanglement across iPhone + Apple Watch <em>and</em> phone-to-phone
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
