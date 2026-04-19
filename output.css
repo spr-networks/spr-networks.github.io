@@ -1192,6 +1192,10 @@ h1, h2, h3, h4 {
   width: 2rem;
 }
 
+.w-\[280px\] {
+  width: 280px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1617,10 +1621,6 @@ h1, h2, h3, h4 {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -4342,6 +4342,10 @@ html {
     width: 15rem;
   }
 
+  .sm\:w-\[320px\] {
+    width: 320px;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -4542,6 +4546,10 @@ html {
     width: 75%;
   }
 
+  .md\:w-\[380px\] {
+    width: 380px;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -4612,10 +4620,6 @@ html {
 
   .md\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .md\:gap-8 {
-    gap: 2rem;
   }
 
   .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {

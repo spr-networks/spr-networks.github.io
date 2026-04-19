@@ -113,19 +113,71 @@
          bit of physical character without needing an overlay PNG. */
       .phone-frame {
         background: #0b0b0d;
-        padding: 6px;
-        border-radius: 36px;
+        padding: 7px;
+        border-radius: 34px;
         box-shadow:
           inset 0 0 0 1px rgba(255, 255, 255, 0.06),
           inset 0 0 0 2px rgba(255, 255, 255, 0.02),
-          0 18px 40px -12px rgba(15, 23, 42, 0.35),
-          0 2px 6px -2px rgba(15, 23, 42, 0.18);
+          0 28px 60px -14px rgba(15, 23, 42, 0.38),
+          0 4px 10px -2px rgba(15, 23, 42, 0.18);
         position: relative;
       }
       .phone-frame img {
         display: block;
         width: 100%;
-        border-radius: 30px;
+        border-radius: 27px;
+      }
+
+      /* Cycling phone screen — the screenshots sit in a horizontal strip
+         inside a fixed-aspect viewport. Advancing through the three
+         shots translates the strip by 33.33% at a time with a smooth
+         ease-out, so the user sees a clear left-to-right slide instead
+         of a crossfade. Aspect ratio matches the iPhone 17 Pro Max
+         screenshot (1284 × 2778) so the viewport has the same shape as
+         the device screen. JS drives the transform because a CSS-only
+         loop can't wrap cleanly without either a visible snap-back or
+         a duplicated slide. */
+      .phone-cycle {
+        position: relative;
+        aspect-ratio: 1284 / 2778;
+        border-radius: 27px;
+        overflow: hidden;
+      }
+      .phone-strip {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        transition: transform 0.28s cubic-bezier(0.32, 0.72, 0.35, 1);
+        will-change: transform;
+      }
+      .phone-strip img {
+        flex: 0 0 33.3333%;
+        width: 33.3333%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .phone-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .phone-dots button {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: #cbd5e1;
+        cursor: pointer;
+        transition: background 0.25s ease, transform 0.25s ease, width 0.25s ease;
+      }
+      .phone-dots button.active {
+        background: #0f172a;
+        width: 22px;   /* elongate the active dot into a short pill */
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .phone-strip { transition: none; }
       }
       /* Subtle side-button nubs on the left + right edge — classic
          iPhone silhouette cue without a full 3D bezel. */
@@ -342,22 +394,28 @@
              really quantum" shot), an IBM Quantum job detail with its
              rendered circuit + measurement histogram, and the jobs list
              as it lands on the wrist. -->
-        <div class="grid grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
-          <div class="phone-frame">
-            <img src="/assets/img/qubitsim-sphere.png"
-                 alt="Single-qubit Bloch sphere with cardinal-state presets"
-                 loading="lazy" />
+        <!-- Horizontal slide carousel. One large phone, three shots
+             scrolling past on a ~3.5s interval. Click a dot to jump
+             directly. Width scales 280 → 320 → 380 across breakpoints. -->
+        <div class="mx-auto phone-frame w-[280px] sm:w-[320px] md:w-[380px]">
+          <div class="phone-cycle">
+            <div class="phone-strip" id="phoneStrip">
+              <img src="/assets/img/qubitsim-sphere.png"
+                   alt="Single-qubit Bloch sphere with cardinal-state presets"
+                   loading="lazy" />
+              <img src="/assets/img/qubitsim-density.png"
+                   alt="4×4 joint density matrix of a Bell state in Z/X/Y bases"
+                   loading="lazy" />
+              <img src="/assets/img/qubitsim-job-detail.png"
+                   alt="IBM Quantum job detail with rendered circuit and measurement histogram"
+                   loading="lazy" />
+            </div>
           </div>
-          <div class="phone-frame">
-            <img src="/assets/img/qubitsim-density.png"
-                 alt="4×4 joint density matrix of a Bell state in Z/X/Y bases"
-                 loading="lazy" />
-          </div>
-          <div class="phone-frame">
-            <img src="/assets/img/qubitsim-job-detail.png"
-                 alt="IBM Quantum job detail with rendered circuit and measurement histogram"
-                 loading="lazy" />
-          </div>
+        </div>
+        <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Screenshot selector">
+          <button type="button" data-i="0" class="active" aria-label="Bloch sphere"></button>
+          <button type="button" data-i="1" aria-label="Density matrix"></button>
+          <button type="button" data-i="2" aria-label="Job detail"></button>
         </div>
 
         <!-- Apple Watch row — just the jobs view, since that's the wrist's
@@ -469,10 +527,6 @@
                 <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                 Compact watch detail view with histograms and status
               </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Entitlement syncs automatically across your devices
-              </li>
             </ul>
           </div>
         </div>
@@ -564,5 +618,43 @@
       </div>
     </footer>
 
+    <!-- Phone screenshot carousel: auto-advance every ~3.5s and let the
+         user jump directly via the dot row. Pauses while tab is hidden
+         so we don't burn cycles in a backgrounded tab. Respects
+         prefers-reduced-motion (CSS kills the transition). -->
+    <script>
+      (function () {
+        var strip = document.getElementById('phoneStrip');
+        var dots = document.querySelectorAll('#phoneDots button');
+        if (!strip || !dots.length) return;
+        var count = dots.length;
+        var i = 0;
+        var timer = null;
+        function go(n) {
+          i = ((n % count) + count) % count;
+          strip.style.transform = 'translateX(-' + (i * (100 / count)) + '%)';
+          dots.forEach(function (d, idx) {
+            d.classList.toggle('active', idx === i);
+          });
+        }
+        function start() {
+          stop();
+          timer = setInterval(function () { go(i + 1); }, 3500);
+        }
+        function stop() {
+          if (timer) { clearInterval(timer); timer = null; }
+        }
+        dots.forEach(function (d) {
+          d.addEventListener('click', function () {
+            go(parseInt(d.dataset.i, 10));
+            start(); // reset the interval so the user's click isn't immediately overridden
+          });
+        });
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) stop(); else start();
+        });
+        start();
+      })();
+    </script>
   </body>
 </html>
