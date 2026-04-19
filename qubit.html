@@ -6,11 +6,11 @@
 
     <meta
       name="description"
-      content="Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a gate playground with live Hamiltonian evolution, phone-to-phone qubit entanglement, and a live tracker for your IBM Quantum and IONQ jobs. iPhone and Apple Watch. Your API keys never leave the device."
+      content="Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a gate playground with live unitary evolution, phone-to-phone qubit entanglement, and a live tracker for your IBM Quantum and IONQ jobs. iPhone and Apple Watch. Your API keys never leave the device."
     />
     <meta
       name="keywords"
-      content="qubit, bloch sphere, quantum gates, hamiltonian, unitary evolution, entanglement, multipeer, quantum computing, iOS app, Apple Watch, IBM Quantum, IONQ, sampler, quantum visualization"
+      content="qubit, bloch sphere, quantum gates, unitary evolution, entanglement, multipeer, quantum computing, iOS app, Apple Watch, IBM Quantum, IONQ, sampler, quantum visualization"
     />
 
     <!-- Open Graph -->
@@ -19,7 +19,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://www.supernetworks.org/qubit.html" />
     <meta property="og:title" content="Qubit Simulator &amp; Job Monitor — Gates, entanglement, and IBM/IONQ jobs on iPhone + Apple Watch" />
-    <meta property="og:description" content="Interactive Bloch sphere, gate practice with live Hamiltonian evolution, phone-to-phone qubit entanglement, and a live tracker for IBM Quantum and IONQ jobs. API keys never leave your device." />
+    <meta property="og:description" content="Interactive Bloch sphere, gate practice with live unitary evolution, phone-to-phone qubit entanglement, and a live tracker for IBM Quantum and IONQ jobs. API keys never leave your device." />
     <meta property="og:image" content="https://www.supernetworks.org/assets/img/qubitsim-og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -29,7 +29,7 @@
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.supernetworks.org/qubit.html" />
     <meta property="twitter:title" content="Qubit Simulator &amp; Job Monitor — Gates, entanglement, and IBM/IONQ jobs on iPhone + Apple Watch" />
-    <meta property="twitter:description" content="Interactive Bloch sphere, gate practice with live Hamiltonian evolution, phone-to-phone qubit entanglement, and a live tracker for IBM Quantum and IONQ jobs." />
+    <meta property="twitter:description" content="Interactive Bloch sphere, gate practice with live unitary evolution, phone-to-phone qubit entanglement, and a live tracker for IBM Quantum and IONQ jobs." />
     <meta property="twitter:image" content="https://www.supernetworks.org/assets/img/qubitsim-og.png" />
 
     <meta name="robots" content="index, follow" />
@@ -105,6 +105,81 @@
     <style>
       html { scroll-behavior: smooth; }
       body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+      /* iPhone-style device frame around each screenshot. The outer
+         border-radius minus the bezel padding equals the inner image
+         radius — that proportion is what makes the mock read as a real
+         device instead of "image inside a box". Side button nubs add a
+         bit of physical character without needing an overlay PNG. */
+      .phone-frame {
+        background: #0b0b0d;
+        padding: 6px;
+        border-radius: 36px;
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.02),
+          0 18px 40px -12px rgba(15, 23, 42, 0.35),
+          0 2px 6px -2px rgba(15, 23, 42, 0.18);
+        position: relative;
+      }
+      .phone-frame img {
+        display: block;
+        width: 100%;
+        border-radius: 30px;
+      }
+      /* Subtle side-button nubs on the left + right edge — classic
+         iPhone silhouette cue without a full 3D bezel. */
+      .phone-frame::before,
+      .phone-frame::after {
+        content: "";
+        position: absolute;
+        background: #0b0b0d;
+        border-radius: 2px;
+      }
+      .phone-frame::before {
+        /* silence switch + volume, left side */
+        top: 22%;
+        left: -2px;
+        width: 2px;
+        height: 14%;
+      }
+      .phone-frame::after {
+        /* power button, right side */
+        top: 26%;
+        right: -2px;
+        width: 2px;
+        height: 10%;
+      }
+
+      /* Apple Watch frame — much rounder than the phone, with a crown
+         nub on the right edge. */
+      .watch-frame {
+        background: #0b0b0d;
+        padding: 10px 6px;
+        border-radius: 30px;
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.02),
+          0 14px 32px -10px rgba(15, 23, 42, 0.35),
+          0 2px 6px -2px rgba(15, 23, 42, 0.18);
+        position: relative;
+      }
+      .watch-frame img {
+        display: block;
+        width: 100%;
+        border-radius: 22px;
+      }
+      /* Digital crown cue on the right edge. */
+      .watch-frame::before {
+        content: "";
+        position: absolute;
+        top: 38%;
+        right: -3px;
+        width: 3px;
+        height: 14%;
+        background: #0b0b0d;
+        border-radius: 2px;
+      }
     </style>
   </head>
 
@@ -170,20 +245,13 @@
           A pocket quantum lab<br class="hidden sm:block" /> for iPhone and Apple Watch.
         </h1>
         <p class="mt-6 text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl">
-          Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a gate playground with live Hamiltonian and unitary evolution, a Bell-pair playground that entangles qubits across two phones, and a live tracker for your IBM Quantum and IONQ jobs.
+          Qubit Simulator &amp; Job Monitor is an interactive Bloch sphere, a gate playground with live unitary evolution, a Bell-pair playground that entangles qubits across two phones, and a live tracker for your IBM Quantum and IONQ jobs.
         </p>
 
         <div id="download" class="mt-8 flex flex-col sm:flex-row gap-4">
           <a href="https://apps.apple.com/us/app/qubit-simulator-job-monitor/id6762375652" class="inline-flex items-center justify-center">
             <img src="/assets/img/appdownload.png" alt="Download on the App Store" class="h-[46px]" />
           </a>
-        </div>
-
-        <!-- Proof bar -->
-        <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-400">
-          <span>iPhone + Apple Watch</span>
-          <span class="text-gray-300">&middot;</span>
-          <span>API keys stay on device</span>
         </div>
 
         <!-- Hero video: autodemo recording — state → |+⟩, camera orbit, measure -->
@@ -258,33 +326,52 @@
     </section>
 
     <!-- ==================== SCREENSHOT GALLERY ==================== -->
+    <!--
+      Each screenshot sits inside a CSS-only device frame — a thin dark
+      bezel with matched rounded corners — so the UI reads as "on an
+      iPhone" / "on an Apple Watch" instead of a floating rectangle.
+      The outer radius is larger than the inner radius by exactly the
+      bezel padding, which is how actual hardware looks on marketing
+      photography. Keeping it pure CSS (no overlay PNG) means we can
+      swap the screenshots freely without re-compositing.
+    -->
     <section class="py-16 md:py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-          <img src="/assets/img/qubitsim-sphere.png"
-               alt="Single-qubit Bloch sphere"
-               class="w-full rounded-2xl ring-1 ring-gray-200"
-               loading="lazy" />
-          <img src="/assets/img/qubitsim-gates.png"
-               alt="Gate playground with unitary evolution"
-               class="w-full rounded-2xl ring-1 ring-gray-200"
-               loading="lazy" />
-          <img src="/assets/img/qubitsim-entangled.png"
-               alt="Entangled Bell pair on a single device"
-               class="w-full rounded-2xl ring-1 ring-gray-200"
-               loading="lazy" />
-          <img src="/assets/img/qubitsim-entangled-phones.png"
-               alt="Entangled pair across two iPhones via MultipeerConnectivity"
-               class="w-full rounded-2xl ring-1 ring-gray-200"
-               loading="lazy" />
-          <img src="/assets/img/qubitsim-jobs.png"
-               alt="Jobs tracker list"
-               class="w-full rounded-2xl ring-1 ring-gray-200"
-               loading="lazy" />
-          <img src="/assets/img/qubitsim-job-detail.png"
-               alt="Job detail with circuit and measurement histogram"
-               class="w-full rounded-2xl ring-1 ring-gray-200"
-               loading="lazy" />
+      <div class="max-w-5xl mx-auto px-6">
+        <!-- Trimmed to four unique views: the interactive Bloch sphere,
+             the 4×4 joint density matrix (the most distinctive "this is
+             really quantum" shot), an IBM Quantum job detail with its
+             rendered circuit + measurement histogram, and the jobs list
+             as it lands on the wrist. -->
+        <div class="grid grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
+          <div class="phone-frame">
+            <img src="/assets/img/qubitsim-sphere.png"
+                 alt="Single-qubit Bloch sphere with cardinal-state presets"
+                 loading="lazy" />
+          </div>
+          <div class="phone-frame">
+            <img src="/assets/img/qubitsim-density.png"
+                 alt="4×4 joint density matrix of a Bell state in Z/X/Y bases"
+                 loading="lazy" />
+          </div>
+          <div class="phone-frame">
+            <img src="/assets/img/qubitsim-job-detail.png"
+                 alt="IBM Quantum job detail with rendered circuit and measurement histogram"
+                 loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Apple Watch row — just the jobs view, since that's the wrist's
+             killer feature (check on a long-running run without opening a
+             laptop). -->
+        <div class="mt-12 md:mt-16">
+          <p class="text-center text-sm font-medium text-gray-500 uppercase tracking-wider mb-8">On your wrist</p>
+          <div class="flex justify-center">
+            <div class="watch-frame w-40 md:w-48">
+              <img src="/assets/img/qubitsim-watch-jobs.png"
+                   alt="IBM Quantum + IONQ jobs list on Apple Watch"
+                   loading="lazy" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -294,7 +381,7 @@
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">On-device by design</h2>
         <p class="mt-4 text-lg text-gray-500 max-w-2xl">
-          No backend, no telemetry, no cloud. Qubit Simulator &amp; Job Monitor talks only to the quantum providers you configure.
+          The app doesn't have a backend and doesn't collect telemetry. The only network traffic it makes goes to the quantum providers you've set up in Settings.
         </p>
 
         <div class="mt-12 grid md:grid-cols-3 gap-8">
@@ -307,13 +394,13 @@
           <div class="border-l-2 border-slate-900 pl-6">
             <h3 class="text-lg font-semibold text-slate-900">Circuits render on-device</h3>
             <p class="mt-2 text-slate-600 leading-relaxed">
-              Every circuit diagram and measurement histogram is decoded and rendered locally on your phone. No round-trip to a server, no streamed images, no data leaves the device.
+              Qiskit QPY payloads and IONQ circuit JSON are decoded and drawn right on your phone. The rendering pipeline runs entirely on your device.
             </p>
           </div>
           <div class="border-l-2 border-slate-900 pl-6">
             <h3 class="text-lg font-semibold text-slate-900">Peer-to-peer, no internet</h3>
             <p class="mt-2 text-slate-600 leading-relaxed">
-              Entangling qubits across two phones uses Apple's MultipeerConnectivity (Bluetooth + peer-to-peer Wi-Fi). No server, no account, no relay &mdash; devices find each other on the local network and exchange state directly.
+              Entangling qubits across two phones uses Apple's MultipeerConnectivity (Bluetooth + peer-to-peer Wi-Fi). The two devices discover each other on the local network and exchange state directly, without needing a login or a server in between.
             </p>
           </div>
         </div>
@@ -346,7 +433,7 @@
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Bell-state entanglement across iPhone + Apple Watch <em>and</em> phone-to-phone
+                <span>Bell-state entanglement across iPhone + Apple Watch <em>and</em> phone-to-phone</span>
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>

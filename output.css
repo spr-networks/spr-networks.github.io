@@ -1619,6 +1619,10 @@ h1, h2, h3, h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -4442,6 +4446,10 @@ html {
     margin-top: 0px;
   }
 
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4504,6 +4512,10 @@ html {
 
   .md\:w-4\/6 {
     width: 66.666667%;
+  }
+
+  .md\:w-48 {
+    width: 12rem;
   }
 
   .md\:w-5\/12 {
@@ -4600,6 +4612,10 @@ html {
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 
   .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -4850,10 +4866,6 @@ html {
 
   .lg\:w-3\/4 {
     width: 75%;
-  }
-
-  .lg\:grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:p-4 {
